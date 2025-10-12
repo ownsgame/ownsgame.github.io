@@ -1,0 +1,6 @@
+.ceramica{
+    background-image: url("../Sprites/Map/ceramica_1.svg");
+}
+.ceramica:nth-child(odd){
+    background-image: url("../Sprites/Map/ceramica_2.svg");
+}

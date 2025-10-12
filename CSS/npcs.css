@@ -1,0 +1,18 @@
+.npc{
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sabio{
+    grid-column: 3/3;
+    grid-row: 3/3;
+    background-image: url("../Sprites/Npcs/sabio.svg");
+}
+
+.tocha{
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url("../Sprites/Map/tochaDungeon.svg");
+    background-size: contain;
+}

@@ -1,0 +1,88 @@
+*::selection{
+    background-color: transparent;
+}
+
+body{
+    margin: 0px;
+}
+
+#conteiner{
+    height: 600px;
+    width: 600px;
+
+    display: grid;
+
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.jogador{
+    z-index: 1;
+}
+
+.tiles{
+    background-size: cover;
+    z-index: 0;
+}
+
+.special-Border{
+    border: 3px solid rgba(255, 255, 255, 0.274);
+    filter: brightness(1.5);
+}
+
+.red-effect{
+    width: 100vw; height: 100vh;
+    margin: 0px;
+    position: absolute;
+    z-index: 998;
+    display: none;
+    opacity: 1;
+    transition: all 50ms ease-in-out;
+}
+
+.game-over{
+    color: white;
+    font-family: "Delius Swash Caps";
+    background-color: rgb(226, 20, 13);
+    border: 3px solid rgb(88, 10, 10);
+    position: absolute;
+    width: 20vw; height: 20vw;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-over h3, .game-over h2{
+    text-align: center;
+}
+
+@media (max-width: 200px){
+    #conteiner{
+        height: 150px;  width: 150px;
+    }
+}
+@media (min-width: 201px) and (max-width: 300px){
+    #conteiner{
+        height: 200px;  width: 200px;
+    }
+}
+@media (min-width: 301px) and (max-width: 400px){
+    #conteiner{
+        height: 300px;  width: 300px;
+    }
+}
+@media (min-width: 401px) and (max-width: 500px){
+    #conteiner{
+        height: 400px;  width: 400px;
+    }
+}
+@media (min-width: 501px) and (max-width: 600px){
+    #conteiner{
+        height: 500px;  width: 500px;
+    }
+}

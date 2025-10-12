@@ -1,0 +1,14 @@
+.terra{
+    background-image: url("../Sprites/ground/terra_1.svg");
+}
+.terra:nth-child(odd){
+    background-image: url("../Sprites/ground/terra_2.svg");
+}
+.bau{
+    background-image: url("../Sprites/ground/ore_1.svg");
+}
+.void{
+    background-size: cover;
+    z-index: 0;
+    background-image: none;
+}

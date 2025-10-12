@@ -1,0 +1,75 @@
+.menu-collection::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+    margin: 2px;
+}
+
+.menu-collection::-webkit-scrollbar-track { 
+    background: #1e69ff; border-radius: 10px; 
+} 
+.menu-collection::-webkit-scrollbar-thumb { 
+    background: linear-gradient(180deg, #4166a7, #1c4494);
+    border-radius: 10px; border: 3px solid #f3f4f6; 
+} 
+
+.menu-collection::-webkit-scrollbar-thumb:hover { 
+    background: linear-gradient(180deg, #6b7280, #4b5563); 
+}
+
+#menu-button{
+    position: absolute;
+}
+
+#menu-button{
+    position: absolute;
+    z-index: 999;
+    top:2%;
+    left: 10px;
+}
+#menu{
+    color: white;
+    font-family: "Delius Swash Caps";
+    background-color: rgb(14, 30, 255);
+    border: 3px solid rgb(13, 13, 73);
+    
+    position: absolute;
+    width: 85vw; height: 85vh;
+    z-index: 99;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 700px){
+    #menu{
+        width: 90vw; height: 50vh;
+        top: 40%;
+    }
+}
+
+#menu h3, #menu h2{
+    color: white;
+}
+
+.menu-collection{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    overflow-x: scroll;
+}
+
+.menu-card{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 3px solid rgb(255, 255, 255);
+}

@@ -1,0 +1,53 @@
+#caixa-dialogo{
+    width: 70vw; height: 20vh;
+
+    background-color: rgba(0, 0, 0, 0.63);
+    color: white;
+    border: 3px solid white;
+    position: absolute;
+
+    z-index: 99;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+#titulo-dialogo, #textinho-dialogo{
+    margin: 0px;
+}
+
+#titulo-dialogo{
+    font-size: 1.5rem;
+}
+#textinho-dialogo{
+    font-size: 1rem;
+}
+
+#botoes-dialogo{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 90%;
+    height: 20%;
+}
+#botoes-dialogo button{
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: underline;
+}
+#botoes-dialogo button:hover{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.disponivel{
+    border: 1px solid rgba(1, 56, 156, 0.788);
+}
