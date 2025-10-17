@@ -61,15 +61,12 @@ function desenharGrade(ordem, classe, loot = false){
 function atualizarTamanhoPadrao() {
   const conteiner = document.getElementById("conteiner");
   
-  // pega as dimensões atuais do container
   const largura = conteiner.offsetWidth;
   const altura = conteiner.offsetHeight;
-  
-  // divide pelo número de colunas/linhas (5x5)
+
   const tamTileLargura = largura / 5;
   const tamTileAltura = altura / 5;
-  
-  // insere a regra CSS da classe .tamPadrao dinamicamente
+
   const estilo = document.createElement("style");
   estilo.innerHTML = `
     .tamPadrao {
@@ -77,15 +74,13 @@ function atualizarTamanhoPadrao() {
       height: ${tamTileAltura}px;
     }
   `;
-  
-  // remove regras antigas, se houver, e adiciona a nova
+
   const antiga = document.getElementById("tamPadraoEstilo");
   if (antiga) antiga.remove();
   estilo.id = "tamPadraoEstilo";
   document.head.appendChild(estilo);
 }
 
-// executa no início e ao redimensionar a janela
 atualizarTamanhoPadrao();
 window.addEventListener("resize", atualizarTamanhoPadrao);
 

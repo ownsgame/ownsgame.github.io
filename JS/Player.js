@@ -1,6 +1,7 @@
 class Player{
     constructor(vida, elemento, sprite, defesa) {
         this.vida = vida;
+        this.vidaInicial = vida;
         this.defesa = defesa
         this.elemento = elemento;
         this.sprite = sprite;
@@ -68,6 +69,19 @@ class Player{
                 fimDeJogo();
             }
         }
+    }
+
+    recuperarVida(quantidade){
+        if(this.vida == this.vidaInicial){
+            console.log("Faz nada");
+        }
+        else if(this.vida + quantidade > this.vidaInicial){
+            this.vida = this.vidaInicial;
+        }
+        else{
+            this.vida += quantidade;
+        }
+        atualizarVida(this.vida);
     }
 }
 

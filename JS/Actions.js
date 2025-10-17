@@ -2,10 +2,9 @@ class Actions {
   constructor(botaoAcao = null, countdown = 5){
     this.estadoInterno = 0;
     this.pause = false;
-    this.botaoAcao = botaoAcao; // container (div) que vai "segurar" o botão
+    this.botaoAcao = botaoAcao;
     this.countdown = countdown;
 
-    // cria o botão uma vez
     if (this.botaoAcao) {
       this._btn = document.createElement("button");
       this._btn.type = "button";
@@ -13,7 +12,6 @@ class Actions {
       this._btn.textContent = "Agir";
       this.botaoAcao.appendChild(this._btn);
 
-      // listener no botão estável
       this._btn.addEventListener("click", () => this._onClick());
     }
 
@@ -48,6 +46,11 @@ class Actions {
   }
 
   _onClick(){
+
+    if(this.pause){
+      return;
+    }
+    
     if(this.estadoInterno == 1){
       coletarRecompensa();
     } else if(this.estadoInterno == 2){

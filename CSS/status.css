@@ -94,7 +94,8 @@
     background-color: rgb(14, 30, 255);
     border: 3px solid rgb(13, 13, 73);
     position: absolute;
-    width: 20vw; height: 20vw;
+    z-index: 999;
+    width: 70vh; height: 70vh;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     display: none;
@@ -104,7 +105,16 @@
 }
 
 .reward h3{
+    font-size: 24pt;
     text-align: center;
+}
+
+.reward img{
+    width: 120px; height: 120px;
+    filter: drop-shadow(-3px 5px 30px #ffffff);
+}
+.reward p{
+    font-size: 18pt;
 }
 
 #damage-count{
@@ -137,6 +147,61 @@
     font-size: 30pt;
 }
 
+#show-rewards{
+    position: absolute;
+    right: 20px;
+    bottom: 130px;
+    border: none;
+    background-color: none;
+    width: 100px;
+    height: 100px;
+    padding: 0%;
+    cursor: pointer;
+    border: 3px solid rgb(102, 78, 12);
+    border-radius: 50%;
+}
+#show-rewards img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+#show-rewards img:hover{
+    filter: brightness(50%);
+}
+
+#screen-show-rewards{
+    color: white;
+    font-family: "Delius Swash Caps";
+    background-color: rgb(14, 30, 255);
+    border: 3px solid rgb(13, 13, 73);
+    position: absolute;
+    z-index: 999;
+    width: 90vw; height: 85vh;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dequeRewards{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    overflow-x: scroll;
+}
+
+.cardReward{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+
 @media (max-width: 900px) {
     #status{
         position: absolute;
@@ -145,7 +210,16 @@
     }
 
     .reward{
-        width: 60vw; height: 60vw;
+        width: 80vw; height: 80vw;
+    }
+    .reward h3{
+        font-size: 14pt;
+    }
+    .reward p{
+        font-size: 10pt;
+    }
+    .reward img{
+        width: 60px; height: 60px;
     }
 }
 
@@ -167,6 +241,9 @@
     #status{
         top: 160px;
     }
+    #show-rewards, #weapon{
+        width: 60px; height: 60px;
+    }
 }
 @media (min-width: 201px) and (max-width: 300px){
     #damage-count{
@@ -180,6 +257,9 @@
     }
     #status{
         top: 210px;
+    }
+    #show-rewards, #weapon{
+        width: 80px; height: 80px;
     }
 }
 @media (min-width: 301px) and (max-width: 400px){
@@ -195,6 +275,9 @@
     #status{
         top: 360px;
     }
+    #show-rewards, #weapon{
+        width: 80px; height: 80px;
+    }
 }
 @media (min-width: 401px) and (max-width: 500px){
     #damage-count{
@@ -202,6 +285,9 @@
     }
     #status{
         top: 410px;
+    }
+    #show-rewards, #weapon{
+        width: 80px; height: 80px;
     }
 }
 @media (min-width: 500px) and (max-width: 600px){

@@ -1,6 +1,6 @@
 const Recompensas_String = {
     moeda: "Moeda(s)",
-    frutaCoracao: "Fruto do Coroção",
+    frutaCoracao: "Fruto do Coração",
     frutaEnergia: "Cacho de Energia", 
 }
 
@@ -10,6 +10,14 @@ const Recompensas_Img = {
     frutaEnergia: "Sprites/Itens/energy_berry.svg", 
 }
 
+function getRewardValue(recompensa){
+    const Recompensas_Valores = {
+        moeda: randomInt(1, 20),
+        frutaCoracao: 1,
+        frutaEnergia: 1, 
+    }
+    return Recompensas_Valores[recompensa];
+}
 
 function getRewardName(recompensa){
     return Recompensas_String[recompensa];

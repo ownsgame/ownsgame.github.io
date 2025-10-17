@@ -46,3 +46,7 @@ function atacarTarget(){
         }
     }    
 }
+
+function zerarInimigoAlvo(){
+    enemyTarget = null;
+}

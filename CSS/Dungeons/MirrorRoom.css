@@ -1,0 +1,24 @@
+.espelho{
+    background-image: url("../../Sprites/Map/MirrorRoom/mirror_ground1.svg");
+}
+.espelho:nth-child(odd){
+    background-image: url("../../Sprites/Map/MirrorRoom/mirror_ground2.svg");
+}
+.bau{
+    background-image: url("../../Sprites/Map/MirrorRoom/chest.svg");
+}
+
+.bau-aberto{
+    background-image: url("../../Sprites/Map/MirrorRoom/opened-chest.svg");
+}
+
+.void{
+    background-size: cover;
+    z-index: 0;
+    background-image: none;
+}
+
+body{
+    width: 100vw; height: 100vh;
+    background-image: linear-gradient(rgb(111, 74, 146), rgb(87, 74, 146), rgb(74, 75, 146), rgb(23, 34, 95));
+}

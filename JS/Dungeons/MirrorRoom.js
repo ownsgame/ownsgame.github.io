@@ -1,12 +1,18 @@
-const TOTAL_VIAGENS = 5;
+class Ghosts extends Inimigo{
+    constructor(elemento, vida, defesa, ataque){
+        super(elemento, vida, defesa, ataque);
+    }
+} 
+
+const TOTAL_VIAGENS = 3;
 let viagensRestantes = TOTAL_VIAGENS;
 const BOTAO_EX = document.getElementById("botao-explorar");
 BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
 
 function gerarDungeonPre(){
     const rd = randomInt(1, 4);
-    desenharGrade(5, "terra", true);
-    gerarInimigos(rd, "Sprites/ground/enemy_1.svg");
+    desenharGrade(5, "espelho", true);
+    gerarInimigos(rd, "Sprites/Enemys/ghost.svg");
 }
 
 gerarDungeonPre();

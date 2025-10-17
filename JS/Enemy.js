@@ -1,16 +1,20 @@
 const INIMIGOS_ARRAY = [];
 
 class Inimigo{
-    constructor(elemento, vida, defesa, ataque){
+    constructor(elemento, sprite, vida, defesa, ataque){
         this.vida = vida;
         this.defesa = defesa;
         this.ataque = ataque;
         this.elemento = elemento;
         this.emCombate = false;
         this.time = 5;
+        this.setSprite(sprite);
         this.modoAlerta();
     }
 
+    setSprite(sprite){
+        this.elemento.src = sprite;
+    }
     estaEmCombate(){
         return this.emCombate;
     }
@@ -56,7 +60,7 @@ class Inimigo{
     morrer(){
         this.elemento.remove();
         const indice = INIMIGOS_ARRAY.indexOf(this);
-
+        ChamadorAcao.mudarEstado(0);
         if(indice !== -1){
             INIMIGOS_ARRAY.splice(indice, 1);
         }
@@ -73,7 +77,7 @@ class Inimigo{
 }
 
 
-function gerarInimigos(qntd) {
+function gerarInimigos(qntd, sprite) {
     const maxInimigos = 10;
     const quantidade = Math.min(qntd, maxInimigos);
 
@@ -82,7 +86,6 @@ function gerarInimigos(qntd) {
     for (let i = 0; i < quantidade; i++) {
         let novoInimigoEl = document.createElement("img");
         novoInimigoEl.classList.add("inimigo", "tamPadrao");
-        novoInimigoEl.src = "Sprites/ground/enemy_1.svg";
 
         let cordX, cordY;
         let posValida = false;
@@ -96,7 +99,7 @@ function gerarInimigos(qntd) {
         posicoesOcupadas.push({ x: cordX, y: cordY });
 
         posicionarGrid(novoInimigoEl, cordX, cordY);
-        let novoInimigo = new Inimigo(novoInimigoEl, 100, 10, 10);
+        let novoInimigo = new Inimigo(novoInimigoEl, sprite, 100, 10, 10);
         fixarAoConteiner(novoInimigoEl);
         INIMIGOS_ARRAY.push(novoInimigo);
     }
@@ -111,7 +114,6 @@ function deletarInimigos(){
     for (let i = INIMIGOS.length - 1; i >= 0; i--) {
         INIMIGOS[i].remover();
     }
-
     return true;
 }
 
