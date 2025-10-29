@@ -13,23 +13,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="conteiner"></div>
     
     <div id="status">
-        <div id="barra-vida">
-            <h3 id="status-vida" class="status-item">100/100</h3>
-            <div id="status-hp" class="status-item"></div>
-            <div id="status-lost" class="status-item"></div>
-        </div>
+        <div id="status-hp" class="status-item"></div>
+        <h3 id="status-vida" class="status-item">HP: 100/100</h3>
+        <div id="action-button"></div>
 
-        <div id="action-button">
-        </div>
-
-        <h3 id="coords" class="status-item">1, 1</h3>
         <h3 id="contagem-ataque" class="status-item">Fora de Combate!</h3>
+        <div id="dados-inimigo"></div>
+        <h3 id="coords" class="status-item">1, 1</h3>
         <button class="status-item botao-status" id="botao-explorar" onclick="resetar()"></button>
+        <button class="botao-ativo" id="botao-explorar" onclick="">Menu</button>
     </div>
 
     <div id="weapon"></div>
@@ -54,6 +55,7 @@
     <script src="JS/Colision.js"></script>
     <script src="JS/AtualizarVidaJogador.js"></script>
 
+    <script src="JS/MapaPres.js"></script>
     <script src="JS/Chest.js"></script>
     <script src="JS/GridControl.js"></script>
     

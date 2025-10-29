@@ -1,38 +1,66 @@
 body{
-    background-color: rgb(108, 32, 230);
+    margin: 0px;
+    padding: 0px;
+    width: 100vw; height: 100vh;
+    background-image: linear-gradient(rgb(69, 32, 112), rgb(17, 32, 78), rgb(10, 18, 43), rgb(3, 7, 19));
 }
 
 body *{
     margin: auto;
-    text-align: center;
+    text-align: center;    
+}
+
+main{
+    width: 80vw; height: 80vh;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
 }
 
 #inicial-imagem{
     display: block;
-    margin: 5px;
+    width: 300px; height: 300px;
+    margin: auto;
 }
 
 h1{
-    margin-top: 15px;
     font-family: "Delius Swash Caps";
     color: white;
-    font-size: 30pt;
+    font-size: 50pt;
 }
+
+#titulo h2{
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    font-size: 15pt;
+}
+
 button{
-    font-family: "Delius Swash Caps";
+    width: 30%; height: 10%;
+    font-weight: bolder;
+    font-size: 15pt;
+    font-family: "Ysabeau Infant", sans-serif;
     display: block;
     color: white;
     cursor: pointer;
-    background-color: rgb(27, 27, 201);
-    border: 3px solid rgb(13, 13, 73);
+    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
+    border: rgba(255, 255, 255, 0.24) 2px solid;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover{
+    background-image: linear-gradient(rgb(255, 255, 255));
+    color: rgb(113, 51, 138);
 }
 
 #versao{
     width: 90%;
     text-align: center;
-    position: absolute;
     bottom: 10px;
-    font-family: "Delius Swash Caps";
+    font-family: "Ysabeau Infant", sans-serif;
     color: white;
 }
 

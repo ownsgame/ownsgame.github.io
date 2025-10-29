@@ -4,3 +4,11 @@
 .ceramica:nth-child(odd){
     background-image: url("../Sprites/Map/ceramica_2.svg");
 }
+
+.mirror{
+    cursor: pointer;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../Sprites/WorkBanks/mirror.svg");
+}

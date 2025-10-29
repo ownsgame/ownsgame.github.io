@@ -1,0 +1,19 @@
+.menuJogo{
+    color: white;
+    font-family: "Delius Swash Caps";
+    border: 8px solid rgb(2, 2, 26);
+    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(7, 20, 59));
+    
+    position: absolute;
+    width: 85vw; height: 85vh;
+    z-index: 99;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

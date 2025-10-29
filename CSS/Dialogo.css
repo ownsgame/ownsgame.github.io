@@ -1,9 +1,8 @@
 #caixa-dialogo{
     width: 70vw; height: 20vh;
-
-    background-color: rgba(0, 0, 0, 0.63);
+    border: 8px solid rgb(2, 2, 26);
+    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(3, 11, 37));
     color: white;
-    border: 3px solid white;
     position: absolute;
 
     z-index: 99;
@@ -21,9 +20,13 @@
 }
 
 #titulo-dialogo{
+    font-family: "Delius Swash Caps";
     font-size: 1.5rem;
 }
 #textinho-dialogo{
+    font-weight: bolder;
+    font-size: 12pt;
+    font-family: "Ysabeau Infant", sans-serif;
     font-size: 1rem;
 }
 

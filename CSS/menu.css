@@ -1,15 +1,15 @@
 .menu-collection::-webkit-scrollbar {
-    width: 10px; 
-    height: 10px;
-    margin: 2px;
+    width: 14px; 
+    height: 14px;
+    margin: 5px;
 }
 
 .menu-collection::-webkit-scrollbar-track { 
-    background: #1e69ff; border-radius: 10px; 
+    background: #1e69ff;
+    border: 3px solid #f3f4f642; 
 } 
 .menu-collection::-webkit-scrollbar-thumb { 
     background: linear-gradient(180deg, #4166a7, #1c4494);
-    border-radius: 10px; border: 3px solid #f3f4f6; 
 } 
 
 .menu-collection::-webkit-scrollbar-thumb:hover { 
@@ -29,7 +29,7 @@
 #menu{
     color: white;
     font-family: "Delius Swash Caps";
-    background-color: rgb(14, 30, 255);
+    background-color: rgb(40, 54, 255);
     border: 3px solid rgb(13, 13, 73);
     
     position: absolute;
@@ -46,15 +46,34 @@
     justify-content: center;
 }
 
+#show-boss{
+    color: white;
+    font-family: "Delius Swash Caps";
+    position: absolute;
+    background-color: rgb(12, 16, 39);
+    border: 3px solid rgb(5, 5, 15);
+    width: 50vw; height: 90vh;
+    z-index: 100;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 700px){
     #menu{
-        width: 90vw; height: 50vh;
-        top: 40%;
+        width: 90vw; height: 80vh;
     }
 }
 
 #menu h3, #menu h2{
     color: white;
+    margin: 0px;
 }
 
 .menu-collection{
@@ -62,14 +81,71 @@
     flex-direction: row;
     width: 98%;
     overflow-x: scroll;
+    gap: 5px;
+}
+
+.capa{
+    width: 100px; height: 100px;
+    border: 4px solid rgb(2, 2, 22);
 }
 
 .menu-card{
     display: flex;
-    flex: 1;
+    flex: 1 1;
+    max-width: 300px;
+    max-height: 300px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 8px;
+    background-color: rgb(21, 21, 66);
+    border: 4px solid rgb(2, 2, 22);
+    border-radius: 8px;
+}
+
+.menu-card img{
+    width: 100%; height: 100%;
+    border: 5px solid rgb(2, 2, 22);
+    border-radius: 50%;
+}
+
+.menu-card button, .menu-card a{
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 5px;
+    color: white;
+    font-family: "Delius Swash Caps";
+    background-color: rgb(14, 30, 255);
+    border: 3px solid rgb(2, 2, 22);
+    cursor: pointer;
+    padding: 2px;
+    transition: all 100ms ease-in-out;
+}
+.menu-card button:hover, .menu-card a:hover{
+    color: rgb(14, 30, 255);
+    background-color: rgb(255, 255, 255);
     padding: 5px;
-    border: 3px solid rgb(255, 255, 255);
+}
+
+.botoes-alinhados{
+    height: 50px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+.botoes-alinhados button{
+    flex: 1;
+    color: white;
+    font-family: "Delius Swash Caps";
+    background-color: rgb(14, 30, 255);
+    border: 3px solid rgb(2, 2, 22);
+    cursor: pointer;
+    margin: 2px 0px;
+}
+
+.botoes-alinhados button:hover{
+    color: rgb(14, 30, 255);
+    background-color: rgb(255, 255, 255);
 }

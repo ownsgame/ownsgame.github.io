@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="CSS/grid.css">
     <link rel="stylesheet" href="CSS/status.css">
     <link rel="stylesheet" href="CSS/Enemy.css">
+    <link rel="stylesheet" href="CSS/MenuJogo.css">
     <link rel="stylesheet" href="CSS/Dungeons/MirrorRoom.css">
 
     <title>Grid</title>
@@ -13,31 +14,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="conteiner"></div>
     
     <div id="status">
-        <div id="barra-vida">
-            <h3 id="status-vida" class="status-item">100/100</h3>
-            <div id="status-hp" class="status-item"></div>
-            <div id="status-lost" class="status-item"></div>
-        </div>
+        <div id="status-hp" class="status-item"></div>
+        <h3 id="status-vida" class="status-item">HP: 100/100</h3>
+        <div id="action-button"></div>
 
-        <div id="action-button">
-        </div>
-
-        <h3 id="coords" class="status-item">1, 1</h3>
         <h3 id="contagem-ataque" class="status-item">Fora de Combate!</h3>
+        <div id="dados-inimigo"></div>
+        <h3 id="coords" class="status-item">1, 1</h3>
         <button class="status-item botao-status" id="botao-explorar" onclick="resetar()"></button>
+        <button class="botao-ativo" id="botao-explorar" onclick="abrirTelaMenuJogo()">Menu</button>
     </div>
 
-    <div id="weapon"></div>
-
-    <button id="show-rewards" onclick="showRewards()">
-        <img src="Sprites/IU/chest.svg">
-    </button>
-    <div id="screen-show-rewards"></div>
+    <div class="menuJogo" id="menu-jogo"></div>
     
     <div class="red-effect" id="camada-de-efeito"></div>
     <div id="tela_reward" class="reward"></div>
@@ -55,6 +53,7 @@
     <script src="JS/Colision.js"></script>
     <script src="JS/AtualizarVidaJogador.js"></script>
 
+    <script src="JS/MapaPres.js"></script>
     <script src="JS/Chest.js"></script>
     <script src="JS/GridControl.js"></script>
     
@@ -71,7 +70,9 @@
     
     <!--JS da Dungeon-->
     <script src="JS/VoidControl.js"></script>
+    <script src="JS/Enemys/Ghosts.js"></script>
     <script src="JS/Dungeons/MirrorRoom.js"></script>
+    <script src="JS/MenuJogo.js"></script>
 
     
     <script src="JS/AtualizaPosJogador.js"></script>
