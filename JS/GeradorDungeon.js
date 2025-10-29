@@ -6,7 +6,7 @@ BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`;
 function gerarDungeonPre(){
     const rd = randomInt(1, 4);
     desenharGrade(5, "terra", true);
-    gerarInimigos(rd, "Sprites/ground/enemy_1.svg");
+    Inimigo.gerarInimigos(rd, "Sprites/ground/enemy_1.svg");
 }
 
 gerarDungeonPre();

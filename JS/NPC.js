@@ -25,14 +25,12 @@ class NPC {
                     this.passarDialogo(array[index])
                 }
                 else{
-                    this.objeto.classList.add("disponivel");
                     index = 0;
                     fecharCaixaDialogo();
                     this.emFala = false;
                 }
             });
             BOTAO_EX.addEventListener("click", ()=>{
-                this.objeto.classList.add("disponivel");
                 index = 0;
                 fecharCaixaDialogo();
                 this.emFala = false;
@@ -53,13 +51,11 @@ class NPC {
                 }
                 else{
                     index = 0;
-                    this.objeto.classList.add("disponivel");
                     fecharCaixaDialogo();
                     this.emFala = false;
                 }
             });
             BOTAO_EX.addEventListener("click", ()=>{
-                this.objeto.classList.add("disponivel");
                 index = 0;
                 fecharCaixaDialogo();
                 this.emFala = false;
@@ -72,7 +68,7 @@ class NPC {
     }
 
     ativo(){
-        this.objeto.classList.add("disponivel");
+         ;
         this.objeto.addEventListener("click", ()=>{
             if(!this.emFala){
                 this.emFala = true;

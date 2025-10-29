@@ -4,6 +4,7 @@ function varrerTile(tile){
 
     tile.className = "";
     tile.classList.add("void");
+    setTileValue("v", x, y, false);
 
     tile.style.gridRow = cordX;
     tile.style.gridColumn = CordY;   
@@ -40,6 +41,7 @@ function restaurarTile(num, classe){
     if (tile.classList.contains("void")) {
         tile.className = "";
         tile.classList.add(`${classe}`, "tiles");
+        setTileValue("g", x, y, false);
     }
     
 

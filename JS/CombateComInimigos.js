@@ -11,6 +11,7 @@ setInterval(() => {
         if (inimigo.estaEmCombate()) {
             enemyTarget = inimigo;
             combate = true;
+            mostrarInimigoAlvo(enemyTarget);
             tempo = inimigo.getTime();
             dano = inimigo.getDano();
             break;
@@ -37,14 +38,25 @@ function atacarTarget(){
         let dano = player.getAtaque();
             
         enemyTarget.sofrerDano(dano);
+        mostrarInimigoAlvo(enemyTarget);
 
         if(enemyTarget.getVida() <= 0){
             enemyTarget = null;
+
             resetarContador();
         } else {
             iniciarContador(enemyTarget.getTime(), enemyTarget.getDano());
         }
     }    
+}
+
+function mostrarInimigoAlvo(inimigo){
+    const tela = document.getElementById("dados-inimigo");
+
+    tela.innerHTML = `
+        <h3>Dados Do Inimigo:</h3>
+        <h3>❤️: ${inimigo.getVida()} | 🗡️: ${inimigo.getAtaque()} | 🛡️: ${inimigo.getDefesa()} </h3>
+    `;
 }
 
 function zerarInimigoAlvo(){

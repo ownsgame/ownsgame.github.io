@@ -8,7 +8,7 @@ function posicionarGrid(item, x, y){
     item.style.gridColumn = `${y}/${y}`;
 }
 
-function criarGrid(x, y, classe, loot){
+function criarGrid(x, y, classe, loot, arrayRewards){
     let quadrado = document.createElement("div");
     quadrado.classList.add("tiles");
     
@@ -16,10 +16,17 @@ function criarGrid(x, y, classe, loot){
         let rd = randomInt(0, 100);
         if(rd <= 5){
             quadrado.classList.add("bau");
-            setBau(quadrado);
+            if(arrayRewards != null){
+                setBau(quadrado, arrayRewards);
+            }
+            else{
+                setBau(quadrado);
+            }
+            setTileValue("c", x, y, false);
         }
         else{
             quadrado.classList.add(`${classe}`);
+            setTileValue("g", x, y, false);
         } 
     }
     else{
@@ -39,7 +46,7 @@ function removerGrid(){
     return true;
 }
 
-function desenharGrade(ordem, classe, loot = false){
+function desenharGrade(ordem, classe, loot = false, arrayRewards = null){
     const CONTAINER = document.getElementById("conteiner");
     let string = ``;
     for(let j = 1; j <= ordem; j++){
@@ -51,7 +58,7 @@ function desenharGrade(ordem, classe, loot = false){
 
     for(let i = 1; i <= ordem; i++){
         for(let j = 1; j <= ordem; j++){
-            criarGrid(i, j, classe, loot);
+            criarGrid(i, j, classe, loot, arrayRewards);
         }
     }
 }

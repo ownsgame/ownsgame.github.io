@@ -17,3 +17,15 @@ function randomBool(){
         return false;
     }
 }
+
+function fecharTela(id){
+    let tela = document.getElementById(id)
+    tela.style.transition = "all ease-in-out 250ms";
+    setTimeout(()=>{
+        tela.style.opacity = 0;
+    }, 50);
+    setTimeout(()=>{
+        tela.style.display = "none"
+        tela.style.opacity = 1;
+    }, 300);
+}

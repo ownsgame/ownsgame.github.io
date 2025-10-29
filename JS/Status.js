@@ -8,6 +8,12 @@ function verificarAcaoInicial(){
     }
 }
 
+function limparTelaInimigo(){
+    const tela = document.getElementById("dados-inimigo");
+
+    tela.innerHTML = ``;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     verificarAcaoInicial();
 });
@@ -16,17 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
 let intervaloContador = null;
 
 function iniciarContador(tempo, dano) {
+    tempo *= 1000;
     const CONTADOR = document.getElementById("contagem-ataque");
 
     if (intervaloContador) clearInterval(intervaloContador);
 
     intervaloContador = setInterval(() => {
-        tempo--;
+        tempo -= 100;
         if(tempo == 0){
             CONTADOR.innerHTML = `Dano Recebido!`;
         }
         else{
-            CONTADOR.innerHTML = `${tempo}s`;
+            CONTADOR.innerHTML = `⏰ ${(tempo / 1000).toFixed(1)}s`;
         }       
 
         if (tempo <= 0) {
@@ -44,12 +51,12 @@ function iniciarContador(tempo, dano) {
                 resetarContador();
             }
         }
-    }, 1000);
+    }, 100);
 }
 
 function resetarContador() {
     const CONTADOR = document.getElementById("contagem-ataque");
-
+    limparTelaInimigo();
     if (intervaloContador) {
         clearInterval(intervaloContador);
         intervaloContador = null;
@@ -60,7 +67,7 @@ function resetarContador() {
 
 function atualizarCoordenadas(x, y){
     const CORDS_EL = document.getElementById("coords");
-    CORDS_EL.innerHTML = `${x}, ${y}`;
+    CORDS_EL.innerHTML = `X: ${x}, Y: ${y}`;
 }
 
 function fecharMenuRewards(){
@@ -84,6 +91,5 @@ function exibirDano(dano, tipo = 0){
     CONTADOR.style.display = "flex";
     CONTADOR.style.opacity = 1;
 
-    setTimeout(()=>{CONTADOR.style.opacity = 1;}, 1100);
-    setTimeout(()=>{CONTADOR.style.display = "none";}, 1200);
+    setTimeout(()=>{fecharTela("damage-count")}, 1200);
 }

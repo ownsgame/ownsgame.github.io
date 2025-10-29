@@ -57,12 +57,11 @@ class Actions {
       atacarTarget();
       this.pause = true;
 
-      // altera texto durante espera sem recriar o botão
-      this._btn.textContent = `Espere (${this.countdown}s)`;
+      this._btn.textContent = `Espere (${this.countdown - 1}s)`;
       this._btn.className = "botao-inativo";
       let currentTime = 1;
       const tempoEspera = setInterval(() => {
-        this._btn.textContent = `Espere (${this.countdown - currentTime}s)`;
+        this._btn.textContent = `Espere (${this.countdown - currentTime - 1}s)`;
         currentTime++;
         if(currentTime == this.countdown){
           this.pause = false;

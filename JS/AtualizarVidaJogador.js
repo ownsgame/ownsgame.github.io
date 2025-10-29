@@ -2,7 +2,7 @@ const VIDA_EL = document.getElementById("status-vida");
 
 function atualizarVida(vida, total = 100){
     
-    VIDA_EL.innerHTML = `${vida} / ${total}`;
+    VIDA_EL.innerHTML = `HP: ${vida} / ${total}`;
     atualizarHP(vida, total);
 }
 

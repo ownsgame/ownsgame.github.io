@@ -5,9 +5,6 @@ function picarRed(){
     
 
     setTimeout(()=>{
-        camada.style.backgroundColor = "rgba(255, 0, 0, 0)";
-    }, 500);
-    setTimeout(()=>{
-        camada.style.display = "none";
-    }, 600);
+        fecharTela("camada-de-efeito")
+    }, 700);
 }

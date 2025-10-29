@@ -34,11 +34,20 @@ const SabioFalas = [
 desenharGrade(5, "ceramica", false);
 
 const sabioEl = document.createElement("div");
+const bancadaEl = document.createElement("div");
+
 sabioEl.classList.add("sabio");
 sabioEl.classList.add("tamPadrao");
 sabioEl.classList.add("npc");
+
+bancadaEl.classList.add("mirror");
+bancadaEl.classList.add("tamPadrao");
+
 posicionarGrid(sabioEl, 3, 3);
 fixarAoConteiner(sabioEl);
+
+posicionarGrid(bancadaEl, 3, 5);
+fixarAoConteiner(bancadaEl);
 
 const posTochas = [[2, 3], [3, 2], [3, 4], [4, 3]]
 for(let i =0; i<4; i++){

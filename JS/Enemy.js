@@ -1,13 +1,14 @@
 const INIMIGOS_ARRAY = [];
 
 class Inimigo{
-    constructor(elemento, sprite, vida, defesa, ataque){
+    constructor(elemento, sprite, vida, defesa, ataque, recompensa = null){
         this.vida = vida;
         this.defesa = defesa;
         this.ataque = ataque;
         this.elemento = elemento;
         this.emCombate = false;
         this.time = 5;
+        this.recompensa = recompensa;
         this.setSprite(sprite);
         this.modoAlerta();
     }
@@ -22,6 +23,13 @@ class Inimigo{
     getVida(){
         return this.vida;
     }
+    getAtaque(){
+        return this.ataque;
+    }
+    getDefesa(){
+        return this.defesa;
+    }
+
     getTime(){
         return this.time;
     }
@@ -58,12 +66,15 @@ class Inimigo{
     }
 
     morrer(){
-        this.elemento.remove();
-        const indice = INIMIGOS_ARRAY.indexOf(this);
-        ChamadorAcao.mudarEstado(0);
-        if(indice !== -1){
-            INIMIGOS_ARRAY.splice(indice, 1);
+        console.log(this.recompensa);
+        if(this.recompensa != null){
+            let tipo = this.recompensa.tipo;
+            let quantidade = this.recompensa.quantidade;
+            addRewardsList(tipo, quantidade);
+            mostrarRecompensas(tipo, quantidade)
         }
+
+        this.remover();
     }
 
     remover(){
@@ -74,34 +85,34 @@ class Inimigo{
             INIMIGOS_ARRAY.splice(indice, 1);
         }
     }
-}
 
+    static gerarInimigos(qntd, sprite) {
+        const maxInimigos = 10;
+        const quantidade = Math.min(qntd, maxInimigos);
 
-function gerarInimigos(qntd, sprite) {
-    const maxInimigos = 10;
-    const quantidade = Math.min(qntd, maxInimigos);
+        const posicoesOcupadas = [];
 
-    const posicoesOcupadas = [];
+        for (let i = 0; i < quantidade; i++) {
+            let novoInimigoEl = document.createElement("img");
+            novoInimigoEl.classList.add("inimigo", "tamPadrao");
 
-    for (let i = 0; i < quantidade; i++) {
-        let novoInimigoEl = document.createElement("img");
-        novoInimigoEl.classList.add("inimigo", "tamPadrao");
+            let cordX, cordY;
+            let posValida = false;
 
-        let cordX, cordY;
-        let posValida = false;
+            while (!posValida) {
+                cordX = randomInt(1, 5);
+                cordY = randomInt(1, 5);
+                posValida = !posicoesOcupadas.some(pos => pos.x === cordX && pos.y === cordY);
+            }
 
-        while (!posValida) {
-            cordX = randomInt(1, 5);
-            cordY = randomInt(1, 5);
-            posValida = !posicoesOcupadas.some(pos => pos.x === cordX && pos.y === cordY);
+            posicoesOcupadas.push({ x: cordX, y: cordY });
+
+            posicionarGrid(novoInimigoEl, cordX, cordY);
+            setTileEnemy(true, cordX, cordY, false);
+            let novoInimigo = new Inimigo(novoInimigoEl, sprite, 100, 10, 10);
+            fixarAoConteiner(novoInimigoEl);
+            INIMIGOS_ARRAY.push(novoInimigo);
         }
-
-        posicoesOcupadas.push({ x: cordX, y: cordY });
-
-        posicionarGrid(novoInimigoEl, cordX, cordY);
-        let novoInimigo = new Inimigo(novoInimigoEl, sprite, 100, 10, 10);
-        fixarAoConteiner(novoInimigoEl);
-        INIMIGOS_ARRAY.push(novoInimigo);
     }
 }
 
