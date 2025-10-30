@@ -2,12 +2,16 @@
     z-index: 2;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 
 .sabio{
     grid-column: 3/3;
     grid-row: 3/3;
     background-image: url("../Sprites/Npcs/sabio.svg");
+}
+.sabio:hover{
+    background-image: url("../Sprites/Npcs/sabio-hover.svg");
 }
 
 .tocha{

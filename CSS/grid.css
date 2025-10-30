@@ -25,6 +25,11 @@ body{
 .tiles{
     background-size: cover;
     z-index: 0;
+    cursor: pointer;
+}
+.tiles:hover{
+    filter: brightness(2);
+    border: 3px solid rgba(255, 255, 255, 0.274);
 }
 
 .special-Border{
@@ -61,28 +66,39 @@ body{
     text-align: center;
 }
 
-@media (max-width: 200px){
+@media (max-width: 199px){
     #conteiner{
-        height: 150px;  width: 150px;
+        height: 100px; width: 100px;
     }
 }
+
+@media (max-width: 200px) and (max-height: 200px){
+    #conteiner{
+        height: 150px; width: 150px;
+    }
+}
+
 @media (min-width: 201px) and (max-width: 300px){
     #conteiner{
-        height: 200px;  width: 200px;
+        height: 200px; width: 200px;
     }
 }
+
 @media (min-width: 301px) and (max-width: 400px){
     #conteiner{
-        height: 300px;  width: 300px;
+        height: 300px; width: 300px;
     }
 }
+
 @media (min-width: 401px) and (max-width: 500px){
     #conteiner{
-        height: 400px;  width: 400px;
+        height: 400px; width: 400px;
     }
 }
+
 @media (min-width: 501px) and (max-width: 600px){
     #conteiner{
-        height: 500px;  width: 500px;
+        height: 500px; width: 500px;
     }
 }
+

@@ -2,15 +2,27 @@
     border: 8px solid rgb(2, 2, 26);
     background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(7, 20, 59));
     padding: 5px 8px 10px 8px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: stretch;
+    justify-content: center;
+
+    width: 18vw;
+    height: 50%;
+    
+    z-index: 90;
     position: absolute;
     right: 20px;
     top: 10px;
 }
 
+#status *{
+    box-sizing: border-box;
+}
+
 .status-item{
+
     margin: 0px;
 }
 
@@ -73,15 +85,14 @@
     text-align: center;
     color: white;
     width: 100%;
-    border-bottom: 3px rgba(255, 255, 255, 0.247) solid;
-    border-left: 3px rgba(255, 255, 255, 0.247) solid;
-    border-right: 3px rgba(255, 255, 255, 0.247) solid;
 }
 
 #status-hp{
     box-sizing: border-box;
-    background-image: linear-gradient(to right,rgb(177, 27, 27),rgb(83, 7, 7));
-    background-color: rgb(14, 50, 255);
+    
+    background: linear-gradient(to right, rgb(14, 50, 255) 100%, black 100%);
+    transition: background-image 0.3s ease;
+
     border: 3px solid rgb(255, 255, 255);
     border-bottom: 3px rgba(255, 255, 255, 0.247) solid;
     border-radius: 50px;
@@ -234,10 +245,14 @@
 
 @media (max-width: 900px) {
     #status{
+        justify-content: flex-start;
+
         position: absolute;
-        width: 90vw;
+        width: 100vw;
+        left: 0px;
         right: 0px;
-        height: 20vh;
+        bottom:0px;
+        height: 50%;
     }
 
     .reward{

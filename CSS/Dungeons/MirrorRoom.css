@@ -20,5 +20,7 @@
 
 body{
     width: 100vw; height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: linear-gradient(rgb(111, 74, 146), rgb(87, 74, 146), rgb(74, 75, 146), rgb(23, 34, 95));
 }
