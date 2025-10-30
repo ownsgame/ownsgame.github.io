@@ -7,9 +7,14 @@ function atualizarVida(vida, total = 100){
 }
 
 function atualizarHP(vidaAtual, vidaTotal) {
-    let porcentagem = (vidaAtual / vidaTotal) * 100;
-
     const barraHP = document.getElementById('status-hp');
 
-    barraHP.style.width = porcentagem + '%';
+    let porcentagem = (vidaAtual / vidaTotal) * 100;
+
+
+    barraHP.style.backgroundImage = `linear-gradient(
+        to right,
+        rgb(14, 50, 255) ${porcentagem}%,
+        black ${porcentagem}%
+    )`;
 }

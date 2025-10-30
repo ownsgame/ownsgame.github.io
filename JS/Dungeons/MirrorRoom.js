@@ -33,19 +33,22 @@ function resetar(){
     zerarInimigoAlvo();
     zerarBauAlvo();
     
-    if(viagensRestantes > 0){
+    if(viagensRestantes >= 0){
         let removido1 = removerGrid();
         let removido2 = deletarInimigos();
 
         if(removido1 && removido2){
             gerarDungeonPre();
             atualizarPos();
-            BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+            if(viagensRestantes == 0){
+                BOTAO_EX.innerHTML = `Sair`;
+                BOTAO_EX.onclick = () => window.location = 'mapa.html';
+                BOTAO_EX.classList.add("botao-inativo");
+                BOTAO_EX.classList.remove("botao-status");
+            }
+            else{
+                BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+            }
         }
     }
-    else{
-        BOTAO_EX.classList.add("botao-inativo");
-        BOTAO_EX.classList.remove("botao-status");
-        BOTAO_EX.innerHTML = `Sair`;
-    }  
 }

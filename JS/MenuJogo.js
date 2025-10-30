@@ -9,14 +9,14 @@ function abrirTelaMenuJogo(){
     string += `
         <div class="botoes-alinhados">
             <button class="botao-ativo" onclick="showRewards()">Recompensas</button>
-            <button class="botao-ativo">Inventário</button>
-            <button class="botao-ativo">Abandonar Partida</button>
+            <button class="botao-ativo" onclick="window.location = 'Inventario.html'">Inventário</button>
+            <button class="botao-ativo" onclick="window.location = 'mapa.html'">Abandonar Partida</button>
         </div>
     `;
 
     string += `<button class="botao-ativo" onclick="fecharTela('menu-jogo')">Fechar</button>`;
     TELA.innerHTML = string;
-    TELA.style.display = "flex";
+    abrirTela("menu-jogo");
 }
 
 function showRewards(){
@@ -32,5 +32,5 @@ function showRewards(){
 
     string += `<button class="botao-ativo" onclick="abrirTelaMenuJogo()">Voltar</button>`;
     TELA.innerHTML = string;
-    TELA.style.display = "flex";
+    abrirTela("menu-jogo");
 }

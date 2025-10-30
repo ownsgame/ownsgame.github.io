@@ -10,7 +10,7 @@ BOTAO_MENU.addEventListener("click", ()=>{
         menuHabilitado = false;
     }
     else{
-        MENU_EL.style.display = "flex";
+        abrirTela("menu");
         menuPrincipal();
         BOTAO_MENU.innerHTML = `Fechar`;
         menuHabilitado = true;
@@ -21,7 +21,7 @@ function menuPrincipal(){
     MENU_EL.innerHTML = `
             <h2>Menu:</h2>
             <button onclick="apresentarMapa()">Jornada Principal</button>
-            <button>Inventário</button>
+            <button class="botao-ativo" onclick="window.location = 'Inventario.html'">Inventário</button>
         `;
 }
 
@@ -158,7 +158,7 @@ function apresentarCapitulo(id, tela = 0){
     if(tela == 0){
         string += `<img class="capa" src="${CAPITULOS_SPRITES[id]}">
                     <h2>Chefe do Capítulo:</h2> 
-                    <button onclick="apresentarBoss(${id})">Desafiar</button>
+                    <button class="desafio-botao" onclick="apresentarBoss(${id})">Desafiar</button>
         `;
     }
 
@@ -227,12 +227,12 @@ function apresentarBoss(id){
     TELA.innerHTML = `
         <h2>APRESENTANDO: ${BOSSES_DADOS[id].nome}</h2>
         <img src="${BOSSES_DADOS[id].sprite}" width="200px" height="200px">
-        <button onclick="window.location = 'HTML_Bosses/${LINKS[0][id]}'">Desafiar</button>
+        <button class="desafio-botao" onclick="window.location = 'HTML_Bosses/${LINKS[0][id]}'">Desafiar</button>
         <div class="botoes-alinhados">
-            <button>Inventário</button>
+            <button class="botao-ativo" onclick="window.location = 'Inventario.html'">Inventário</button>
             <button onclick="fecharTela('show-boss')">Fechar</button>
         </div>
     `;
 
-    TELA.style.display = "flex";
+    abrirTela("show-boss");
 }

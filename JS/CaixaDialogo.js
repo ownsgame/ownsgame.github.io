@@ -1,7 +1,6 @@
 
 function iniciarCaixaDialogo(){
-    const CAIXA = document.getElementById("caixa-dialogo");
-    CAIXA.style.display = "flex";
+    abrirTela("caixa-dialogo");
 }
 
 function mostrarDialogo(ator, dialogo){

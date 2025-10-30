@@ -10,6 +10,7 @@ class Ghosts extends Inimigo {
         this.elemento.style.gridColumn = y;
     }
 
+    
     movimento() {
         setInterval(() => { this.mover() }, 500);
     }
@@ -72,9 +73,9 @@ class Ghosts extends Inimigo {
 
                 const GHOST_REWARDS = {
                     moeda: 50,
-                    frutaCoracao: 25,
-                    frutaEnergia: 23,
-                    espadaFantasma: 2, 
+                    frutaCoracao: 22,
+                    frutaEnergia: 13,
+                    espadaFantasma: 15, 
                 }
 
                 let recompensaEscolhida = sortearItem(GHOST_REWARDS);
