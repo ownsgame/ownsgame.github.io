@@ -66,12 +66,14 @@ class Inimigo{
     }
 
     morrer(){
-        console.log(this.recompensa);
+        
         if(this.recompensa != null){
             let tipo = this.recompensa.tipo;
             let quantidade = this.recompensa.quantidade;
             addRewardsList(tipo, quantidade);
-            mostrarRecompensas(tipo, quantidade)
+            mostrarRecompensas(tipo, quantidade);
+            
+            ChamadorAcao.mudarEstado(0);
         }
 
         this.remover();

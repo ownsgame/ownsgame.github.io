@@ -12,6 +12,12 @@ const Recompensas_Img = {
     espadaFantasma: "Sprites/Itens/espada_fantasma.svg",
 }
 
+const Recompensas_Descricao = {
+    moeda: "O dinheiro é muito importante pra sociedade OWN! Quem tem muito sempre mais quer ter!",
+    frutaCoracao: "Restaura 15 Pontos de Vida, Se você não estava precisando,que azar!",
+    frutaEnergia: "Te dá vigor para explorar ainda mais a área!", 
+    espadaFantasma: "Espada Rara, dizem que é feita com essencia de Fantasmas! Assustador...",
+}
 
 function sortearItem(objProbabilidades) {
     let sorteio = Math.random() * 100;
@@ -42,4 +48,8 @@ function getRewardName(recompensa){
 
 function getRewardSprite(recompensa){
     return Recompensas_Img[recompensa];
+}
+
+function getRewardDescricao(recompensa){
+    return Recompensas_Descricao[recompensa];
 }

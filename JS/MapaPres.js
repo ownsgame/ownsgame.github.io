@@ -94,3 +94,5 @@ function setTileEnemy(v = true, x, y, z = true){
         enemyMap[x - 1][y - 1] = v;
     }
 }
+
+

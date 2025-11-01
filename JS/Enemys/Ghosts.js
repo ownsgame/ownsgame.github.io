@@ -1,8 +1,20 @@
+const SPRITES_ANIM_GHOST = [
+    [
+        "Sprites/Enemys/ghost[0][0].svg",
+        "Sprites/Enemys/ghost[0][1].svg",
+        "Sprites/Enemys/ghost[0][2].svg",
+    ],
+    [
+        "Sprites/Enemys/ghost[1][0].svg",
+        "Sprites/Enemys/ghost[1][1].svg",
+    ],
+];
 
 class Ghosts extends Inimigo {
     constructor(elemento, sprite, vida, defesa, ataque, recompensa) {
         super(elemento, sprite, vida, defesa, ataque, recompensa);
         this.movimento();
+        this.animar(SPRITES_ANIM_GHOST[0]);
     }
 
     atualizarPos(x, y) {
@@ -10,6 +22,25 @@ class Ghosts extends Inimigo {
         this.elemento.style.gridColumn = y;
     }
 
+
+    animar(vetor) {
+        if (this.intervaloAnimacao) clearInterval(this.intervaloAnimacao);
+
+        let index = 0;
+        this.intervaloAnimacao = setInterval(() => {
+            this.setSprite(vetor[index]);
+            index = (index + 1) % vetor.length;
+        }, 250);
+    }
+
+    mudarAnimacao(vetorNovo) {
+        if (this.intervaloAnimacao) {
+            clearInterval(this.intervaloAnimacao);
+            this.intervaloAnimacao = null;
+        }
+
+        this.animar(vetorNovo);
+    }
     
     movimento() {
         setInterval(() => { this.mover() }, 500);

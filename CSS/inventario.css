@@ -1,28 +1,54 @@
-body{
-    background-image: linear-gradient(to bottom right,rgb(15, 34, 92), rgb(1, 7, 27));
-    width: 100vw; height: 100vh;
+html, body {
+    height: 100%;
+    margin: 0;
     box-sizing: border-box;
-    margin: 0px;
-    padding: 10px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(15, 34, 92), rgb(1, 7, 27));
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 main{
-    width: 100%; height: 100%;
+    width: 80vw;
+    height: 80vh;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    box-sizing: border-box;
+    overflow: auto;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: stretch;
     justify-content: center;
+    gap: 2px;
+
 }
 
 section{
+    background-image: linear-gradient(to bottom right, rgb(15, 34, 92), rgb(1, 7, 27));
     flex: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 3px solid white;
+    border: 3px solid rgba(255, 255, 255, 0.233);
+    
+}
+
+#menu{
+    flex: 0.4;
+    align-items: stretch;
+    gap: 5px;
 }
 
 h2{
@@ -36,6 +62,28 @@ h3{
     font-weight: bolder;
 }
 
+section img{
+    width: 200px; height: 200px;
+}
+
 @media (max-width: 800px) {
-    main{ flex-direction: column;}
+    main{ flex-direction: column-reverse;}
+    section img{width: 100px; height: 100px;}
+    
+}
+
+.botao-ativo{
+    font-weight: bolder;
+    font-size: 12pt;
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
+    border: rgba(255, 255, 255, 0.24) 3px solid;
+    transition: all 200ms ease-in-out;
+}
+
+.botao-ativo:hover{
+    background-image: linear-gradient(rgb(255, 255, 255));
+    color: rgb(113, 51, 138);
 }

@@ -17,25 +17,21 @@
 </head>
 <body>
         <main>
-            <section id="personagem-Status">
-                <img src="Sprites/Player/base.svg" width="200px" height="200px">
-                <h2>Atributos:</h2>
-                <h3>❤️ Vida: 100 | 🗡️ Ataque: 20 | 🛡️ Defesa: 10 </h3>
-                <h3>💪 Força: 43</h3>
+            <section id="menu">
+                <h2>Menu:</h2>
+                <button class="botao-ativo" onclick="loadStatus()">🔴 Principal</button>
+                <button class="botao-ativo" onclick="loadGear()">⚙️ Equipamentos</button>
+                <button class="botao-ativo" onclick="loadMissao()">🗺️ Missão</button>
             </section>
-            <section id="personagem-Gear">
-                <h3>Arma Atual:</h3>
-                <h3>Poder Atual:</h3>
-                <h3>Escudo:</h3>
-                <button>Alterar</button>
-                <button>Equipamentos</button>
-                <button>Itens</button>
-            </section>
-            <section id="personagem-Mission">
-                <img src="" width="200px" height="200px">
-                <h2>Hexopoda</h2>
-            </section>
+
+            <section id="personagem-Status"></section>
+            
+            <section id="personagem-Gear"></section>
+
+            <section id="personagem-Mission"></section>
         </main>
         
+        <script src="JS/LocalStorageFunctions.js"></script>
+        <script src="JS/Inventário.js"></script>
 </body>
 </html>

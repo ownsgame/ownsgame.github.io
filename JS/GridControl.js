@@ -1,3 +1,5 @@
+let haQuadrados = false;
+
 function fixarAoConteiner(objeto){
     const CONTAINER = document.getElementById("conteiner");
     CONTAINER.appendChild(objeto);
@@ -7,6 +9,27 @@ function posicionarGrid(item, x, y){
     item.style.gridRow = `${x}/${x}`;
     item.style.gridColumn = `${y}/${y}`;
 }
+
+function getTileInPosition(x, y) {
+    console.log(haQuadrados);
+    console.log(x);
+    console.log(y);
+
+    if (!haQuadrados) return null;
+
+    const QUADRADOS = document.querySelectorAll(".tiles");
+    for (const q of QUADRADOS) {
+        const row = parseInt(q.style.gridRow);
+        const col = parseInt(q.style.gridColumn);
+        
+        if(x == row && y == col){
+            return q;
+        }
+    }
+
+    return null;
+}
+
 
 function criarGrid(x, y, classe, loot, arrayRewards){
     let quadrado = document.createElement("div");
@@ -31,6 +54,7 @@ function criarGrid(x, y, classe, loot, arrayRewards){
     }
     else{
         quadrado.classList.add(`${classe}`);
+        setTileValue("g", x, y, false);
     }
 
     posicionarGrid(quadrado, x, y);
@@ -61,7 +85,10 @@ function desenharGrade(ordem, classe, loot = false, arrayRewards = null){
             criarGrid(i, j, classe, loot, arrayRewards);
         }
     }
+
+    haQuadrados = true;
 }
+
 
 //boa chatgpt estou gostando de ver...
 

@@ -14,9 +14,16 @@ class Chest{
         if(!this.aberto){
             addRewardsList(this.recompensa, this.quantidade);
             this.aberto = true;
+
+            const row = parseInt(this.elemento.style.gridRow);
+            const col = parseInt(this.elemento.style.gridColumn);
+            setTileValue("g", row, col, false);
+
             this.elemento.classList.add("bau-aberto");
             this.elemento.classList.remove("bau");
             mostrarRecompensas(this.recompensa, this.quantidade);
+            
+            ChamadorAcao.mudarEstado(0);
         }
     }
 
@@ -61,8 +68,9 @@ function mostrarRecompensas(tipo, quantidade){
     TELA_REWARD.innerHTML = `
         <h3>Recompensa Concedida!</h3>
         <img src="${getRewardSprite(tipo)}" height="50px" width="50px">
-        <p>${quantidade}x ${getRewardName(tipo)}</p>
-        <button onclick="fecharMenuRewards()">Fechar</button>
+        <h3>${quantidade}x ${getRewardName(tipo)}</h3>
+        <p><i>"${getRewardDescricao(tipo)}"</i></p>
+        <button class="botao-ativo" onclick="fecharMenuRewards()">Fechar</button>
     `;
     TELA_REWARD.style.display = "flex";
     verificaAcaoReward(tipo);

@@ -44,8 +44,9 @@
     font-family: "Ysabeau Infant", sans-serif;
     color: white;
     cursor: pointer;
-    background-color: rgb(27, 27, 201);
-    border: 3px solid rgb(13, 13, 73);
+    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
+    border: rgba(255, 255, 255, 0.24) 3px solid;
+    transition: all 200ms ease-in-out;
 }
 
 .botao-inativo{
@@ -66,8 +67,8 @@
     width: 100%;
 }
 .botao-status:hover, .botao-ativo:hover{
-    color: rgb(27, 27, 201);
-    background-color: white;
+    background-image: linear-gradient(rgb(255, 255, 255));
+    color: rgb(113, 51, 138);
 }
 
 #barra-vida{
@@ -131,7 +132,6 @@
 
 .reward{
     color: white;
-    font-family: "Delius Swash Caps";
     background-color: rgb(14, 30, 255);
     border: 3px solid rgb(13, 13, 73);
     position: absolute;
@@ -146,7 +146,8 @@
 }
 
 .reward h3{
-    font-size: 24pt;
+    font-family: "Delius Swash Caps";
+    font-size: 18pt;
     text-align: center;
 }
 
@@ -155,7 +156,9 @@
     filter: drop-shadow(-3px 5px 30px #ffffff);
 }
 .reward p{
-    font-size: 18pt;
+    font-family: "Ysabeau Infant", sans-serif;
+    text-align: center;
+    font-size: 16pt;
 }
 
 #damage-count{
@@ -290,6 +293,9 @@
     #show-rewards, #weapon{
         width: 60px; height: 60px;
     }
+    .reward{
+        width: 90vw; height: 70vh;
+    }
 }
 @media (min-width: 201px) and (max-width: 300px){
     #damage-count{
@@ -307,6 +313,9 @@
     #show-rewards, #weapon{
         width: 80px; height: 80px;
     }
+    .reward{
+        width: 90vw; height: 70vh;
+    }
 }
 @media (min-width: 301px) and (max-width: 400px){
     #damage-count{
@@ -323,6 +332,9 @@
     }
     #show-rewards, #weapon{
         width: 80px; height: 80px;
+    }
+    .reward{
+        width: 90vw; height: 70vh;
     }
 }
 @media (min-width: 401px) and (max-width: 500px){
