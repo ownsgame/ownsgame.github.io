@@ -13,6 +13,19 @@
     background-image: url("../Sprites/WorkBanks/mirror.svg");
 }
 
+
 .mirror:hover{
     background-image: url("../Sprites/WorkBanks/mirror-hover.svg");
+}
+
+.bookshelf{
+    cursor: pointer;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../Sprites/WorkBanks/book-shelf.svg");
+}
+
+.bookshelf:hover{
+    background-image: url("../Sprites/WorkBanks/book-shelf-hover.svg");
 }

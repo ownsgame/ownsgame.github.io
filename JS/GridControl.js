@@ -89,9 +89,6 @@ function desenharGrade(ordem, classe, loot = false, arrayRewards = null){
     haQuadrados = true;
 }
 
-
-//boa chatgpt estou gostando de ver...
-
 function atualizarTamanhoPadrao() {
   const conteiner = document.getElementById("conteiner");
   

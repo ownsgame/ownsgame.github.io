@@ -1,0 +1,11 @@
+.porta{
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url("../Sprites/WorkBanks/door.svg");
+    background-size: contain;
+    cursor: pointer;
+}
+
+.porta:hover{
+    background-image: url("../Sprites/WorkBanks/door-hover.svg");
+}

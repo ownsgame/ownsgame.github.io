@@ -22,8 +22,7 @@ function loadStatus(){
     SECAO_STATUS.innerHTML = string;
 
     SECAO_STATUS.style.display = "flex";
-    SECAO_BOTAO.style.display = "flex";
-
+    loadBotoes(0);
     SECAO_GEAR.style.display = "none";
     SECAO_MISSAO.style.display = "none";
 }
@@ -46,8 +45,7 @@ function loadGear(){
     SECAO_GEAR.innerHTML = string;
 
     SECAO_GEAR.style.display = "flex";
-    SECAO_BOTAO.style.display = "flex";
-
+    loadBotoes(1);
     SECAO_STATUS.style.display = "none";
     SECAO_MISSAO.style.display = "none";
 }
@@ -70,10 +68,30 @@ function loadMissao(){
     SECAO_MISSAO.innerHTML = string;
 
     SECAO_MISSAO.style.display = "flex";
-    SECAO_BOTAO.style.display = "flex";
-
+    loadBotoes(2);
     SECAO_STATUS.style.display = "none";
     SECAO_GEAR.style.display = "none";
+}
+
+function loadBotoes(id){
+    SECAO_BOTAO.style.display = "none";
+    const funcoes = ["loadStatus()", "loadGear()", "loadMissao()"];
+    const textos = ["Status", "⚙️ Gear", "🗺️ Missão"];
+    let stringHtml = "<h2>Menu:</h2>";
+
+    for(let i = 0; i < 3; i++){
+        if(i != id){
+            stringHtml += "<button class='botao-ativo'";
+        }
+        else{
+            stringHtml += "<button class='botao-inativo'";
+        }
+
+        stringHtml += `onclick="${funcoes[i]}">${textos[i]}</button>`;
+    }
+
+    SECAO_BOTAO.innerHTML = stringHtml;
+    SECAO_BOTAO.style.display = "flex";
 }
 
 loadStatus();

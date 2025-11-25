@@ -32,7 +32,7 @@ function criarDados(){
 
         recursos:[],
 
-        //estao na ordem 
+        
         chefes: [false, false, false, false, false,],
         mapas:[false, false, false, false, false],
         exploracao: [false, false, false, false, false,],

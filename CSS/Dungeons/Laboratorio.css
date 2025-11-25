@@ -1,0 +1,13 @@
+.incubadora{
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url("../../Sprites/WorkBanks/incubator.svg");
+    background-size: contain;
+}
+
+.maquina{
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-image: url("../../Sprites/WorkBanks/scientific-machine.svg");
+    background-size: contain;
+}
