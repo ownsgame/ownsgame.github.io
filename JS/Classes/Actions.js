@@ -66,7 +66,7 @@ class Actions {
         if(currentTime == this.countdown){
           this.pause = false;
           clearInterval(tempoEspera);
-          this.alterarBotao(); // restaura texto conforme estado atual
+          this.alterarBotao(); 
         }
       }, 1000);
     }
