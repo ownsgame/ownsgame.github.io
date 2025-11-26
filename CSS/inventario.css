@@ -4,6 +4,10 @@ html, body {
     box-sizing: border-box;
 }
 
+body *{
+    margin: 0px;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -12,7 +16,7 @@ body {
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgb(15, 34, 92), rgb(1, 7, 27));
+    background-image: var(--gradienteRoxo);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,20 +38,33 @@ main{
 }
 
 section{
-    background-image: linear-gradient(to bottom right, rgb(15, 34, 92), rgb(1, 7, 27));
+    background-image: var(--gradienteAzul);
     flex: 1;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid rgb(2, 2, 26);
-    
+    border: 2px solid rgba(9, 18, 100, 0.61); 
+}
+
+.inventario-cabecalho{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #menu{
     flex: 0.4;
     align-items: stretch;
     gap: 5px;
+}
+
+h1{
+    color: white;
+    font-family: "Delius Swash Caps";
+    font-size: 25pt;
 }
 
 h2{
@@ -75,24 +92,9 @@ section img{
     font-family: "Ysabeau Infant", sans-serif;
     color: white;
     background-color: transparent;
+    background-image: none;
     border: none;
     font-weight: bolder;
     font-size: 12pt;
     border-bottom: rgba(255, 255, 255, 0.24) 3px solid;
-}
-
-.botao-ativo{
-    font-weight: bolder;
-    font-size: 12pt;
-    font-family: "Ysabeau Infant", sans-serif;
-    color: white;
-    cursor: pointer;
-    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
-    border: rgba(255, 255, 255, 0.24) 3px solid;
-    transition: all 200ms ease-in-out;
-}
-
-.botao-ativo:hover{
-    background-image: linear-gradient(rgb(255, 255, 255));
-    color: rgb(113, 51, 138);
 }

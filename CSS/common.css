@@ -1,0 +1,20 @@
+:root {
+    --gradienteRoxo: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
+    --gradienteAzul: linear-gradient(to bottom right, rgba(20, 42, 107, 0.815), rgba(15, 34, 92, 0.842), rgba(1, 7, 27, 0.877));
+}
+
+button{
+    font-weight: bolder;
+    font-size: 12pt;
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    cursor: pointer;
+    background-image: var(--gradienteRoxo);
+    border: rgba(255, 255, 255, 0.24) 3px solid;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover{
+    background-image: linear-gradient(rgb(255, 255, 255));
+    color: rgb(113, 51, 138);
+}

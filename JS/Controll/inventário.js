@@ -6,7 +6,12 @@ const SECAO_MISSAO = document.getElementById("personagem-Mission");
 function loadStatus(){
     let copiaDados = getDados();
 
-    let string = "";
+    let string = `
+        <div class="inventario-cabecalho">
+            <h1>Inventário:</h1>
+            <button>Voltar</button>     
+        </div>
+    `;
     let vida = copiaDados.vida;
     let ataque = copiaDados.dano;
     let defesa = copiaDados.defesa;
@@ -16,7 +21,7 @@ function loadStatus(){
             <img src="Sprites/Player/base.svg">
             <h2>Atributos:</h2>
             <h3>❤️ Vida: ${vida} | 🗡️ Ataque: ${ataque} | 🛡️ Defesa: ${defesa} </h3>
-            <h3>💪 Força: ${Math.floor((vida + ataque + defesa) / 3)}</h3>
+            <h3>💪 Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
     `;
 
     SECAO_STATUS.innerHTML = string;
@@ -30,7 +35,12 @@ function loadStatus(){
 function loadGear(){
     let copiaDados = getDados();
 
-    let string = "";
+    let string = `
+        <div class="inventario-cabecalho">
+            <h1>Inventário:</h1>
+            <button>Voltar</button>     
+        </div>
+    `;
     
     string +=
     `
@@ -54,7 +64,12 @@ function loadMissao(){
     let copiaDados = getDados();
     let capitulo = copiaDados.capituloAtual;
     
-    let string = "";
+    let string = `
+        <div class="inventario-cabecalho">
+            <h1>Inventário:</h1>
+            <button>Voltar</button>     
+        </div>
+    `;
     
     string +=
     `
@@ -77,7 +92,7 @@ function loadBotoes(id){
     SECAO_BOTAO.style.display = "none";
     const funcoes = ["loadStatus()", "loadGear()", "loadMissao()"];
     const textos = ["Status", "⚙️ Gear", "🗺️ Missão"];
-    let stringHtml = "<h2>Menu:</h2>";
+    let stringHtml = "";
 
     for(let i = 0; i < 3; i++){
         if(i != id){
