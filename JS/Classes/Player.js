@@ -1,11 +1,11 @@
 class Player{
-    constructor(vida, elemento, sprite, defesa) {
+    constructor(vida, elemento, sprite, defesa, ataque) {
         this.vida = vida;
         this.vidaInicial = vida;
         this.defesa = defesa
         this.elemento = elemento;
         this.sprite = sprite;
-        this.ataque = 20;
+        this.ataque = ataque;
         this.esperaAtaque = 4;
         this.podeAtaca = true;
         this.morto = false;

@@ -1,8 +1,12 @@
 body{
     margin: 0px;
     padding: 0px;
-    width: 100vw; height: 100vh;
+    
     background-image: linear-gradient(rgb(69, 32, 112), rgb(17, 32, 78), rgb(10, 18, 43), rgb(3, 7, 19));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;   
 }
 
 body *{
@@ -10,11 +14,17 @@ body *{
     text-align: center;    
 }
 
+.fonte-futuretimes{
+    font-family: "FutureTimes";
+    color: white;
+    letter-spacing: 3px;
+}
+
 main{
     width: 80vw; height: 80vh;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+    top: 1rem; left: 50%;
+    transform: translateX(-50%);
 
     display: flex;
     flex-direction: column;
@@ -26,16 +36,16 @@ main{
     margin: auto;
 }
 
+.titulo-destaque{
+    font-size: 75pt;
+}
+
 h1{
-    font-family: "Delius Swash Caps";
-    color: white;
     font-size: 50pt;
 }
 
 #titulo h2{
-    font-family: "Ysabeau Infant", sans-serif;
-    color: white;
-    font-size: 15pt;
+    font-size: 30pt;
 }
 
 button{
@@ -49,6 +59,7 @@ button{
     background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
     border: rgba(255, 255, 255, 0.24) 2px solid;
     transition: all 200ms ease-in-out;
+    padding: 0.5rem;
 }
 
 button:hover{
@@ -69,3 +80,16 @@ button:hover{
         width: 200px; height: 200px;
     }
 }
+
+.telinha{
+    width: 60vw; height: 60vh;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    border: 2px solid white;
+}
+

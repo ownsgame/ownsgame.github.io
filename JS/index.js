@@ -10,4 +10,18 @@ let index = 0;
 setInterval(()=>{
     ImagemTelaInicial.src = imgs[index];
     index = (index + 1) % imgs.length;
-}, 1200);
+}, 250);
+
+function mostrarTelaSaves(){
+    const SAVES = getSaves();
+    mostrarSaves(SAVES);
+}
+
+function jogar(pos){
+    const SAVES = getSaves();
+    const SAVE = SAVES[pos];
+
+    setSession(pos, SAVE);
+    location.replace("mapa.html");
+}
+

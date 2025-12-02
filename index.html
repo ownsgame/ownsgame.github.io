@@ -7,6 +7,7 @@
     <title>Owns</title>
     <link rel="icon" href="Sprites/IU/Logo.svg"> 
 
+    <link rel="stylesheet" href="CSS/fontes.css">
     <link rel="stylesheet" href="CSS/index.css">
 
     <!--Fontes-->
@@ -22,16 +23,28 @@
 
     <main>
         <div id="titulo">
-            <h1>Owns</h1>
-            <h2>& Conto do Hexopoda</h2>
+            <h1 class="fonte-futuretimes titulo-destaque">OwnS</h1>
+            <h2 class="fonte-futuretimes">& Conto do Hexopoda</h2>
         </div>
         
         <img id="inicial-imagem" src="Sprites/IU/TelaInicial1.svg">
-        <button onclick="window.location='mapa.html'">Jogar</button>
+        <button onclick="mostrarTelaSaves()">Jogar</button>
+        <button onclick="mostrarTelaSaves()">Opções</button>
         <p id="versao">Versão: 0.1.1 - Para Capa</p>
         <p id="versao">by: <a href="https://github.com/samuscadev"><b>@samuscadev</b></a> - 2025 Projeto Pessoal</p>
+
+        <div class="telinha" id="select-save"></div>
     </main>
 
+    <script src="JS/Controll/utils.js"></script>
+
+    
+    <script src="JS/Session/save.js"></script>
+    <script src="JS/Session/setup.js"></script>
+    <script src="JS/Session/session.js"></script>
+    <script src="JS/View/save_view.js"></script>
+
     <script src="JS/index.js"></script>
+    
 </body>
 </html>

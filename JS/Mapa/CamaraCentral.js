@@ -106,7 +106,7 @@ for(let i =0; i<4; i++){
 const sabioOWN = new NPC("Sábio OWN", SabioFalas, sabioEl, 1);
 
 function verificacaoInicialDeSala(){
-    const JOGADOR = getDados();
+    const JOGADOR = getSession();
     if(JOGADOR.iniciante){
         sabioOWN.falar(SabioFalas[0]);
     } 
