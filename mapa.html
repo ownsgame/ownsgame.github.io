@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="CSS/fontes.css">
+    <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/grid.css">
     <link rel="stylesheet" href="CSS/Dialogo.css">
     <link rel="stylesheet" href="CSS/Enemy.css">
     <link rel="stylesheet" href="CSS/ground.css">
     <link rel="stylesheet" href="CSS/menu.css">
-    <link rel="stylesheet" href="CSS/camaraCentral.css">
     <link rel="stylesheet" href="CSS/npcs.css">
-    <link rel="stylesheet" href="CSS/mapaTiles.css">
-    <link rel="stylesheet" href="CSS/porta.css">
     <title>Owns</title>
     <link rel="icon" href="Sprites/IU/Logo.svg"> 
     <!--Fontes-->
@@ -30,14 +30,24 @@
     <div id="caixa-dialogo">
         <h1 id="titulo-dialogo"></h1>
         <p id="textinho-dialogo"></p>
-        <div id="botoes-dialogo">
+        <div class="row-buttons">
             <button id="proximaFala">Próxima</button>
             <button id="fecharCaixaDialogo">Pular</button>
         </div>
     </div>
 
-    <div id="show-place"></div>
+    <div id="show-place" class="show-place"></div>
+    <div class="blur-box"></div>
     
+    <script src="DATA/entidades.js"></script>
+    <script src="DATA/tiles.js"></script>
+    <script src="DATA/works.js"></script>
+    <script src="DATA/places.js"></script>
+   
+    <script src="JS/View/visualEffects.js"></script>
+    <script src="JS/View/caixa_dialogo.js"></script>
+
+    <script src="JS/Controll/sprites.js"></script>
     <script src="JS/Session/save.js"></script>
     <script src="JS/Session/setup.js"></script>
     <script src="JS/Session/session.js"></script>
@@ -49,14 +59,14 @@
     <script src="JS/Controll/colision.js"></script>
     <script src="JS/Controll/grid.js"></script>
 
-    <script src="JS/View/caixa_dialogo.js"></script>
-        
-    <script src="JS/Classes/Porta.js"></script>
+      
+    <script src="JS/Classes/FixedEntity.js"></script>
+    <script src="JS/Classes/HiperLinks.js"></script>
     <script src="JS/Classes/Player.js"></script>
     <script src="JS/Controll/inserir_player.js"></script>
   
-    <script src="JS/Controll/void.js"></script>
 
+    
     <script src="JS/Classes/Npc.js"></script>
     <script src="JS/Mapa/CamaraCentral.js"></script>
 

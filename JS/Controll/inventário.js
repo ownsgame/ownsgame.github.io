@@ -4,22 +4,22 @@ const SECAO_GEAR = document.getElementById("personagem-Gear");
 const SECAO_MISSAO = document.getElementById("personagem-Mission");
 
 function loadStatus(){
-    let copiaDados = getDados();
+    let copiaDados = getSession();
 
     let string = `
-        <div class="inventario-cabecalho">
-            <h1>Inventário:</h1>
+        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
+            <h1>Status:</h1>
             <button>Voltar</button>     
         </div>
     `;
     let vida = copiaDados.vida;
-    let ataque = copiaDados.dano;
+    let ataque = copiaDados.ataque;
     let defesa = copiaDados.defesa;
 
     string +=
     `
             <img src="Sprites/Player/base.svg">
-            <h2>Atributos:</h2>
+            <h2 class="fonte-futuretimes">Atributos:</h2>
             <h3>❤️ Vida: ${vida} | 🗡️ Ataque: ${ataque} | 🛡️ Defesa: ${defesa} </h3>
             <h3>💪 Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
     `;
@@ -33,11 +33,11 @@ function loadStatus(){
 }
 
 function loadGear(){
-    let copiaDados = getDados();
+    let copiaDados = getSession();
 
     let string = `
-        <div class="inventario-cabecalho">
-            <h1>Inventário:</h1>
+        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
+            <h1>Equipamentos:</h1>
             <button>Voltar</button>     
         </div>
     `;
@@ -47,9 +47,11 @@ function loadGear(){
             <h3>Arma Atual:</h3>
             <h3>Poder Atual:</h3>
             <h3>Escudo:</h3>
-            <button>Alterar</button>
-            <button>Equipamentos</button>
-            <button>Itens</button>
+            <div class="column-buttons animated-buttons">
+                <button>Alterar</button>
+                <button>Equipamentos</button>
+                <button>Itens</button>
+            </div>
     `;
 
     SECAO_GEAR.innerHTML = string;
@@ -61,23 +63,23 @@ function loadGear(){
 }
 
 function loadMissao(){
-    let copiaDados = getDados();
+    let copiaDados = getSession();
     let capitulo = copiaDados.capituloAtual;
     
     let string = `
-        <div class="inventario-cabecalho">
-            <h1>Inventário:</h1>
+        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
+            <h1>Missao</h1>
             <button>Voltar</button>     
         </div>
     `;
     
     string +=
     `
-            <h2>Hexopoda</h2>
-            <img src="Sprites/IU/hexopoda0.svg">
-            <h2>0/6 partes</h2>
-            <h3>Conclusão: ${Math.floor(((capitulo) * 100)/ 6)}%</h3>
-            <h3>Capítulo Atual: ${capitulo}</h3>
+            <h2 class="animated-aparecer fonte-futuretimes"> Hexopoda</h2>
+            <img class="animated-aparecer" src="Sprites/IU/hexopoda0.svg">
+            <h2 class="animated-aparecer fonte-futuretimes"> 0 de 6 partes</h2>
+            <h3 class="animated-aparecer">Conclusão: ${Math.floor(((capitulo) * 100)/ 6)}%</h3>
+            <h3 class="animated-aparecer">Capítulo Atual: ${capitulo}</h3>
     `;
 
     SECAO_MISSAO.innerHTML = string;
@@ -96,10 +98,10 @@ function loadBotoes(id){
 
     for(let i = 0; i < 3; i++){
         if(i != id){
-            stringHtml += "<button class='botao-ativo'";
+            stringHtml += "<button class='botao-ativo animated-aparecer'";
         }
         else{
-            stringHtml += "<button class='botao-inativo'";
+            stringHtml += "<button class='botao-inativo animated-aparecer'";
         }
 
         stringHtml += `onclick="${funcoes[i]}">${textos[i]}</button>`;

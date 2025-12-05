@@ -63,47 +63,30 @@ const SabioFalas = [
                     "O que você viu lá?",
                 ],
 ];
-desenharGrade(5, "ceramica", false);
+setBackground("Sprites/Ground/ceramica_background.svg")
+desenharGrade("ceramica", false);
 
 const sabioEl = document.createElement("div");
-const bancadaEl = document.createElement("div");
-const bookshelfEl = document.createElement("div");
 
-const portaEl = document.createElement("div");
-const portaUm = new Porta(portaEl, "grid.html");
+const bookshelfEl = document.createElement("img");
+const portaEl = document.createElement("img");
+const espelhoEl = document.createElement("img");
 
-posicionarGrid(portaEl, 3, 1);
-fixarAoConteiner(portaEl);
+const portaUm = new DirectLink("door", portaEl, "index.html", [3, 1], 2);
+const bookshelf = new DirectLink("bookshelf", bookshelfEl, "index.html", [2, 5], 2);
+const espelho = new IndirectLink("mirror", espelhoEl, [3, 5], 2, "mirrorroom");
 
 sabioEl.classList.add("sabio");
-sabioEl.classList.add("tamPadrao");
 sabioEl.classList.add("npc");
-
-bancadaEl.classList.add("mirror");
-bancadaEl.classList.add("tamPadrao");
-
-bookshelfEl.classList.add("bookshelf");
-bookshelfEl.classList.add("tamPadrao");
-
-posicionarGrid(sabioEl, 3, 3);
-fixarAoConteiner(sabioEl);
-
-posicionarGrid(bancadaEl, 3, 5);
-fixarAoConteiner(bancadaEl);
-
-posicionarGrid(bookshelfEl, 2, 5);
-fixarAoConteiner(bookshelfEl);
 
 const posTochas = [[2, 3], [3, 2], [3, 4], [4, 3]]
 for(let i =0; i<4; i++){
-    const novaTocha = document.createElement("div");
-    novaTocha.classList.add("tocha");
-    novaTocha.classList.add("tamPadrao");
-    posicionarGrid(novaTocha, posTochas[i][0], posTochas[i][1]);
-    fixarAoConteiner(novaTocha);
+    const novaTochaEL = document.createElement("img");
+    setSprite(novaTochaEL, "entidade", "tocha");
+    let novaTocha = new FixedEntity(novaTochaEL, [posTochas[i][0], posTochas[i][1]], 2);
 }
 
-const sabioOWN = new NPC("Sábio OWN", SabioFalas, sabioEl, 1);
+const sabioOWN = new NPC("Sábio OWN", SabioFalas, sabioEl, 1, [3, 3]);
 
 function verificacaoInicialDeSala(){
     const JOGADOR = getSession();
@@ -116,24 +99,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
     verificacaoInicialDeSala();
 })
 
-bancadaEl.addEventListener("click", abrirTeleporte);
-
-function abrirTeleporte(){
-    const TELA = document.getElementById("show-place");
-
-    TELA.innerHTML = `
-        <h3>Reino dos Espelhos</h3>
-        <img src="Sprites/Places/MirrorRoom-capa.svg" width="200px" height="200px">
-        <div class="botoes-alinhados">
-            <button onclick="redirecionarSalaEspelhos()">Teleportar</button>
-            <button class="botao-ativo" onclick="window.location = 'Inventario.html'">Inventário</button>
-            <button onclick="fecharTela('show-place')">Fechar</button>
-        </div>
-    `;
-
-    abrirTela("show-place");
-}
-
-function redirecionarSalaEspelhos(){
-    window.location = "MirrorRoom.html";
-}

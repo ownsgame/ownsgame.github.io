@@ -1,5 +1,6 @@
-class NPC {
-    constructor(nome, matrizFalas, objeto, inicioFalas = 0){
+class NPC extends FixedEntity{
+    constructor(nome, matrizFalas, objeto, inicioFalas = 0, posicao){
+        super(objeto, posicao);
         this.nome = nome;
         this.inicioFalas = inicioFalas;
         this.matrizFalas = matrizFalas;

@@ -1,7 +1,7 @@
 #caixa-dialogo{
     width: 70vw; height: 20vh;
-    border: 8px solid rgb(2, 2, 26);
-    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(3, 11, 37));
+    border-radius: 1rem;
+    background-image: var(--gradienteAzul);
     color: white;
     position: absolute;
 
@@ -28,27 +28,6 @@
     font-size: 12pt;
     font-family: "Ysabeau Infant", sans-serif;
     font-size: 1rem;
-}
-
-#botoes-dialogo{
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    width: 90%;
-    height: 20%;
-}
-#botoes-dialogo button{
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    color: white;
-    text-decoration: underline;
-}
-#botoes-dialogo button:hover{
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    font-weight: bolder;
 }
 
 .disponivel{

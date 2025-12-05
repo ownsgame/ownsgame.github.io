@@ -13,6 +13,7 @@ function getSessionNumber(){
 
 function logoutSession(){
     localStorage.setItem("OwnsSession", JSON.stringify(null));
+    localStorage.setItem("OwnsSessionNumber", JSON.stringify(null));
 }
 
 function saveSession(save){

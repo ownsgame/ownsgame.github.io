@@ -16,7 +16,7 @@ body {
 }
 
 body {
-    background-image: var(--gradienteRoxo);
+    background-image: var(--corFundo);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,17 +34,18 @@ main{
     flex-direction: row-reverse;
     align-items: stretch;
     justify-content: center;
-    gap: 2px;
+    gap: 1.2rem;
 }
 
 section{
+    z-index: 1;
     background-image: var(--gradienteAzul);
     flex: 1;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(9, 18, 100, 0.61); 
+    border-radius: 1rem;
 }
 
 .inventario-cabecalho{
@@ -63,13 +64,11 @@ section{
 
 h1{
     color: white;
-    font-family: "Delius Swash Caps";
-    font-size: 25pt;
+    font-size: 40pt;
 }
 
 h2{
     color: white;
-    font-family: "Delius Swash Caps";
 }
 
 h3{
@@ -88,6 +87,14 @@ section img{
     
 }
 
+.i-box-blux{
+    width: 100vw; height: 100vh;
+    background-color: rgba(8, 8, 8, 0.589);
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    position: absolute;
+}
+
 .botao-inativo{
     font-family: "Ysabeau Infant", sans-serif;
     color: white;
@@ -96,5 +103,6 @@ section img{
     border: none;
     font-weight: bolder;
     font-size: 12pt;
-    border-bottom: rgba(255, 255, 255, 0.24) 3px solid;
+    border-left: rgba(255, 255, 255, 0.452) 3px solid;
+    border-bottom: rgba(255, 255, 255, 0.452) 3px solid;
 }

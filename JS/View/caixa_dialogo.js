@@ -12,6 +12,5 @@ function mostrarDialogo(ator, dialogo){
 }
 
 function fecharCaixaDialogo(){
-    const CAIXA = document.getElementById("caixa-dialogo");
-    CAIXA.style.display = "none";
+    fecharTela("caixa-dialogo");
 }

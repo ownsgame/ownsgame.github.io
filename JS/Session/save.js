@@ -56,18 +56,19 @@ function setSave(pos, save){
         return;
     }
 
-    SAVES[pos] = save;
+    SAVES[pos] = save;  
     setSaves(SAVES);
 }
 
 function deleteSave(pos){
     const SAVES = getSaves();
+    console.log(pos);
 
     if(SAVES == null){
         console.log("Erro: Saves Nulo");
         return;
     }
-    if(SAVES[pos] != null || pos >= 3){
+    if(pos >= 3){
         console.log("Erro: local incorreto");
         return;
     }

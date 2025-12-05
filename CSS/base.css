@@ -1,0 +1,138 @@
+:root {
+    --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
+    --gradienteAzul: linear-gradient(to bottom right, rgb(32, 60, 146), rgb(15, 39, 110), rgb(8, 27, 88));
+    --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
+}
+
+::selection {
+    background: transparent;
+}
+::-moz-selection {
+    background: transparent;
+}
+
+.fonte-futuretimes{
+    font-family: "FutureTimes";
+    color: white;
+    letter-spacing: 3px;
+}
+
+button{
+    padding: 0.5rem 2rem;
+    font-weight: bolder;
+    font-size: 16pt;
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    cursor: pointer;
+    background-image: var(--gradienteRoxo);
+    
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    
+    transition: all 200ms ease-in-out;
+    outline: none;
+}
+
+button:hover{
+    background-image: linear-gradient(rgb(255, 255, 255));
+    font-weight: bolder;
+    color: rgb(68, 35, 160);
+}
+
+.row-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.row-buttons *{
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+@media (max-width: 450px) {
+    .row-buttons{
+        flex-direction: column;
+    }
+
+    .row-buttons *{
+        padding: 0.2rem 1rem;
+    }
+}
+
+.column-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.column-buttons *{
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blur-box{
+    width: 100vw; height: 100vh;
+    background-color: rgba(8, 8, 8, 0.589);
+    display: none;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    transition: ease-in-out all 200ms;
+}
+
+.animated-aparecer{
+    animation: aparecer 500ms ease-in-out;
+}
+
+.animated-buttons *{
+    animation: aparecer 500ms ease-in-out;
+}
+
+@keyframes aparecer{
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+a{
+    color: white;
+    letter-spacing: 3px;
+}
+
+a:hover{
+    background-image: var(--gradienteRoxo);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    transition: all 200ms ease-in-out;
+}
+
+.link{
+    cursor: pointer;
+}
+
+.layerZero{
+    z-index: 0;
+}
+
+.layerUm{
+    z-index: 1;
+}
+
+.layerDois{
+    z-index: 2;
+}
+
+.layerTres{
+    z-index: 3;
+}

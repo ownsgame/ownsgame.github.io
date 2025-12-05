@@ -1,57 +1,10 @@
-.menu-collection::-webkit-scrollbar {
-    width: 14px; 
-    height: 14px;
-    margin: 5px;
-}
-
-.menu-collection::-webkit-scrollbar-track { 
-    background-color: rgb(2, 2, 26);
-} 
-.menu-collection::-webkit-scrollbar-thumb { 
-    background: linear-gradient(180deg, #4166a7, #1c4494);
-} 
-
-.menu-collection::-webkit-scrollbar-thumb:hover { 
-    background: linear-gradient(180deg, #6b7280, #4b5563); 
-}
-
-#menu-button{
-    position: absolute;
-}
-
-#menu-button{
-    position: absolute;
-    z-index: 999;
-    top:2%;
-    left: 10px;
-}
-#menu{
-    color: white;
-    font-family: "Delius Swash Caps";
-    border: 8px solid rgb(2, 2, 26);
-    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(7, 20, 59));
-    
-    position: absolute;
-    width: 85vw; height: 85vh;
-    z-index: 99;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#show-boss{
+.show-place{
     color: white;
     font-family: "Delius Swash Caps";
     position: absolute;
-    background-color: rgb(12, 16, 39);
-    border: 3px solid rgb(5, 5, 15);
-    width: 50vw; height: 90vh;
+    background-image: var(--gradienteAzul);
+    border-radius: 1rem;
+    width: 60vw; height: 90vh;
     z-index: 100;
 
     top: 50%;
@@ -64,145 +17,12 @@
     justify-content: center;
 }
 
-#show-boss img{
-    width: 300px; height: 300px;
-    padding: 10px; 
-    border: white 3px solid;
-    border-radius: 50%;
+.show-place h3{
+    font-size: 24pt;
 }
 
-#show-place{
-    color: white;
-    font-family: "Delius Swash Caps";
-    position: absolute;
-    background-color: rgb(12, 16, 39);
-    border: 3px solid rgb(5, 5, 15);
-    width: 50vw; height: 90vh;
-    z-index: 100;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width: 700px){
-    #menu{
-        width: 90vw; height: 80vh;
+@media (max-width: 1000px) {
+    .show-place{
+        width: 80vw;
     }
-    #show-boss, #show-place{
-        width: 90vw; height: 80vh;
-    }
-    #show-boss img{
-        width: 150px; height: 150px;
-    }
-}
-
-#menu h3, #menu h2{
-    color: white;
-    margin: 0px;
-}
-
-.menu-collection{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 98%;
-    overflow-x: scroll;
-    gap: 5px;
-}
-
-.capa{
-    width: 100px; height: 100px;
-    border: 4px solid rgb(2, 2, 22);
-}
-
-.menu-card{
-    display: flex;
-    flex: 1 1;
-    max-width: 300px;
-    max-height: 300px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    background-color: rgb(21, 21, 66);
-    border: 4px solid rgb(2, 2, 22);
-    border-radius: 8px;
-}
-
-.menu-card img{
-    width: 100%; height: 100%;
-    border: 5px solid rgb(2, 2, 22);
-    border-radius: 50%;
-}
-
-.menu-card button, .menu-card a{
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    margin-top: 5px;
-    color: white;
-    font-family: "Delius Swash Caps";
-    background-color: rgb(14, 30, 255);
-    border: 3px solid rgb(2, 2, 22);
-    cursor: pointer;
-    padding: 2px;
-    transition: all 100ms ease-in-out;
-}
-.menu-card button:hover, .menu-card a:hover{
-    color: rgb(14, 30, 255);
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
-}
-
-.desafio-botao{
-    box-sizing: border-box;
-    color: white;
-    font-family: "Ysabeau Infant", sans-serif;
-    font-weight: bolder;
-    font-size: 14pt;
-    margin: 5px;
-
-    background-image: linear-gradient(to bottom right,rgb(148, 25, 31), rgb(102, 11, 19), rgb(73, 4, 10));
-    border: rgba(255, 255, 255, 0.24) 3px solid;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-}
-
-.desafio-botao:hover{
-    color: rgb(148, 25, 31);
-    background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgb(196, 196, 196));
-}
-
-.botoes-alinhados{
-    height: 50px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.botoes-alinhados button{
-    box-sizing: border-box;
-    flex: 1;
-    color: white;
-    font-family: "Ysabeau Infant", sans-serif;
-    font-weight: bolder;
-    font-size: 14pt;
-
-    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
-    border: rgba(255, 255, 255, 0.24) 2px solid;
-    transition: all 200ms ease-in-out;
-
-    cursor: pointer;
-    margin: 2px 0px;
-}
-
-.botoes-alinhados button:hover{
-    background-image: linear-gradient(rgb(255, 255, 255));
-    color: rgb(113, 51, 138);
 }

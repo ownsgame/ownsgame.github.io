@@ -1,4 +1,4 @@
-let haQuadrados = false;
+let haquadradoEls = false;
 
 function fixarAoConteiner(objeto){
     const CONTAINER = document.getElementById("conteiner");
@@ -11,14 +11,14 @@ function posicionarGrid(item, x, y){
 }
 
 function getTileInPosition(x, y) {
-    console.log(haQuadrados);
+    console.log(haquadradoEls);
     console.log(x);
     console.log(y);
 
-    if (!haQuadrados) return null;
+    if (!haquadradoEls) return null;
 
-    const QUADRADOS = document.querySelectorAll(".tiles");
-    for (const q of QUADRADOS) {
+    const quadradoElS = document.querySelectorAll(".tiles");
+    for (const q of quadradoElS) {
         const row = parseInt(q.style.gridRow);
         const col = parseInt(q.style.gridColumn);
         
@@ -31,34 +31,38 @@ function getTileInPosition(x, y) {
 }
 
 
-function criarGrid(x, y, classe, loot, arrayRewards){
-    let quadrado = document.createElement("div");
-    quadrado.classList.add("tiles");
+function criarGrid(x, y, loot, arrayRewards, sprites) {
     
-    if(loot){
+    if (!criarGrid._indiceSprite) criarGrid._indiceSprite = 0;
+
+    const quadradoEl = document.createElement("img");
+    quadradoEl.classList.add("tiles");
+
+    const spriteAtual = sprites[criarGrid._indiceSprite];
+    quadradoEl.src = spriteAtual;
+
+    criarGrid._indiceSprite = (criarGrid._indiceSprite + 1) % sprites.length;
+
+    if (loot) {
         let rd = randomInt(0, 100);
-        if(rd <= 5){
-            quadrado.classList.add("bau");
-            if(arrayRewards != null){
-                setBau(quadrado, arrayRewards);
-            }
-            else{
-                setBau(quadrado);
+        if (rd <= 5) {
+            quadradoEl.classList.add("bau");
+            if (arrayRewards != null) {
+                setBau(quadradoEl, arrayRewards);
+            } else {
+                setBau(quadradoEl);
             }
             setTileValue("c", x, y, false);
-        }
-        else{
-            quadrado.classList.add(`${classe}`);
+        } else {
             setTileValue("g", x, y, false);
-        } 
-    }
-    else{
-        quadrado.classList.add(`${classe}`);
+        }
+    } else {
         setTileValue("g", x, y, false);
     }
 
-    posicionarGrid(quadrado, x, y);
-    fixarAoConteiner(quadrado);
+    quadradoEl.classList.add("tamPadrao");
+    posicionarGrid(quadradoEl, x, y);
+    fixarAoConteiner(quadradoEl);
 }
 
 function removerGrid(){
@@ -70,23 +74,24 @@ function removerGrid(){
     return true;
 }
 
-function desenharGrade(ordem, classe, loot = false, arrayRewards = null){
+function desenharGrade(id, loot = false, arrayRewards = null){
     const CONTAINER = document.getElementById("conteiner");
+    const SPRITES = getClusterTiles(id);
     let string = ``;
-    for(let j = 1; j <= ordem; j++){
+    for(let j = 1; j <= 5; j++){
         string += `1fr `;
     }
     
     CONTAINER.style.gridTemplateRows = string;
     CONTAINER.style.gridTemplateColumns = string;
 
-    for(let i = 1; i <= ordem; i++){
-        for(let j = 1; j <= ordem; j++){
-            criarGrid(i, j, classe, loot, arrayRewards);
+    for(let i = 1; i <= 5; i++){
+        for(let j = 1; j <= 5; j++){
+            criarGrid(i, j, loot, arrayRewards, SPRITES);
         }
     }
 
-    haQuadrados = true;
+    haquadradoEls = true;
 }
 
 function atualizarTamanhoPadrao() {

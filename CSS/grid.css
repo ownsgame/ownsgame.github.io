@@ -9,6 +9,7 @@ body{
 #conteiner{
     height: 600px;
     width: 600px;
+    gap: 0px;
 
     display: grid;
 
@@ -26,15 +27,11 @@ body{
     background-size: cover;
     z-index: 0;
     cursor: pointer;
+    box-sizing: border-box;
 }
 .tiles:hover{
     filter: brightness(2);
     border: 3px solid rgba(255, 255, 255, 0.274);
-}
-
-.special-Border{
-    border: 3px solid rgba(255, 255, 255, 0.671);
-    filter: brightness(2);
 }
 
 .red-effect{

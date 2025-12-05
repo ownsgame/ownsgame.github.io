@@ -19,24 +19,29 @@ function randomBool(){
 }
 
 function fecharTela(id){
-    let tela = document.getElementById(id)
+    let tela = document.getElementById(id);
     tela.style.transition = "all ease-in-out 250ms";
+    
+
     setTimeout(()=>{
         tela.style.opacity = 0;
     }, 50);
     setTimeout(()=>{
         tela.style.display = "none"
         tela.style.opacity = 1;
+        blurBoxClose();
     }, 300);
 }
 
 function abrirTela(id) {
     const tela = document.getElementById(id);
+    
     tela.style.transition = "all ease-in-out 250ms";
     tela.style.display = "flex";
     tela.style.opacity = 0;
 
     setTimeout(() => {
         tela.style.opacity = 1;
+        blurBoxOpen();
     }, 50);
 }

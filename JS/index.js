@@ -4,7 +4,7 @@ const imgs = [
     "Sprites/IU/TelaInicial3.svg",
 ];
 
-const ImagemTelaInicial = document.getElementById("inicial-imagem");
+const ImagemTelaInicial = document.querySelector(".main-image");
 let index = 0;
 
 setInterval(()=>{
@@ -17,6 +17,11 @@ function mostrarTelaSaves(){
     mostrarSaves(SAVES);
 }
 
+function mostrarOpcoesSaves(){
+    const SAVES = getSaves();
+    mostrarOpcoes(SAVES);
+}
+
 function jogar(pos){
     const SAVES = getSaves();
     const SAVE = SAVES[pos];
@@ -25,3 +30,10 @@ function jogar(pos){
     location.replace("mapa.html");
 }
 
+function deletar(pos){
+    const SAVES = getSaves();
+    
+    deleteSave(pos);
+    logoutSession();
+    fecharTelaPrincipal();  
+}
