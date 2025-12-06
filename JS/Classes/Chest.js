@@ -1,4 +1,3 @@
-let rewards = {};
 let baus = [];
 let chestTarget = null;
 
@@ -12,7 +11,7 @@ class Chest{
 
     abrir(){
         if(!this.aberto){
-            addRewardsList(this.recompensa, this.quantidade);
+            addReward(this.recompensa, this.quantidade);
             this.aberto = true;
 
             const row = parseInt(this.elemento.style.gridRow);
@@ -80,30 +79,7 @@ function zerarBauAlvo(){
     chestTarget = null;
 }
 
-function rewardsToHtml(){
-    
-    let string = `<h2>Recompensas Obtidas:</h2>`;
-    let quantidadeTipos = Object.keys(rewards).length;
 
-    if(quantidadeTipos === 0){
-        string += `<h3>Você não coletou nenhuma recompensa ainda</h3>`;
-    } else {
-        
-        string += `<div class="dequeRewards">`;
-        for (let tipo in rewards) {
-            string += `<div class="cardReward">
-            <h3>${getRewardName(tipo)}</h3>
-            <img width="80px" heigth="80px" src="${getRewardSprite(tipo)}"> 
-            <h3>${rewards[tipo]}</h3>
-            </div>`;
-        }
-        string += `</div>`;
-    }
-    return string;    
-}
 
-function addRewardsList(recompensa, quantidade){
-    rewards[recompensa] = (rewards[recompensa] || 0) + quantidade;
-}
 
 

@@ -86,7 +86,7 @@ for(let i =0; i<4; i++){
     let novaTocha = new FixedEntity(novaTochaEL, [posTochas[i][0], posTochas[i][1]], 2);
 }
 
-const sabioOWN = new NPC("Sábio OWN", SabioFalas, sabioEl, 1, [3, 3]);
+const sabioOWN = new NPC("SABIO OWN", SabioFalas, sabioEl, 1, [3, 3]);
 
 function verificacaoInicialDeSala(){
     const JOGADOR = getSession();

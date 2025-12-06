@@ -4,10 +4,6 @@ const SPRITES_ANIM_GHOST = [
         "Sprites/Enemys/ghost[0][1].svg",
         "Sprites/Enemys/ghost[0][2].svg",
     ],
-    [
-        "Sprites/Enemys/ghost[1][0].svg",
-        "Sprites/Enemys/ghost[1][1].svg",
-    ],
 ];
 
 class Ghosts extends Inimigo {
@@ -90,17 +86,13 @@ class Ghosts extends Inimigo {
 
             if(rd){
                 let novoInimigoEl = document.createElement("img");
-                novoInimigoEl.classList.add("inimigo", "tamPadrao");
 
                 let cordX = i + 1;
                 let cordY = randomInt(1, 5);
-
-                posicionarGrid(novoInimigoEl, cordX, cordY);
-                setTileEnemy(true, cordX, cordY, false);
                 
-                let vidaEnemy = randomInt(40, 50);
-                let defesaEnemy = randomInt(5, 15);
-                let ataqueEnemy = randomInt(10, 30);
+                let vidaEnemy = randomInt(15, 30);
+                let defesaEnemy = randomInt(0, 5);
+                let ataqueEnemy = randomInt(10, 25);
 
                 const GHOST_REWARDS = {
                     moeda: 50,
@@ -118,8 +110,8 @@ class Ghosts extends Inimigo {
                 }
 
                 let novoInimigo = new Ghosts(novoInimigoEl, "Sprites/Enemys/ghost.svg", vidaEnemy, defesaEnemy, ataqueEnemy, recompensa);
-                fixarAoConteiner(novoInimigoEl);
-                INIMIGOS_ARRAY.push(novoInimigo);
+                Inimigo.setThisGrid(novoInimigo, novoInimigoEl, cordX, cordY);
+                
             }   
         }
     }

@@ -1,6 +1,6 @@
 #status{
-    border: 8px solid rgb(2, 2, 26);
-    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(7, 20, 59));
+    background-image: var(--gradienteAzul);
+    border-radius: 1rem;
     padding: 5px 8px 10px 8px;
     box-sizing: border-box;
     display: flex;
@@ -8,13 +8,14 @@
     align-items: stretch;
     justify-content: center;
 
-    width: 18vw;
+    width: 19vw;
     height: 50%;
     
     z-index: 90;
     position: absolute;
     right: 20px;
     top: 10px;
+    filter: drop-shadow(-8px 5px 10px #00000086);
 }
 
 #status *{
@@ -22,53 +23,7 @@
 }
 
 .status-item{
-
     margin: 0px;
-}
-
-.botao-status{
-    font-weight: bolder;
-    font-size: 12pt;
-    font-family: "Ysabeau Infant", sans-serif;
-    text-align: center;
-    color: rgb(13, 56, 22);
-    background-color: rgb(97, 255, 83);
-    border: 3px solid rgb(13, 56, 22);
-    width: 100%;
-    cursor: pointer;
-}
-
-.botao-ativo{
-    font-weight: bolder;
-    font-size: 12pt;
-    font-family: "Ysabeau Infant", sans-serif;
-    color: white;
-    cursor: pointer;
-    background-image: linear-gradient(to bottom right,rgb(113, 51, 138), rgb(28, 51, 119), rgb(22, 38, 88));
-    border: rgba(255, 255, 255, 0.24) 3px solid;
-    transition: all 200ms ease-in-out;
-}
-
-.botao-inativo{
-    font-weight: bolder;
-    font-size: 12pt;
-    font-family: "Ysabeau Infant", sans-serif;
-    color: white;
-    background-color: rgb(37, 37, 37);
-    border: 3px solid rgb(22, 22, 22);
-}
-.botao-inativo:hover{
-    background-color: rgb(63, 63, 63);
-    border: 3px solid rgb(22, 22, 22);
-}
-
-#action-button button{
-    text-align: center;
-    width: 100%;
-}
-.botao-status:hover, .botao-ativo:hover{
-    background-image: linear-gradient(rgb(255, 255, 255));
-    color: rgb(113, 51, 138);
 }
 
 #barra-vida{
@@ -91,7 +46,7 @@
 #status-hp{
     box-sizing: border-box;
     
-    background: linear-gradient(to right, rgb(14, 50, 255) 100%, black 100%);
+    background: linear-gradient(to right, rgb(50, 14, 255) 100%, black 100%);
     transition: background-image 0.3s ease;
 
     border: 3px solid rgb(255, 255, 255);

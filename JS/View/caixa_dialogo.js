@@ -1,6 +1,6 @@
 
 function iniciarCaixaDialogo(){
-    abrirTela("caixa-dialogo");
+    abrirTela("caixa-dialogo", false);
 }
 
 function mostrarDialogo(ator, dialogo){
@@ -12,5 +12,5 @@ function mostrarDialogo(ator, dialogo){
 }
 
 function fecharCaixaDialogo(){
-    fecharTela("caixa-dialogo");
+    fecharTela("caixa-dialogo", false);
 }

@@ -44,7 +44,7 @@ function atualizarPos(){
             let posX = parseInt(inimigo.style.gridRow);
             let posY = parseInt(inimigo.style.gridColumn);
             let quadrado = getTileInPosition(posX, posY);
-            console.log(quadrado);
+            
             quadrado.classList.add("special-Border");
 
             jogador.mover(inimigo.style.gridRow, inimigo.style.gridColumn);

@@ -18,7 +18,7 @@ function randomBool(){
     }
 }
 
-function fecharTela(id){
+function fecharTela(id, blur = true){
     let tela = document.getElementById(id);
     tela.style.transition = "all ease-in-out 250ms";
     
@@ -29,11 +29,13 @@ function fecharTela(id){
     setTimeout(()=>{
         tela.style.display = "none"
         tela.style.opacity = 1;
-        blurBoxClose();
+        if(blur){
+            blurBoxClose();
+        }
     }, 300);
 }
 
-function abrirTela(id) {
+function abrirTela(id, blur = true) {
     const tela = document.getElementById(id);
     
     tela.style.transition = "all ease-in-out 250ms";
@@ -42,6 +44,8 @@ function abrirTela(id) {
 
     setTimeout(() => {
         tela.style.opacity = 1;
-        blurBoxOpen();
+        if(blur){
+            blurBoxOpen();
+        }
     }, 50);
 }

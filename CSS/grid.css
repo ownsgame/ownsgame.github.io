@@ -31,7 +31,7 @@ body{
 }
 .tiles:hover{
     filter: brightness(2);
-    border: 3px solid rgba(255, 255, 255, 0.274);
+    border: 3px solid rgb(255, 255, 255);
 }
 
 .red-effect{

@@ -8,6 +8,7 @@ setInterval(() => {
     let dano = 0;
 
     for (const inimigo of inimigos) {
+        
         if (inimigo.estaEmCombate()) {
             enemyTarget = inimigo;
             combate = true;

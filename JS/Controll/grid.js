@@ -11,9 +11,6 @@ function posicionarGrid(item, x, y){
 }
 
 function getTileInPosition(x, y) {
-    console.log(haquadradoEls);
-    console.log(x);
-    console.log(y);
 
     if (!haquadradoEls) return null;
 
@@ -31,8 +28,7 @@ function getTileInPosition(x, y) {
 }
 
 
-function criarGrid(x, y, loot, arrayRewards, sprites) {
-    
+function criarGrid(x, y, sprites) {
     if (!criarGrid._indiceSprite) criarGrid._indiceSprite = 0;
 
     const quadradoEl = document.createElement("img");
@@ -42,23 +38,7 @@ function criarGrid(x, y, loot, arrayRewards, sprites) {
     quadradoEl.src = spriteAtual;
 
     criarGrid._indiceSprite = (criarGrid._indiceSprite + 1) % sprites.length;
-
-    if (loot) {
-        let rd = randomInt(0, 100);
-        if (rd <= 5) {
-            quadradoEl.classList.add("bau");
-            if (arrayRewards != null) {
-                setBau(quadradoEl, arrayRewards);
-            } else {
-                setBau(quadradoEl);
-            }
-            setTileValue("c", x, y, false);
-        } else {
-            setTileValue("g", x, y, false);
-        }
-    } else {
-        setTileValue("g", x, y, false);
-    }
+    setTileValue("g", x, y, false);
 
     quadradoEl.classList.add("tamPadrao");
     posicionarGrid(quadradoEl, x, y);
@@ -74,7 +54,7 @@ function removerGrid(){
     return true;
 }
 
-function desenharGrade(id, loot = false, arrayRewards = null){
+function desenharGrade(id, ){
     const CONTAINER = document.getElementById("conteiner");
     const SPRITES = getClusterTiles(id);
     let string = ``;
@@ -87,7 +67,7 @@ function desenharGrade(id, loot = false, arrayRewards = null){
 
     for(let i = 1; i <= 5; i++){
         for(let j = 1; j <= 5; j++){
-            criarGrid(i, j, loot, arrayRewards, SPRITES);
+            criarGrid(i, j, SPRITES);
         }
     }
 

@@ -20,7 +20,6 @@ function blurBoxOpen(){
 }
 
 function blurBoxClose(){
-    console.log("oi?");
     const BOX = document.querySelector(".blur-box");
     
     if(BOX.style.display != "none"){

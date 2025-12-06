@@ -1,13 +1,12 @@
 
-let ArrayRecompensas = {
-    moeda: 54,
-    frutaCoracao: 24,
-    frutaEnergia: 22, 
-}
+setBackground("Sprites/Ground/mirrorroom_background.svg");
+const SALA = getPlace("mirrorroom");
 
-const FASE = "Reino dos Espelhos";
+const NomeSala = SALA.nome;
+const ArrayRecompensas = SALA.recompensas;
+
 function getLevelName(){
-    return FASE;
+    return NomeSala;
 }
 
 const TOTAL_VIAGENS = 3;
@@ -21,8 +20,7 @@ function aumentarTotalViagens(){
 }
 
 function gerarDungeonPre(){
-    const rd = randomInt(1, 4);
-    desenharGrade(5, "espelho", true, ArrayRecompensas);
+    desenharGrade("mirror", false);
     Ghosts.gerarInimigos();
 }
 

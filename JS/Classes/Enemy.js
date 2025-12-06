@@ -11,6 +11,11 @@ class Inimigo{
         this.recompensa = recompensa;
         this.setSprite(sprite);
         this.modoAlerta();
+        this.setClasses();
+    }
+
+    setClasses(){
+        this.elemento.classList.add("inimigo", "tamPadrao", "layerTres");
     }
 
     setSprite(sprite){
@@ -41,6 +46,13 @@ class Inimigo{
     }
     getDano(){
         return this.ataque;
+    }
+
+    static setThisGrid(objeto, elementoEl, cordX, cordY){
+        posicionarGrid(elementoEl, cordX, cordY);
+        setTileEnemy(true, cordX, cordY, false);
+        fixarAoConteiner(elementoEl);
+        INIMIGOS_ARRAY.push(objeto);
     }
 
     modoAlerta(){
@@ -109,10 +121,8 @@ class Inimigo{
 
             posicoesOcupadas.push({ x: cordX, y: cordY });
 
-            posicionarGrid(novoInimigoEl, cordX, cordY);
-            setTileEnemy(true, cordX, cordY, false);
             let novoInimigo = new Inimigo(novoInimigoEl, sprite, 100, 10, 10);
-            fixarAoConteiner(novoInimigoEl);
+            setThisGrid(cordX, cordY);
             INIMIGOS_ARRAY.push(novoInimigo);
         }
     }
