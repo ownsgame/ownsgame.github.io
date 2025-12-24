@@ -36,7 +36,7 @@ function getSave(pos){
         console.log("Erro: Saves Nulo");
         return;
     }
-    if(SAVES[pos] != null || pos >= 3){
+    if(SAVES[pos] == null || pos >= 3){
         console.log("Erro: local incorreto");
         return;
     }
@@ -51,7 +51,7 @@ function setSave(pos, save){
         console.log("Erro: Saves Nulo");
         return;
     }
-    if(SAVES[pos] != null || pos >= 3){
+    if(SAVES[pos] == null || pos >= 3){
         console.log("Erro: local incorreto");
         return;
     }

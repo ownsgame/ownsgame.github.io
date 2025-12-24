@@ -1,67 +1,72 @@
 const ESPADAS = [
     {
-        id: 1,
+        id: "espadaFantasma",
         nome: "Espada Fantasma",
         sprite: "Sprites/Itens/espada_fantasma.svg",
         dano: 40,
         espera: 5,
         descricao: "Espada Rara, dizem que é feita com essência de Fantasmas!",
         unico: true,
-        espada: false,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
         raridade: "Comum"
     },
     {
-        id: 2,
+        id: "linguaDeHidra",
         nome: "Língua de Hidra",
         sprite: "Sprites/Itens/espada_hydra.svg",
         dano: 100,
         espera: 5,
         descricao: "Um dia um herói Helano cortou a língua de Hydra e transformou em sua espada",
         unico: true,
-        espada: false,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
         raridade: "Raro"
     },
     {
-        id: 3,
+        id: "excalibur",
         nome: "Excalibur",
         sprite: "Sprites/Itens/espada_excalibur.svg",
         dano: 250,
         espera: 4,
         descricao: "O Rei Rutra foi o único que conseguiu remover a espada do Pedestal Bretão",
         unico: true,
-        espada: false,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
         raridade: "Raro"
     },
     {
-        id: 4,
+        id: "furaBolas",
         nome: "Fura Bolas",
         sprite: "Sprites/Itens/fura_bolas.svg",
         dano: 550,
         espera: 3,
         descricao: "A Fura Bolas é uma arma secreta usada pra interromper partidas de futebol",
         unico: true,
-        espada: false,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
         raridade: "Raro"
     },
     {
-        id: 5,
+        id: "katanaDeOrodoki",
         nome: "Katana de Orodoki",
         sprite: "Sprites/Itens/katana_orodoki.svg",
         dano: 1000,
         espera: 3,
         descricao: "Orodoki foi um lendário espadachin conhecido por portar esta espada",
         unico: true,
-        espada: false,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
         raridade: "Lendário"
     }
 ];
 
 function getEspada(id){
-    ESPADAS.forEach(espada => {
-        if(espada.id == id){
-            return espada;
-        }
-    });
-
-    return null;
+    const espada = ESPADAS.find(e => e.id === id);
+    return espada ? espada : null;
 }

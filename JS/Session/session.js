@@ -1,6 +1,13 @@
-function setSession(pos, save){
-    localStorage.setItem("OwnsSession", JSON.stringify(save));
-    localStorage.setItem("OwnsSessionNumber", JSON.stringify(pos));
+function setSession(pos, save) {
+    console.log(save);
+    try {
+        const dataToSave = JSON.stringify(save);
+        localStorage.setItem("OwnsSession", dataToSave);
+        localStorage.setItem("OwnsSessionNumber", pos);
+        console.log(dataToSave);
+    } catch (e) {
+        console.error("Erro ao salvar no localStorage:", e);
+    }
 }
 
 function getSession(){
@@ -12,14 +19,15 @@ function getSessionNumber(){
 }
 
 function logoutSession(){
-    localStorage.setItem("OwnsSession", JSON.stringify(null));
-    localStorage.setItem("OwnsSessionNumber", JSON.stringify(null));
+    localStorage.removeItem("OwnsSession");
+    localStorage.removeItem("OwnsSessionNumber");
 }
 
 function saveSession(save){
     const POS = getSessionNumber();
-    setSave(POS, save);
+    
     setSession(POS, save);
+    setSave(POS, save);
 }
 
 

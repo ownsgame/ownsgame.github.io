@@ -1,114 +1,35 @@
-const SECAO_STATUS = document.getElementById("personagem-Status");
-const SECAO_BOTAO = document.getElementById("menu");
-const SECAO_GEAR = document.getElementById("personagem-Gear");
-const SECAO_MISSAO = document.getElementById("personagem-Mission");
 
-function loadStatus(){
-    let copiaDados = getSession();
+const PLAYER_DADOS = getSession();
+console.log(PLAYER_DADOS);
 
-    let string = `
-        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
-            <h1>Status:</h1>
-            <button>Voltar</button>     
-        </div>
-    `;
-    let vida = copiaDados.vida;
-    let ataque = copiaDados.ataque;
-    let defesa = copiaDados.defesa;
+let indexInventario = 0;
+let vetorSecoes = ["Status", "Gear", "Missão"];
 
-    string +=
-    `
-            <img src="Sprites/Player/base.svg">
-            <h2 class="fonte-futuretimes">Atributos:</h2>
-            <h3>❤️ Vida: ${vida} | 🗡️ Ataque: ${ataque} | 🛡️ Defesa: ${defesa} </h3>
-            <h3>💪 Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
-    `;
-
-    SECAO_STATUS.innerHTML = string;
-
-    SECAO_STATUS.style.display = "flex";
-    loadBotoes(0);
-    SECAO_GEAR.style.display = "none";
-    SECAO_MISSAO.style.display = "none";
+function avancarSecao(){
+    indexInventario = (indexInventario + 1) % vetorSecoes.length;
+    const ABA = vetorSecoes[indexInventario];
+    toogleSecaoInventario(ABA);
 }
 
-function loadGear(){
-    let copiaDados = getSession();
-
-    let string = `
-        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
-            <h1>Equipamentos:</h1>
-            <button>Voltar</button>     
-        </div>
-    `;
-    
-    string +=
-    `
-            <h3>Arma Atual:</h3>
-            <h3>Poder Atual:</h3>
-            <h3>Escudo:</h3>
-            <div class="column-buttons animated-buttons">
-                <button>Alterar</button>
-                <button>Equipamentos</button>
-                <button>Itens</button>
-            </div>
-    `;
-
-    SECAO_GEAR.innerHTML = string;
-
-    SECAO_GEAR.style.display = "flex";
-    loadBotoes(1);
-    SECAO_STATUS.style.display = "none";
-    SECAO_MISSAO.style.display = "none";
+function retrocederSecao(){
+    indexInventario = (indexInventario - 1 + vetorSecoes.length) % vetorSecoes.length;
+    const ABA = vetorSecoes[indexInventario];
+    toogleSecaoInventario(ABA);
 }
 
-function loadMissao(){
-    let copiaDados = getSession();
-    let capitulo = copiaDados.capituloAtual;
-    
-    let string = `
-        <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
-            <h1>Missao</h1>
-            <button>Voltar</button>     
-        </div>
-    `;
-    
-    string +=
-    `
-            <h2 class="animated-aparecer fonte-futuretimes"> Hexopoda</h2>
-            <img class="animated-aparecer" src="Sprites/IU/hexopoda0.svg">
-            <h2 class="animated-aparecer fonte-futuretimes"> 0 de 6 partes</h2>
-            <h3 class="animated-aparecer">Conclusão: ${Math.floor(((capitulo) * 100)/ 6)}%</h3>
-            <h3 class="animated-aparecer">Capítulo Atual: ${capitulo}</h3>
-    `;
 
-    SECAO_MISSAO.innerHTML = string;
-
-    SECAO_MISSAO.style.display = "flex";
-    loadBotoes(2);
-    SECAO_STATUS.style.display = "none";
-    SECAO_GEAR.style.display = "none";
-}
-
-function loadBotoes(id){
-    SECAO_BOTAO.style.display = "none";
-    const funcoes = ["loadStatus()", "loadGear()", "loadMissao()"];
-    const textos = ["Status", "⚙️ Gear", "🗺️ Missão"];
-    let stringHtml = "";
-
-    for(let i = 0; i < 3; i++){
-        if(i != id){
-            stringHtml += "<button class='botao-ativo animated-aparecer'";
-        }
-        else{
-            stringHtml += "<button class='botao-inativo animated-aparecer'";
-        }
-
-        stringHtml += `onclick="${funcoes[i]}">${textos[i]}</button>`;
+function toogleSecaoInventario(aba){
+    if(aba == "Status"){
+        loadStatus();
     }
-
-    SECAO_BOTAO.innerHTML = stringHtml;
-    SECAO_BOTAO.style.display = "flex";
+    else if(aba == "Gear"){
+        loadGear();
+    }
+    else if(aba == "Missão"){
+        loadMissao();
+    }
 }
 
-loadStatus();
+function sair(){
+    window.location(PLAYER_DADOS.ultimaSala);
+}

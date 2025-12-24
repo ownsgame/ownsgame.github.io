@@ -15,7 +15,7 @@ function setSessionItem(caminho, valor) {
 
     ref[ultimaChave] = valor;
 
-    saveSession(SAVE);
+    saveSession(ref);
 }
 
 function setSessionVida(valor){
@@ -40,4 +40,12 @@ function setSessionUltimaSala(valor){
 
 function setSessionNome(valor){
     setSessionItem("nome", valor);
+}
+
+function setSessionInventario(valor){
+    setSessionItem("inventario", valor);
+}
+
+function setSessionRecursos(valor){
+    setSessionItem("recursos", valor);
 }

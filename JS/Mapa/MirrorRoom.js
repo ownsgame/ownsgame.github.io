@@ -1,3 +1,4 @@
+let ultimaSala = false;
 
 setBackground("Sprites/Ground/mirrorroom_background.svg");
 const SALA = getPlace("mirrorroom");
@@ -17,19 +18,26 @@ BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`;
 function aumentarTotalViagens(){
     viagensRestantes ++;
     BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+
+    if(ultimaSala){
+        BOTAO_EX.onclick = resetar;
+    }
 }
 
 function gerarDungeonPre(){
     desenharGrade("mirror", false);
+    const QUANT_BAU = randomInt(0, 3);
+    Chest.gerarBaus(QUANT_BAU, ArrayRecompensas, SALA.baus);
     Ghosts.gerarInimigos();
 }
 
 gerarDungeonPre();
 
+
 function resetar(){
     viagensRestantes --;
     zerarInimigoAlvo();
-    zerarBauAlvo();
+    Chest.matarBaus();
     
     if(viagensRestantes >= 0){
         let removido1 = removerGrid();
@@ -39,14 +47,17 @@ function resetar(){
             gerarDungeonPre();
             atualizarPos();
             if(viagensRestantes == 0){
+                ultimaSala = true;
                 BOTAO_EX.innerHTML = `Sair`;
-                BOTAO_EX.onclick = () => window.location = 'mapa.html';
-                BOTAO_EX.classList.add("botao-inativo");
-                BOTAO_EX.classList.remove("botao-status");
+                BOTAO_EX.onclick = sairSala;
             }
             else{
                 BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
             }
         }
     }
+}
+
+function sairSala(){
+    addRewardsToInventory();
 }

@@ -117,6 +117,10 @@ a:hover{
     transition: all 200ms ease-in-out;
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 .link{
     cursor: pointer;
 }

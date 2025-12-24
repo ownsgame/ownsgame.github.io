@@ -12,30 +12,21 @@ function criarModelo(){
         nome: nomeRandom,
         primeiraVez: true,
 
-        vidaBase: 100,
-        vidaExtra: 0,
-        vidaAumento: 1,
-        get vida() { return (this.vidaBase + this.vidaExtra) * this.vidaAumento; },
+        vida: 100,
+        defesa: 0,
+        ataque: 10,
+        espera: 5,
 
-        defesaBase: 0,
-        defesaExtra: 0,
-        defesaAumento: 1,
-        get defesa() { return (this.defesaBase + this.defesaExtra) * this.defesaAumento; },
+        inventario: {},
+        recursos: {},
 
-        ataqueBase: 10,
-        ataqueExtra: 0,
-        ataqueAumento: 1,
-        get ataque() { return (this.ataqueBase + this.ataqueExtra) * this.ataqueAumento; },
-
-        inventario: [],
-        recursos: [],
-        conclusao: {
-            cap1: false,
-            cap2: false,
-            cap3: false,
-            cap4: false,
-            cap5: false,
-            cap6: false,
+        arvoreConclusao: {
+            cap1: null,
+            cap2: null,
+            cap3: null,
+            cap4: null,
+            cap5: null,
+            cap6: null,
         },
 
         armadura: {

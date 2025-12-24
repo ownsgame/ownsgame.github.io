@@ -82,7 +82,7 @@ class Inimigo{
         if(this.recompensa != null){
             let tipo = this.recompensa.tipo;
             let quantidade = this.recompensa.quantidade;
-            addRewardsList(tipo, quantidade);
+            addReward(tipo, quantidade);
             mostrarRecompensas(tipo, quantidade);
             
             ChamadorAcao.mudarEstado(0);

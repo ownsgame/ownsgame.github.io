@@ -31,3 +31,11 @@ function getSessionUltimaSala(){
 function getSessionNome(){
     return getSessionItem("nome");
 }
+
+function getSessionInventario(){
+    return getSessionItem("inventario");
+}
+
+function getSessionRecursos(){
+    return getSessionItem("recursos");
+}

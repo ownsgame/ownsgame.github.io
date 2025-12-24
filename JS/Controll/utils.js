@@ -18,6 +18,20 @@ function randomBool(){
     }
 }
 
+function sorteioComProbabilidade(obj) {
+    const total = Object.values(obj).reduce((soma, v) => soma + v, 0);
+    const sorteio = Math.random() * total;
+
+    let acumulado = 0;
+
+    for (const chave in obj) {
+        acumulado += obj[chave];
+        if (sorteio < acumulado) {
+            return chave;
+        }
+    }
+}
+
 function fecharTela(id, blur = true){
     let tela = document.getElementById(id);
     tela.style.transition = "all ease-in-out 250ms";

@@ -8,6 +8,28 @@ function getRewardsObtained(){
     return rewards;
 }
 
+function addRewardsToInventory(){
+    const RECURSOS = getSessionRecursos();
+    const INVENTARIO = getSessionRecursos();
+
+    
+    for(let id in rewards){
+        const RECOMPENSA = getItem(id);
+        
+        if(!RECOMPENSA.consumivel){
+            if(RECOMPENSA.destino == "inventário"){
+                INVENTARIO[id] = (INVENTARIO[id] || 0) + rewards[id];
+            }
+            else if(RECOMPENSA.destino == "recursos"){
+                RECURSOS[id] = (RECURSOS[id] || 0) + rewards[id];
+            }
+        }
+    }
+
+    setSessionRecursos(INVENTARIO);
+    setSessionRecursos(RECURSOS);
+}
+
 function rewardsToHtml(){
     let string = `<h2>Recompensas Obtidas:</h2>`;
     let quantidadeTipos = Object.keys(rewards).length;

@@ -4,7 +4,7 @@ const CONSUMIVEIS = [
         nome: "Fruta do Coracao",
         sprite: "Sprites/Itens/health_fruit.svg",
         descricao: "Restaura 15 Pontos de Vida, Se você não estava precisando,que azar!",
-        unico: false,
+        unico: true,
         consumivel: true,
         raridade: "Comum"
     },
@@ -13,22 +13,25 @@ const CONSUMIVEIS = [
         nome: "Fruta de Energia",
         sprite: "Sprites/Itens/energy_berry.svg",
         descricao: "Te dá vigor para explorar ainda mais a área!",
-        unico: false,
+        unico: true,
         consumivel: true,
         raridade: "Comum"
     },
     {
         id: "moeda",
         nome: "Moedas",
-        sprite: "Sprites/Itens/energy_berry.svg",
+        sprite: "Sprites/Itens/coin.svg",
         descricao: "Quem tem muito sempre mais quer ter!",
         unico: false,
-        consumivel: true,
-        raridade: "Comum"
+        maxQuant: 20,
+        minQuant: 5,
+        consumivel: false,
+        raridade: "Comum",
+        destino: "recursos",
     }
 ];
 
-function getItem(id){
+function getConsumivel(id){
     const item = CONSUMIVEIS.find(e => e.id === id);
     return item ? item : null;
 }
