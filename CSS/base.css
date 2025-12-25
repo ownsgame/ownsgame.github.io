@@ -1,4 +1,5 @@
 :root {
+    --gradientebranco: linear-gradient(white);
     --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
     --gradienteAzul: linear-gradient(to bottom right, rgb(32, 60, 146), rgb(15, 39, 110), rgb(8, 27, 88));
     --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
@@ -15,6 +16,11 @@
     font-family: "FutureTimes";
     color: white;
     letter-spacing: 3px;
+}
+
+.fonte-comum{
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
 }
 
 button{

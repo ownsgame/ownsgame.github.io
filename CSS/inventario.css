@@ -83,13 +83,13 @@ h3{
     font-weight: bolder;
 }
 
-section img{
+.inventario-image{
     width: 200px; height: 200px;
 }
 
 @media (max-width: 800px) {
     main{ flex-direction: column-reverse;}
-    section img{width: 100px; height: 100px;}
+    .inventario-image{width: 100px; height: 100px;}
     
 }
 
@@ -111,4 +111,66 @@ section img{
     font-size: 12pt;
     border-left: rgba(255, 255, 255, 0.452) 3px solid;
     border-bottom: rgba(255, 255, 255, 0.452) 3px solid;
+}
+
+.atributos-alinhados, .atributo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.atributos-alinhados{
+    padding: 1rem 0rem;
+}
+
+.atributo{
+    padding: 0.2rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.082);
+}
+
+.atributo:hover{
+    padding: 0.5rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.274);
+}
+
+.atributos-alinhados *{
+    animation: aparecer 500ms ease-in-out;
+    transition: all ease-in-out 200ms;
+}
+
+.gear{
+    width: 100%;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itens-conteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
+
+.item-conteiner{
+    padding: 0.2rem;
+    background-image: var(--gradienteRoxo);
+    border: 2px rgba(255, 255, 255, 0.459) solid;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 200ms ease-in-out all;
+}
+
+.item-conteiner:hover{
+    padding: 0.3rem;
+    background-image: var(--gradientebranco);
+}
+
+.item {
+    width: 64px; height: 64px;
 }
