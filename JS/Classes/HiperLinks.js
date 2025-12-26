@@ -45,9 +45,18 @@ class IndirectLink extends FixedEntity{
                 <h3 class="animated-aparecer fonte-futuretimes">${lugar.nome}</h3>
                 <img class="animated-aparecer"src="${lugar.sprite}" width="200px" height="200px">
                 <div class="row-buttons">
-                    <button onclick="location.replace('${lugar.link}');">Teleportar</button>
-                    <button class="botao-ativo" onclick="window.location = 'Inventario.html'">Inventário</button>
-                    <button onclick="fecharTela('show-place')">Fechar</button>
+                    <button onclick="location.replace('${lugar.link}');">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button class="botao-ativo" onclick="">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="botao-ativo" onclick="window.location = 'Inventario.html'">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </button>
+                    <button onclick="fecharTela('show-place')">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
                 </div>
             `;
 

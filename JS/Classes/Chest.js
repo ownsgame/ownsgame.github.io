@@ -84,9 +84,10 @@ function mostrarRecompensas(id, quantidade){
         <img src="${RECOMPENSA.sprite}" height="50px" width="50px">
         <h3>${quantidade}x ${RECOMPENSA.nome}</h3>
         <p><i>"${RECOMPENSA.descricao}"</i></p>
-        <button class="botao-ativo" onclick="fecharMenuRewards()">Fechar</button>
+        <button class="botao-ativo" onclick="fecharTela('tela_reward')">Fechar</button>
     `;
-    TELA_REWARD.style.display = "flex";
+    
+    abrirTela("tela_reward");
     verificaAcaoReward(id);
 }
 

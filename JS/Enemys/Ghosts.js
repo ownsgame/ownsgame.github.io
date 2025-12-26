@@ -11,6 +11,7 @@ class Ghosts extends Inimigo {
         super(elemento, sprite, vida, defesa, ataque, recompensa);
         this.movimento();
         this.animar(SPRITES_ANIM_GHOST[0]);
+        this.direcaoY = 1;
     }
 
     atualizarPos(x, y) {
@@ -39,7 +40,7 @@ class Ghosts extends Inimigo {
     }
     
     movimento() {
-        setInterval(() => { this.mover() }, 500);
+        setInterval(() => { this.mover() }, 300);
     }
 
     mover() {
@@ -48,32 +49,15 @@ class Ghosts extends Inimigo {
             let cordX = posicoes.x;
             let cordY = posicoes.y;
 
-            const dir = randomBool();
+            if (cordY + this.direcaoY > 5) {
+                this.direcaoY = -1;
+            }
 
-            if (dir) {
-                if (cordY + 1 < 6) {
-                    if (!getTileEnemy(cordX, cordY + 1, false)) {
-                        cordY += 1;
-                    }
-                    else if (cordY - 1 > 0) {
-                        if (!getTileEnemy(cordX, cordY - 1, false)) {
-                            cordY -= 1;
-                        }
-                    }
-                }
+            if (cordY + this.direcaoY < 1) {
+                this.direcaoY = 1;
             }
-            else {
-                if (cordY - 1 > 0) {
-                    if (!getTileEnemy(cordX, cordY - 1, false)) {
-                        cordY -= 1;
-                    }
-                    else if (cordY + 1 < 6) {
-                        if (!getTileEnemy(cordX, cordY + 1, false)) {
-                            cordY += 1;
-                        }
-                    }
-                }
-            }
+
+            cordY += this.direcaoY;
 
             this.atualizarPos(cordX, cordY);
             setTileEnemyToogle(posicoes.x, posicoes.y, cordX, cordY, false);
@@ -95,10 +79,10 @@ class Ghosts extends Inimigo {
                 let ataqueEnemy = randomInt(10, 25);
 
                 const GHOST_REWARDS = {
-                    moeda: 50,
+                    moeda: 15,
                     frutaCoracao: 22,
                     frutaEnergia: 13,
-                    espadaFantasma: 15, 
+                    espadaFantasma: 50, 
                 }
 
                 let recompensaEscolhida = sortearItem(GHOST_REWARDS);

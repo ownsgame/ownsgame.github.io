@@ -30,7 +30,9 @@ function telaApresentarSala(nome, imagem, link){
             <button >Jogar</button>
             <button>Prévia</button>
             <button>Inventário</button>
-            <button onclick="fecharTelaF()">Fechar</button>
+            <button onclick="fecharTelaF()">
+                <i class="fa-solid fa-x"></i>
+            </button>
         </div>
     `;
 }
@@ -46,7 +48,9 @@ function telaApresentarBoss(nome, titulo, imagem, link, forca){
             <button>Jogar</button>
             <button>Prévia</button>
             <button>Inventário</button>
-            <button onclick="fecharTelaF()">Fechar</button>
+            <button onclick="fecharTelaF()">
+                <i class="fa-solid fa-x"></i>
+            </button>
         </div>
     `;
 }

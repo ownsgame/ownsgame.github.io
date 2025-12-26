@@ -14,9 +14,3 @@
     background-image: url("../Sprites/Npcs/sabio-hover.svg");
 }
 
-.tocha{
-    z-index: 2;
-    background-repeat: no-repeat;
-    background-image: url("../Sprites/Map/tochaDungeon.svg");
-    background-size: contain;
-}

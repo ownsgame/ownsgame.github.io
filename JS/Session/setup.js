@@ -10,12 +10,20 @@ function criarModelo(){
 
     return {
         nome: nomeRandom,
-        primeiraVez: true,
-
+        
         vida: 100,
+        vidaMult: 1,
+        vidaSum: 0,
+
         defesa: 0,
+        defesaMult: 1,
+        defesaSum: 0,
+
         ataque: 10,
-        espera: 5,
+        ataqueMult: 1,
+        ataqueSum: 0,
+
+        tempoEspera: 5,
 
         inventario: {},
         recursos: {},

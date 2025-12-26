@@ -38,7 +38,7 @@ body{
     width: 100vw; height: 100vh;
     margin: 0px;
     position: absolute;
-    z-index: 998;
+    z-index: 7;
     display: none;
     opacity: 1;
     transition: all 50ms ease-in-out;

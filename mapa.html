@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     
+    <title>Owns</title>
+    <link rel="icon" href="Sprites/IU/Logo.svg"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link rel="stylesheet" href="CSS/fontes.css">
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/grid.css">
@@ -12,8 +17,6 @@
     <link rel="stylesheet" href="CSS/ground.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <link rel="stylesheet" href="CSS/npcs.css">
-    <title>Owns</title>
-    <link rel="icon" href="Sprites/IU/Logo.svg"> 
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +28,40 @@
 
 </head>
 <body>
+    <img class="menu pointer" src="Sprites/IU/home_icon.svg" onclick="abrirOpcoes()">
+    <div id="menu_options" class="options">
+        <h1 class="fonte-futuretimes">Opcoes</h1>
+        <div class="row-buttons">
+            <button>
+                <i class="fa-solid fa-volume-low"></i>
+            </button>
+            
+            <button class="botao-ativo" onclick="window.location = 'Inventario.html'">
+                <i class="fa-solid fa-toolbox"></i>
+            </button>
+            
+            <button onclick="window.location = 'index.html'">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+
+            <button onclick="fecharOpcoes()">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+    </div>
+
     <div id="conteiner"></div>
 
     <div id="caixa-dialogo">
         <h1 id="titulo-dialogo" class="fonte-futuretimes"></h1>
         <p id="textinho-dialogo"></p>
         <div class="row-buttons">
-            <button id="proximaFala">Próxima</button>
-            <button id="fecharCaixaDialogo">Pular</button>
+            <button id="fecharCaixaDialogo">
+                <i class="fa-solid fa-angles-right"></i>
+            </button>
+            <button id="proximaFala">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 
@@ -44,6 +73,8 @@
     <script src="DATA/works.js"></script>
     <script src="DATA/places.js"></script>
    
+    <script src="JS/Controll/utils.js"></script>
+    <script src="JS/View/menu.js"></script>
     <script src="JS/View/visualEffects.js"></script>
     <script src="JS/View/caixa_dialogo.js"></script>
 
@@ -55,18 +86,14 @@
     <script src="JS/Session/session_setters.js"></script>
     
     <script src="JS/Controll/mapa_pres.js"></script>
-    <script src="JS/Controll/utils.js"></script>
     <script src="JS/Controll/colision.js"></script>
     <script src="JS/Controll/grid.js"></script>
-
       
     <script src="JS/Classes/FixedEntity.js"></script>
     <script src="JS/Classes/HiperLinks.js"></script>
     <script src="JS/Classes/Player.js"></script>
     <script src="JS/Controll/inserir_player.js"></script>
-  
 
-    
     <script src="JS/Classes/Npc.js"></script>
     <script src="JS/Mapa/CamaraCentral.js"></script>
 

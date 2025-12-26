@@ -68,11 +68,6 @@ const BOSSES = [
 ]
 
 function getBoss(id){
-    BOSSES.forEach(boss => {
-        if(boss.id == id){
-            return boss;
-        }
-    });
-
-    return null;
+    const boss = BOSSES.find(b => b.id === id);
+    return boss ? boss : null;
 }

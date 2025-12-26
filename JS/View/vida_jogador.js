@@ -2,7 +2,7 @@ const VIDA_EL = document.getElementById("status-vida");
 
 function atualizarVida(vida, total = 100){
     
-    VIDA_EL.innerHTML = `HP: ${vida} / ${total}`;
+    VIDA_EL.innerHTML = `<i class="fa-solid fa-heart"></i> HP: ${vida} / ${total}`;
     atualizarHP(vida, total);
 }
 
@@ -14,7 +14,7 @@ function atualizarHP(vidaAtual, vidaTotal) {
 
     barraHP.style.backgroundImage = `linear-gradient(
         to right,
-        rgb(14, 50, 255) ${porcentagem}%,
+        rgb(50, 14, 255) ${porcentagem}%,
         black ${porcentagem}%
     )`;
 }

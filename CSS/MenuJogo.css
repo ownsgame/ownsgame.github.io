@@ -1,8 +1,7 @@
 .menuJogo{
     color: white;
-    font-family: "Delius Swash Caps";
-    border: 8px solid rgb(2, 2, 26);
-    background-image: linear-gradient(to bottom right,rgb(13, 29, 77), rgb(7, 20, 59));
+    background-image: var(--gradienteAzul);
+    border-radius: 1rem;
     
     position: absolute;
     width: 85vw; height: 85vh;

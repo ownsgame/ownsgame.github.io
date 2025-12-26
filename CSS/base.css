@@ -33,7 +33,7 @@ button{
     background-image: var(--gradienteRoxo);
     
     border: 1px solid rgba(255, 255, 255, 0.096);
-    
+    border-radius: 2rem;
     transition: all 200ms ease-in-out;
     outline: none;
 }
@@ -84,7 +84,7 @@ button:hover{
     display: none;
     backdrop-filter: blur(10px);
     position: absolute;
-    z-index: 5;
+    z-index: 9;
     opacity: 0;
     transition: ease-in-out all 200ms;
 }

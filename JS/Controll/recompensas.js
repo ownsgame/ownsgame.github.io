@@ -10,7 +10,7 @@ function getRewardsObtained(){
 
 function addRewardsToInventory(){
     const RECURSOS = getSessionRecursos();
-    const INVENTARIO = getSessionRecursos();
+    const INVENTARIO = getSessionInventario();
 
     
     for(let id in rewards){
@@ -26,29 +26,6 @@ function addRewardsToInventory(){
         }
     }
 
-    setSessionRecursos(INVENTARIO);
+    setSessionInventario(INVENTARIO);
     setSessionRecursos(RECURSOS);
-}
-
-function rewardsToHtml(){
-    let string = `<h2>Recompensas Obtidas:</h2>`;
-    let quantidadeTipos = Object.keys(rewards).length;
-
-    if(quantidadeTipos === 0){
-        string += `<h3>Você não coletou nenhuma recompensa ainda</h3>`;
-    } else {
-        
-        string += `<div class="dequeRewards">`;
-        for (let tipo in rewards) {
-
-            const RECOMPENSA = getItem(tipo);
-            string += `<div class="cardReward">
-            <h3>${RECOMPENSA.nome}</h3>
-            <img width="80px" heigth="80px" src="${RECOMPENSA.sprite}"> 
-            <h3>${rewards[tipo]}</h3>
-            </div>`;
-        }
-        string += `</div>`;
-    }
-    return string;    
 }

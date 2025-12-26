@@ -10,14 +10,18 @@ function getLevelName(){
     return NomeSala;
 }
 
+function mudarBotaoExplorar(restante, total){
+    BOTAO_EX.innerHTML = `Avançar (${restante}/${total})`; 
+}
+
 const TOTAL_VIAGENS = 3;
 let viagensRestantes = TOTAL_VIAGENS;
 const BOTAO_EX = document.getElementById("botao-explorar");
-BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+mudarBotaoExplorar(viagensRestantes, TOTAL_VIAGENS);
 
 function aumentarTotalViagens(){
     viagensRestantes ++;
-    BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+    mudarBotaoExplorar(viagensRestantes, TOTAL_VIAGENS);
 
     if(ultimaSala){
         BOTAO_EX.onclick = resetar;
@@ -32,7 +36,6 @@ function gerarDungeonPre(){
 }
 
 gerarDungeonPre();
-
 
 function resetar(){
     viagensRestantes --;
@@ -52,12 +55,9 @@ function resetar(){
                 BOTAO_EX.onclick = sairSala;
             }
             else{
-                BOTAO_EX.innerHTML = `Explorar (${viagensRestantes}/${TOTAL_VIAGENS})`; 
+                mudarBotaoExplorar(viagensRestantes, TOTAL_VIAGENS);
             }
         }
     }
 }
 
-function sairSala(){
-    addRewardsToInventory();
-}

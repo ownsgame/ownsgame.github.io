@@ -49,3 +49,7 @@ function setSessionInventario(valor){
 function setSessionRecursos(valor){
     setSessionItem("recursos", valor);
 }
+
+function changeIniciante(){
+    setSessionItem("iniciante", false);
+}

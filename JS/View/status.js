@@ -33,7 +33,7 @@ function iniciarContador(tempo, dano) {
             CONTADOR.innerHTML = `Dano Recebido!`;
         }
         else{
-            CONTADOR.innerHTML = `⏰ ${(tempo / 1000).toFixed(1)}s`;
+            CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Ataque em: ${(tempo / 1000).toFixed(1)}s`;
         }       
 
         if (tempo <= 0) {
@@ -92,4 +92,8 @@ function exibirDano(dano, tipo = 0){
     CONTADOR.style.opacity = 1;
 
     setTimeout(()=>{fecharTela("damage-count")}, 1200);
+}
+
+function fecharAbaStatus(){
+    fecharTela("status");
 }

@@ -1,12 +1,17 @@
 class Player{
-    constructor(vida, elemento, sprite, defesa, ataque) {
-        this.vida = vida;
-        this.vidaInicial = vida;
-        this.defesa = defesa
+    constructor(elemento, sprite, Dados) {
+        
+        console.log(typeof Dados.vida)
+        console.log(Dados);
         this.elemento = elemento;
         this.sprite = sprite;
-        this.ataque = ataque;
-        this.esperaAtaque = 4;
+
+        this.vida = (Dados.vida + Dados.vidaSum) * Dados.vidaMult;
+        this.vidaInicial = this.vida;
+        this.defesa = (Dados.defesa + Dados.defesaSum) * Dados.defesaMult;
+        this.ataque = (Dados.ataque + Dados.ataqueSum) * Dados.ataqueMult;
+
+        this.tempoEspera = Dados.tempoEspera;
         this.podeAtaca = true;
         this.morto = false;
 
