@@ -47,7 +47,7 @@ function criarModelo(){
         armaAtual: null,
         poderAtual: null,
         escudoAtual: null,
-        ultimaSala: null,
+        ultimaSala: "camaraCentral.html",
         iniciante: true,
     };
 }

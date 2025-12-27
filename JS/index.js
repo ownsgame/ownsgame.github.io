@@ -27,7 +27,7 @@ function jogar(pos){
     const SAVE = SAVES[pos];
 
     setSession(pos, SAVE);
-    location.replace("mapa.html");
+    redirecionarUltimaSala();
 }
 
 function deletar(pos){

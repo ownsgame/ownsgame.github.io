@@ -1,10 +1,11 @@
 let ultimaSala = false;
 
-setBackground("Sprites/Ground/mirrorroom_background.svg");
 const SALA = getPlace("mirrorroom");
 
 const NomeSala = SALA.nome;
 const ArrayRecompensas = SALA.recompensas;
+
+setBackground(SALA.background);
 
 function getLevelName(){
     return NomeSala;

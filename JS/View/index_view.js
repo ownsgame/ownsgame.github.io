@@ -5,7 +5,7 @@ function mostrarSaves(saves){
     let stringHTML = 
     `
         <h1 class="fonte-futuretimes animated-aparecer">Selecione seu save...</h1>
-        <div class="column-buttons animated-buttons">
+        <div class="column-buttons">
     `;
 
     for(let i = 0; i < 3; i ++){
@@ -14,7 +14,13 @@ function mostrarSaves(saves){
         }
         else{
             const SAVE = saves[i];
-            stringHTML +=`<button onclick="jogar(${i})">${SAVE.nome}</button>`;
+            stringHTML +=
+            `
+                <div class="row-buttons animated-buttons">
+                    <button onclick="jogar(${i})"> ${i + 1} - Jogar</button>
+                    <button onclick="deletar(${i})"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
         }
     }
 
@@ -49,7 +55,12 @@ function mostrarOpcoes(saves){
         }
         else{
             const SAVE = saves[i];
-            stringHTML +=`<button onclick="deletar(${i})">Deletar: ${SAVE.nome}</button>`;
+            stringHTML +=
+            `
+                <button onclick="deletar(${i})">
+                    <i class="fa-solid fa-trash"></i>: Save ${i + 1}
+                </button>
+            `;
         }
     }
 

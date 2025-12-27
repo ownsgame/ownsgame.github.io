@@ -53,3 +53,7 @@ function setSessionRecursos(valor){
 function changeIniciante(){
     setSessionItem("iniciante", false);
 }
+
+function setSessionUltimaSala(valor){
+    setSessionItem("ultimaSala", valor);
+}

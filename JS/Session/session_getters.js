@@ -39,3 +39,7 @@ function getSessionInventario(){
 function getSessionRecursos(){
     return getSessionItem("recursos");
 }
+
+function getSessionUltimaSala(){
+    return getSessionItem("ultimaSala");
+}

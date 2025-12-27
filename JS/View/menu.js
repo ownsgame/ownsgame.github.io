@@ -9,7 +9,7 @@ MENU_OPTIONS.innerHTML =
             <i class="fa-solid fa-volume-low"></i>
         </button>
         
-        <button class="botao-ativo" onclick="window.location = 'Inventario.html'">
+        <button class="botao-ativo" onclick="window.location = 'inventario.html'">
             <i class="fa-solid fa-toolbox"></i>
         </button>
         

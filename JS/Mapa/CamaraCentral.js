@@ -1,4 +1,7 @@
-setBackground("Sprites/Ground/ceramica_background.svg")
+const SALA = getPlace("camaraCentral");
+
+marcarSala(SALA.link);
+setBackground(SALA.background);
 desenharGrade("ceramica", false);
 
 const sabioEl = document.createElement("img");

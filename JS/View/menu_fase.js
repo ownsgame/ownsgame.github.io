@@ -9,7 +9,7 @@ function abrirTelaMenuJogo(){
     string += `
         <div class="botoes-alinhados">
             <button class="botao-ativo" onclick="showRewards()">Recompensas</button>
-            <button class="botao-ativo" onclick="window.location = 'mapa.html'">Abandonar Partida</button>
+            <button class="botao-ativo" onclick="redirecionarUltimaSala()">Abandonar Partida</button>
         </div>
     `;
 
@@ -124,7 +124,7 @@ function showEndRewards(){
     `;
     string += `${rewardsSelectToHtml()}`;
 
-    string += `<button class="botao-ativo" onclick='window.location.replace("mapa.html")'>Sair</button>`;
+    string += `<button class="botao-ativo" onclick='redirecionarUltimaSala()'>Sair</button>`;
     TELA.innerHTML = string;
     abrirTela("menu-jogo");
 }

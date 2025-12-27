@@ -1,10 +1,8 @@
 function setSession(pos, save) {
-    console.log(save);
     try {
         const dataToSave = JSON.stringify(save);
         localStorage.setItem("OwnsSession", dataToSave);
         localStorage.setItem("OwnsSessionNumber", pos);
-        console.log(dataToSave);
     } catch (e) {
         console.error("Erro ao salvar no localStorage:", e);
     }

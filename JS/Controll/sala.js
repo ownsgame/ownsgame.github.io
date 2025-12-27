@@ -1,3 +1,12 @@
+function marcarSala(link){
+    setSessionUltimaSala(link);
+}
+
+function redirecionarUltimaSala(){
+    const LINK_SALA = getSessionUltimaSala();
+    location.replace(LINK_SALA);
+}
+
 function sairSala(){
     apagarSala();
     addRewardsToInventory();
