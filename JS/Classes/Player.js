@@ -1,8 +1,5 @@
 class Player{
     constructor(elemento, sprite, Dados) {
-        
-        console.log(typeof Dados.vida)
-        console.log(Dados);
         this.elemento = elemento;
         this.sprite = sprite;
 

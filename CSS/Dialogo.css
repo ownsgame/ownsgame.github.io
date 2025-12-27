@@ -10,8 +10,8 @@
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: row;
+    gap: 2rem;
     padding: 1rem;
 }
 
@@ -31,4 +31,10 @@
 
 .disponivel{
     border: 1px solid rgba(1, 56, 156, 0.788);
+}
+
+.caixa-dialogo-data{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }

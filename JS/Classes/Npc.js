@@ -1,84 +1,70 @@
 class NPC extends FixedEntity{
-    constructor(nome, matrizFalas, objeto, inicioFalas = 0, posicao){
-        super(objeto, posicao);
-        this.nome = nome;
-        this.inicioFalas = inicioFalas;
-        this.matrizFalas = matrizFalas;
-        this.objeto = objeto;
-        this.emFala = false;
-        this.ativo();
-    }
+    constructor(id, elemento, posicao, layer){
+        super(elemento, posicao, layer);
+        this.elemento = elemento;
 
-    falar(vetor = null){
-        this.objeto.classList.remove("disponivel");
-        if(vetor == null){
-            const rd = randomInt(this.inicioFalas, this.matrizFalas.length - 1);
-            let array = this.matrizFalas[rd];
-            let index = 0;
-            this.passarDialogo(array[index]);
-
-            const BOTAO_PROX = document.getElementById("proximaFala");
-            const BOTAO_EX = document.getElementById("fecharCaixaDialogo");
-
-            BOTAO_PROX.addEventListener("click", ()=>{
-                if(index < array.length - 1){
-                    index ++;
-                    this.passarDialogo(array[index])
-                }
-                else{
-                    index = 0;
-                    fecharCaixaDialogo();
-                    this.emFala = false;
-                }
-            });
-            BOTAO_EX.addEventListener("click", ()=>{
-                index = 0;
-                fecharCaixaDialogo();
-                this.emFala = false;
-            });
-        } 
-        else{
-            let array = vetor;
-            let index = 0;
-            this.passarDialogo(array[index]);
-
-            const BOTAO_PROX = document.getElementById("proximaFala");
-            const BOTAO_EX = document.getElementById("fecharCaixaDialogo");
-
-            BOTAO_PROX.addEventListener("click", ()=>{
-                if(index < array.length - 1){
-                    index ++;
-                    this.passarDialogo(array[index])
-                }
-                else{
-                    index = 0;
-                    fecharCaixaDialogo();
-                    this.emFala = false;
-                }
-            });
-            BOTAO_EX.addEventListener("click", ()=>{
-                index = 0;
-                fecharCaixaDialogo();
-                this.emFala = false;
-            });
+        let data = getNpc(id);
+        this.npc = data;
+        this.especial = data.falasEspeciais;
+                
+        if(this.especial){
+            this.falas = getFalasEsp(data.id, 0);
         }
+        else{
+            this.falas = getFalasCom(data.id);
+        }
+
+        this.rosto = data.rosto;
+        this.sprites = data.sprites;
+        this.elemento.src = data.sprites[0];
+        this.hover = data.hover;
+        this.emFala = false;
+        this.conjuntoFalas = null;
+        this.indexFala = 0;
+        this.evento();    
     }
 
-    passarDialogo(string){
-        mostrarDialogo(this.nome, string);
-    }
+    evento(){
+        this.elemento.addEventListener("click", ()=>{
+            const caixa = CaixaDialogo.get();
 
-    ativo(){
-         ;
-        this.objeto.addEventListener("click", ()=>{
-            if(!this.emFala){
-                this.emFala = true;
-                this.falar();
-            }
+            if(this.emFala) return;
+            if(caixa.getAtiva()) return;
+            
+            this.emFala = true;
+            this.conjuntoFalas = randomVec(this.falas);
+            this.indexFala = 0;
+            caixa.passarDialogo(this.npc, this.conjuntoFalas[this.indexFala]);
+            
         });
-    }
 
-    getAtivo(){
-        return this.emFala;
+        let proximaFalaBTN = document.getElementById("proximaFala");
+        let fecharFalaBTN = document.getElementById("fecharCaixaDialogo");
+
+        proximaFalaBTN.onclick = () => {
+            const TAM = this.conjuntoFalas.length - 1;
+            const caixa = CaixaDialogo.get();
+
+            if(this.indexFala + 1 > TAM){
+                this.encerraDialogo();
+            } else {
+                this.indexFala++;
+                caixa.passarDialogo(this.npc, this.conjuntoFalas[this.indexFala]);
+            }
+        };
+
+
+        fecharFalaBTN.onclick = () => {
+            this.encerraDialogo();
+        }
+    }   
+    
+    encerraDialogo(){
+        const caixa = CaixaDialogo.get();
+        this.emFala = false;
+        this.conjuntoFalas = null;
+        this.indexFala = 0;
+
+        caixa.fecharCaixa();
     }
 }

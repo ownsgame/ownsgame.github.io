@@ -93,12 +93,3 @@ const NPC_DADOS = [
         ["Personagem6", "Sprites/Places/campos.svg", "mapa.html"],
     ],
 ];
-
-const BOSSES_DADOS = [
-    {nome: "Woody, o Tronco", forca: 1000, sprite: "Sprites/Capa/b_woody.svg"},
-    {nome: "Polifemo, o Ciclope", forca: 1000, sprite: "Sprites/Capa/b_ciclop.svg"},
-    {nome: "Dom. Corración", forca: 1000, sprite: "Sprites/Capa/b_cavaleiro.svg"},
-    {nome: "Dona Yara, a estilista", forca: 1000, sprite: "Sprites/Capa/b_bailarina.svg"},
-    {nome: "Yudi Fenomeno", forca: 1000, sprite: "Sprites/Capa/b_craque.svg"},
-    {nome: "Lord Orakana", forca: 1000, sprite: "Sprites/Capa/b_lord.svg"},
-];

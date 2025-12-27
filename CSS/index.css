@@ -65,7 +65,7 @@ h1{
     padding: 2rem;
     box-sizing: border-box;
     position: absolute;
-    z-index: 6;
+    z-index: 10;
     
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);

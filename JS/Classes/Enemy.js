@@ -1,26 +1,41 @@
 const INIMIGOS_ARRAY = [];
 
 class Inimigo{
-    constructor(elemento, sprite, vida, defesa, ataque, recompensa = null){
-        this.vida = vida;
-        this.defesa = defesa;
-        this.ataque = ataque;
+    constructor(id, elemento){
         this.elemento = elemento;
         this.emCombate = false;
-        this.time = 5;
-        this.recompensa = recompensa;
-        this.setSprite(sprite);
+
+        const DadosInimigo = getInimigoById(id);
+        this.vida = randomInt(DadosInimigo.minVida, DadosInimigo.maxVida);
+        this.defesa = randomInt(DadosInimigo.minDefesa, DadosInimigo.maxDefesa);
+        this.ataque = randomInt(DadosInimigo.minAtaque, DadosInimigo.maxAtaque);
+        this.time = DadosInimigo.intervalo;
+        this.animacao = new AnimatedEntity(this.elemento, DadosInimigo.sprites, DadosInimigo.hover, 200);
+
+        const possiveisRecompensas = DadosInimigo.recompensas;
+
+        const ID_RECOMPENSA = sorteioComProbabilidade(possiveisRecompensas);
+        const ITEM = getItem(ID_RECOMPENSA);
+
+        let QUANT = 1;
+        if (!ITEM.unico) {
+            QUANT = randomInt(ITEM.minQuant, ITEM.maxQuant);
+        }
+
+        this.recompensa = {
+            tipo: ITEM.id,
+            quantidade: QUANT,
+        }
+
         this.modoAlerta();
         this.setClasses();
     }
 
+
     setClasses(){
-        this.elemento.classList.add("inimigo", "tamPadrao", "layerTres");
+        this.elemento.classList.add("tamPadrao", "layerTres");
     }
 
-    setSprite(sprite){
-        this.elemento.src = sprite;
-    }
     estaEmCombate(){
         return this.emCombate;
     }
@@ -97,33 +112,6 @@ class Inimigo{
 
         if(indice !== -1){
             INIMIGOS_ARRAY.splice(indice, 1);
-        }
-    }
-
-    static gerarInimigos(qntd, sprite) {
-        const maxInimigos = 10;
-        const quantidade = Math.min(qntd, maxInimigos);
-
-        const posicoesOcupadas = [];
-
-        for (let i = 0; i < quantidade; i++) {
-            let novoInimigoEl = document.createElement("img");
-            novoInimigoEl.classList.add("inimigo", "tamPadrao");
-
-            let cordX, cordY;
-            let posValida = false;
-
-            while (!posValida) {
-                cordX = randomInt(1, 5);
-                cordY = randomInt(1, 5);
-                posValida = !posicoesOcupadas.some(pos => pos.x === cordX && pos.y === cordY);
-            }
-
-            posicoesOcupadas.push({ x: cordX, y: cordY });
-
-            let novoInimigo = new Inimigo(novoInimigoEl, sprite, 100, 10, 10);
-            setThisGrid(cordX, cordY);
-            INIMIGOS_ARRAY.push(novoInimigo);
         }
     }
 }
