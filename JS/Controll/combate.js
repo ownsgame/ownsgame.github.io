@@ -13,14 +13,13 @@ setInterval(() => {
             enemyTarget = inimigo;
             combate = true;
             mostrarInimigoAlvo(enemyTarget);
-            tempo = inimigo.getTime();
-            dano = inimigo.getDano();
+            tempo = inimigo.getIntervalo();
+            dano = inimigo.getAtaque();
             break;
         }
     }
 
     if (combate && !emCombateAnterior) {
-        ChamadorAcao.mudarEstado(2);
         iniciarContador(tempo, dano);
     }
 
@@ -43,8 +42,8 @@ function atacarTarget(){
 
         if(enemyTarget.getVida() <= 0){
             enemyTarget = null;
-
             resetarContador();
+
         } else {
             iniciarContador(enemyTarget.getTime(), enemyTarget.getDano());
         }

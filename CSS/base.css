@@ -146,3 +146,24 @@ a:hover{
 .layerTres{
     z-index: 3;
 }
+
+.no-click{
+    pointer-events: none;
+}
+
+.player{
+    pointer-events: none;
+}
+
+.inimigo{
+    cursor: pointer;
+    transition: filter 0.300ms ease-in-out;
+}
+
+.inimigo:hover{
+    filter: brightness(150%);
+}
+
+.tx-yellow{
+    color: rgb(255, 255, 43);
+}

@@ -19,10 +19,6 @@ body{
     transform: translateX(-50%);
 }
 
-.jogador{
-    z-index: 1;
-}
-
 .tiles{
     background-size: cover;
     z-index: 0;
@@ -42,25 +38,6 @@ body{
     display: none;
     opacity: 1;
     transition: all 50ms ease-in-out;
-}
-
-.game-over{
-    color: white;
-    font-family: "Delius Swash Caps";
-    background-color: rgb(226, 20, 13);
-    border: 3px solid rgb(88, 10, 10);
-    position: absolute;
-    width: 20vw; height: 20vw;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.game-over h3, .game-over h2{
-    text-align: center;
 }
 
 @media (max-width: 199px){

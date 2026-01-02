@@ -25,6 +25,22 @@ const PLACES = [
         isDungeon: false,
         haveChests: false,
     },
+    {
+        id: "laboratorio",
+        nome: "Laboratorio Do Palacio",
+        link: "laboratorio.html", 
+        background: "Sprites/Ground/ceramica_background.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "biblioteca",
+        nome: "Biblioteca Real Own",
+        link: "biblioteca.html", 
+        background: "Sprites/Ground/ceramica_background.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
 ]
 
 function getPlace(id){

@@ -1,6 +1,5 @@
 
 function atualizarPos(){
-    
     const QUADRADOS = document.querySelectorAll(".tiles");
     const INIMIGOS = document.querySelectorAll(".inimigo");
     QUADRADOS.forEach(quadrado => {
@@ -9,13 +8,6 @@ function atualizarPos(){
 
                 let posX = parseInt(quadrado.style.gridRow);
                 let posY = parseInt(quadrado.style.gridColumn);
-                let resultado = getTileValue(posX, posY, false);
-                
-                if(resultado == "c"){
-                    ChamadorAcao.mudarEstado(1);
-                } else if(resultado == "g") {
-                    ChamadorAcao.mudarEstado(0);
-                }
             }
             
             QUADRADOS.forEach(q => {

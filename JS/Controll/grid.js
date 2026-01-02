@@ -38,8 +38,7 @@ function criarGrid(x, y, sprites) {
     quadradoEl.src = spriteAtual;
 
     criarGrid._indiceSprite = (criarGrid._indiceSprite + 1) % sprites.length;
-    setTileValue("g", x, y, false);
-
+    
     quadradoEl.classList.add("tamPadrao");
     posicionarGrid(quadradoEl, x, y);
     fixarAoConteiner(quadradoEl);

@@ -6,17 +6,14 @@ const TEXTINHOS_MOTIVACIONAIS = [
     "Levante, e tente novamente pô!",
 ]
 
-function voltarAoInicio(){
-    window.location.replace("mapa.html");
-}
 function fimDeJogo(){
-    
     let rd = randomVec(TEXTINHOS_MOTIVACIONAIS);
+    apagarSala();
     TELA_GAME_OVER.innerHTML = `
-        <h2>Fim da Linha!</h2>
-        <img src="">
-        <h3>${rd}</h3>
-        <button onclick="voltarAoInicio()">Voltar</button>
+        <h1 class="fonte-futuretimes">Game Over</h1>
+        
+        <p class="fonte-comum">${rd}</p>
+        <button onclick="redirecionarUltimaSala()">Voltar</button>
     `;
     TELA_GAME_OVER.style.display = "flex";
 }

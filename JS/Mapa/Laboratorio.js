@@ -1,33 +1,30 @@
-desenharGrade(5, "ceramica", false);
-const JOGADOR_EL = document.createElement("img");   
-const DADOS = getDados();
-let jogador = new Player(DADOS.vidaBase, JOGADOR_EL, "../../Sprites/Player/base.svg", DADOS.defesaBase);
+const SALA = getPlace("laboratorio");
 
-function getObjectPlayer(){
-    return jogador;
-}
+marcarSala(SALA.link);
+setBackground(SALA.background);
+desenharGrade("ceramica", false);
 
-const incubator = document.createElement("div");
+const FLAG_NOME_SALA = document.querySelector(".sala-name");
+FLAG_NOME_SALA.innerHTML = `${SALA.nome}`;
 
-const portaEl = document.createElement("div");
-const portaUm = new Porta(portaEl, "../../mapa.html");
-
-posicionarGrid(portaEl, 5, 3);
-fixarAoConteiner(portaEl);
-
-incubator.classList.add("incubadora");
-incubator.classList.add("tamPadrao");
-
-posicionarGrid(incubator, 3, 3);
-fixarAoConteiner(incubator);
-
-const posTochas = [[2, 1], [2, 5], [4, 1], [4, 5]]
+const posTochas = [[2, 1], [4, 1], [2, 5], [4, 5]]
 for(let i =0; i<4; i++){
-    const novaTocha = document.createElement("div");
-    novaTocha.classList.add("tocha");
-    novaTocha.classList.add("tamPadrao");
-    posicionarGrid(novaTocha, posTochas[i][0], posTochas[i][1]);
-    fixarAoConteiner(novaTocha);
+    const novaTochaEL = document.createElement("img");
+    setSprite(novaTochaEL, "entidade", "tocha");
+    let novaTocha = new FixedEntity(novaTochaEL, [posTochas[i][0], posTochas[i][1]], 2);
 }
 
+const portaEl = document.createElement("img");
+const portaUm = new DirectLink("door", portaEl, "camaraCentral.html", [3, 5], 2);
 
+const maquinaCientificaEL = document.createElement("img");
+setSprite(maquinaCientificaEL, "entidade", "maquinaCientifica");
+let novaMaquina = new FixedEntity(maquinaCientificaEL, [3,3], 2);
+
+const globoEL = document.createElement("img");
+setSprite(globoEL, "entidade", "globo");
+let novoGlobo = new FixedEntity(globoEL, [5,4], 2);
+
+const reportEL = document.createElement("img");
+setSprite(reportEL, "entidade", "mesaRelatorio");
+let reportTable = new FixedEntity(reportEL, [5,2], 2);

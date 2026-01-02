@@ -17,7 +17,7 @@ class Player{
 
     inicializarElemento() {
         this.elemento.src = this.sprite;
-        this.elemento.classList.add("jogador", "tamPadrao");
+        this.elemento.classList.add("player", "tamPadrao", "layerTres");
         this.elemento.id = "jogador"; 
         posicionarGrid(this.elemento, 1, 1);
         fixarAoConteiner(this.elemento);
@@ -32,11 +32,15 @@ class Player{
     podeAtacar(){
         return this.podeAtaca;
     }
+
     bloquearAtaque(){
         if(this.podeAtaca){
             this.podeAtaca = false;
         }
-        
+
+        setTimeout(()=>{
+            this.podeAtaca = true;
+        }, this.tempoEspera * 1000);
     }
 
     getPosicao() {
@@ -64,7 +68,7 @@ class Player{
             picarRed();
             exibirDano((dano - this.defesa), 1);
             if(this.vida >= 0){
-                atualizarVida(this.vida);
+                atualizarVida(this.vida, this.vidaInicial);
             }
             if(this.vida <= 0){
                 this.morto = true;
@@ -83,7 +87,7 @@ class Player{
         else{
             this.vida += quantidade;
         }
-        atualizarVida(this.vida);
+        atualizarVida(this.vida, this.vidaInicial);
     }
 }
 

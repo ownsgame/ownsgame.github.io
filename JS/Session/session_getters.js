@@ -43,3 +43,7 @@ function getSessionRecursos(){
 function getSessionUltimaSala(){
     return getSessionItem("ultimaSala");
 }
+
+function getTempoEspera(){
+    return getSessionItem("tempoEspera");
+}

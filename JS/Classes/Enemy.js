@@ -9,7 +9,7 @@ class Inimigo{
         this.vida = randomInt(DadosInimigo.minVida, DadosInimigo.maxVida);
         this.defesa = randomInt(DadosInimigo.minDefesa, DadosInimigo.maxDefesa);
         this.ataque = randomInt(DadosInimigo.minAtaque, DadosInimigo.maxAtaque);
-        this.time = DadosInimigo.intervalo;
+        this.intervalo = DadosInimigo.intervalo;
         this.animacao = new AnimatedEntity(this.elemento, DadosInimigo.sprites, DadosInimigo.hover, 200);
 
         const possiveisRecompensas = DadosInimigo.recompensas;
@@ -27,19 +27,18 @@ class Inimigo{
             quantidade: QUANT,
         }
 
-        this.modoAlerta();
         this.setClasses();
+        this.modoAlerta();
+        this.elemento.onclick = () => this.clique();
     }
 
-
     setClasses(){
-        this.elemento.classList.add("tamPadrao", "layerTres");
+        this.elemento.classList.add("inimigo", "tamPadrao", "layerTres");
     }
 
     estaEmCombate(){
         return this.emCombate;
     }
-
     getVida(){
         return this.vida;
     }
@@ -50,17 +49,15 @@ class Inimigo{
         return this.defesa;
     }
 
-    getTime(){
-        return this.time;
+    getIntervalo(){
+        return this.intervalo;
     }
+
     getPosicao() {
         return {
         x: parseInt(this.elemento.style.gridRow),
         y: parseInt(this.elemento.style.gridColumn)
         };
-    }
-    getDano(){
-        return this.ataque;
     }
 
     static setThisGrid(objeto, elementoEl, cordX, cordY){
@@ -71,36 +68,50 @@ class Inimigo{
     }
 
     modoAlerta(){
-        let jogador = getObjectPlayer();
+        const PLAYER = getObjectPlayer();
 
         setInterval(()=>{
-            if(colisionGrid(jogador.getElemento(), this.elemento)){
+            if(colisionGrid(PLAYER.getElemento(), this.elemento)){
                 this.emCombate = true;
             }
-            else{
+            else {
                 this.emCombate = false;
             }
-        }, 500);
+        }, 100);
+    }
+
+    clique(){
+        const PLAYER = getObjectPlayer();
+
+        if(PLAYER.podeAtacar()){
+            const DANO = PLAYER.getAtaque();
+            PLAYER.bloquearAtaque();
+            this.sofrerDano(DANO);
+        }
     }
 
     sofrerDano(dano){
         let danoTotal = dano - this.defesa >= 0 ? dano - this.defesa : randomInt(1, 4);
         this.vida -= danoTotal;
         exibirDano(danoTotal);
+
         if(this.vida <= 0){
             this.morrer();
+            return;
         }  
+        this.elemento.style.filter = "brightness(200)";
+
+        setTimeout(() => {
+            this.elemento.style.filter = "brightness(1)";
+        }, 300);
     }
 
     morrer(){
-        
         if(this.recompensa != null){
             let tipo = this.recompensa.tipo;
             let quantidade = this.recompensa.quantidade;
             addReward(tipo, quantidade);
             mostrarRecompensas(tipo, quantidade);
-            
-            ChamadorAcao.mudarEstado(0);
         }
 
         this.remover();

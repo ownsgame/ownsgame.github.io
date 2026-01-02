@@ -1,23 +1,25 @@
+const PAINEL_STATUS = document.getElementById("status");
 
-function verificarAcaoInicial(){
-    const QUADRADOS = document.querySelectorAll(".tiles");
-    if(QUADRADOS[0].classList.contains("bau")){
-        ChamadorAcao.mudarEstado(1);
-    } else {
-        ChamadorAcao.mudarEstado(0);
-    }
-}
+PAINEL_STATUS.innerHTML = 
+`
+    <div id="status-hp" class="status-item">
+        <h3 id="status-vida" class="status-item"><i class="fa-solid fa-heart"></i> ${getSessionVida()}/${getSessionVida()}</h3>
+    </div>
+
+    <h3 id="contagem-ataque" class="status-item fonte-comum"></h3>
+    <div id=""></div>
+    <div id="dados-inimigo"></div>
+    <button class="status-item botao-status" id="botao-explorar" onclick="resetar()"></button>
+    <button class="botao-ativo" id="botao-explorar" onclick="abrirTelaMenuJogo()">Menu</button>
+`;
+
+const VIDA_TEXTO = document.getElementById("status-vida");
+const BARRA_HP = document.getElementById("status-hp");
 
 function limparTelaInimigo(){
     const tela = document.getElementById("dados-inimigo");
-
     tela.innerHTML = ``;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    verificarAcaoInicial();
-});
-
 
 let intervaloContador = null;
 
@@ -33,6 +35,12 @@ function iniciarContador(tempo, dano) {
             CONTADOR.innerHTML = `Dano Recebido!`;
         }
         else{
+            if(tempo < 1000){
+                CONTADOR.classList.add("tx-yellow");
+            }
+            else{
+                CONTADOR.classList.remove("tx-yellow");
+            }
             CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Ataque em: ${(tempo / 1000).toFixed(1)}s`;
         }       
 
@@ -46,7 +54,7 @@ function iniciarContador(tempo, dano) {
 
             if (aindaEmCombate) {
                 const inimigo = inimigos.find(i => i.estaEmCombate());
-                iniciarContador(inimigo.getTime(), dano);
+                iniciarContador(inimigo.getIntervalo(), dano);
             } else {
                 resetarContador();
             }
@@ -62,12 +70,7 @@ function resetarContador() {
         intervaloContador = null;
     }
 
-    CONTADOR.innerHTML = `Fora de Combate!`;
-}
-
-function atualizarCoordenadas(x, y){
-    const CORDS_EL = document.getElementById("coords");
-    CORDS_EL.innerHTML = `X: ${x}, Y: ${y}`;
+    CONTADOR.innerHTML = ``;
 }
 
 function fecharMenuRewards(){
@@ -96,4 +99,16 @@ function exibirDano(dano, tipo = 0){
 
 function fecharAbaStatus(){
     fecharTela("status");
+}
+
+function atualizarVida(vida, total){
+    VIDA_TEXTO.innerHTML = `<i class="fa-solid fa-heart"></i> HP: ${vida} / ${total}`;
+    
+    let porcentagem = (vida / total) * 100;
+
+    BARRA_HP.style.backgroundImage = `linear-gradient(
+        to right,
+        rgb(50, 14, 255) ${porcentagem}%,
+        black ${porcentagem}%
+    )`;
 }

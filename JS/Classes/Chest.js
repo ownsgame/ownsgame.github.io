@@ -20,12 +20,11 @@ class Chest extends FixedEntity{
 
                 const row = parseInt(this.elemento.style.gridRow);
                 const col = parseInt(this.elemento.style.gridColumn);
-                setTileValue("g", row, col, false);
 
                 this.setSprite(this.sprites[1]);
+                this.elemento.classList.add("no-click");
                 mostrarRecompensas(this.recompensa, this.quantidade);
-                
-                ChamadorAcao.mudarEstado(0);
+
             }
         });
     }

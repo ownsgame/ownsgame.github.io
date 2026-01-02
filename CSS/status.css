@@ -1,15 +1,14 @@
 #status{
     background-image: var(--gradienteAzul);
     border-radius: 1rem;
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1.5rem;
     gap: 0.2rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-
-    width: 19vw;
+    
     z-index: 7;
     position: absolute;
     right: 20px;
@@ -55,18 +54,10 @@
     width: 100%; height: 30px;
 }
 
-#coords{
-    font-size: 12pt;
-    font-family: "Ysabeau Infant", sans-serif;
-    text-align: center;
-    color: white;
-}
-
 #contagem-ataque{
     font-size: 12pt;
     font-family: "Ysabeau Infant", sans-serif;
     text-align: center;
-    color: white;
 }
 
 #dados-inimigo{
@@ -78,8 +69,9 @@
 
 .reward{
     color: white;
-    background-color: rgb(14, 30, 255);
-    border: 3px solid rgb(13, 13, 73);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-image: var(--gradienteAzul);
     position: absolute;
     z-index: 10;
     width: 70vh; height: 70vh;
@@ -129,12 +121,13 @@
 }
 
 #damage-count h2{
-    font-family: "Delius Swash Caps";
+    font-family: "FutureTimes";
     font-size: 50pt;
 }
 #damage-count h3{
-    font-family: "Delius Swash Caps";
+    font-family: "FutureTimes"; 
     font-size: 30pt;
+    letter-spacing: 3px;
 }
 
 #show-rewards{
@@ -161,9 +154,11 @@
 
 #screen-show-rewards{
     color: white;
-    font-family: "Delius Swash Caps";
-    background-color: rgb(14, 30, 255);
-    border: 3px solid rgb(13, 13, 73);
+    font-family: "FutureTimes"; 
+    letter-spacing: 3px;
+
+    border-radius: 1rem;
+    background-image: var(--gradienteAzul);
     position: absolute;
     z-index: 8;
     width: 90vw; height: 85vh;
