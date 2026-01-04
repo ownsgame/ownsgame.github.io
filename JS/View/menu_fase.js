@@ -1,10 +1,22 @@
+function cardItem(sprite, quantidade){
+    return `
+        <div class="cardReward">
+            <img src="${sprite}"> 
+            <p class="fonte-comum">x${quantidade}</p>
+        </div>
+    `;
+}
+
 function abrirTelaMenuJogo(){
     const TELA = document.getElementById("menu-jogo");
     const NOME_FASE = getLevelName();
 
     let string = `
         <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
-        <p class="fonte-comum">Atenção:<i>"O jogo ainda está rodando no fundo!"</i></p>
+        <p class="fonte-comum alerta">
+            <i class="fa-solid fa-triangle-exclamation"></i> 
+            Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
+        </p>
     `;
     string += `
         <div class="botoes-alinhados">
@@ -19,7 +31,7 @@ function abrirTelaMenuJogo(){
 }
 
 function rewardsToHtml(){
-    let string = `<h2 class="fonte-futuretimes">Itens Coletados:</h2>`;
+    let string = `<h3 class="fonte-futuretimes">Coletados:</h3>`;
     let quantidadeTipos = Object.keys(rewards).length;
 
     if(quantidadeTipos === 0){
@@ -30,13 +42,7 @@ function rewardsToHtml(){
         for (let tipo in rewards) {
 
             const RECOMPENSA = getItem(tipo);
-            string += 
-            `
-                <div class="cardReward">
-                    <img src="${RECOMPENSA.sprite}"> 
-                    <h3 class="fonte-comum">x${rewards[tipo]}</h3>
-                </div>
-            `;
+            string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
         }
         string += `</div>`;
     }
@@ -44,7 +50,7 @@ function rewardsToHtml(){
 }
 
 function rewardsSelectToHtml(){
-    let string = `<h2 class="fonte-futuretimes">Recompensas Obtidas:</h2>`;
+    let string = `<h3 class="fonte-futuretimes">Recompensas Obtidas:</h3>`;
     let quantidadeTipos = Object.keys(rewards).length;
 
     if(quantidadeTipos === 0){
@@ -52,7 +58,6 @@ function rewardsSelectToHtml(){
     } 
     else 
     {
-        
         string += 
         `
             <h3 class="fonte-comum">Recursos:</h3>
@@ -63,13 +68,7 @@ function rewardsSelectToHtml(){
             const RECOMPENSA = getItem(tipo);
 
             if(!RECOMPENSA.consumivel && RECOMPENSA.destino == "recursos"){
-                string += 
-                `
-                    <div class="cardReward">
-                        <img src="${RECOMPENSA.sprite}"> 
-                        <h3 class="fonte-comum">x${rewards[tipo]}</h3>
-                    </div>
-                `;
+                string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
             }            
         }
         string += `</div>`;
@@ -84,13 +83,7 @@ function rewardsSelectToHtml(){
             const RECOMPENSA = getItem(tipo);
 
             if(!RECOMPENSA.consumivel && RECOMPENSA.destino == "inventário"){
-                string += 
-                `
-                    <div class="cardReward">
-                        <img src="${RECOMPENSA.sprite}"> 
-                        <h3 class="fonte-comum">x${rewards[tipo]}</h3>
-                    </div>
-                `;
+                string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
             }            
         }
         string += `</div>`;
@@ -105,7 +98,10 @@ function showRewards(){
 
     let string = `
         <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
-        <p class="fonte-comum">Atenção:<i>"O jogo ainda está rodando no fundo!"</i></p>
+        <p class="fonte-comum alerta">
+            <i class="fa-solid fa-triangle-exclamation"></i> 
+            Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
+        </p>
     `;
 
     string += `${rewardsToHtml()}`;

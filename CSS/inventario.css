@@ -28,7 +28,7 @@ main{
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     box-sizing: border-box;
-    overflow: auto;
+    
 
     display: flex;
     flex-direction: row-reverse;
@@ -46,6 +46,7 @@ section{
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
+    overflow: auto;
 }
 
 .inventario-cabecalho, .inventario-corpo{
@@ -89,7 +90,7 @@ h3{
 
 @media (max-width: 800px) {
     main{ flex-direction: column-reverse;}
-    .inventario-image{width: 100px; height: 100px;}
+    .inventario-image{width: 150px; height: 150px;}
     
 }
 
@@ -173,4 +174,46 @@ h3{
 
 .item {
     width: 64px; height: 64px;
+}
+
+@media (max-width: 700px){
+    .inventario-cabecalho, .inventario-corpo{
+        width: 98%;
+        flex-direction: column;
+    }
+
+    .inventario-corpo{
+        gap: 0.5rem;
+    }
+
+    main{
+        width: 95vw;
+        height: 95vh;
+    }
+
+    section{
+        gap: 0.5rem;
+    }
+
+    .inventario-dados{
+        width: 100%;
+    }
+
+    .inventario-dados .row-buttons{
+        width: 100%;
+    }
+
+    .atributos-alinhados{
+        
+        gap: 0.5rem;
+        flex-direction: column;
+    }
+
+    .atributo{
+        gap: 0.5rem;
+        border-bottom: none;
+    }
+    .atributo:hover{
+        border-bottom: none;
+    }
 }

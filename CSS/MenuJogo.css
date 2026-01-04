@@ -1,6 +1,7 @@
 .menuJogo{
     color: white;
     background-image: var(--gradienteAzul);
+    border: 1px solid rgba(255, 255, 255, 0.096);
     border-radius: 1rem;
     
     position: absolute;
@@ -15,6 +16,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.2rem;
+}
+
+.menuJogo h2{
+    font-size: 50pt;
+}
+
+.menuJogo h3{
+    font-size: 25pt;
+}
+
+@media (max-width: 660px) {
+    .menuJogo h2{
+        font-size: 30pt;
+    }
+
+    .menuJogo h3{
+        font-size: 20pt;
+    }
+
+    .menuJogo{
+        width: 98vw; height: 95vh;
+    }
 }
 
 .game-over{

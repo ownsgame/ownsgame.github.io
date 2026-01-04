@@ -51,7 +51,7 @@ class IndirectLink extends FixedEntity{
                     <button class="botao-ativo" onclick="">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
-                    <button class="botao-ativo" onclick="window.location = 'Inventario.html'">
+                    <button class="botao-ativo" onclick="window.location = 'inventario.html'">
                         <i class="fa-solid fa-toolbox"></i>
                     </button>
                     <button onclick="fecharTela('show-place')">

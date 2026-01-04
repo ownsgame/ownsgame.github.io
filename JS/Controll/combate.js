@@ -32,24 +32,6 @@ setInterval(() => {
 }, 200);
 
 
-function atacarTarget(){
-    if(enemyTarget != null){
-        let player = getObjectPlayer(); 
-        let dano = player.getAtaque();
-            
-        enemyTarget.sofrerDano(dano);
-        mostrarInimigoAlvo(enemyTarget);
-
-        if(enemyTarget.getVida() <= 0){
-            enemyTarget = null;
-            resetarContador();
-
-        } else {
-            iniciarContador(enemyTarget.getTime(), enemyTarget.getDano());
-        }
-    }    
-}
-
 function mostrarInimigoAlvo(inimigo){
     const tela = document.getElementById("dados-inimigo");
 

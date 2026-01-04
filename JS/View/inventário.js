@@ -45,7 +45,7 @@ function loadGear(){
     `
 
             <div class="gear">
-                <h2 class="fonte-futuretimes">Arsenal</h2>
+                <h2 class="fonte-comum">Arsenal:</h2>
                 <div class="itens-conteiner"> 
                     <div class="item-conteiner">
                         <img class="item" src="Sprites/IU/sword_null_icon.svg">
@@ -57,7 +57,7 @@ function loadGear(){
                         <img class="item" src="Sprites/IU/scepter_null_icon.svg">
                     </div>
                 </div>
-                <h2 class="fonte-futuretimes">Roupagem</h2>
+                <h2 class="fonte-comum">Roupagem:</h2>
                 <div class="itens-conteiner"> 
                     <div class="item-conteiner">
                         <img class="item" src="Sprites/IU/sword_null_icon.svg">

@@ -4,7 +4,7 @@ const MENU_OPTIONS = document.querySelector(".options");
 MENU_OPTIONS.innerHTML = 
 `
     <h1 class="sala-name fonte-futuretimes">Sala</h1>
-    <h1 class="fonte-futuretimes">Opcoes</h1>
+    <h1 class="fonte-comum">Opções:</h1>
     <div class="row-buttons">
         <button>
             <i class="fa-solid fa-volume-low"></i>

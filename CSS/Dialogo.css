@@ -38,3 +38,15 @@
     flex-direction: row;
     gap: 1rem;
 }
+
+@media (max-width: 800px){
+    #caixa-dialogo{
+        flex-direction: column;
+        width: 90vw; height: 33vh;
+        bottom: 3vh;
+    }
+
+    #caixa-dialogo .row-buttons{
+        flex-direction: row;
+    }
+}

@@ -38,6 +38,8 @@ class Player{
             this.podeAtaca = false;
         }
 
+        animarBarraTempo(this.tempoEspera * 1000);
+
         setTimeout(()=>{
             this.podeAtaca = true;
         }, this.tempoEspera * 1000);

@@ -4,10 +4,21 @@
     left: 1rem;
 }
 
+@media (max-width: 860px){
+    .menu{
+        position: absolute;
+        top: auto;
+        bottom: 1rem;
+        left: 40vw;
+        z-index: 7;
+    }
+}
+
 .options{
     color: white;
     position: absolute;
     background-image: var(--gradienteAzul);
+    border: 1px solid rgba(255, 255, 255, 0.096);
     border-radius: 1rem;
     width: 40vw; height: 50vh;
     z-index: 100;
@@ -20,6 +31,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 940px) and (min-width: 651px){
+    .options{
+        width: 60vw; height: 50vh;
+    }
+}
+
+@media (max-width: 650px) and (min-width: 401px){
+    .options{
+        width: 70vw; height: 80vh;
+    }
+}
+
+@media (max-width: 400px){
+    .options{
+        width: 90vw; height: 90vh;
+    }
 }
 
 .show-place{

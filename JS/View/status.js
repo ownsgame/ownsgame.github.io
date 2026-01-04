@@ -6,6 +6,13 @@ PAINEL_STATUS.innerHTML =
         <h3 id="status-vida" class="status-item"><i class="fa-solid fa-heart"></i> ${getSessionVida()}/${getSessionVida()}</h3>
     </div>
 
+    <div id="status-time-attack" class="status-item">
+        <h3 class="status-item fonte-comum">
+        <i class="fa-solid fa-hand-fist"></i>
+             ${getSessionAtaque()}
+        </h3>
+    </div>
+
     <h3 id="contagem-ataque" class="status-item fonte-comum"></h3>
     <div id=""></div>
     <div id="dados-inimigo"></div>
@@ -26,6 +33,7 @@ let intervaloContador = null;
 function iniciarContador(tempo, dano) {
     tempo *= 1000;
     const CONTADOR = document.getElementById("contagem-ataque");
+    CONTADOR.style.display = "flex";
 
     if (intervaloContador) clearInterval(intervaloContador);
 
@@ -41,7 +49,7 @@ function iniciarContador(tempo, dano) {
             else{
                 CONTADOR.classList.remove("tx-yellow");
             }
-            CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Ataque em: ${(tempo / 1000).toFixed(1)}s`;
+            CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>  Ataque em: ${(tempo / 1000).toFixed(1)}s`;
         }       
 
         if (tempo <= 0) {
@@ -71,6 +79,7 @@ function resetarContador() {
     }
 
     CONTADOR.innerHTML = ``;
+    CONTADOR.style.display = "none";
 }
 
 function fecharMenuRewards(){
@@ -84,7 +93,7 @@ function exibirDano(dano, tipo = 0){
     let string = `<h2>${dano}</h2>`;
     
     if(tipo == 0){
-        string += `<h3>Dano Infligido</h3>`;
+        string += `<h3>Dano Causado</h3>`;
     }
     else{
         string += `<h3>Dano Sofrido</h3>`
@@ -111,4 +120,30 @@ function atualizarVida(vida, total){
         rgb(50, 14, 255) ${porcentagem}%,
         black ${porcentagem}%
     )`;
+}
+
+function animarBarraTempo(tempoMs){
+    const barra = document.getElementById("status-time-attack");
+    const inicio = performance.now();
+
+    function atualizar(agora){
+        const decorrido = agora - inicio;
+        let progresso = decorrido / tempoMs;
+
+        if(progresso > 1) progresso = 1;
+
+        const porcentagem = progresso * 100;
+
+        barra.style.background = `linear-gradient(
+            to right,
+            rgb(20, 102, 54) ${porcentagem}%,
+            rgba(21, 21, 22, 1) ${porcentagem}%
+        )`;
+
+        if(progresso < 1){
+            requestAnimationFrame(atualizar);
+        }
+    }
+
+    requestAnimationFrame(atualizar);
 }

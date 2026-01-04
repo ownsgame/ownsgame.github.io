@@ -100,6 +100,7 @@ class Inimigo{
             return;
         }  
         this.elemento.style.filter = "brightness(200)";
+        iniciarContador(this.intervalo, this.ataque);
 
         setTimeout(() => {
             this.elemento.style.filter = "brightness(1)";

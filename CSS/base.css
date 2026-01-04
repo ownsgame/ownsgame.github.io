@@ -23,6 +23,10 @@
     color: white;
 }
 
+.fonte-roxa{
+    color: rgb(50, 14, 255);
+}
+
 button{
     padding: 0.5rem 2rem;
     font-weight: bolder;
@@ -76,6 +80,10 @@ button:hover{
     flex: 1;
     width: 100%;
     box-sizing: border-box;
+}
+
+.red-effect{
+    backdrop-filter: blur(10px);
 }
 
 .blur-box{
@@ -166,4 +174,13 @@ a:hover{
 
 .tx-yellow{
     color: rgb(255, 255, 43);
+}
+
+.alerta{
+    background-color: rgba(255, 255, 255, 0.151);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 90%;
+    box-sizing: border-box;
 }
