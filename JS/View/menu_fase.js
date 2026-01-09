@@ -20,8 +20,8 @@ function abrirTelaMenuJogo(){
     `;
     string += `
         <div class="botoes-alinhados">
-            <button class="botao-ativo" onclick="showRewards()">Recompensas</button>
-            <button class="botao-ativo" onclick="redirecionarUltimaSala()">Abandonar Partida</button>
+            <button class="botao-ativo" onclick="showRewards()">Coletados</button>
+            <button class="botao-ativo red-button" onclick="redirecionarUltimaSala()">Desistir</button>
         </div>
     `;
 
@@ -50,18 +50,19 @@ function rewardsToHtml(){
 }
 
 function rewardsSelectToHtml(){
-    let string = `<h3 class="fonte-futuretimes">Recompensas Obtidas:</h3>`;
+    let string = ``;
     let quantidadeTipos = Object.keys(rewards).length;
 
     if(quantidadeTipos === 0){
-        string += `<h3 class="fonte-comum">Você não coletou nenhuma recompensa! Sério que você entrou na fase realmente para isso?</h3>`;
+        string += `<p class="fonte-comum">Você não coletou nenhuma recompensa! Sério que você entrou na fase realmente para isso?</p>`;
     } 
     else 
     {
         string += 
         `
-            <h3 class="fonte-comum">Recursos:</h3>
-            <div class="dequeRewards">
+            <section class="deque-section">
+                <h3 class="fonte-comum">Recursos:</h3>
+                <div class="dequeRewards">
         `;
 
         for (let tipo in rewards) {
@@ -71,12 +72,16 @@ function rewardsSelectToHtml(){
                 string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
             }            
         }
-        string += `</div>`;
+        string += `
+                </div>
+            </section>
+        `;
 
         string += 
         `
-            <h3 class="fonte-comum">Equipamentos:</h3>
-            <div class="dequeRewards">
+            <section class="deque-section">
+                <h3 class="fonte-comum">Equipamentos:</h3>
+                <div class="dequeRewards">
         `;
 
         for (let tipo in rewards) {
@@ -86,7 +91,10 @@ function rewardsSelectToHtml(){
                 string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
             }            
         }
-        string += `</div>`;
+        string += `
+                </div>
+            </section>
+        `;
     }
 
     return string;    
@@ -118,7 +126,13 @@ function showEndRewards(){
     let string = `
         <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
     `;
-    string += `${rewardsSelectToHtml()}`;
+    string += 
+    `
+        <h3 class="fonte-comum">Recompensas Obtidas:</h3>
+        <div class="deque-section-conteiner">
+            ${rewardsSelectToHtml()}
+        </div>
+    `;
 
     string += `<button class="botao-ativo" onclick='redirecionarUltimaSala()'>Sair</button>`;
     TELA.innerHTML = string;

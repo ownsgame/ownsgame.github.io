@@ -106,14 +106,14 @@
 }
 
 .reward h3{
-    font-family: "Delius Swash Caps";
+    font-family: "Ysabeau Infant", sans-serif;
     font-size: 18pt;
     text-align: center;
 }
 
 .reward img{
     width: 120px; height: 120px;
-    filter: drop-shadow(-3px 5px 30px #ffffff);
+    filter: drop-shadow(-3px 5px 30px #ffffffa2);
 }
 .reward p{
     font-family: "Ysabeau Infant", sans-serif;

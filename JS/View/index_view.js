@@ -10,15 +10,28 @@ function mostrarSaves(saves){
 
     for(let i = 0; i < 3; i ++){
         if(saves[i] == null){
-            stringHTML +=`<button onclick="createSaveAt(${i})"> + </button>`;
+            stringHTML +=`
+                <div class="row-buttons animated-buttons">
+                    <button class="save-button empty" onclick="createSaveAt(${i})">
+                        + Novo Save
+                    </button>
+                </div> 
+            `;
         }
         else{
             const SAVE = saves[i];
             stringHTML +=
             `
                 <div class="row-buttons animated-buttons">
-                    <button onclick="jogar(${i})"> ${i + 1} - Jogar</button>
-                    <button onclick="deletar(${i})"><i class="fa-solid fa-trash"></i></button>
+                    <button onclick="jogar(${i})" class="save-button"> 
+                        ${saves[i].nome}
+                    </button>
+                    <button onclick="jogar(${i})" class="save-button"> 
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button onclick="deletar(${i})" class="save-button red-button">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
                 </div>
             `;
         }
@@ -27,7 +40,9 @@ function mostrarSaves(saves){
     stringHTML += 
     `
         </div>
-        <button class="animated-aparecer" onclick="fecharTelaPrincipal()">Fechar</button>
+        <button class="animated-aparecer red-button" onclick="fecharTelaPrincipal()">
+            <i class="fa-solid fa-x"></i>
+        </button>
     `;
     TELA.innerHTML = stringHTML;
     abrirTela("index-popup");
@@ -49,26 +64,13 @@ function mostrarOpcoes(saves){
         <div class="column-buttons animated-buttons">
     `;
 
-    for(let i = 0; i < 3; i ++){
-        if(saves[i] == null){
-            stringHTML +=``;
-        }
-        else{
-            const SAVE = saves[i];
-            stringHTML +=
-            `
-                <button onclick="deletar(${i})">
-                    <i class="fa-solid fa-trash"></i>: Save ${i + 1}
-                </button>
-            `;
-        }
-    }
-
     stringHTML += 
     `
-        <button>Som: Ativo</button>
+            <button><i class="fa-solid fa-volume-low"></i></button>
+            <button class="animated-aparecer red-button" onclick="fecharTelaPrincipal()">
+                <i class="fa-solid fa-x"></i>
+            </button>
         </div>
-        <button class="animated-aparecer" onclick="fecharTelaPrincipal()">Fechar</button>
     `;
     TELA.innerHTML = stringHTML;
     abrirTela("index-popup");
@@ -81,14 +83,16 @@ function mostrarSobre(){
     let stringHTML = 
     `
         <h1 class="fonte-futuretimes animated-aparecer">Sobre</h1>
-        <p class="texto-padrão"><b>Versão:</b> 0.1.2 - Estruturas Iniciais</p>
+        <p class="texto-padrão"><b>Versão:</b> 0.1.3 - Estruturação de Telas</p>
         <p class="texto-padrão">
-            Owns é um jogo onde o orgulho de um povo é testado ao limite, a descoberta do mundo
-            e lutas intrigantes irão mitigar um sentimento nacionalista? <br>
+            <i>Owns é um jogo onde o orgulho de um povo é testado ao limite, a descoberta do mundo
+            e lutas intrigantes irão mitigar um sentimento nacionalista?</i> <br>
             <b>Feito por:</b> 
-            <a href="https://github.com/samuscadev" target="_blank"><b>@samuscadev</b></a>
+            <a href="https://github.com/SamuelDevelop" target="_blank"><b>@samuscadev</b></a>
          - 2025 Projeto Pessoal</p>
-        <button class="animated-aparecer" onclick="fecharTelaPrincipal()">Fechar</button>
+        <button class="animated-aparecer red-button" onclick="fecharTelaPrincipal()">
+            <i class="fa-solid fa-x"></i>
+        </button>
     `;
 
     TELA.innerHTML = stringHTML;

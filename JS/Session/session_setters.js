@@ -57,3 +57,10 @@ function changeIniciante(){
 function setSessionUltimaSala(valor){
     setSessionItem("ultimaSala", valor);
 }
+
+function setArmaAtual(armaId){
+    let arma = getItem(armaId);
+    setSessionItem("armaAtual", armaId);
+    setSessionItem("ataque", arma.dano);
+    setSessionItem("tempoEspera", arma.espera);
+}

@@ -10,11 +10,11 @@ MENU_OPTIONS.innerHTML =
             <i class="fa-solid fa-volume-low"></i>
         </button>
         
-        <button class="botao-ativo" onclick="window.location = 'inventario.html'">
+        <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
             <i class="fa-solid fa-toolbox"></i>
         </button>
         
-        <button onclick="window.location = 'index.html'">
+        <button class="red-button" onclick="window.location = 'index.html'">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
         </button>
 

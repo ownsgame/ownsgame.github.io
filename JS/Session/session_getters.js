@@ -9,7 +9,11 @@ function getSessionItem(caminho) {
 }
 
 function getSessionVida(){
-    return getSessionItem("vida");
+    let vida = getSessionItem("vida");
+    let vidaMult = getSessionItem("vidaMult");
+    let vidaSum = getSessionItem("vidaSum");
+
+    return (vida + vidaSum) * vidaMult;
 }
 
 function getSessionAtaque(){

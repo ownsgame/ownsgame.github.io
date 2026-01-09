@@ -45,35 +45,78 @@ function loadGear(){
     `
 
             <div class="gear">
-                <h2 class="fonte-comum">Arsenal:</h2>
-                <div class="itens-conteiner"> 
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/sword_null_icon.svg">
-                    </div>
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/shield_null_icon.svg">
-                    </div>
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/scepter_null_icon.svg">
-                    </div>
-                </div>
-                <h2 class="fonte-comum">Roupagem:</h2>
-                <div class="itens-conteiner"> 
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/sword_null_icon.svg">
-                    </div>
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/shield_null_icon.svg">
-                    </div>
-                    <div class="item-conteiner">
-                        <img class="item" src="Sprites/IU/scepter_null_icon.svg">
-                    </div>
+                <h2 class="fonte-comum">Seu Arsenal Atual:</h2>
+                <div class="itens-conteiner">
+    ` 
+    let copiaDados = getSession();
+    
+    if(copiaDados.armaAtual == null || !copiaDados.armaAtual){
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('arma')">
+                <img class="item" src="Sprites/IU/sword_null_icon.svg">
+            </div>
+        `;
+    }
+    else{
+        let itemId = copiaDados.armaAtual;
+        const item = getItem(itemId);
+
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('arma')">
+                <img class="item" src="${item.sprite}">
+            </div>
+        `;
+    }
+
+    if(copiaDados.escudoAtual == null || !copiaDados.escudoAtual){
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('escudo')">
+                <img class="item" src="Sprites/IU/shield_null_icon.svg">
+            </div>
+        `;
+    }
+    else{
+        let itemId = copiaDados.armaAtual;
+        const item = getItem(itemId);
+
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('arma')">
+                <img class="item" src="${item.sprite}">
+            </div>
+        `;
+    }
+
+    if(copiaDados.poderAtual == null || !copiaDados.poderAtual){
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('cetro')">
+                <img class="item" src="Sprites/IU/scepter_null_icon.svg">
+            </div>
+        `;
+    }
+    else{
+        let itemId = copiaDados.armaAtual;
+        const item = getItem(itemId);
+
+        string +=
+        `
+            <div class="item-conteiner" onclick="loadChangeItem('arma')">
+                <img class="item" src="${item.sprite}">
+            </div>
+        `;
+    }
+                    
+    string +=      
+    `
                 </div>
             </div>
                         
             <div class="row-buttons animated-buttons">
                 <button>Alterar</button>
-                <button>Equipamentos</button>
                 <button onclick="loadItens()">Itens</button>
             </div>
     `;
@@ -115,6 +158,7 @@ function loadItens(){
         `
             <div class="item-conteiner" onclick="loadDataItem('${item.descricao}', '${RECURSOS[recurso]}')">
                 <img class="item" src="${item.sprite}">
+                <p class="fonte-comum">x${RECURSOS[recurso]}</p>
             </div>
         `
     }
@@ -128,6 +172,7 @@ function loadItens(){
         `
             <div class="item-conteiner" onclick="loadDataItem('${item.descricao}', '${INVENTARIO[recurso]}')">
                 <img class="item" src="${item.sprite}">
+                <p class="fonte-comum">x${INVENTARIO[recurso]}</p>
             </div>
         `
     }
@@ -149,4 +194,27 @@ function loadDataItem(descricao, quantidade){
         <br>
         <i>"${descricao}"</i>
     `;
+}
+
+function loadChangeItem(classe){    
+    let copiaDados = getSession();
+    const INVENTARIO = copiaDados.inventario;
+    let string = "";
+
+    for(let recurso in INVENTARIO){
+
+        let item = getItem(recurso);
+        if(item.classe == classe){
+            string += 
+            `
+                <div class="item-conteiner" onclick="trocaDeItens('${classe}', '${item.id}')">
+                    <img class="item" src="${item.sprite}">
+                </div>
+            `
+        }
+    }
+
+    string += "<button onclick='loadGear()'>Voltar</button>";
+
+    changeDados("Troca de Item", string);
 }

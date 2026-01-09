@@ -17,7 +17,9 @@ PAINEL_STATUS.innerHTML =
     <div id=""></div>
     <div id="dados-inimigo"></div>
     <button class="status-item botao-status" id="botao-explorar" onclick="resetar()"></button>
-    <button class="botao-ativo" id="botao-explorar" onclick="abrirTelaMenuJogo()">Menu</button>
+    <button class="botao-ativo" id="botao-explorar" onclick="abrirTelaMenuJogo()">
+        <i class="fa-solid fa-house"></i>
+    </button>
 `;
 
 const VIDA_TEXTO = document.getElementById("status-vida");

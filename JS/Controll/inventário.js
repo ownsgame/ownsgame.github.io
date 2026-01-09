@@ -30,6 +30,13 @@ function toogleSecaoInventario(aba){
     }
 }
 
+function trocaDeItens(classe, novoItemId){
+    if(classe == "arma"){
+        setArmaAtual(novoItemId);
+        loadGear();
+    }
+}
+
 function sair(){
     window.location(PLAYER_DADOS.ultimaSala);
 }

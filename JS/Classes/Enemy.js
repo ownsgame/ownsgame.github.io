@@ -98,13 +98,9 @@ class Inimigo{
         if(this.vida <= 0){
             this.morrer();
             return;
-        }  
-        this.elemento.style.filter = "brightness(200)";
+        }
+          
         iniciarContador(this.intervalo, this.ataque);
-
-        setTimeout(() => {
-            this.elemento.style.filter = "brightness(1)";
-        }, 300);
     }
 
     morrer(){

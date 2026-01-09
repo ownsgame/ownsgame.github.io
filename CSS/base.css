@@ -1,8 +1,9 @@
 :root {
     --gradientebranco: linear-gradient(white);
     --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
-    --gradienteAzul: linear-gradient(to bottom right, rgb(32, 60, 146), rgb(15, 39, 110), rgb(8, 27, 88));
+    --gradienteAzul: linear-gradient(to bottom right, rgb(16, 55, 170), rgb(10, 41, 133), rgb(3, 19, 73));
     --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
+    --gradienteVermelho: linear-gradient(to bottom right, rgb(206, 33, 33), rgb(184, 23, 23), rgb(94, 13, 13));
 }
 
 ::selection {
@@ -46,6 +47,22 @@ button:hover{
     background-image: linear-gradient(rgb(255, 255, 255));
     font-weight: bolder;
     color: rgb(68, 35, 160);
+}
+
+.red-button{
+    background-image: var(--gradienteVermelho);
+}
+
+.red-button:hover{
+    color: rgb(184, 23, 23);
+}
+
+.blue-button{
+    background-image: var(--gradienteAzul);
+}
+
+.blue-button:hover{
+    color: rgb(16, 55, 170);
 }
 
 .row-buttons{
@@ -121,14 +138,6 @@ button:hover{
 
 a{
     color: white;
-    letter-spacing: 3px;
-}
-
-a:hover{
-    background-image: var(--gradienteRoxo);
-    padding: 0.2rem 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.096);
-    transition: all 200ms ease-in-out;
 }
 
 .pointer{
@@ -176,6 +185,11 @@ a:hover{
     color: rgb(255, 255, 43);
 }
 
+.tela-comum{
+    background-image: var(--gradienteAzul);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+}
+
 .alerta{
     background-color: rgba(255, 255, 255, 0.151);
     border: 1px solid rgba(255, 255, 255, 0.096);
@@ -184,3 +198,4 @@ a:hover{
     width: 90%;
     box-sizing: border-box;
 }
+

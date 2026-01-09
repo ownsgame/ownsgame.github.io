@@ -21,10 +21,25 @@
 
 .menuJogo h2{
     font-size: 50pt;
+    margin: 0.2rem;
 }
 
 .menuJogo h3{
     font-size: 25pt;
+    margin: 0.2rem;
+}
+
+.deque-section-conteiner{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.deque-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 @media (max-width: 660px) {
@@ -38,6 +53,10 @@
 
     .menuJogo{
         width: 98vw; height: 95vh;
+    }
+
+    .deque-section-conteiner{
+        flex-direction: column;
     }
 }
 

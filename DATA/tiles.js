@@ -15,16 +15,11 @@ const TILES = [
         id: "mirrorDois",
         sprite: "Sprites/Tiles/mirror_2.svg"
     },
-    {
-        id: "mirrorChest",
-        sprite: "Sprites/Tiles/ch-mirror.svg",
-        spriteAberto: "Sprites/Tiles/co-mirror.svg",
-    },
 ]
 
 const TILES_CUSTER = {
     ceramica: ["Sprites/Tiles/ceramica_1.svg", "Sprites/Tiles/ceramica_2.svg"],
-    mirror: ["Sprites/Tiles/mirror_1.svg", "Sprites/Tiles/mirror_2.svg"],
+    mirror: ["Sprites/Tiles/mirror_2.svg", "Sprites/Tiles/mirror_1.svg"],
 }
 
 function getTileSprite(id){
