@@ -13,7 +13,7 @@ const portaEl = document.createElement("img");
 const espelhoEl = document.createElement("img");
 
 const portaUm = new DirectLink("door", portaEl, "laboratorio.html", [3, 1], 2);
-const bookshelf = new DirectLink("bookshelf", bookshelfEl, "index.html", [2, 5], 2);
+const bookshelf = new DirectLink("bookshelf", bookshelfEl, "testeBoss.html", [2, 5], 2);
 const espelho = new IndirectLink("mirror", espelhoEl, [3, 5], 2, "mirrorroom");
 const sabioOWN = new NPC("sabioown", sabioEl, [3, 3], 2);
 

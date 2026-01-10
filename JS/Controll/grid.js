@@ -1,13 +1,15 @@
 let haquadradoEls = false;
+let tilesAlt = 100;
+let tilesLarg = 100;
 
 function fixarAoConteiner(objeto){
     const CONTAINER = document.getElementById("conteiner");
     CONTAINER.appendChild(objeto);
 }
 
-function posicionarGrid(item, x, y){
-    item.style.gridRow = `${x}/${x}`;
-    item.style.gridColumn = `${y}/${y}`;
+function posicionarGrid(item, x, y, largura = 1, altura = 1){
+    item.style.gridRow = `${x} / ${x + altura}`;
+    item.style.gridColumn = `${y} / ${y + largura}`;
 }
 
 function getTileInPosition(x, y) {
@@ -81,6 +83,8 @@ function atualizarTamanhoPadrao() {
 
   const tamTileLargura = largura / 5;
   const tamTileAltura = altura / 5;
+  tilesAlt = tamTileAltura;
+  tilesLarg = tamTileLargura;
 
   const estilo = document.createElement("style");
   estilo.innerHTML = `
@@ -88,16 +92,34 @@ function atualizarTamanhoPadrao() {
       width: ${tamTileLargura}px;
       height: ${tamTileAltura}px;
     }
+
+    .boss {
+      width: ${tamTileLargura * 2}px;
+      height: ${tamTileAltura * 2}px;
+    }
   `;
 
   const antiga = document.getElementById("tamPadraoEstilo");
   if (antiga) antiga.remove();
+
   estilo.id = "tamPadraoEstilo";
   document.head.appendChild(estilo);
 }
 
 atualizarTamanhoPadrao();
 window.addEventListener("resize", atualizarTamanhoPadrao);
+
+function getTamanhosGrid(){
+    const grid = document.getElementById("conteiner");
+    const rect = grid.getBoundingClientRect();
+
+    return {
+        gridOffsetX: rect.left,
+        gridOffsetY: rect.top,
+        tileAlt: tilesAlt,
+        tileLarg: tilesLarg
+    }
+}
 
 
 

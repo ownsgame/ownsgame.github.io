@@ -169,16 +169,27 @@ a{
 }
 
 .player{
+    position: absolute;
     pointer-events: none;
 }
 
-.inimigo{
+.inimigo, .boss{
     cursor: pointer;
     transition: filter 0.300ms ease-in-out;
+    transition: grid-row 0.25s ease-in-out, grid-column 0.25s ease-in-out;
 }
 
-.inimigo:hover{
+.inimigo:hover, .boss:hover{
     filter: brightness(150%);
+}
+
+.boss{
+    z-index: 3;
+}
+
+.voador{
+    position: absolute;
+    transition: all 200ms ease-in-out;
 }
 
 .tx-yellow{

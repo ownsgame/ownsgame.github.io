@@ -33,12 +33,12 @@ class Player{
         return this.podeAtaca;
     }
 
-    bloquearAtaque(){
+    bloquearAtaque(mult = 1){
         if(this.podeAtaca){
             this.podeAtaca = false;
         }
 
-        animarBarraTempo(this.tempoEspera * 1000);
+        animarBarraTempo(this.tempoEspera * 1000 * mult);
 
         setTimeout(()=>{
             this.podeAtaca = true;
@@ -50,6 +50,18 @@ class Player{
         x: parseInt(this.elemento.style.gridRow),
         y: parseInt(this.elemento.style.gridColumn)
         };
+    }
+
+    getPixelPosicao(){
+        const tamanhos = getTamanhosGrid();
+
+        const xGrid = parseInt(this.elemento.style.gridRow);
+        const yGrid = parseInt(this.elemento.style.gridColumn);
+
+        const px = tamanhos.gridOffsetX + (yGrid - 1) * tamanhos.tileLarg + tamanhos.tileLarg / 2;
+        const py = tamanhos.gridOffsetY + (xGrid - 1) * tamanhos.tileAlt + tamanhos.tileAlt / 2;
+
+        return { px, py };
     }
 
     getMorto(){
