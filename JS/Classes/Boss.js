@@ -71,7 +71,7 @@ class Boss {
     sofrerDano(dano){
         let danoTotal = dano - this.defesa >= 0 ? dano - this.defesa : randomInt(1, 4);
         this.vida -= danoTotal;
-        exibirDano(danoTotal, 1);
+        exibirDano(danoTotal, 0);
         atualizarVidaChefe(this.vida, this.vidaInicial);
 
         if(this.vida <= 0){
@@ -87,7 +87,7 @@ class Boss {
     modoAlerta(){
         setInterval(()=>{
             this.atacar();
-        }, 1000);
+        }, 1200);
     }
 
     atacar(){
@@ -100,7 +100,7 @@ class Boss {
     }
 }
 
-let boss = new Boss(2);
+let boss = new Boss(1);
 
 let movimentos = [[4,4], [3,4], [2,4], [1, 4], [1, 3], [1, 2], [1, 1],
                   [2,1], [3,1], [4,1], [4,2], [4,3], [4,4]

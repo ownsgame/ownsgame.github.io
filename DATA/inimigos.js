@@ -3,6 +3,7 @@ const INIMIGOS_LIST =
     {
         id: "ghost",
         nome: "Ghosts",
+        capitulo: 1,
         maxVida: 25,
         minVida: 15,
         maxDefesa: 5,
@@ -27,6 +28,54 @@ const INIMIGOS_LIST =
         ],
         hover: "Sprites/Enemys/ghost.svg",
         intervalo: 5,
+    },
+    {
+        id: "flow",
+        nome: "Flows",
+        capitulo: 1,
+        maxVida: 210,
+        minVida: 115,
+        maxDefesa: 20,
+        minDefesa: 5,
+        maxAtaque: 30,
+        minAtaque: 20,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/1/flow.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/1/flow.svg",
+        intervalo: 5,
+    },
+    {
+        id: "flowy",
+        nome: "Flowys",
+        capitulo: 1,
+        maxVida: 300,
+        minVida: 120,
+        maxDefesa: 5,
+        minDefesa: 1,
+        maxAtaque: 35,
+        minAtaque: 15,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/1/flowy.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/1/flowy.svg",
+        intervalo: 3,
     }
 ];
 

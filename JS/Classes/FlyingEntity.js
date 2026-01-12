@@ -53,3 +53,4 @@ class FlyingEntity {
 }
 
 let entidade = new FlyingEntity(100, 100, 1, 1, 200, 25);
+entidade.perseguirJogador();

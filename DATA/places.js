@@ -41,6 +41,24 @@ const PLACES = [
         isDungeon: false,
         haveChests: false,
     },
+    {
+        id: "colinaDancante",
+        nome: "Colina das Flores que Dancam",
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/MirrorRoom-capa.svg",
+        link: "colinaDancante.html", 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        recompensas: 
+        { 
+            moeda: 54,
+            frutaCoracao: 24,
+            frutaEnergia: 22,
+        },
+
+        inimigos: ["flow"],
+        background: "Sprites/Ground/colina_background.svg",
+    },
 ]
 
 function getPlace(id){

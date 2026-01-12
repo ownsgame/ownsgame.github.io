@@ -10,7 +10,7 @@ class Inimigo{
         this.defesa = randomInt(DadosInimigo.minDefesa, DadosInimigo.maxDefesa);
         this.ataque = randomInt(DadosInimigo.minAtaque, DadosInimigo.maxAtaque);
         this.intervalo = DadosInimigo.intervalo;
-        this.animacao = new AnimatedEntity(this.elemento, DadosInimigo.sprites, DadosInimigo.hover, 200);
+        this.animacao = new AnimatedEntity(this.elemento, DadosInimigo.sprites, DadosInimigo.hover, 150);
 
         const possiveisRecompensas = DadosInimigo.recompensas;
 

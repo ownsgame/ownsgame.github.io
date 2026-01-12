@@ -42,7 +42,7 @@ class Player{
 
         setTimeout(()=>{
             this.podeAtaca = true;
-        }, this.tempoEspera * 1000);
+        }, this.tempoEspera * 1000 * mult);
     }
 
     getPosicao() {

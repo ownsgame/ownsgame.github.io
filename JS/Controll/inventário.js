@@ -40,3 +40,13 @@ function trocaDeItens(classe, novoItemId){
 function sair(){
     window.location(PLAYER_DADOS.ultimaSala);
 }
+
+document.addEventListener("keyup", (evento) => {
+    if (evento.key === "ArrowLeft" || evento.key === "a") {
+        retrocederSecao();
+    }
+    else if(evento.key === "ArrowRight" || evento.key === "d") {
+        avancarSecao();
+    }
+});
+

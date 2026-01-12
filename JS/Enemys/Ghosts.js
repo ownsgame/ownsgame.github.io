@@ -10,15 +10,6 @@ class Ghosts extends Inimigo {
         this.elemento.style.gridRow = x;
         this.elemento.style.gridColumn = y;
     }
-
-    mudarAnimacao(vetorNovo) {
-        if (this.intervaloAnimacao) {
-            clearInterval(this.intervaloAnimacao);
-            this.intervaloAnimacao = null;
-        }
-
-        this.animar(vetorNovo);
-    }
     
     movimento() {
         setInterval(() => { this.mover() }, 300);
