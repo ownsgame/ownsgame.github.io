@@ -42,6 +42,14 @@ const PLACES = [
         haveChests: false,
     },
     {
+        id: "antesala",
+        nome: "Entrada Do Palacio",
+        link: "anteSala.html", 
+        background: "Sprites/Ground/ceramica_background.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
         id: "colinaDancante",
         nome: "Colina das Flores que Dancam",
         isDungeon: true,

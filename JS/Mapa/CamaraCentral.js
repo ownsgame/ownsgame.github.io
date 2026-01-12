@@ -10,10 +10,12 @@ FLAG_NOME_SALA.innerHTML = `${SALA.nome}`;
 const sabioEl = document.createElement("img");
 const bookshelfEl = document.createElement("img");
 const portaEl = document.createElement("img");
+const portaDoisEl = document.createElement("img");
 const espelhoEl = document.createElement("img");
 
 const portaUm = new DirectLink("door", portaEl, "laboratorio.html", [3, 1], 2);
-const bookshelf = new DirectLink("bookshelf", bookshelfEl, "testeBoss.html", [2, 5], 2);
+const portaDois = new DirectLink("door", portaDoisEl, "anteSala.html", [5, 3], 2);
+const bookshelf = new DirectLink("bookshelf", bookshelfEl, "biblioteca.html", [2, 5], 2);
 const espelho = new IndirectLink("mirror", espelhoEl, [3, 5], 2, "mirrorroom");
 const sabioOWN = new NPC("sabioown", sabioEl, [3, 3], 2);
 

@@ -18,7 +18,7 @@ const FALAS_ESP = [
                     "...e por direito nos pertence.",
                 ],
                 [
-                    "Os mistérios que circuncidam o nosso mundo são demais!",
+                    "Os mistérios que rodeam o nosso mundo são demais!",
                     "Gostaria de saber a hora em que você saí daqui e vai explora-lo?"
                 ],
                 [

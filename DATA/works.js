@@ -13,7 +13,12 @@ const WORKS = [
         id: "bookshelf",
         sprite: "Sprites/WorkBanks/book-shelf.svg",
         hover: "Sprites/WorkBanks/book-shelf-hover.svg",
-    },  
+    },
+    {
+        id: "bestiario",
+        sprite: "Sprites/WorkBanks/bestiario.svg",
+        hover: "Sprites/WorkBanks/bestiario.svg",
+    },   
 ]
 
 function getWorkSprite(id){
