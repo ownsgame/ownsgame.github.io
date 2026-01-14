@@ -6,6 +6,7 @@ desenharGrade("ceramica", false);
 
 const FLAG_NOME_SALA = document.querySelector(".sala-name");
 FLAG_NOME_SALA.innerHTML = `${SALA.nome}`;
+salaApresentation(SALA.nome, SALA.capitulo);
 
 const sabioEl = document.createElement("img");
 const bookshelfEl = document.createElement("img");
@@ -18,6 +19,11 @@ const portaDois = new DirectLink("door", portaDoisEl, "anteSala.html", [5, 3], 2
 const bookshelf = new DirectLink("bookshelf", bookshelfEl, "biblioteca.html", [2, 5], 2);
 const espelho = new IndirectLink("mirror", espelhoEl, [3, 5], 2, "mirrorroom");
 const sabioOWN = new NPC("sabioown", sabioEl, [3, 3], 2);
+
+const desBookshelf = new Description(bookshelfEl, "Biblioteca Real Own");
+const desPortaUm = new Description(portaEl, "Laboratório do Palácio");
+const desPortaDois = new Description(portaDoisEl, "Entrada do Palácio");
+const desEspelho = new Description(espelhoEl, "<i class='fa-solid fa-circle-play'></i>");
 
 const posTochas = [[2, 3], [3, 2], [3, 4], [4, 3]]
 for(let i =0; i<4; i++){

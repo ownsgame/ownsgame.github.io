@@ -21,9 +21,14 @@ class NPC extends FixedEntity{
         this.emFala = false;
         this.conjuntoFalas = null;
         this.indexFala = 0;
-        this.evento();    
+        this.descricao = new Description(this.elemento, '<i class="fa-solid fa-comment-dots"></i>');
+        this.setClasses();  
+        this.evento();  
     }
 
+    setClasses(){
+        this.elemento.classList.add("pointer");
+    }
     evento(){
         this.elemento.addEventListener("click", ()=>{
             const caixa = CaixaDialogo.get();

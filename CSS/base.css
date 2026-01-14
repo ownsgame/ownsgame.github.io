@@ -1,5 +1,6 @@
 :root {
     --gradientebranco: linear-gradient(white);
+    --gradienteTransparente: linear-gradient(to top left, rgba(255, 255, 255, 0.699),rgba(255, 255, 255, 0.479), rgba(255, 255, 255, 0.151));
     --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
     --gradienteAzul: linear-gradient(to bottom right, rgb(16, 55, 170), rgb(10, 41, 133), rgb(3, 19, 73));
     --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
@@ -209,4 +210,58 @@ a{
     width: 90%;
     box-sizing: border-box;
 }
+
+.description{
+    z-index: 8;
+    position: absolute;
+    display: block;
+    opacity: 0;
+
+    color: white;
+    background-image: var(--gradienteRoxo);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    padding: 0.5rem 1rem;
+    transition: 50ms all ease-in-out;
+    border-radius: 1rem;
+}
+
+.description p{
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Ysabeau Infant", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.room-apresentation{
+    background-image: var(--gradienteRoxo);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 8vh;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0px;
+    padding: 0.5rem 1rem;
+    z-index: 9;
+    
+}
+
+.room-apresentation * {
+    margin: 0px;
+}
+
+.room-apresentation h1{
+    font-size: 30pt;
+}
+
+.room-apresentation p{
+    padding-top: 0.5rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
 

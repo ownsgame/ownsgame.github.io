@@ -2,6 +2,7 @@ const PLACES = [
     {
         id: "mirrorroom",
         nome: "Reino Dos Espelhos",
+        capitulo: 1,
         isDungeon: true,
         haveChests: true,
         sprite: "Sprites/Places/MirrorRoom-capa.svg",
@@ -20,6 +21,7 @@ const PLACES = [
     {
         id: "camaraCentral",
         nome: "Camara Central",
+        capitulo: 1,
         link: "camaraCentral.html", 
         background: "Sprites/Ground/ceramica_background.svg",
         isDungeon: false,
@@ -28,6 +30,7 @@ const PLACES = [
     {
         id: "laboratorio",
         nome: "Laboratorio Do Palacio",
+        capitulo: 1,
         link: "laboratorio.html", 
         background: "Sprites/Ground/ceramica_background.svg",
         isDungeon: false,
@@ -36,6 +39,7 @@ const PLACES = [
     {
         id: "biblioteca",
         nome: "Biblioteca Real Own",
+        capitulo: 1,
         link: "biblioteca.html", 
         background: "Sprites/Ground/ceramica_background.svg",
         isDungeon: false,
@@ -44,6 +48,7 @@ const PLACES = [
     {
         id: "antesala",
         nome: "Entrada Do Palacio",
+        capitulo: 1,
         link: "anteSala.html", 
         background: "Sprites/Ground/ceramica_background.svg",
         isDungeon: false,
@@ -52,6 +57,7 @@ const PLACES = [
     {
         id: "colinaDancante",
         nome: "Colina das Flores que Dancam",
+        capitulo: 1,
         isDungeon: true,
         haveChests: true,
         sprite: "Sprites/Places/MirrorRoom-capa.svg",

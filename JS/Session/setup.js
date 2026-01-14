@@ -29,7 +29,10 @@ function criarModelo(){
         recursos: {},
 
         arvoreConclusao: {
-            cap1: null,
+            cap1: {
+                espadaFantasma: false,
+                chaveMestra: false
+            },
             cap2: null,
             cap3: null,
             cap4: null,
@@ -43,12 +46,15 @@ function criarModelo(){
             bota: null,
         },
 
-        capituloAtual: 0,
+        capituloCorrente: 1,
+        fragmentosHexopoda: 0,
+        porcentagem: 0,
         armaAtual: null,
         poderAtual: null,
         escudoAtual: null,
-        ultimaSala: "camaraCentral.html",
+        ultimaSala: "laboratorio.html",
         iniciante: true,
+        questsAtivas: [1],
     };
 }
 

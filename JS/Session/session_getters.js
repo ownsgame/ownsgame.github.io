@@ -51,3 +51,8 @@ function getSessionUltimaSala(){
 function getTempoEspera(){
     return getSessionItem("tempoEspera");
 }
+
+function getIsCompleteQuest(id){
+    const QUEST = getQuest(id);
+    return getSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`);
+}

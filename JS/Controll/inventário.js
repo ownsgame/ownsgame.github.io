@@ -3,7 +3,7 @@ const PLAYER_DADOS = getSession();
 console.log(PLAYER_DADOS);
 
 let indexInventario = 0;
-let vetorSecoes = ["Status", "Gear", "Missão"];
+let vetorSecoes = ["Status", "Gear", "Missão", "Quests"];
 
 function avancarSecao(){
     indexInventario = (indexInventario + 1) % vetorSecoes.length;
@@ -27,6 +27,9 @@ function toogleSecaoInventario(aba){
     }
     else if(aba == "Missão"){
         loadMissao();
+    }
+    else if(aba == "Quests"){
+        loadQuests();
     }
 }
 

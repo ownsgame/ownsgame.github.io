@@ -6,6 +6,7 @@ desenharGrade("ceramica", false);
 
 const FLAG_NOME_SALA = document.querySelector(".sala-name");
 FLAG_NOME_SALA.innerHTML = `${SALA.nome}`;
+salaApresentation(SALA.nome, SALA.capitulo);
 
 const posTochas = [[2, 1], [4, 1], [2, 5], [4, 5]]
 for(let i =0; i<4; i++){
@@ -16,6 +17,7 @@ for(let i =0; i<4; i++){
 
 const portaEl = document.createElement("img");
 const portaUm = new DirectLink("door", portaEl, "camaraCentral.html", [3, 5], 2);
+const desPorta = new Description(portaEl, "Câmara Central");
 
 const maquinaCientificaEL = document.createElement("img");
 setSprite(maquinaCientificaEL, "entidade", "maquinaCientifica");
@@ -24,7 +26,9 @@ let novaMaquina = new FixedEntity(maquinaCientificaEL, [3,3], 2);
 const globoEL = document.createElement("img");
 setSprite(globoEL, "entidade", "globo");
 let novoGlobo = new FixedEntity(globoEL, [5,4], 2);
+const desGlobo = new Description(globoEL, "Mapa");
 
 const reportEL = document.createElement("img");
 setSprite(reportEL, "entidade", "mesaRelatorio");
 let reportTable = new FixedEntity(reportEL, [5,2], 2);
+const desReport = new Description(reportEL, "Relatório de Projeto");

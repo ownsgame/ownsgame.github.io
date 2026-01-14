@@ -39,6 +39,10 @@
     gap: 1rem;
 }
 
+#caixa-dialogo .row-buttons *{
+    border-radius: 0%;
+}
+
 @media (max-width: 800px){
     #caixa-dialogo{
         flex-direction: column;

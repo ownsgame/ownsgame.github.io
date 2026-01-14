@@ -34,7 +34,7 @@ function loadStatus(){
             </div>
         </div>
         
-        <h3>💪 Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
+        <h3>Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
     `;
 
     changeDados("Status", string);
@@ -126,15 +126,14 @@ function loadGear(){
 
 function loadMissao(){
     let copiaDados = getSession();
-    let capitulo = copiaDados.capituloAtual;
-        
+            
     let string =
     `
             <h2 class="animated-aparecer fonte-futuretimes"> Hexopoda</h2>
             <img class="animated-aparecer inventario-image" src="Sprites/IU/hexopoda0.svg">
-            <h2 class="animated-aparecer fonte-futuretimes"> 0 de 6 partes</h2>
-            <h3 class="animated-aparecer">Conclusão: ${Math.floor(((capitulo) * 100)/ 6)}%</h3>
-            <h3 class="animated-aparecer">Capítulo Atual: ${capitulo}</h3>
+            <h2 class="animated-aparecer fonte-futuretimes"> ${copiaDados.fragmentosHexopoda} de 6 partes</h2>
+            <h3 class="animated-aparecer">Conclusão: ${copiaDados.porcentagem}%</h3>
+            <h3 class="animated-aparecer">Capítulo Atual: ${copiaDados.capituloCorrente}</h3>
     `;
 
     changeDados("Missao", string);
@@ -217,4 +216,39 @@ function loadChangeItem(classe){
     string += "<button onclick='loadGear()'>Voltar</button>";
 
     changeDados("Troca de Item", string);
+}
+
+function loadQuests(){
+    let questsAtivas = getSessionItem("questsAtivas");
+    let arvoreConclusao = getSessionItem("arvoreConclusao");
+
+    let string = `<div class="quests-conteiner">`;
+
+    if(questsAtivas.length == 0){
+        string += "<p>Você não possui quests ativas no momento</p>";
+    }
+    else{
+        string += `<h2 class="fonte-comum">Quests ativas: (${questsAtivas.length})</h2>`;
+        questsAtivas.forEach(id => {
+            
+            let quest = getQuest(id);
+            string += 
+            `
+                <div class="quest animated-aparecer">
+                    <h3>${quest.nome}</h3>
+                    <p class="fonte-comum">${quest.descricao}</p>
+                </div>
+            `;
+        });
+    }
+
+    string += 
+    `
+        </div>
+        <div class="row-buttons animated-buttons">
+            <button>Quests Concluidas</button>
+        </div>
+    `;
+
+    changeDados("Quests", string);
 }

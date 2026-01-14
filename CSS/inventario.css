@@ -176,6 +176,28 @@ h3{
     width: 64px; height: 64px;
 }
 
+.quests-conteiner{
+    width: 90%;
+    padding: 0.5rem;
+    background-image: var(--gradienteTransparente);
+    border: 3px rgba(255, 255, 255, 0.459) solid;
+    overflow-y: scroll;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.quest{
+    padding: 0.5rem;
+    background-image: var(--gradienteAzul);
+    border: 1px solid rgba(255, 255, 255, 0.096);
+}
+
+.quest *{
+    color: white;
+}
+
 @media (max-width: 700px){
     .inventario-cabecalho, .inventario-corpo{
         width: 98%;

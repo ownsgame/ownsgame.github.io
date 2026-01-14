@@ -64,3 +64,19 @@ function setArmaAtual(armaId){
     setSessionItem("ataque", arma.dano);
     setSessionItem("tempoEspera", arma.espera);
 }
+
+function completarQuest(id){
+    const QUEST = getQuest(id);
+    setSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`, true);
+
+    const QUESTS_ATIVAS = getSessionItem("questsAtivas");
+    QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
+    setSessionItem("questsAtivas", QUESTS_ATIVAS);
+}
+
+function addQuest(id){
+    const QUEST = getQuest(id);
+    const QUESTS_ATIVAS = getSessionItem("questsAtivas");
+    QUESTS_ATIVAS.push(QUEST.id);
+    setSessionItem("questsAtivas", QUESTS_ATIVAS);
+}

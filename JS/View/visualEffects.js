@@ -29,3 +29,22 @@ function blurBoxClose(){
         }, 300);
     }
 }
+
+function salaApresentation(Nome, Capitulo){
+    const apresentacaoEL = document.querySelector(".room-apresentation");
+    apresentacaoEL.classList.add("animated-aparecer");
+
+    apresentacaoEL.innerHTML = 
+    `
+        <h1 class="fonte-futuretimes">${Nome}</h1>
+        <p class="fonte-comum">${Capitulo}° Capítulo</p>
+    `;
+
+    setTimeout(()=>{
+        abrirTela("room-apresentation", false);
+    }, 1000);
+    
+    setTimeout(()=>{
+        fecharTela("room-apresentation", false);
+    }, 2000);
+}
