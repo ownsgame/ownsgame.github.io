@@ -1,9 +1,8 @@
 
 const PLAYER_DADOS = getSession();
-console.log(PLAYER_DADOS);
 
 let indexInventario = 0;
-let vetorSecoes = ["Status", "Gear", "Missão", "Quests"];
+let vetorSecoes = ["Status", "Itens", "Gear", "Missão", "Quests"];
 
 function avancarSecao(){
     indexInventario = (indexInventario + 1) % vetorSecoes.length;
@@ -21,6 +20,9 @@ function retrocederSecao(){
 function toogleSecaoInventario(aba){
     if(aba == "Status"){
         loadStatus();
+    }
+    else if(aba == "Itens"){
+        loadItens();
     }
     else if(aba == "Gear"){
         loadGear();

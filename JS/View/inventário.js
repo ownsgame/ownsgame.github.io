@@ -1,8 +1,11 @@
 const SECAO_VIEW = document.querySelector(".view");
 
-function changeDados(titulo, dados){
+function changeDados(titulo, dados, aba){
     const TITULO = document.querySelector(".inventario-cabecalho h1");
     TITULO.innerHTML = titulo;
+
+    const ABA = document.querySelector(".aba-atual");
+    ABA.innerHTML = `${aba}/5`;
 
     const DADOS = document.querySelector(".inventario-dados");
     DADOS.innerHTML = dados;
@@ -18,7 +21,7 @@ function loadStatus(){
     let string =
     `
         <img class="animated-aparecer inventario-image" src="Sprites/Player/base.svg">
-        <h2 class="fonte-futuretimes">Atributos:</h2>
+        <h2 class="fonte-comum">Atributos:</h2>
         <div class="atributos-alinhados">
             <div class="atributo">
                 <img src="Sprites/IU/heart_icon.svg" width="32px" height="32px">
@@ -37,21 +40,60 @@ function loadStatus(){
         <h3>Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
     `;
 
-    changeDados("Status", string);
+    changeDados("Status", string, 1);
+}
+
+function loadItens(){
+    let copiaDados = getSession();
+    const RECURSOS = copiaDados.recursos;
+    const INVENTARIO = copiaDados.inventario;
+
+    let string =
+    `
+        <div class="itens-conteiner animated-aparecer"> 
+    `;
+
+    if(Object.keys(RECURSOS).length == 0 && Object.keys(INVENTARIO).length == 0) {
+        string += "<h3><i class='fa-solid fa-triangle-exclamation'></i> Você possui não itens!</h3>"
+    }
+
+    else{
+        for(let recurso in RECURSOS){
+            const DESCRICAO = getItem(recurso).descricao;
+            if(RECURSOS[recurso] != 0){
+                string += itemFrame(recurso, RECURSOS[recurso], false);
+            }
+        }
+      
+        for(let recurso in INVENTARIO){
+            const DESCRICAO = getItem(recurso).descricao;
+            if(INVENTARIO[recurso] != 0){
+                string += itemFrame(recurso, INVENTARIO[recurso], false);
+            }
+        }
+    }
+
+    string += 
+    `           
+        </div>
+        <p class="descreve-item fonte-comum"></p>
+    `;
+
+    changeDados("Meus Itens", string, 2);
 }
 
 function loadGear(){    
     let string =
     `
 
-            <div class="gear">
+            <div class="gear animated-aparecer">
                 <h2 class="fonte-comum">Seu Arsenal Atual:</h2>
                 <div class="itens-conteiner">
     ` 
     let copiaDados = getSession();
     
     if(copiaDados.armaAtual == null || !copiaDados.armaAtual){
-        string +=
+        string += 
         `
             <div class="item-conteiner" onclick="loadChangeItem('arma')">
                 <img class="item" src="Sprites/IU/sword_null_icon.svg">
@@ -60,14 +102,7 @@ function loadGear(){
     }
     else{
         let itemId = copiaDados.armaAtual;
-        const item = getItem(itemId);
-
-        string +=
-        `
-            <div class="item-conteiner" onclick="loadChangeItem('arma')">
-                <img class="item" src="${item.sprite}">
-            </div>
-        `;
+        string += itemFrame(itemId, false, "loadChangeItem('arma')")
     }
 
     if(copiaDados.escudoAtual == null || !copiaDados.escudoAtual){
@@ -80,14 +115,7 @@ function loadGear(){
     }
     else{
         let itemId = copiaDados.armaAtual;
-        const item = getItem(itemId);
-
-        string +=
-        `
-            <div class="item-conteiner" onclick="loadChangeItem('arma')">
-                <img class="item" src="${item.sprite}">
-            </div>
-        `;
+        string += itemFrame(itemId, false, "loadChangeItem('arma')")
     }
 
     if(copiaDados.poderAtual == null || !copiaDados.poderAtual){
@@ -100,28 +128,16 @@ function loadGear(){
     }
     else{
         let itemId = copiaDados.armaAtual;
-        const item = getItem(itemId);
-
-        string +=
-        `
-            <div class="item-conteiner" onclick="loadChangeItem('arma')">
-                <img class="item" src="${item.sprite}">
-            </div>
-        `;
+        string += itemFrame(itemId, false, "loadChangeItem('arma')")
     }
                     
     string +=      
     `
                 </div>
             </div>
-                        
-            <div class="row-buttons animated-buttons">
-                <button>Alterar</button>
-                <button onclick="loadItens()">Itens</button>
-            </div>
     `;
 
-    changeDados("Gear", string);
+    changeDados("Arsenal", string, 3);
 }
 
 function loadMissao(){
@@ -136,86 +152,34 @@ function loadMissao(){
             <h3 class="animated-aparecer">Capítulo Atual: ${copiaDados.capituloCorrente}</h3>
     `;
 
-    changeDados("Missao", string);
+    changeDados("Missao", string, 4);
 }
 
 loadStatus();
 
-function loadItens(){
-    let copiaDados = getSession();
-    const RECURSOS = copiaDados.recursos;
-
-    let string =
-    `
-        <div class="itens-conteiner"> 
-    `;
-
-    for(let recurso in RECURSOS){
-
-        let item = getItem(recurso);
-        string += 
-        `
-            <div class="item-conteiner" onclick="loadDataItem('${item.descricao}', '${RECURSOS[recurso]}')">
-                <img class="item" src="${item.sprite}">
-                <p class="fonte-comum">x${RECURSOS[recurso]}</p>
-            </div>
-        `
-    }
-
-    const INVENTARIO = copiaDados.inventario;
-
-    for(let recurso in INVENTARIO){
-
-        let item = getItem(recurso);
-        string += 
-        `
-            <div class="item-conteiner" onclick="loadDataItem('${item.descricao}', '${INVENTARIO[recurso]}')">
-                <img class="item" src="${item.sprite}">
-                <p class="fonte-comum">x${INVENTARIO[recurso]}</p>
-            </div>
-        `
-    }
-
-    string += 
-    `           
-        </div>
-        <p class="descreve-item fonte-comum"></p>
-    `;
-
-    changeDados("Itens", string);
-}
-
-function loadDataItem(descricao, quantidade){
-    const AREA = document.querySelector(".descreve-item");
-    AREA.innerHTML = 
-    `
-        <b>Quantidade:</b> ${quantidade}
-        <br>
-        <i>"${descricao}"</i>
-    `;
-}
-
 function loadChangeItem(classe){    
     let copiaDados = getSession();
     const INVENTARIO = copiaDados.inventario;
-    let string = "";
+    let possui = false;
+
+    let string = `<h3 class='fonte-comum'>Trocar ${classe} atual por:</h3>`;
 
     for(let recurso in INVENTARIO){
 
         let item = getItem(recurso);
+
         if(item.classe == classe){
-            string += 
-            `
-                <div class="item-conteiner" onclick="trocaDeItens('${classe}', '${item.id}')">
-                    <img class="item" src="${item.sprite}">
-                </div>
-            `
+            possui = true;
+            string += itemFrame(recurso, false, `trocaDeItens('${classe}', '${item.id}')`);
         }
     }
 
+    if(!possui){
+        string += `<h3><i class='fa-solid fa-triangle-exclamation'></i> Você não possui ${classe}s!</h3>`;
+    }
     string += "<button onclick='loadGear()'>Voltar</button>";
 
-    changeDados("Troca de Item", string);
+    changeDados("Trocar", string, 3);
 }
 
 function loadQuests(){
@@ -250,5 +214,5 @@ function loadQuests(){
         </div>
     `;
 
-    changeDados("Quests", string);
+    changeDados("Quests", string, 5);
 }

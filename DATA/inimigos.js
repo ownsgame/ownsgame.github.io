@@ -12,10 +12,9 @@ const INIMIGOS_LIST =
         minAtaque: 10,
 
         recompensas: {
-            moeda: 50,
-            frutaCoracao: 22,
-            frutaEnergia: 15,
-            espadaFantasma: 13, 
+            moeda: 44,
+            frutaCoracao: 20,
+            ectoplasma: 36, 
         },
 
         pontosVitais: 5,

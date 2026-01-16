@@ -1,0 +1,66 @@
+:root {
+    --lendario: linear-gradient(to bottom right,rgb(127, 43, 184),  rgb(35, 14, 95));
+    --raro: linear-gradient(to bottom right,rgb(219, 203, 52),  rgb(209, 156, 9));
+    --comum: linear-gradient(to bottom right,rgb(80, 136, 240), rgb(45, 108, 224),  rgb(18, 71, 170));
+    --nulo: linear-gradient(to bottom right,rgb(63, 63, 63),  rgb(26, 26, 26));
+}
+
+.Comum{
+    background-image: var(--comum);
+}
+
+.Raro{
+    background-image: var(--raro);
+}
+
+.Lendário{
+    background-image: var(--lendario);
+}
+
+.Nulo{
+    background-image: var(--nulo);
+}
+
+.Raro p{
+    color: var(--azulPadrao);
+}
+
+.Comum p, .Lendário p{
+    color: white;
+}
+.itens-conteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    box-sizing: border-box;
+}
+
+.item-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.5rem;
+    border: 1px rgba(255, 255, 255, 0.384) solid;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 200ms ease-in-out all;
+}
+
+.item-conteiner:hover{
+    background-image: var(--gradientebranco);
+}
+
+.item-conteiner img{
+    width: 64px; height: 64px;
+}
+
+.item-conteiner p{
+    text-align: center;
+    font-weight: bolder;
+    margin: 0px;
+}

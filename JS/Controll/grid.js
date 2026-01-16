@@ -55,7 +55,7 @@ function removerGrid(){
     return true;
 }
 
-function desenharGrade(id, ){
+function desenharGrade(id){
     const CONTAINER = document.getElementById("conteiner");
     const SPRITES = getClusterTiles(id);
     let string = ``;

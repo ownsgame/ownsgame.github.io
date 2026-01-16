@@ -149,40 +149,13 @@ h3{
     align-items: center;
 }
 
-.itens-conteiner{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    box-sizing: border-box;
-}
-
-.item-conteiner{
-    padding: 0.2rem;
-    background-image: var(--gradienteRoxo);
-    border: 2px rgba(255, 255, 255, 0.459) solid;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: 200ms ease-in-out all;
-}
-
-.item-conteiner:hover{
-    padding: 0.3rem;
-    background-image: var(--gradientebranco);
-}
-
-.item {
-    width: 64px; height: 64px;
-}
-
 .quests-conteiner{
     width: 90%;
     padding: 0.5rem;
     background-image: var(--gradienteTransparente);
     border: 3px rgba(255, 255, 255, 0.459) solid;
     overflow-y: scroll;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
@@ -191,7 +164,8 @@ h3{
 .quest{
     padding: 0.5rem;
     background-image: var(--gradienteAzul);
-    border: 1px solid rgba(255, 255, 255, 0.096);
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    border-radius: 0.5rem;
 }
 
 .quest *{

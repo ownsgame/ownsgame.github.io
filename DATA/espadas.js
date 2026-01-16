@@ -5,7 +5,7 @@ const ESPADAS = [
         sprite: "Sprites/Itens/espada_fantasma.svg",
         dano: 40,
         espera: 5,
-        descricao: "Espada Rara, dizem que é feita com essência de Fantasmas!",
+        descricao: "Dizem que é feita com ectoplasmas de Fantasmas!",
         unico: true,
         consumivel: false,
         destino: "inventário",

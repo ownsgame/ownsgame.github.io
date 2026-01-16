@@ -10,9 +10,9 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-mirror.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
         recompensas: 
         { 
-            moeda: 54,
-            frutaCoracao: 24,
-            frutaEnergia: 22,
+            moeda: 44,
+            frutaCoracao: 12,
+            frutaEnergia: 44,
         },
 
         inimigos: ["ghost"],

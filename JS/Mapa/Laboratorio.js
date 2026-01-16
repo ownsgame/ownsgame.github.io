@@ -32,3 +32,5 @@ const reportEL = document.createElement("img");
 setSprite(reportEL, "entidade", "mesaRelatorio");
 let reportTable = new FixedEntity(reportEL, [5,2], 2);
 const desReport = new Description(reportEL, "Relatório de Projeto");
+
+const forjaFantasma = new WorkBench("forjaFantasma", [5, 3]);

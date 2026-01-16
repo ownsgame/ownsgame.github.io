@@ -1,10 +1,15 @@
 :root {
     --gradientebranco: linear-gradient(white);
-    --gradienteTransparente: linear-gradient(to top left, rgba(255, 255, 255, 0.699),rgba(255, 255, 255, 0.479), rgba(255, 255, 255, 0.151));
+    --gradienteTransparente: linear-gradient(to top left, rgba(255, 255, 255, 0.418),rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0.048));
     --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
     --gradienteAzul: linear-gradient(to bottom right, rgb(16, 55, 170), rgb(10, 41, 133), rgb(3, 19, 73));
     --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
     --gradienteVermelho: linear-gradient(to bottom right, rgb(206, 33, 33), rgb(184, 23, 23), rgb(94, 13, 13));
+    --azulPadrao: rgb(10, 41, 133);
+}
+
+body{
+    overflow: hidden;
 }
 
 ::selection {
@@ -108,7 +113,7 @@ button:hover{
     width: 100vw; height: 100vh;
     background-color: rgba(8, 8, 8, 0.589);
     display: none;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     position: absolute;
     z-index: 9;
     opacity: 0;
@@ -234,8 +239,8 @@ a{
 }
 
 .room-apresentation{
-    background-image: var(--gradienteRoxo);
-    border: 1px solid rgba(255, 255, 255, 0.096);
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.822),rgba(0, 0, 0, 0.562), rgba(12, 12, 12, 0.192));
+    border: 1px solid rgba(255, 255, 255, 0.137);
     border-radius: 0.5rem;
     position: absolute;
     bottom: 8vh;

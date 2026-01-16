@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="CSS/fontes.css">
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/inventario.css">
+    <link rel="stylesheet" href="CSS/itens.css">
     
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,8 @@
 
                 <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
                     <h1 class="animated-aparecer"></h1>
-                    <button onclick="redirecionarUltimaSala()">
+
+                    <button class="red-button" onclick="redirecionarUltimaSala()">
                         <i class="fa-solid fa-xmark"></i>
                     </button>     
                 </div>
@@ -44,21 +46,27 @@
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
+
+                <p class="aba-atual fonte-comum animated-aparecer">1/5</p>
             </section>
         </main>
 
         <div class="i-box-blux"></div>
+        <div class="description"></div>
+
         
         <script src="DATA/consumiveis.js"></script>
         <script src="DATA/espadas.js"></script>
         <script src="DATA/itens(filtro).js"></script>
         <script src="DATA/quests.js"></script>
 
+        <script src="JS/Classes/Description.js"></script>
         <script src="JS/Session/save.js"></script>
         <script src="JS/Session/session.js"></script>
         <script src="JS/Session/session_getters.js"></script>
         <script src="JS/Session/session_setters.js"></script>
         <script src="JS/Controll/sala.js"></script>
+        <script src="JS/View/itens.js"></script>
         <script src="JS/View/inventário.js"></script>
         <script src="JS/Controll/inventário.js"></script>
 </body>

@@ -83,10 +83,10 @@ function mostrarSobre(){
     let stringHTML = 
     `
         <h1 class="fonte-futuretimes animated-aparecer">Sobre</h1>
-        <p class="texto-padrão"><b>Versão:</b> 0.1.3 - Estruturação de Telas</p>
+        <p class="texto-padrão"><b>Versão:</b> 0.1.4 - Quests e Mapa</p>
         <p class="texto-padrão">
-            <i>Owns é um jogo onde o orgulho de um povo é testado ao limite, a descoberta do mundo
-            e lutas intrigantes irão mitigar um sentimento nacionalista?</i> <br>
+            <i>Owns é um jogo onde mundo carrega o destino de um herói
+            à uma possível catastrofe. Será que no fim deixarás ela acontecer?</i> <br>
             <b>Feito por:</b> 
             <a href="https://github.com/SamuelDevelop" target="_blank"><b>@samuscadev</b></a>
          - 2025 Projeto Pessoal</p>

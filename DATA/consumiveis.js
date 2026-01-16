@@ -28,6 +28,18 @@ const CONSUMIVEIS = [
         consumivel: false,
         raridade: "Comum",
         destino: "recursos",
+    },
+    {
+        id: "ectoplasma",
+        nome: "Ectoplasmas",
+        sprite: "Sprites/Itens/ectoplasma.svg",
+        descricao: "A concentração de restos vitais de Ghosts deixados ao chão",
+        unico: false,
+        maxQuant: 6,
+        minQuant: 1,
+        consumivel: false,
+        raridade: "Comum",
+        destino: "recursos",
     }
 ];
 
