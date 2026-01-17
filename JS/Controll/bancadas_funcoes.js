@@ -35,9 +35,16 @@ function construirReceita(id){
             recursosJogador[receita.resultado] = (recursosJogador[receita.resultado] || 0) + receita.quantItensResultado;
         }
         
+        if(receita.concluiQuest){
+            receita.quests.forEach(receitaId => {
+                completarQuest(receitaId);
+            });
+        }
+
         setSessionInventario(inventarioJogador);
         setSessionRecursos(recursosJogador);
-        console.log("Sucesso!");
-        loadReceita(id);
+
+        emitirNotificacao(1, `x${receita.quantItensResultado} de ${produtoFinal.nome}`);
+        changeReceita(id);
     }
 }

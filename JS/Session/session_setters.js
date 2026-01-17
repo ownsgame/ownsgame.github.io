@@ -6,7 +6,6 @@ function setSessionItem(caminho, valor) {
     let ref = SAVE;
 
     for (const chave of partes) {
-        
         if (!ref.hasOwnProperty(chave) || typeof ref[chave] !== 'object') {
             ref[chave] = {};
         }
@@ -15,7 +14,7 @@ function setSessionItem(caminho, valor) {
 
     ref[ultimaChave] = valor;
 
-    saveSession(ref);
+    saveSession(SAVE);
 }
 
 function setSessionVida(valor){
@@ -67,11 +66,17 @@ function setArmaAtual(armaId){
 
 function completarQuest(id){
     const QUEST = getQuest(id);
-    setSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`, true);
+    let estado = getSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`);
 
-    const QUESTS_ATIVAS = getSessionItem("questsAtivas");
-    QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
-    setSessionItem("questsAtivas", QUESTS_ATIVAS);
+    if(!estado){
+        setSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`, true);
+   
+        let QUESTS_ATIVAS = getSessionItem("questsAtivas");
+
+        QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
+        setSessionItem("questsAtivas", QUESTS_ATIVAS);
+        emitirNotificacao(3, QUEST.nome);
+    }
 }
 
 function addQuest(id){

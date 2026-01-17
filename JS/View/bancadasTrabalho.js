@@ -5,7 +5,7 @@ function changeWorkBenchScreen(titulo, string){
     `
         <h1 class="fonte-futuretimes">${titulo}</h1>
         ${string}
-        <button onclick='fecharTela("workbench_screen")'>Fechar</button>
+        <button class="red-button" onclick='fecharTela("workbench_screen")'><i class="fa-solid fa-xmark"></i></button>
     `;
 
     abrirTela("workbench_screen");
@@ -64,7 +64,7 @@ function loadBancadaContrucao(nome, receitas){
 
     receitas.forEach(receitaId => {
         const receita = getReceita(receitaId);
-        string += itemFrame(receita.resultado, false, `loadReceita(${receitaId})`);
+        string += itemFrame(receita.resultado, false, `changeReceita(${receitaId})`);
     });
 
 
@@ -78,4 +78,8 @@ function loadBancadaContrucao(nome, receitas){
     `;
 
     changeWorkBenchScreen(nome, string);
+}
+
+function changeReceita(receitaId){
+    document.querySelector(".receitas-conteiner"). innerHTML = loadReceita(receitaId);
 }

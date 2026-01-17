@@ -55,6 +55,16 @@ const PLACES = [
         haveChests: false,
     },
     {
+        id: "cidadeOwn",
+        nome: "Cidade Own",
+        capitulo: 1,
+        link: "cidade.html", 
+        sprite: "Sprites/Places/Cidade-Own.svg",
+        background: "Sprites/Ground/noite_cidade.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
         id: "colinaDancante",
         nome: "Colina das Flores que Dancam",
         capitulo: 1,

@@ -63,3 +63,34 @@ function abrirTela(id, blur = true) {
         }
     }, 50);
 }
+
+const NOTIFICACOES = document.getElementById("notificacoes");
+const TIPO_NOMES = ["Alerta", "Item Criado", "Conquista", "Quest Concluída"];
+const TIPO_ICONS = [
+    '<i class="fa-solid fa-triangle-exclamation"></i>',
+    '<i class="fa-solid fa-hammer"></i>',
+    '<i class="fa-solid fa-trophy"></i>',
+    '<i class="fa-solid fa-book"></i>',
+];
+
+let idNotificacao = 0;
+
+function emitirNotificacao(tipo, mensagem){
+    const notificacao  = document.createElement("div");
+    notificacao.innerHTML = `
+        <h3 class="fonte-comum">${TIPO_ICONS[tipo]} ${TIPO_NOMES[tipo]}</h3>
+        <p class="fonte-comum">${mensagem}</p>
+    `;
+
+    let idItem = `notificacao${idNotificacao}`;
+    console.log(idItem)
+    idNotificacao ++;
+    notificacao.setAttribute("id", idItem);
+    NOTIFICACOES.appendChild(notificacao);
+
+    abrirTela(idItem, false);    
+
+    setTimeout(() => {
+        fecharTela(idItem, false);
+    }, 1500);    
+}

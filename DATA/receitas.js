@@ -4,7 +4,17 @@ const RECEITAS = [
         resultado: "espadaFantasma",
         quantItensResultado: 1,
         ingredientes: {
-            ectoplasma: 1,
+            ectoplasma: 15,
+        },
+        concluiQuest: true,
+        quests: [1]
+    },
+    {
+        id: 2,
+        resultado: "moeda",
+        quantItensResultado: 1,
+        ingredientes: {
+            moeda: 15,
         }
     }
 ];

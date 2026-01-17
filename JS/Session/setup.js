@@ -1,8 +1,8 @@
 
 const NOMES_SAVE = [
-    "Reino de Hexopoda", "Heroí do Destino", "Carinha Azul",
-    "Guerreiro de Helos", "Terras Distantes", "Terras Desconhecidas",
-    "Aflorecer do Amanhã", "Jogador Profissional", "Guerreiro de virtudes",
+    "Hexopoda", "Destino", "Carinha Azul",
+    "Helano", "Terras Distantes", "Terras Desconhecidas",
+    "Aflorecer", "Jogador Profissional", "Guerreiro Own",
 ];
 
 function criarModelo(){
