@@ -86,6 +86,7 @@ function changeReceita(receitaId){
 
 function loadTrainPerfil(){
     const PLAYER_DATA  = getSession();
+    const treino = getTreino(PLAYER_DATA.levelTreino);
 
     let string = 
     `
@@ -119,27 +120,44 @@ function loadTrainPerfil(){
                     </div>
                 </div>
             </div>
+    `
+    if(treino != null){
+        string += 
+        `
             <div>
                 <h2 class="fonte-comum">Treinar:</h2>
-                <button><i class="fa-solid fa-dumbbell"></i> Treinar</button>
+                <h3 class="fonte-comum">Melhorias do <b>Treinamento ${PLAYER_DATA.levelTreino + 1}</b>:</h3>
+                <p class="fonte-comum">Vida: <span class="tx-yellow">+${treino.vidaSum}</span></p>
+                <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum}</span></p>
+                <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum}</span></p>
+                <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas / Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
+                <button onclick="playerTreinar()"><i class="fa-solid fa-dumbbell"></i> Treinar</button>
             </div>
-        </div>
+        `;
+    }
+    else{
+        string += "<h3 class='fonte-comum'><i class='fa-solid fa-dumbbell'></i> Você concluiu seu Treinamento!</h3>";
+    }
+    
+    string +=
     `
+        </div>
+    `;
 
     changeWorkBenchScreen("Bancada de Treino", string);
 }
 
 function loadTeleport(){
-
+    const PLAYER_DATA  = getSession();
     let string = 
     `
         <h2 class="fonte-comum">Viajar para:</h2>
         <div class="column-buttons">
             <button><i class="fa-solid fa-bell"></i> Reino Flora</button>
-            <button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>
-            <button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>
-            <button><i class="fa-solid fa-bell"></i> Reino Brasa</button>
-            <button><i class="fa-solid fa-bell"></i> Terras de Orakana</button>
+            ${PLAYER_DATA.capituloCorrente >= 2 ? '<button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>' : ""}
+            ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>' : ""}
+            ${PLAYER_DATA.capituloCorrente >= 5 ? '<button><i class="fa-solid fa-bell"></i> Reino Brasa</button>' : ""}
+            ${PLAYER_DATA.capituloCorrente >= 6 ? '<button><i class="fa-solid fa-bell"></i> Terras de Orakana</button>' : ""}
         </div>
     `;
     

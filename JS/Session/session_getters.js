@@ -17,11 +17,19 @@ function getSessionVida(){
 }
 
 function getSessionAtaque(){
-    return getSessionItem("ataque");
+    let ataque = getSessionItem("ataque");
+    let ataqueMult = getSessionItem("ataqueMult");
+    let ataqueSum = getSessionItem("ataqueSum");
+
+    return (ataque + ataqueSum) * ataqueMult;
 }
 
 function getSessionDefesa(){
-    return getSessionItem("defesa");
+    let defesa = getSessionItem("defesa");
+    let defesaMult = getSessionItem("defesaMult");
+    let defesaSum = getSessionItem("defesaSum");
+
+    return (defesa + defesaSum) * defesaMult;
 }
 
 function getSessionCapitulo(){
@@ -50,6 +58,10 @@ function getSessionUltimaSala(){
 
 function getTempoEspera(){
     return getSessionItem("tempoEspera");
+}
+
+function getMoedas(){
+    return getSessionItem("recursos.moeda");
 }
 
 function getIsCompleteQuest(id){

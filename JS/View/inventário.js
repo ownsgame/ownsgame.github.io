@@ -25,19 +25,19 @@ function loadStatus(){
         <div class="atributos-alinhados">
             <div class="atributo">
                 <img src="Sprites/IU/heart_icon.svg" width="32px" height="32px">
-                <h3> Vida: ${vida} </h3>
+                <h3> Vida: ${getSessionVida()} </h3>
             </div>
             <div class="atributo">
                 <img src="Sprites/IU/attack_icon.svg" width="32px" height="32px">
-                <h3> Ataque: ${ataque} </h3>
+                <h3> Ataque: ${getSessionAtaque()} </h3>
             </div>
             <div class="atributo">
                 <img src="Sprites/IU/shield_icon.svg" width="32px" height="32px">
-                <h3> Defesa: ${defesa} </h3>
+                <h3> Defesa: ${getSessionDefesa()} </h3>
             </div>
         </div>
         
-        <h3>Força: ${Math.floor((vida * 20  + ataque * 30 + defesa * 10) / 60)}</h3>
+        <h3>Força: ${Math.floor((getSessionVida() * 20  + getSessionAtaque() * 30 + getSessionDefesa() * 10) / 60)}</h3>
     `;
 
     changeDados("Status", string, 1);

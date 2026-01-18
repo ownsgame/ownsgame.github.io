@@ -65,12 +65,13 @@ function abrirTela(id, blur = true) {
 }
 
 const NOTIFICACOES = document.getElementById("notificacoes");
-const TIPO_NOMES = ["Alerta", "Item Criado", "Conquista", "Quest Concluída"];
+const TIPO_NOMES = ["Alerta", "Item Criado", "Conquista", "Quest Concluída", "Treinamento Concluído"];
 const TIPO_ICONS = [
     '<i class="fa-solid fa-triangle-exclamation"></i>',
     '<i class="fa-solid fa-hammer"></i>',
     '<i class="fa-solid fa-trophy"></i>',
     '<i class="fa-solid fa-book"></i>',
+    '<i class="fa-solid fa-dumbbell"></i>',
 ];
 
 let idNotificacao = 0;
@@ -83,7 +84,6 @@ function emitirNotificacao(tipo, mensagem){
     `;
 
     let idItem = `notificacao${idNotificacao}`;
-    console.log(idItem)
     idNotificacao ++;
     notificacao.setAttribute("id", idItem);
     NOTIFICACOES.appendChild(notificacao);

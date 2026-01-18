@@ -26,7 +26,9 @@ function criarModelo(){
         tempoEspera: 5,
 
         inventario: {},
-        recursos: {},
+        recursos: {
+            moeda: 0,
+        },
 
         arvoreConclusao: {
             cap1: {
@@ -55,6 +57,7 @@ function criarModelo(){
         ultimaSala: "laboratorio.html",
         iniciante: true,
         questsAtivas: [1],
+        levelTreino: 0,
     };
 }
 

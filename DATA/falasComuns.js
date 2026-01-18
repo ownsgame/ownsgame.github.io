@@ -16,6 +16,9 @@ const FALAS_COM = [
         falas: [[
             "Espere aí jovem! ", 
             "Se for treinar no meu Dojo vai ter que pagar!",
+            "Eu sou mercenário sim! Cobro por cada treinamento",
+            "E ninguém fica me devendo",
+            "Se algum aluno ousar, vai ter que luatr com o mestre!",
         ]],
     }
 ]

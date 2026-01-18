@@ -78,7 +78,12 @@ class Player{
 
     tomarDano(dano){
         if(!this.morto){
-            this.vida -= (dano - this.defesa);
+            if(this.vida - (dano - this.defesa) <= 0){
+                this.vida -= randomInt(1, 4);
+            }
+            else{
+                this.vida -= (dano - this.defesa);
+            }
             picarRed();
             exibirDano((dano - this.defesa), 1);
             if(this.vida >= 0){

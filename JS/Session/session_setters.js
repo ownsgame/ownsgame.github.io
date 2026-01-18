@@ -75,6 +75,7 @@ function completarQuest(id){
 
         QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
         setSessionItem("questsAtivas", QUESTS_ATIVAS);
+        plusPorcentagem(5);
         emitirNotificacao(3, QUEST.nome);
     }
 }
@@ -84,4 +85,42 @@ function addQuest(id){
     const QUESTS_ATIVAS = getSessionItem("questsAtivas");
     QUESTS_ATIVAS.push(QUEST.id);
     setSessionItem("questsAtivas", QUESTS_ATIVAS);
+}
+
+function plusPorcentagem(sum){
+    let porcentagem = getSessionItem("porcentagem");
+    porcentagem += sum;
+
+    setSessionItem("porcentagem", porcentagem);
+}
+
+function playerTreinar(){
+    let levelTreino = getSessionItem("levelTreino");
+    if(levelTreino <= 10){
+        const treino = getTreino(levelTreino);
+        let moedas = getMoedas();
+
+        console.log(moedas);
+        console.log(treino.custo);
+        if(moedas >= treino.custo){
+            const PLAYER_DATA = getSession();
+            PLAYER_DATA.recursos.moeda -= treino.custo;
+            PLAYER_DATA.vidaSum += treino.vidaSum;
+            PLAYER_DATA.ataqueSum += treino.ataqueSum;
+            PLAYER_DATA.defesaSum += treino.defesaSum;
+            PLAYER_DATA.levelTreino += 1;
+
+            setSessionItem("recursos.moeda", PLAYER_DATA.recursos.moeda);
+            setSessionItem("vidaSum", PLAYER_DATA.vidaSum);
+            setSessionItem("ataqueSum", PLAYER_DATA.ataqueSum);
+            setSessionItem("defesaSum", PLAYER_DATA.defesaSum);
+            setSessionItem("levelTreino", PLAYER_DATA.levelTreino);
+            loadTrainPerfil();
+            emitirNotificacao(4, `Treinamento: ${PLAYER_DATA.levelTreino}`);
+        }
+        else{
+            emitirNotificacao(0, "Você não possui moedas o suficiente pagar pelo treino");
+            console.log(getMoedas());
+        }
+    }
 }
