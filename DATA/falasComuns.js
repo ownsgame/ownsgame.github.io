@@ -10,6 +10,13 @@ const FALAS_COM = [
             "Ela também começou a gostar de mim por conta dos olhos",
             "É estranho as diferentes ideias que temos a respeito dos aspectos físicos dos outros",
         ]],
+    },
+    {
+        id: "mestreWei",
+        falas: [[
+            "Espere aí jovem! ", 
+            "Se for treinar no meu Dojo vai ter que pagar!",
+        ]],
     }
 ]
 

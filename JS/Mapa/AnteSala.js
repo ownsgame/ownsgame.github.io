@@ -18,7 +18,18 @@ const portaDois = new IndirectLink("door", portaDoisEl, [5, 3], 2, "cidadeOwn", 
 const desPortaUm = new Description(portaUmEl, "Câmara Central");
 const desPortaDois = new Description(portaDoisEl, "Sair Do Palácio");
 
-const posGuarda = [[5, 2], [5, 4], [2, 2], [2, 4]];
+const posGuarda = [[4, 2], [4, 4], [2, 2], [2, 4]];
 let thisPosGuarda = randomInt(0, 3);
 const guarda = new NPC("guarda", guardaEl, posGuarda[thisPosGuarda], 2);
 
+const fonteDesejosEl = document.createElement("img");
+setSprite(fonteDesejosEl, "entidade", "fontedesejos");
+const fonteDesejos = new FixedEntity(fonteDesejosEl, [3, 3], 2);
+const desFonteDesejos = new Description(fonteDesejosEl, "Fonte dos Desejos");
+
+const posPilares = [[1, 2], [1, 4], [5, 2], [5, 4]]
+for(let i =0; i<4; i++){
+    const novoPilarEL = document.createElement("img");
+    setSprite(novoPilarEL, "entidade", "pilar");
+    let novoPilar = new FixedEntity(novoPilarEL, [posPilares[i][0], posPilares[i][1]], 2);
+}

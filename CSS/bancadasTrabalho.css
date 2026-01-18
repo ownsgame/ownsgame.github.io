@@ -43,3 +43,29 @@
     flex-direction: column;
     align-items: center;
 }
+
+.atributo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.atributos-alinhados{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0rem;
+}
+
+.atributo{
+    padding: 0.2rem;
+}
+
+.atributo:hover{
+    padding: 0.5rem;
+}
+
+.atributos-alinhados *{
+    animation: aparecer 500ms ease-in-out;
+    transition: all ease-in-out 200ms;
+}

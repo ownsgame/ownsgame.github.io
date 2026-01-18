@@ -4,8 +4,16 @@ const ENTIDADES_SPRITES = [
         sprite: "Sprites/WorkBanks/tocha.svg"
     },
     {
+        id: "pilar",
+        sprite: "Sprites/WorkBanks/pilar.svg"
+    },
+    {
         id: "maquinaCientifica",
         sprite: "Sprites/WorkBanks/scientific-machine.svg"
+    },
+    {
+        id: "fontedesejos",
+        sprite: "Sprites/WorkBanks/wishing-well.svg"
     },
     {
         id: "globo",
@@ -15,6 +23,7 @@ const ENTIDADES_SPRITES = [
         id: "mesaRelatorio",
         sprite: "Sprites/WorkBanks/report-table.svg"
     },
+
 ]
 
 function getEntitySprite(id){

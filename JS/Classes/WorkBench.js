@@ -32,5 +32,11 @@ class WorkBench {
         if(this.tipo == "construção"){
             loadBancadaContrucao(this.nome, this.receitas);
         }
+        else if(this.tipo == "treino"){
+            loadTrainPerfil();
+        }
+        else if(this.tipo == "teleporte"){
+            loadTeleport();
+        }
     }
 }

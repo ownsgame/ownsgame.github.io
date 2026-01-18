@@ -64,22 +64,42 @@ class IndirectLink extends FixedEntity{
                 `;
             }
             else{
-                string += `
-                    <div class="row-buttons">
-                        <button onclick="location.replace('${lugar.link}');">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-                        <button class="botao-ativo" onclick="">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                        <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
-                            <i class="fa-solid fa-toolbox"></i>
-                        </button>
-                        <button onclick="fecharTela('show-place')" class="red-button">
-                            <i class="fa-solid fa-x"></i>
-                        </button>
-                    </div>
-                `;
+                if(lugar.isDungeon){
+                    string += `
+                        <div class="row-buttons">
+                            <button onclick="location.replace('${lugar.link}');">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <button class="botao-ativo" onclick="">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </button>
+                            <button onclick="fecharTela('show-place')" class="red-button">
+                                <i class="fa-solid fa-x"></i>
+                            </button>
+                        </div>
+                    `;
+                }
+                else{
+                    string += `
+                        <p class="fonte-comum">
+                            <i class="fa-solid fa-unlock-keyhole"></i> Acesso Liberado
+                        </p>
+                        <div class="row-buttons">
+                            <button onclick="location.replace('${lugar.link}');">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </button>
+                            <button onclick="fecharTela('show-place')" class="red-button">
+                                <i class="fa-solid fa-x"></i>
+                            </button>
+                        </div>
+                    `;
+                }
             }
 
             TELA.innerHTML = string;            

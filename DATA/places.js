@@ -65,6 +65,15 @@ const PLACES = [
         haveChests: false,
     },
     {
+        id: "dojo",
+        nome: "Dojo do Mestre Wei",
+        capitulo: 1,
+        link: "dojo.html", 
+        background: "Sprites/Ground/dojo.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
         id: "colinaDancante",
         nome: "Colina das Flores que Dancam",
         capitulo: 1,

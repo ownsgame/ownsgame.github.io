@@ -22,6 +22,7 @@ const TILES_CUSTER = {
     mirror: ["Sprites/Tiles/mirror_2.svg", "Sprites/Tiles/mirror_1.svg"],
     colina: ["Sprites/Tiles/colina_1.svg", "Sprites/Tiles/colina_2.svg"],
     cidade: ["Sprites/Tiles/cidade_1.svg", "Sprites/Tiles/cidade_2.svg"],
+    dojo: ["Sprites/Tiles/dojo_1.svg", "Sprites/Tiles/dojo_2.svg"],
 }
 
 function getTileSprite(id){

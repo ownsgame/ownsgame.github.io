@@ -30,6 +30,15 @@ body{
     color: white;
 }
 
+.tx-yellow{
+    color: rgb(255, 255, 30);
+}
+
+.tx-pink{
+    color: rgb(204, 115, 255);
+}
+
+
 .fonte-roxa{
     color: rgb(50, 14, 255);
 }
@@ -103,7 +112,7 @@ button:hover{
     gap: 0.5rem;
 }
 
-.column-buttons *{
+.column-buttons > *{
     flex: 1;
     width: 100%;
     box-sizing: border-box;
