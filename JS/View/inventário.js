@@ -114,8 +114,8 @@ function loadGear(){
         `;
     }
     else{
-        let itemId = copiaDados.armaAtual;
-        string += itemFrame(itemId, false, "loadChangeItem('arma')")
+        let itemId = copiaDados.escudoAtual;
+        string += itemFrame(itemId, false, "loadChangeItem('escudo')")
     }
 
     if(copiaDados.poderAtual == null || !copiaDados.poderAtual){

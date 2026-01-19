@@ -83,7 +83,7 @@ function mostrarSobre(){
     let stringHTML = 
     `
         <h1 class="fonte-futuretimes animated-aparecer">Sobre</h1>
-        <p class="texto-padrão"><b>Versão:</b> 0.1.4 - Quests e Mapa</p>
+        <p class="texto-padrão"><b>Versão:</b> 0.5.1 - Quests e Mapa</p>
         <p class="texto-padrão">
             <i>Owns é um jogo onde mundo carrega o destino de um herói
             à uma possível catastrofe. Será que no fim deixarás ela acontecer?</i> <br>

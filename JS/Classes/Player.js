@@ -77,22 +77,25 @@ class Player{
     }
 
     tomarDano(dano){
-        if(!this.morto){
-            if(this.vida - (dano - this.defesa) <= 0){
-                this.vida -= randomInt(1, 4);
-            }
-            else{
-                this.vida -= (dano - this.defesa);
-            }
+        if(this.morto) return;
+
+        let danoReal = dano - this.defesa;
+
+        if(danoReal < 1){
+            danoReal = randomInt(1, 3);
+        }
+
+        this.vida -= danoReal;
+
+        if(this.vida > 0){
             picarRed();
-            exibirDano((dano - this.defesa), 1);
-            if(this.vida >= 0){
-                atualizarVida(this.vida, this.vidaInicial);
-            }
-            if(this.vida <= 0){
-                this.morto = true;
-                fimDeJogo();
-            }
+            exibirDano(danoReal, 1);
+            atualizarVida(this.vida, this.vidaInicial);
+        } else {
+            this.vida = 0;
+            this.morto = true;
+            atualizarVida(this.vida, this.vidaInicial);
+            fimDeJogo();
         }
     }
 

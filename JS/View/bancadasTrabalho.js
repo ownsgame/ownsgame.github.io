@@ -127,10 +127,11 @@ function loadTrainPerfil(){
             <div>
                 <h2 class="fonte-comum">Treinar:</h2>
                 <h3 class="fonte-comum">Melhorias do <b>Treinamento ${PLAYER_DATA.levelTreino + 1}</b>:</h3>
-                <p class="fonte-comum">Vida: <span class="tx-yellow">+${treino.vidaSum}</span></p>
-                <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum}</span></p>
-                <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum}</span></p>
-                <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas / Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
+                <p class="fonte-comum">Vida: <span class="tx-yellow">+${treino.vidaSum} ao Bônus</span></p>
+                <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum} ao Bônus</span></p>
+                <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum} ao Bônus</span></p>
+                <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas</p>
+                <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
                 <button onclick="playerTreinar()"><i class="fa-solid fa-dumbbell"></i> Treinar</button>
             </div>
         `;

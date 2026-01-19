@@ -27,7 +27,8 @@ function criarModelo(){
 
         inventario: {},
         recursos: {
-            moeda: 0,
+            moeda: 20000,
+            ectoplasma: 100,
         },
 
         arvoreConclusao: {

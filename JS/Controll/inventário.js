@@ -40,6 +40,10 @@ function trocaDeItens(classe, novoItemId){
         setArmaAtual(novoItemId);
         loadGear();
     }
+    else if(classe == "escudo"){
+        setEscudoAtual(novoItemId);
+        loadGear();
+    }
 }
 
 function sair(){

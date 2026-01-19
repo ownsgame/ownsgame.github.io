@@ -64,6 +64,12 @@ function setArmaAtual(armaId){
     setSessionItem("tempoEspera", arma.espera);
 }
 
+function setEscudoAtual(escudoId){
+    let escudo = getItem(escudoId);
+    setSessionItem("escudoAtual", escudoId);
+    setSessionItem("defesa", escudo.defesa);
+}
+
 function completarQuest(id){
     const QUEST = getQuest(id);
     let estado = getSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`);

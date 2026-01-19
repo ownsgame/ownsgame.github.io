@@ -35,7 +35,7 @@ const CONSUMIVEIS = [
         sprite: "Sprites/Itens/ectoplasma.svg",
         descricao: "A concentração de restos vitais de Ghosts deixados ao chão",
         unico: false,
-        maxQuant: 6,
+        maxQuant: 5,
         minQuant: 1,
         consumivel: false,
         raridade: "Comum",

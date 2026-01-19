@@ -70,3 +70,23 @@ function getEspada(id){
     const espada = ESPADAS.find(e => e.id === id);
     return espada ? espada : null;
 }
+
+const ESCUDOS = [
+    {
+        id: "escudoFantasma",
+        nome: "Escudo Fantasma",
+        defesa: 20,
+        sprite: "Sprites/Itens/escudo_fantasma.svg",
+        descricao: "Usa a energia dos Ectoplasmas para conter o dano causado ao seu portador",
+        unico: true,
+        consumivel: false,
+        destino: "inventário",
+        classe: "escudo",
+        raridade: "Raro",
+    }
+];
+
+function getEscudo(id){
+    const escudo = ESCUDOS.find(e => e.id === id);
+    return escudo ? escudo : null;
+}
