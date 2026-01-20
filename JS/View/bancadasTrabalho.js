@@ -154,7 +154,8 @@ function loadTeleport(){
     `
         <h2 class="fonte-comum">Viajar para:</h2>
         <div class="column-buttons">
-            <button><i class="fa-solid fa-bell"></i> Reino Flora</button>
+            ${PLAYER_DATA.ultimaSala != "cidade.html" ? `<button onclick="redirecionarPara('cidade.html')"><i class="fa-solid fa-bell"></i> Cidade Own</button>` : ""}
+            ${PLAYER_DATA.ultimaSala != "reinoFlora.html" ? `<button onclick="redirecionarPara('reinoFlora.html')"><i class="fa-solid fa-bell"></i> Reino Flora</button>` : ""}
             ${PLAYER_DATA.capituloCorrente >= 2 ? '<button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>' : ""}
             ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>' : ""}
             ${PLAYER_DATA.capituloCorrente >= 5 ? '<button><i class="fa-solid fa-bell"></i> Reino Brasa</button>' : ""}

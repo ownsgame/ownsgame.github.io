@@ -5,6 +5,11 @@ const WORKS = [
         hover: "Sprites/WorkBanks/door-hover.svg",
     },
     {
+        id: "door-locked",
+        sprite: "Sprites/WorkBanks/door-locked.svg",
+        hover: "Sprites/WorkBanks/door-locked.svg",
+    },
+    {
         id: "mirror",
         sprite: "Sprites/WorkBanks/mirror.svg",
         hover: "Sprites/WorkBanks/mirror-hover.svg",
@@ -20,7 +25,6 @@ const WORKS = [
         sprite: "Sprites/WorkBanks/bestiario.svg",
         hover: "Sprites/WorkBanks/bestiario-hover.svg",
     },
-    
     {
         id: "dojo",
         sprite: "Sprites/WorkBanks/dojo.svg",
@@ -35,6 +39,11 @@ const WORKS = [
         id: "sino",
         sprite: "Sprites/WorkBanks/sino.svg",
         hover: "Sprites/WorkBanks/sino-hover.svg",
+    },
+    {
+        id: "tronco",
+        sprite: "Sprites/WorkBanks/tronco.svg",
+        hover: "Sprites/WorkBanks/tronco.svg",
     },
 ]
 

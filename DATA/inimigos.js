@@ -4,8 +4,8 @@ const INIMIGOS_LIST =
         id: "ghost",
         nome: "Ghosts",
         capitulo: 1,
-        maxVida: 25,
-        minVida: 15,
+        maxVida: 20,
+        minVida: 10,
         maxDefesa: 5,
         minDefesa: 0,
         maxAtaque: 25,
@@ -39,7 +39,8 @@ const INIMIGOS_LIST =
         minAtaque: 20,
 
         recompensas: {
-            moeda: 100,
+            moeda: 50,
+            petala: 50,
         },
 
         pontosVitais: 5,
@@ -63,7 +64,8 @@ const INIMIGOS_LIST =
         minAtaque: 15,
 
         recompensas: {
-            moeda: 100,
+            moeda: 60,
+            espinho: 40,
         },
 
         pontosVitais: 5,
@@ -74,7 +76,81 @@ const INIMIGOS_LIST =
         ],
         hover: "Sprites/Enemys/1/flowy.svg",
         intervalo: 3,
-    }
+    },
+    {
+        id: "frogs",
+        nome: "Giant Frogs",
+        capitulo: 1,
+        maxVida: 240,
+        minVida: 120,
+        maxDefesa: 15,
+        minDefesa: 5,
+        maxAtaque: 40,
+        minAtaque: 20,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/1/giant_frog.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/1/giant_frog.svg",
+        intervalo: 3,
+    },
+    {
+        id: "troncos",
+        nome: "Troncos",
+        capitulo: 1,
+        maxVida: 300,
+        minVida: 100,
+        maxDefesa: 10,
+        minDefesa: 5,
+        maxAtaque: 30,
+        minAtaque: 20,
+
+        recompensas: {
+            moeda: 50,
+            madeira: 50,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/1/tronco.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/1/tronco.svg",
+        intervalo: 3,
+    },
+    {
+        id: "sadFlowers",
+        nome: "Sad Flowers",
+        capitulo: 1,
+        maxVida: 300,
+        minVida: 200,
+        maxDefesa: 20,
+        minDefesa: 10,
+        maxAtaque: 50,
+        minAtaque: 30,
+
+        recompensas: {
+            moeda: 70,
+            polen: 30,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/1/sad_flower.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/1/sad_flower.svg",
+        intervalo: 2,
+    },
 ];
 
 function getInimigoById(id){

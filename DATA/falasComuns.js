@@ -20,6 +20,27 @@ const FALAS_COM = [
             "E ninguém fica me devendo",
             "Se algum aluno ousar, vai ter que luatr com o mestre!",
         ]],
+    },
+    {
+        id: "dex",
+        falas: [
+            [
+                "Por que está me encarando aí", 
+                "Olhe fique sabendo que sou uma pessoa mudada",
+                "Se for me julgar pelo meu passado, Ok!",
+                "Mas se for pelo fato de eu ser um coelho....",
+                "Isso é imperdoavel",
+            ],
+            [
+                "Eu até que estou tentando uma nova vida",
+                "Depois que eu fui exilado, não tive muitas oportunidades",
+                "Mas devo dizer que o trabalho alternativo é minha especialidade",
+                "Como pode ver eu consigo fazer copias de chaves",
+                "Que dão acesso a lugares especiais",
+                "Não é um trabalho muito bem visto, mas...",
+                "Da dinheiro",
+            ],
+        ],
     }
 ]
 

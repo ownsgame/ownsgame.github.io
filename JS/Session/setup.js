@@ -27,14 +27,13 @@ function criarModelo(){
 
         inventario: {},
         recursos: {
-            moeda: 20000,
-            ectoplasma: 100,
+            ectoplasma: 20,
         },
 
         arvoreConclusao: {
             cap1: {
                 espadaFantasma: false,
-                chaveMestra: false
+                chaveFlora: false
             },
             cap2: null,
             cap3: null,
@@ -57,7 +56,7 @@ function criarModelo(){
         escudoAtual: null,
         ultimaSala: "laboratorio.html",
         iniciante: true,
-        questsAtivas: [1],
+        questsAtivas: [1, 2],
         levelTreino: 0,
     };
 }

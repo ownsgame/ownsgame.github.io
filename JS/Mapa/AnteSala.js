@@ -13,7 +13,7 @@ const portaDoisEl = document.createElement("img");
 const guardaEl = document.createElement("img");
 
 const portaUm = new DirectLink("door", portaUmEl, "camaraCentral.html", [1, 3], 2);
-const portaDois = new IndirectLink("door", portaDoisEl, [5, 3], 2, "cidadeOwn", 1);
+const portaDois = new IndirectLink("door-locked", portaDoisEl, [5, 3], 2, "cidadeOwn", 1);
 
 const desPortaUm = new Description(portaUmEl, "Câmara Central");
 const desPortaDois = new Description(portaDoisEl, "Sair Do Palácio");

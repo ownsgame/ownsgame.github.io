@@ -74,12 +74,30 @@ const PLACES = [
         haveChests: false,
     },
     {
+        id: "flora",
+        nome: "Reino Flora",
+        capitulo: 1,
+        link: "reinoFlora.html", 
+        background: "Sprites/Ground/colina_background.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "florestaProfunda",
+        nome: "Floresta Profunda",
+        capitulo: 1,
+        link: "florestaProfunda.html", 
+        background: "Sprites/Ground/floresta.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
         id: "colinaDancante",
         nome: "Colina das Flores que Dancam",
         capitulo: 1,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/MirrorRoom-capa.svg",
+        sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "colinaDancante.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
         recompensas: 
@@ -91,6 +109,44 @@ const PLACES = [
 
         inimigos: ["flow"],
         background: "Sprites/Ground/colina_background.svg",
+    },
+    {
+        id: "pantano",
+        nome: "Pantano",
+        capitulo: 1,
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/Colina-Dancante.svg",
+        link: "pantano.html", 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        recompensas: 
+        { 
+            moeda: 54,
+            frutaCoracao: 24,
+            frutaEnergia: 22,
+        },
+
+        inimigos: ["frogs"],
+        background: "Sprites/Ground/floresta.svg",
+    },
+    {
+        id: "florestaMorta",
+        nome: "Floresta Morta",
+        capitulo: 1,
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/Colina-Dancante.svg",
+        link: "florestaMorta.html", 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        recompensas: 
+        { 
+            moeda: 54,
+            frutaCoracao: 24,
+            frutaEnergia: 22,
+        },
+
+        inimigos: ["frogs"],
+        background: "Sprites/Ground/floresta.svg",
     },
 ]
 

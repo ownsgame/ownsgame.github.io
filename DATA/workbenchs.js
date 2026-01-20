@@ -18,6 +18,13 @@ const WORKBENCHS = [
         tipo: "teleporte",
         sprite: "Sprites/WorkBanks/sino.svg"
     },
+    {
+        id: "falsificador",
+        nome: "Falsificador de Chaves",
+        tipo: "construção",
+        receitas: [3],
+        sprite: "Sprites/WorkBanks/falsificador.svg"
+    },
 ];
 
 function getWorkBench(id){

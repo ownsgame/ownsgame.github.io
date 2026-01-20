@@ -94,3 +94,7 @@ function emitirNotificacao(tipo, mensagem){
         fecharTela(idItem, false);
     }, 1500);    
 }
+
+function redirecionarPara(link){
+    location.replace(link);
+}

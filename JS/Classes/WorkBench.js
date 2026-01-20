@@ -39,4 +39,8 @@ class WorkBench {
             loadTeleport();
         }
     }
+
+    getElemento(){
+        return this.elemento;
+    }
 }

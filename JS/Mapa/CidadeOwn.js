@@ -11,7 +11,7 @@ salaApresentation(SALA.nome, SALA.capitulo);
 const portaUmEl = document.createElement("img");
 const portaDoisEl = document.createElement("img");
 
-const portaUm = new DirectLink("door", portaUmEl, "anteSala.html", [1, 3], 2);
+const portaUm = new DirectLink("door-locked", portaUmEl, "anteSala.html", [1, 3], 2);
 const desPortaUm = new Description(portaUmEl, "Entrar no Palácio");
 
 const posPilares = [[1, 2], [1, 4]]

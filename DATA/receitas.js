@@ -16,6 +16,19 @@ const RECEITAS = [
         ingredientes: {
             ectoplasma: 35,
         }
+    },
+    {
+        id: 3,
+        resultado: "chaveFlora",
+        quantItensResultado: 1,
+        ingredientes: {
+            petala: 15,
+            espinho: 5,
+            madeira: 20,
+            polen: 5,
+        },
+        concluiQuest: true,
+        quests: [2]
     }
 ];
 

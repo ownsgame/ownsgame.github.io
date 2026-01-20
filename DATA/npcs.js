@@ -22,6 +22,14 @@ const NPCS = [
         sprites: ["Sprites/Npcs/mestre.svg"],
         hover: "Sprites/Npcs/mestre.svg",
         falasEspeciais: false,
+    },
+    {
+        id: "dex",
+        nome: "Dex",
+        rosto: "Sprites/Npcs/dex.svg",
+        sprites: ["Sprites/Npcs/dex.svg"],
+        hover: "Sprites/Npcs/dex.svg",
+        falasEspeciais: false,
     }
 ]
 
