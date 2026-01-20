@@ -1,9 +1,3 @@
-const SALA = getPlace("camaraCentral");
-
-marcarSala(SALA.link);
-setBackground(SALA.background);
-desenharGrade("ceramica", false);
-
 class Boss {
     constructor(id){
         const DATA = getBoss(id);
@@ -16,7 +10,10 @@ class Boss {
         this.estado = 0;
         this.x = 2;
         this.y = 3;
+        this.podeAtacar = true,
         this.movendo = false;
+        this.intervaloAtaque = null;
+        this.timeoutAtaque = null;
         this.inicializarElemento();
         this.elemento.onclick = () => this.clique();
     }
@@ -38,20 +35,66 @@ class Boss {
 
         this.movendo = true;
         let indexMovimento = 0;
+        let ultimoTempo = performance.now();
 
-        this.intervaloMovimento = setInterval(() => {
-            this.x = vetor[indexMovimento][0];
-            this.y = vetor[indexMovimento][1];
+        const animar = (tempoAtual) => {
+            if(!this.movendo) return;
 
-            this.atualizarPos(vetor[indexMovimento][0], vetor[indexMovimento][1]);
-            indexMovimento++;
+            if(tempoAtual - ultimoTempo >= intervalo){
+                this.x = vetor[indexMovimento][0];
+                this.y = vetor[indexMovimento][1];
 
-            if(indexMovimento >= vetor.length){
-                clearInterval(this.intervaloMovimento);
-                this.intervaloMovimento = null;
-                this.movendo = false;
+                this.atualizarPos(this.x, this.y);
+                indexMovimento++;
+                ultimoTempo = tempoAtual;
+
+                if(indexMovimento >= vetor.length){
+                    this.movendo = false;
+                    return;
+                }
             }
-        }, intervalo);
+
+            this.intervaloMovimento = requestAnimationFrame(animar);
+        };
+
+        this.intervaloMovimento = requestAnimationFrame(animar);
+    }
+
+    moverLoop(vetor, intervalo){
+        if(this.movendo) return;
+
+        this.movendo = true;
+        let indexMovimento = 0;
+        let ultimoTempo = performance.now();
+
+        const animar = (tempoAtual) => {
+            if(!this.movendo) return;
+
+            if(tempoAtual - ultimoTempo >= intervalo){
+                this.x = vetor[indexMovimento][0];
+                this.y = vetor[indexMovimento][1];
+
+                this.atualizarPos(this.x, this.y);
+                indexMovimento++;
+                ultimoTempo = tempoAtual;
+
+                if(indexMovimento >= vetor.length){
+                    indexMovimento = 0;
+                }
+            }
+
+            this.intervaloMovimento = requestAnimationFrame(animar);
+        };
+
+        this.intervaloMovimento = requestAnimationFrame(animar);
+    }
+
+    pararMovimento(){
+        if(this.intervaloMovimento){
+            cancelAnimationFrame(this.intervaloMovimento);
+            this.intervaloMovimento = null;
+            this.movendo = false;
+        }
     }
 
     atualizarPos(x, y){
@@ -81,29 +124,40 @@ class Boss {
     }
 
     morrer(){
+        if (this.intervaloAtaque) {
+            clearInterval(this.intervaloAtaque);
+            this.intervaloAtaque = null;
+        }
+
+        if (this.timeoutAtaque) {
+            clearTimeout(this.timeoutAtaque);
+            this.timeoutAtaque = null;
+        }
+
+        this.pararMovimento();
         this.elemento.remove();
     }
 
     modoAlerta(){
-        setInterval(()=>{
+        this.intervaloAtaque = setInterval(() => {
             this.atacar();
-        }, 1200);
+        }, 200);
     }
 
     atacar(){
         const PLAYER = getObjectPlayer();
         const PLAYER_DIR = PLAYER.getPosicao();
 
-        if(generalColision(this.x, PLAYER_DIR.x, this.y, PLAYER_DIR.y, 2, 1, 2, 1)){
+        if (
+            generalColision(this.x, PLAYER_DIR.x, this.y, PLAYER_DIR.y, 2, 1, 2, 1) &&
+            this.podeAtacar
+        ) {
             PLAYER.tomarDano(this.dano);
+            this.podeAtacar = false;
+
+            this.timeoutAtaque = setTimeout(() => {
+                this.podeAtacar = true;
+            }, 1000);
         }
     }
 }
-
-let boss = new Boss(1);
-
-let movimentos = [[4,4], [3,4], [2,4], [1, 4], [1, 3], [1, 2], [1, 1],
-                  [2,1], [3,1], [4,1], [4,2], [4,3], [4,4]
-];
-
-boss.mover(movimentos, 500);

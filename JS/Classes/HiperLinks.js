@@ -41,12 +41,23 @@ class IndirectLink extends FixedEntity{
         const lugar = getPlace(this.lugar);
 
         this.elemento.addEventListener("click", ()=>{
-            let string = 
-            `
-                <h3 class="animated-aparecer fonte-futuretimes">${lugar.nome}</h3>
-                <img class="animated-aparecer"src="${lugar.sprite}" width="200px" height="200px">
-            `;
-
+            let string = "";
+            if(lugar.boss){
+                const boss = getBoss(lugar.bossId);
+                string += 
+                `
+                    <h3 class="animated-aparecer fonte-futuretimes">${boss.nome}</h3>
+                    <h3 class="animated-aparecer fonte-comum">${boss.titulo}</h3>
+                    <img class="animated-aparecer"src="${boss.sprites[0][0]}" width="200px" height="200px">
+                `;
+            }
+            else {
+                string += 
+                `
+                    <h3 class="animated-aparecer fonte-futuretimes">${lugar.nome}</h3>
+                    <img class="animated-aparecer"src="${lugar.sprite}" width="200px" height="200px">
+                `;
+            }
             if(this.questId != false && !getIsCompleteQuest(this.questId)){
                 const quest = getQuest(this.questId);
 
@@ -101,6 +112,7 @@ class IndirectLink extends FixedEntity{
                     `;
                 }
             }
+             
 
             TELA.innerHTML = string;            
             abrirTela("show-place");

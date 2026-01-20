@@ -2,7 +2,7 @@ const BOSSES = [
     {
         id: 1,
         nome: "Woody",
-        titulo: "Rei da Floresta Taara",
+        titulo: "Rei da Floresta de Flora",
         capa: "Sprites/Capa/b_woody.svg",
         sprites: [["Sprites/Bosses/woody.svg"]],
         vida: 600,

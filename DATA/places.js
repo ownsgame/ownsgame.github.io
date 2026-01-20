@@ -148,6 +148,17 @@ const PLACES = [
         inimigos: ["frogs"],
         background: "Sprites/Ground/floresta.svg",
     },
+    {
+        id: "bossWoody",
+        boss: true,
+        bossId: 1,
+        capitulo: 1,
+        sprite: "Sprites/Places/Colina-Dancante.svg",
+        link: "bossWoody.html", 
+        background: "Sprites/Ground/floresta.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
 ]
 
 function getPlace(id){

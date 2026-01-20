@@ -27,4 +27,4 @@ const troncoQuatro = new IndirectLink("tronco", troncoQuatroEl, [5, 3], 2, "flor
 const desTroncoQuatro = new Description(troncoQuatroEl, "Floresta Morta");
 
 const portaChefeEl = document.createElement("img");
-const portaChefe = new IndirectLink("door-locked", portaChefeEl, [3, 5], 2, "cidadeOwn", 2);
+const portaChefe = new IndirectLink("door-locked", portaChefeEl, [3, 5], 2, "bossWoody", 2);

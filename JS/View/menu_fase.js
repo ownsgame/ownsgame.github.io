@@ -61,7 +61,6 @@ function rewardsSelectToHtml(){
         string += 
         `
             <section class="deque-section">
-                <h3 class="fonte-comum">Recursos:</h3>
                 <div class="dequeRewards">
         `;
 
@@ -72,17 +71,6 @@ function rewardsSelectToHtml(){
                 string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
             }            
         }
-        string += `
-                </div>
-            </section>
-        `;
-
-        string += 
-        `
-            <section class="deque-section">
-                <h3 class="fonte-comum">Equipamentos:</h3>
-                <div class="dequeRewards">
-        `;
 
         for (let tipo in rewards) {
             const RECOMPENSA = getItem(tipo);
@@ -94,7 +82,7 @@ function rewardsSelectToHtml(){
         string += `
                 </div>
             </section>
-        `;
+        `;  
     }
 
     return string;    

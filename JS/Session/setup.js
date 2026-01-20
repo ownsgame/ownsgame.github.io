@@ -26,9 +26,7 @@ function criarModelo(){
         tempoEspera: 5,
 
         inventario: {},
-        recursos: {
-            ectoplasma: 20,
-        },
+        recursos: {},
 
         arvoreConclusao: {
             cap1: {

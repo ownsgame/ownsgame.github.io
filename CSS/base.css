@@ -215,9 +215,43 @@ a{
 }
 
 .voador{
+    opacity: 1;
     position: absolute;
     transition: all 200ms ease-in-out;
 }
+
+.voadorPequeno{
+    width: 64px;
+    height: 64px;
+}
+
+.voadorMédio{
+    width: 120px;
+    height: 120px;
+}
+
+.voadorGrande{
+    width: 180px;
+    height: 180px;
+}
+
+@media (max-width: 500px) {
+    .voadorPequeno{
+        width: 32px;
+        height: 32px;
+    }
+
+    .voadorMédio{
+        width: 64px;
+        height: 64px;
+    }
+
+    .voadorGrande{
+        width: 100px;
+        height: 100px;
+    }
+}
+
 
 .tx-yellow{
     color: rgb(255, 255, 43);

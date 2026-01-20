@@ -8,7 +8,11 @@ const TEXTINHOS_MOTIVACIONAIS = [
 
 function fimDeJogo(){
     let rd = randomVec(TEXTINHOS_MOTIVACIONAIS);
-    apagarSala();
+    
+    if(!SALA.boss){
+        apagarSala();
+    }
+    
     TELA_GAME_OVER.innerHTML = `
         <h1 class="fonte-futuretimes">Game Over</h1>
         
