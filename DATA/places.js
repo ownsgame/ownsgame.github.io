@@ -20,7 +20,7 @@ const PLACES = [
     },
     {
         id: "camaraCentral",
-        nome: "Camara Central",
+        nome: "Câmara Central",
         capitulo: 1,
         link: "camaraCentral.html", 
         background: "Sprites/Ground/ceramica_background.svg",
@@ -29,7 +29,7 @@ const PLACES = [
     },
     {
         id: "laboratorio",
-        nome: "Laboratorio Do Palacio",
+        nome: "Laboratório Do Palácio",
         capitulo: 1,
         link: "laboratorio.html", 
         background: "Sprites/Ground/ceramica_background.svg",
@@ -38,7 +38,7 @@ const PLACES = [
     },
     {
         id: "biblioteca",
-        nome: "Biblioteca Real Own",
+        nome: "Biblioteca Real",
         capitulo: 1,
         link: "biblioteca.html", 
         background: "Sprites/Ground/ceramica_background.svg",
@@ -47,7 +47,7 @@ const PLACES = [
     },
     {
         id: "antesala",
-        nome: "Entrada Do Palacio",
+        nome: "Entrada Do Palácio",
         capitulo: 1,
         link: "anteSala.html", 
         background: "Sprites/Ground/ceramica_background.svg",

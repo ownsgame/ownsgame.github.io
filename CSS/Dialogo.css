@@ -11,6 +11,7 @@
     transform: translateX(-50%);
     display: none;
     flex-direction: row;
+    justify-content: space-between;
     gap: 2rem;
     padding: 1rem;
 }
@@ -27,10 +28,6 @@
     font-size: 12pt;
     font-family: "Ysabeau Infant", sans-serif;
     font-size: 1rem;
-}
-
-.disponivel{
-    border: 1px solid rgba(1, 56, 156, 0.788);
 }
 
 .caixa-dialogo-data{

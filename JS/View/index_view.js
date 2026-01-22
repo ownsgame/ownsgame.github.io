@@ -4,32 +4,25 @@ function mostrarSaves(saves){
 
     let stringHTML = 
     `
-        <h1 class="fonte-futuretimes animated-aparecer">Selecione seu save...</h1>
-        <div class="column-buttons">
+        <h1 class="fonte-comum animated-aparecer">Selecione seu Save...</h1>
+        <div class="saves-conteiner">
     `;
 
     for(let i = 0; i < 3; i ++){
         if(saves[i] == null){
             stringHTML +=`
-                <div class="row-buttons animated-buttons">
-                    <button class="save-button empty" onclick="createSaveAt(${i})">
-                        + Novo Save
-                    </button>
-                </div> 
+                <button class="empty animated-aparecer" onclick="createSaveAt(${i})">
+                    <i class="fa-solid fa-floppy-disk"></i> Novo Save
+                </button>
             `;
         }
         else{
             const SAVE = saves[i];
             stringHTML +=
             `
-                <div class="row-buttons animated-buttons">
-                    <button onclick="jogar(${i})" class="save-button"> 
-                        ${saves[i].nome}
-                    </button>
-                    <button onclick="jogar(${i})" class="save-button"> 
-                        <i class="fa-solid fa-play"></i>
-                    </button>
-                    <button onclick="deletar(${i})" class="save-button red-button">
+                <div class="save-conteiner pointer animated-aparecer" onclick="jogar(${i})">
+                    <h2 class="fonte-comum">${i + 1} - ${saves[i].nome}</h2>
+                    <button onclick="deletar(event, ${i})" class="red-button">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>

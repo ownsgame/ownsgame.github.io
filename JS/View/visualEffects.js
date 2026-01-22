@@ -36,8 +36,8 @@ function salaApresentation(Nome, Capitulo){
 
     apresentacaoEL.innerHTML = 
     `
-        <h1 class="fonte-futuretimes">${Nome}</h1>
-        <p class="fonte-comum">${Capitulo}° Capítulo</p>
+        <h1 class="fonte-comum">${Nome}</h1>
+        <p class="fonte-comum"><i class="fa-solid fa-book"></i> Capítulo - ${Capitulo}</p>
     `;
 
     setTimeout(()=>{

@@ -12,7 +12,7 @@ function abrirTelaMenuJogo(){
     const NOME_FASE = getLevelName();
 
     let string = `
-        <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
+        <h2>${NOME_FASE}</h2>
         <p class="fonte-comum alerta">
             <i class="fa-solid fa-triangle-exclamation"></i> 
             Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
@@ -31,7 +31,7 @@ function abrirTelaMenuJogo(){
 }
 
 function rewardsToHtml(){
-    let string = `<h3 class="fonte-futuretimes">Coletados:</h3>`;
+    let string = `<h3>Coletados:</h3>`;
     let quantidadeTipos = Object.keys(rewards).length;
 
     if(quantidadeTipos === 0){
@@ -42,7 +42,7 @@ function rewardsToHtml(){
         for (let tipo in rewards) {
 
             const RECOMPENSA = getItem(tipo);
-            string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
+            string += itemFrame(tipo, rewards[tipo], false);
         }
         string += `</div>`;
     }
@@ -68,7 +68,7 @@ function rewardsSelectToHtml(){
             const RECOMPENSA = getItem(tipo);
 
             if(!RECOMPENSA.consumivel && RECOMPENSA.destino == "recursos"){
-                string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
+                string += itemFrame(tipo, rewards[tipo], false);
             }            
         }
 
@@ -76,7 +76,7 @@ function rewardsSelectToHtml(){
             const RECOMPENSA = getItem(tipo);
 
             if(!RECOMPENSA.consumivel && RECOMPENSA.destino == "inventário"){
-                string += cardItem(RECOMPENSA.sprite, rewards[tipo]);
+                string += itemFrame(tipo, rewards[tipo], false);
             }            
         }
         string += `
@@ -93,7 +93,7 @@ function showRewards(){
     const NOME_FASE = getLevelName();
 
     let string = `
-        <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
+        <h2>${NOME_FASE}</h2>
         <p class="fonte-comum alerta">
             <i class="fa-solid fa-triangle-exclamation"></i> 
             Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
@@ -112,7 +112,7 @@ function showEndRewards(){
     const NOME_FASE = getLevelName();
 
     let string = `
-        <h2 class="fonte-futuretimes">${NOME_FASE}</h2>
+        <h2>${NOME_FASE}</h2>
     `;
     string += 
     `

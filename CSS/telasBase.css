@@ -1,0 +1,95 @@
+.tela-padrao{
+    background-image: linear-gradient(to bottom right, rgba(0, 64, 255, 0.486), rgba(0, 31, 126, 0.397), rgba(0, 11, 49, 0.562));;
+    border: 1px solid rgba(255, 255, 255, 0.192);
+    z-index: 11;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+
+    padding: 2rem;
+
+    position: absolute;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tela-padrao h1, .tela-padrao h2, .tela-padrao h3{
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tela-padrao h1{
+    font-size: 38pt;
+}
+
+.tela-padrao h2{
+    font-size: 28pt;
+}
+
+.tela-padrao h3{
+    font-size: 18pt;
+}
+
+.tela-padrao p{
+    font-family: "Ysabeau Infant", sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 15pt;
+}
+
+@media (max-width: 600px) {
+    .tela-padrao h1{
+        font-size: 25pt;
+    }
+
+    .tela-padrao h2{
+        font-size: 20pt;
+    }
+
+    .tela-padrao h3{
+        font-size: 15pt;
+    }
+
+    .tela-padrao p{
+        font-size: 12pt;
+    }
+
+    .column-telas, .row-telas {
+        align-items: center;
+    }
+}
+
+.tela-padrao .row-buttons{
+    margin: 0.5rem auto;
+}
+
+.row-telas {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 0.2rem;
+}
+
+.column-telas {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.row-telas h2, .column-telas h2{
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .row-telas {
+        flex-direction: column;
+    }
+}

@@ -1,47 +1,24 @@
 .workbench_screen{
     position: absolute;
     z-index: 9;
-
-    width: 70vw; height: 80vh;
-    border-radius: 1rem;
-    background-image: var(--gradienteAzul);
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+    width: 75vw; height: 90vh;
+        
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
     overflow: auto;
+    box-sizing: border-box;
+    gap: 0;
 }
 .workbench_screen h1, .workbench_screen h2{
     margin: 0.2rem;
 }
 
-.construcao{
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-}
-
 @media (max-width: 800px){
-    .construcao{
-        flex-direction: column;
-    }
-
     .workbench_screen{
-        width: 90vw; height: 95vh;
+        width: 95vw; height: 95vh;
     }
-}
-
-.criacoes-conteiner, .receitas-conteiner{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .atributo{

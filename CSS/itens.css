@@ -1,7 +1,7 @@
 :root {
     --lendario: linear-gradient(to bottom right,rgb(127, 43, 184),  rgb(35, 14, 95));
-    --raro: linear-gradient(to bottom right,rgb(219, 203, 52),  rgb(209, 156, 9));
-    --comum: linear-gradient(to bottom right,rgb(80, 136, 240), rgb(45, 108, 224),  rgb(18, 71, 170));
+    --raro: linear-gradient(to bottom right,rgb(255, 230, 0),  rgb(167, 122, 0));
+    --comum: linear-gradient(to bottom right,rgb(31, 109, 255), rgb(0, 79, 224),  rgb(0, 61, 173));
     --nulo: linear-gradient(to bottom right,rgb(63, 63, 63),  rgb(26, 26, 26));
 }
 
@@ -28,13 +28,38 @@
 .Comum p, .Lendário p{
     color: white;
 }
+
 .itens-conteiner{
+    max-width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    overflow: auto;
     flex-wrap: wrap;
     gap: 0.2rem;
     padding: 0.2rem;
     box-sizing: border-box;
+    border: 1px rgba(255, 255, 255, 0.144) solid;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    .itens-conteiner{
+        max-width: 90%;
+        overflow: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+.itens-conteiner::-webkit-scrollbar {
+    width: 100%;
+    height: 6px;
+}
+
+.itens-conteiner::-webkit-scrollbar-thumb {
+    background-image: var(--gradienteTransparente);
+    border: 1px rgba(255, 255, 255, 0.459) solid;
+    border-radius: 10px;
 }
 
 .item-conteiner{
@@ -44,7 +69,7 @@
     justify-content: center;
     gap: 0.2rem;
     padding: 0.5rem;
-    border: 1px rgba(255, 255, 255, 0.384) solid;
+    border: 1px rgba(255, 255, 255, 0.356) solid;
     border-radius: 0.5rem;
     box-sizing: border-box;
     cursor: pointer;
@@ -56,7 +81,13 @@
 }
 
 .item-conteiner img{
-    width: 64px; height: 64px;
+    width: 60px; height: 60px;
+}
+
+@media (max-width: 400px) {
+    .item-conteiner img{
+        width: 32px; height: 32px;
+    }
 }
 
 .item-conteiner p{

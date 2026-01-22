@@ -1,10 +1,10 @@
 :root {
     --gradientebranco: linear-gradient(white);
     --gradienteTransparente: linear-gradient(to top left, rgba(255, 255, 255, 0.418),rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0.048));
-    --gradienteRoxo: linear-gradient(to bottom right,rgb(68, 35, 160),  rgb(13, 34, 97));
-    --gradienteAzul: linear-gradient(to bottom right, rgb(16, 55, 170), rgb(10, 41, 133), rgb(3, 19, 73));
+    --gradienteRoxo: linear-gradient(to bottom right,rgb(76, 30, 201),  rgb(15, 5, 155));
+    --gradienteAzul: linear-gradient(to bottom right, rgb(0, 55, 221), rgb(0, 31, 126), rgb(0, 11, 49));
     --corFundo: linear-gradient(rgb(80, 32, 136), rgb(23, 44, 107), rgb(10, 18, 43), rgb(3, 7, 19));
-    --gradienteVermelho: linear-gradient(to bottom right, rgb(206, 33, 33), rgb(184, 23, 23), rgb(94, 13, 13));
+    --gradienteVermelho: linear-gradient(to bottom right, rgb(255, 35, 35), rgb(230, 16, 16), rgb(133, 0, 0));
     --azulPadrao: rgb(10, 41, 133);
 }
 
@@ -252,7 +252,6 @@ a{
     }
 }
 
-
 .tx-yellow{
     color: rgb(255, 255, 43);
 }
@@ -294,7 +293,7 @@ a{
 }
 
 .room-apresentation{
-    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.822),rgba(0, 0, 0, 0.562), rgba(12, 12, 12, 0.192));
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.596),rgba(0, 0, 0, 0.562), rgba(12, 12, 12, 0.192));
     border: 1px solid rgba(255, 255, 255, 0.137);
     border-radius: 0.5rem;
     position: absolute;
@@ -306,7 +305,10 @@ a{
     gap: 0px;
     padding: 0.5rem 1rem;
     z-index: 9;
-    
+}
+
+.room-apresentation h1{
+    letter-spacing: -0.1rem;
 }
 
 .room-apresentation * {

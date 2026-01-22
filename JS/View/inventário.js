@@ -145,9 +145,9 @@ function loadMissao(){
             
     let string =
     `
-            <h2 class="animated-aparecer fonte-futuretimes"> Hexopoda</h2>
+            <h2 class="animated-aparecer"> Hexapoda</h2>
             <img class="animated-aparecer inventario-image" src="Sprites/IU/hexopoda0.svg">
-            <h2 class="animated-aparecer fonte-futuretimes"> ${copiaDados.fragmentosHexopoda} de 6 partes</h2>
+            <h2 class="animated-aparecer"> ${copiaDados.fragmentosHexopoda} de 6 partes</h2>
             <h3 class="animated-aparecer">Conclusão: ${copiaDados.porcentagem}%</h3>
             <h3 class="animated-aparecer">Capítulo Atual: ${copiaDados.capituloCorrente}</h3>
     `;

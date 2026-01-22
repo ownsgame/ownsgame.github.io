@@ -3,8 +3,10 @@ const TELA_BANCADAS = document.querySelector(".workbench_screen");
 function changeWorkBenchScreen(titulo, string){
     TELA_BANCADAS.innerHTML =
     `
-        <h1 class="fonte-futuretimes">${titulo}</h1>
-        ${string}
+        <h1>${titulo}</h1>
+        <div class="row-telas">
+            ${string}
+        </div>
         <button class="red-button" onclick='fecharTela("workbench_screen")'><i class="fa-solid fa-xmark"></i></button>
     `;
 
@@ -17,8 +19,9 @@ function loadReceita(receitaId){
     const ingredientes = receita.ingredientes;
 
     let string = `
-        <h2 class="fonte-comum">Ingreditentes:</h2>
-        <div class="itens-conteiner">
+        <div class="column-telas">
+            <h2 class="fonte-comum">Ingreditentes:</h2>
+            <div class="itens-conteiner">
     `;
 
     for (let chave in ingredientes) {
@@ -27,28 +30,37 @@ function loadReceita(receitaId){
 
     string += 
     `
+            </div>
         </div>
-        <h2 class="fonte-comum">Resultado:</h2>
-        <div class="itens-conteiner">
-            ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
-        </div>
+
+        <div class="column-telas">
+            <h2 class="fonte-comum">Resultado:</h2>
+            <div class="itens-conteiner">
+                ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
+            </div>
     `;
 
     if(getPossibilidadeReceita(receitaId)){
         string +=   
-        `<button onclick="construirReceita(${receitaId})">
-                <i class="fa-solid fa-hammer"></i> Construir
-        </button>`;
+        `
+            <button onclick="construirReceita(${receitaId})">
+                    <i class="fa-solid fa-hammer"></i> Construir
+            </button>
+        </div>
+        `;
+        
     }
     else{
-        string += ` <p class='fonte-comum'> 
-                        <i class='fa-solid fa-triangle-exclamation'></i>
-                        Faltam Recursos para a Construção
-                    </p>
-                    <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
-                        <i class="fa-solid fa-toolbox"></i> Inventário
-                    </button>
-                    `
+        string += ` 
+            <p class='fonte-comum'> 
+                <i class='fa-solid fa-triangle-exclamation'></i>
+                Faltam Recursos para a Construção
+            </p>
+            <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
+                <i class="fa-solid fa-toolbox"></i> Inventário
+            </button>
+        </div>
+        `
     }
     return string;
 }
@@ -56,8 +68,7 @@ function loadReceita(receitaId){
 function loadBancadaContrucao(nome, receitas){
     let string = 
     `
-        <div class="construcao">
-            <div class="criacoes-conteiner">
+            <div class="column-telas">
                 <h2 class="fonte-comum">Criações:</h2>
                 <div class="itens-conteiner">
     `;
@@ -71,9 +82,7 @@ function loadBancadaContrucao(nome, receitas){
     string += `
                 </div>
             </div>
-            <div class="receitas-conteiner">
-                ${loadReceita(receitas[0])}
-            </div>
+            ${loadReceita(receitas[0])}
         </div>
     `;
 
@@ -90,8 +99,8 @@ function loadTrainPerfil(){
 
     let string = 
     `
-        <div class="construcao">
-            <div>
+        <div class="row-telas">
+            <div class="column-telas">
                 <h2 class="fonte-comum">Força Atual:</h2>
                 <div class="atributos-alinhados">
                     <div class="atributo">
@@ -124,10 +133,10 @@ function loadTrainPerfil(){
     if(treino != null){
         string += 
         `
-            <div>
+            <div class="column-telas">
                 <h2 class="fonte-comum">Treinar:</h2>
                 <h3 class="fonte-comum">Melhorias do <b>Treinamento ${PLAYER_DATA.levelTreino + 1}</b>:</h3>
-                <p class="fonte-comum">Vida: <span class="tx-yellow">+${treino.vidaSum} ao Bônus</span></p>
+                <p>Vida: <span class="tx-yellow">+${treino.vidaSum} ao Bônus</span></p>
                 <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum} ao Bônus</span></p>
                 <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum} ao Bônus</span></p>
                 <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas</p>
@@ -152,15 +161,18 @@ function loadTeleport(){
     const PLAYER_DATA  = getSession();
     let string = 
     `
-        <h2 class="fonte-comum">Viajar para:</h2>
-        <div class="column-buttons">
-            ${PLAYER_DATA.ultimaSala != "cidade.html" ? `<button onclick="redirecionarPara('cidade.html')"><i class="fa-solid fa-bell"></i> Cidade Own</button>` : ""}
-            ${PLAYER_DATA.ultimaSala != "reinoFlora.html" ? `<button onclick="redirecionarPara('reinoFlora.html')"><i class="fa-solid fa-bell"></i> Reino Flora</button>` : ""}
-            ${PLAYER_DATA.capituloCorrente >= 2 ? '<button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>' : ""}
-            ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>' : ""}
-            ${PLAYER_DATA.capituloCorrente >= 5 ? '<button><i class="fa-solid fa-bell"></i> Reino Brasa</button>' : ""}
-            ${PLAYER_DATA.capituloCorrente >= 6 ? '<button><i class="fa-solid fa-bell"></i> Terras de Orakana</button>' : ""}
+        <div class="column-telas">
+            <h2 class="fonte-comum">Viajar para:</h2>
+            <div class="column-buttons">
+                ${PLAYER_DATA.ultimaSala != "cidade.html" ? `<button onclick="redirecionarPara('cidade.html')"><i class="fa-solid fa-bell"></i> Cidade Own</button>` : ""}
+                ${PLAYER_DATA.ultimaSala != "reinoFlora.html" ? `<button onclick="redirecionarPara('reinoFlora.html')"><i class="fa-solid fa-bell"></i> Reino Flora</button>` : ""}
+                ${PLAYER_DATA.capituloCorrente >= 2 ? '<button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>' : ""}
+                ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>' : ""}
+                ${PLAYER_DATA.capituloCorrente >= 5 ? '<button><i class="fa-solid fa-bell"></i> Reino Brasa</button>' : ""}
+                ${PLAYER_DATA.capituloCorrente >= 6 ? '<button><i class="fa-solid fa-bell"></i> Terras de Orakana</button>' : ""}
+            </div>
         </div>
+        
     `;
     
     changeWorkBenchScreen("Solicitar Viagem", string);

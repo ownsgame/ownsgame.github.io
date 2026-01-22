@@ -30,10 +30,10 @@ function jogar(pos){
     redirecionarUltimaSala();
 }
 
-function deletar(pos){
-    const SAVES = getSaves();
-    
+function deletar(e, pos){
+    e.stopPropagation();
+
     deleteSave(pos);
     logoutSession();
-    fecharTelaPrincipal();  
+    mostrarTelaSaves(); 
 }
