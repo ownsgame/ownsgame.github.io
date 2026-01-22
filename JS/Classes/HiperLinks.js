@@ -46,7 +46,7 @@ class IndirectLink extends FixedEntity{
                 const boss = getBoss(lugar.bossId);
                 string += 
                 `
-                    <h3 class="animated-aparecer fonte-futuretimes">${boss.nome}</h3>
+                    <h1 class="animated-aparecer">${boss.nome}</h1>
                     <h3 class="animated-aparecer fonte-comum">${boss.titulo}</h3>
                     <img class="animated-aparecer"src="${boss.sprites[0][0]}" width="200px" height="200px">
                 `;
@@ -54,7 +54,7 @@ class IndirectLink extends FixedEntity{
             else {
                 string += 
                 `
-                    <h3 class="animated-aparecer fonte-futuretimes">${lugar.nome}</h3>
+                    <h1 class="animated-aparecer">${lugar.nome}</h1>
                     <img class="animated-aparecer"src="${lugar.sprite}" width="200px" height="200px">
                 `;
             }

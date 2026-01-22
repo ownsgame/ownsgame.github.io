@@ -22,6 +22,7 @@ const INIMIGOS_LIST =
                 "Sprites/Enemys/ghost[0][0].svg",
                 "Sprites/Enemys/ghost[0][1].svg",
                 "Sprites/Enemys/ghost[0][2].svg",
+                "Sprites/Enemys/ghost[0][1].svg",
             ],
         ],
         hover: "Sprites/Enemys/ghost.svg",

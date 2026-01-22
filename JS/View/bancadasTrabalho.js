@@ -48,7 +48,6 @@ function loadReceita(receitaId){
             </button>
         </div>
         `;
-        
     }
     else{
         string += ` 
@@ -82,7 +81,9 @@ function loadBancadaContrucao(nome, receitas){
     string += `
                 </div>
             </div>
-            ${loadReceita(receitas[0])}
+            <div class="row-telas receitas-conteiner">
+                ${loadReceita(receitas[0])}
+            </div>
         </div>
     `;
 

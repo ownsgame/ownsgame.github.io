@@ -10,9 +10,9 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-mirror.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
         recompensas: 
         { 
-            moeda: 64,
-            frutaCoracao: 15,
-            frutaEnergia: 21,
+            moeda: 45,
+            frutaCoracao: 27,
+            frutaEnergia: 28,
         },
 
         inimigos: ["ghost"],
@@ -93,7 +93,7 @@ const PLACES = [
     },
     {
         id: "colinaDancante",
-        nome: "Colina das Flores que Dancam",
+        nome: "Colina Dançante",
         capitulo: 1,
         isDungeon: true,
         haveChests: true,
@@ -112,7 +112,7 @@ const PLACES = [
     },
     {
         id: "pantano",
-        nome: "Pantano",
+        nome: "Pântano",
         capitulo: 1,
         isDungeon: true,
         haveChests: true,

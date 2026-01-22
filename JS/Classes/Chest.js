@@ -79,7 +79,7 @@ function mostrarRecompensas(id, quantidade){
     const TELA_REWARD = document.getElementById("tela_reward");
     const RECOMPENSA = getItem(id);
     TELA_REWARD.innerHTML = `
-        <h3>Recompensa Concedida!</h3>
+        <h1>Recompensa Concedida!</h1>
         <img src="${RECOMPENSA.sprite}" height="50px" width="50px">
         <h3>${quantidade}x ${RECOMPENSA.nome}</h3>
         <p><i>"${RECOMPENSA.descricao}"</i></p>

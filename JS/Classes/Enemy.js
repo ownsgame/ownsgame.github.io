@@ -93,11 +93,13 @@ class Inimigo{
     sofrerDano(dano){
         let danoTotal = dano - this.defesa >= 0 ? dano - this.defesa : randomInt(1, 4);
         this.vida -= danoTotal;
-        exibirDano(danoTotal);
-
+        
         if(this.vida <= 0){
             this.morrer();
             return;
+        }
+        else{
+            exibirDano(danoTotal);
         }
           
         iniciarContador(this.intervalo, this.ataque);

@@ -45,19 +45,9 @@
 }
 
 .game-over{
-    color: white;
-    background-image: var(--gradienteAzul);
-    border-radius: 1rem;
-    
-    position: absolute;
+    color: white;    
     width: 85vw; height: 85vh;
-
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .game-over h3, .game-over h2{
