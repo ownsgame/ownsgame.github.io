@@ -7,17 +7,37 @@ class Ghosts extends Inimigo {
     }
 
     atualizarPos(x, y) {
-        this.elemento.style.gridRow = x;
-        this.elemento.style.gridColumn = y;
-    }
-    
+    this.elemento.style.gridRow = x;
+    this.elemento.style.gridColumn = y;
+}
+
     movimento() {
-        setInterval(() => { this.mover() }, 300);
+        this.ultimoTempo = 0;
+        this.acumulador = 0;
+        this.loopMovimento = this.loopMovimento.bind(this);
+        requestAnimationFrame(this.loopMovimento);
+    }
+
+    loopMovimento(tempoAtual) {
+        if (!this.ultimoTempo) {
+            this.ultimoTempo = tempoAtual;
+        }
+
+        const delta = tempoAtual - this.ultimoTempo;
+        this.ultimoTempo = tempoAtual;
+        this.acumulador += delta;
+
+        if (this.acumulador >= 400) {
+            this.mover();
+            this.acumulador = 0;
+        }
+
+        requestAnimationFrame(this.loopMovimento);
     }
 
     mover() {
         if (!this.estaEmCombate()) {
-            let posicoes = this.getPosicao();
+            const posicoes = this.getPosicao();
             let cordX = posicoes.x;
             let cordY = posicoes.y;
 

@@ -12,7 +12,27 @@ class Frogs extends Inimigo {
     }
     
     movimento() {
-        setInterval(() => { this.mover() }, 300);
+        this.ultimoTempo = 0;
+        this.acumulador = 0;
+        this.loopMovimento = this.loopMovimento.bind(this);
+        requestAnimationFrame(this.loopMovimento);
+    }
+
+    loopMovimento(tempoAtual) {
+        if (!this.ultimoTempo) {
+            this.ultimoTempo = tempoAtual;
+        }
+
+        const delta = tempoAtual - this.ultimoTempo;
+        this.ultimoTempo = tempoAtual;
+        this.acumulador += delta;
+
+        if (this.acumulador >= 280) {
+            this.mover();
+            this.acumulador = 0;
+        }
+
+        requestAnimationFrame(this.loopMovimento);
     }
 
     mover() {

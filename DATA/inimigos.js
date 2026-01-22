@@ -47,7 +47,12 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/1/flow.svg",
+                "Sprites/Enemys/1/flow[0][0].svg",
+                "Sprites/Enemys/1/flow[0][1].svg",
+                "Sprites/Enemys/1/flow[0][0].svg",
+                "Sprites/Enemys/1/flow[0][2].svg",
+                "Sprites/Enemys/1/flow[0][0].svg",
+                "Sprites/Enemys/1/flow[0][1].svg",
             ],
         ],
         hover: "Sprites/Enemys/1/flow.svg",
@@ -72,7 +77,14 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/1/flowy.svg",
+                "Sprites/Enemys/1/flowy[0][0].svg",
+                "Sprites/Enemys/1/flowy[0][1].svg",
+                "Sprites/Enemys/1/flowy[0][0].svg",
+                "Sprites/Enemys/1/flowy[0][2].svg",
+                "Sprites/Enemys/1/flowy[0][0].svg",
+                "Sprites/Enemys/1/flowy[0][3].svg",
+                "Sprites/Enemys/1/flowy[0][0].svg",
+                "Sprites/Enemys/1/flowy[0][2].svg",
             ],
         ],
         hover: "Sprites/Enemys/1/flowy.svg",
@@ -97,6 +109,10 @@ const INIMIGOS_LIST =
         sprites: [
             [
                 "Sprites/Enemys/1/giant_frog.svg",
+                "Sprites/Enemys/1/giant_frog[0][1].svg",
+                "Sprites/Enemys/1/giant_frog.svg",
+                "Sprites/Enemys/1/giant_frog[0][2].svg",
+                "Sprites/Enemys/1/giant_frog[0][1].svg",
             ],
         ],
         hover: "Sprites/Enemys/1/giant_frog.svg",
@@ -146,7 +162,10 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/1/sad_flower.svg",
+                "Sprites/Enemys/1/sad_flower[0][0].svg",
+                "Sprites/Enemys/1/sad_flower[0][1].svg",
+                "Sprites/Enemys/1/sad_flower[0][2].svg",
+                "Sprites/Enemys/1/sad_flower[0][3].svg",
             ],
         ],
         hover: "Sprites/Enemys/1/sad_flower.svg",
