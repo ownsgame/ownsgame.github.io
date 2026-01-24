@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    
+    <title>Owns</title>
+    <link rel="icon" href="../Sprites/IU/Logo.svg"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../CSS/fontes.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/grid.css">
+    <link rel="stylesheet" href="../CSS/Dialogo.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="../CSS/itens.css">
+    <link rel="stylesheet" href="../CSS/telasBase.css">
+    <link rel="stylesheet" href="../CSS/bancadasTrabalho.css">
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <img class="menu pointer" src="../Sprites/IU/home_icon.svg" onclick="abrirOpcoes()">
+    <div id="menu_options" class="options tela-padrao"></div>
+
+    <div id="conteiner"></div>
+
+    <div id="caixa-dialogo">
+        <div class="caixa-dialogo-data"></div>
+        <div class="row-buttons">
+            <button id="proximaFala">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="fecharCaixaDialogo">
+                <i class="fa-solid fa-angles-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="notificacoes"></div>
+    <div id="show-place" class="show-place tela-padrao"></div>
+    <div class="blur-box"></div>
+    <div class="description"></div>
+    <div id="room-apresentation" class="room-apresentation"></div>
+    
+    <script>
+        const THIS_ARQUIVO = {
+            tipo: "sala-comum",
+            arquivos: ["Mapa/Biblioteca.js"],
+        }
+    </script>
+    <script src="../JS/Controll/scripts_loader.js"></script>  
+</body>
+</html>

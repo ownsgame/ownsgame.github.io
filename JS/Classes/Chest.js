@@ -30,7 +30,7 @@ class Chest extends FixedEntity{
     }
 
     setSprite(sprite){
-        this.elemento.src = sprite;
+        this.elemento.src = `../${sprite}`;
     }
 
     static gerarBaus(quantidade, recompensas, sprites) {
@@ -80,7 +80,7 @@ function mostrarRecompensas(id, quantidade){
     const RECOMPENSA = getItem(id);
     TELA_REWARD.innerHTML = `
         <h1>Recompensa Concedida!</h1>
-        <img src="${RECOMPENSA.sprite}" height="50px" width="50px">
+        <img src="../${RECOMPENSA.sprite}" height="50px" width="50px">
         <h3>${quantidade}x ${RECOMPENSA.nome}</h3>
         <p><i>"${RECOMPENSA.descricao}"</i></p>
         <button class="botao-ativo" onclick="fecharTela('tela_reward')">Fechar</button>

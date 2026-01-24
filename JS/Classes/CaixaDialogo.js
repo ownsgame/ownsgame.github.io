@@ -31,7 +31,7 @@ class CaixaDialogo {
         let rosto = NPC.rosto || "Sprites/IU/sem_imagem.svg";
 
         this.mainEl.innerHTML = `
-            <img class="dialogo-rosto" src="${rosto}">
+            <img class="dialogo-rosto" src="../${rosto}">
             <div class="dialogo-conteudo">
                 <h1 class="fonte-futuretimes animated-aparecer">${nome}</h1>
                 <p  class="fonte-comum animated-aparecer">${string}</p>

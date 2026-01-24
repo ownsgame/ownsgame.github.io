@@ -16,7 +16,7 @@ class WorkBench {
 
     criarElemento(pos){
         this.elemento = document.createElement("img");
-        this.elemento.src = this.sprite;
+        this.elemento.src = `../${this.sprite}`;
         posicionarGrid(this.elemento, pos[0], pos[1]);
         fixarAoConteiner(this.elemento);
         this.descricao = new Description(this.elemento, this.nome);

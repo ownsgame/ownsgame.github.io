@@ -14,25 +14,21 @@ function changeDados(titulo, dados, aba){
 function loadStatus(){
     let copiaDados = getSession();
     
-    let vida = copiaDados.vida;
-    let ataque = copiaDados.ataque;
-    let defesa = copiaDados.defesa;
-
     let string =
     `
-        <img class="animated-aparecer inventario-image" src="Sprites/Player/base.svg">
+        <img class="animated-aparecer inventario-image" src="../Sprites/Player/base.svg">
         <h2 class="fonte-comum">Atributos:</h2>
         <div class="atributos-alinhados">
             <div class="atributo">
-                <img src="Sprites/IU/heart_icon.svg" width="32px" height="32px">
+                <img src="../Sprites/IU/heart_icon.svg" width="32px" height="32px">
                 <h3> Vida: ${getSessionVida()} </h3>
             </div>
             <div class="atributo">
-                <img src="Sprites/IU/attack_icon.svg" width="32px" height="32px">
+                <img src="../Sprites/IU/attack_icon.svg" width="32px" height="32px">
                 <h3> Ataque: ${getSessionAtaque()} </h3>
             </div>
             <div class="atributo">
-                <img src="Sprites/IU/shield_icon.svg" width="32px" height="32px">
+                <img src="../Sprites/IU/shield_icon.svg" width="32px" height="32px">
                 <h3> Defesa: ${getSessionDefesa()} </h3>
             </div>
         </div>
@@ -59,14 +55,12 @@ function loadItens(){
 
     else{
         for(let recurso in RECURSOS){
-            const DESCRICAO = getItem(recurso).descricao;
             if(RECURSOS[recurso] != 0){
                 string += itemFrame(recurso, RECURSOS[recurso], false);
             }
         }
       
         for(let recurso in INVENTARIO){
-            const DESCRICAO = getItem(recurso).descricao;
             if(INVENTARIO[recurso] != 0){
                 string += itemFrame(recurso, INVENTARIO[recurso], false);
             }
@@ -96,7 +90,7 @@ function loadGear(){
         string += 
         `
             <div class="item-conteiner" onclick="loadChangeItem('arma')">
-                <img class="item" src="Sprites/IU/sword_null_icon.svg">
+                <img class="item" src="../Sprites/IU/sword_null_icon.svg">
             </div>
         `;
     }
@@ -109,7 +103,7 @@ function loadGear(){
         string +=
         `
             <div class="item-conteiner" onclick="loadChangeItem('escudo')">
-                <img class="item" src="Sprites/IU/shield_null_icon.svg">
+                <img class="item" src="../Sprites/IU/shield_null_icon.svg">
             </div>
         `;
     }
@@ -122,7 +116,7 @@ function loadGear(){
         string +=
         `
             <div class="item-conteiner" onclick="loadChangeItem('cetro')">
-                <img class="item" src="Sprites/IU/scepter_null_icon.svg">
+                <img class="item" src="../Sprites/IU/scepter_null_icon.svg">
             </div>
         `;
     }
@@ -135,6 +129,7 @@ function loadGear(){
     `
                 </div>
             </div>
+            <p>(Clique para alterar o equipamento)</p>
     `;
 
     changeDados("Arsenal", string, 3);
@@ -146,7 +141,7 @@ function loadMissao(){
     let string =
     `
             <h2 class="animated-aparecer"> Hexapoda</h2>
-            <img class="animated-aparecer inventario-image" src="Sprites/IU/hexopoda0.svg">
+            <img class="animated-aparecer inventario-image" src="../Sprites/IU/hexopoda0.svg">
             <h2 class="animated-aparecer"> ${copiaDados.fragmentosHexopoda} de 6 partes</h2>
             <h3 class="animated-aparecer">Conclusão: ${copiaDados.porcentagem}%</h3>
             <h3 class="animated-aparecer">Capítulo Atual: ${copiaDados.capituloCorrente}</h3>

@@ -24,7 +24,7 @@ class FlyingEntity {
         const elemento = document.createElement("img");
         this.elemento = elemento;
         this.elemento.classList.add("voador", `voador${this.tamanho}`);
-        this.elemento.src = this.sprite;
+        this.elemento.src = `../${this.sprite}`;
         
         this.elemento.style.transform = `scaleX(${this.direcaoX})`;
         this.elemento.style.top = this.y + "px";

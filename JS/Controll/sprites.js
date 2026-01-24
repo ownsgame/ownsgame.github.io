@@ -12,17 +12,17 @@ function setSprite(elemento, tipo, id){
         imagem = objeto.sprite;
 
         elemento.addEventListener("mouseenter", ()=>{
-            elemento.src = objeto.hover;
+            elemento.src = `../${objeto.hover}`;
         });
         elemento.addEventListener("mouseleave", ()=>{
-            elemento.src = objeto.sprite;
+            elemento.src = `../${objeto.sprite}`;
         });
     }
 
-    elemento.src = imagem;
+    elemento.src = `../${imagem}`;
 }
 
 function setBackground(imagem){
     const BACKGROUND = document.body;
-    BACKGROUND.style.backgroundImage = `url(${imagem})`;
+    BACKGROUND.style.backgroundImage = `url('../${imagem}')`;
 }

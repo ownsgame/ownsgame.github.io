@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     
     <title>Owns</title>
-    <link rel="icon" href="Sprites/IU/Logo.svg"> 
+    <link rel="icon" href="../Sprites/IU/Logo.svg"> 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="CSS/fontes.css">
-    <link rel="stylesheet" href="CSS/base.css">
-    <link rel="stylesheet" href="CSS/telasBase.css">
-    <link rel="stylesheet" href="CSS/inventario.css">
-    <link rel="stylesheet" href="CSS/itens.css">
-    
+    <link rel="stylesheet" href="../CSS/fontes.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/telasBase.css">
+    <link rel="stylesheet" href="../CSS/inventario.css">
     
     <!--Fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,48 +27,35 @@
         <main>
             <section class="view tela-padrao inventario-container">
 
-                <div class="inventario-cabecalho animated-aparecer">
+                <div class="inventario-cabecalho fonte-futuretimes animated-aparecer">
                     <h1 class="animated-aparecer"></h1>
-
-                    <button class="red-button" onclick="redirecionarUltimaSala()">
+                    <button onclick="redirecionarUltimaSala()">
                         <i class="fa-solid fa-xmark"></i>
                     </button>     
                 </div>
 
                 <div class="inventario-corpo animated-aparecer">
-                    <button onclick="retrocederSecao()">
+                    <button onclick="retroceder()">
                         <i class="fas fa-chevron-left"></i>
                     </button>
 
-                    <div class="inventario-dados"></div>
+                    <div class="bestiario-dados"></div>
 
-                    <button onclick="avancarSecao()">
+                    <button onclick="avancar()">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
-
-                <p class="aba-atual fonte-comum animated-aparecer">1/5</p>
             </section>
         </main>
 
         <div id="notificacoes"></div>
         <div class="i-box-blux"></div>
-        <div class="description"></div>
+        <script src="../DATA/inimigos.js"></script>
 
-        
-        <script src="DATA/consumiveis.js"></script>
-        <script src="DATA/espadas.js"></script>
-        <script src="DATA/itens(filtro).js"></script>
-        <script src="DATA/quests.js"></script>
+        <script src="../JS/Session/session.js"></script>
+        <script src="../JS/Session/getters.js"></script>
+        <script src="../JS/Controll/sala.js"></script>
 
-        <script src="JS/Classes/Description.js"></script>
-        <script src="JS/Session/save.js"></script>
-        <script src="JS/Session/session.js"></script>
-        <script src="JS/Session/session_getters.js"></script>
-        <script src="JS/Session/session_setters.js"></script>
-        <script src="JS/Controll/sala.js"></script>
-        <script src="JS/View/itens.js"></script>
-        <script src="JS/View/inventário.js"></script>
-        <script src="JS/Controll/inventário.js"></script>
+        <script src="../JS/View/bestiário.js"></script>
 </body>
 </html>

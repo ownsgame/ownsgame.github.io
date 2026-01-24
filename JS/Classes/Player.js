@@ -16,7 +16,7 @@ class Player{
     }
 
     inicializarElemento() {
-        this.elemento.src = this.sprite;
+        this.elemento.src = `../${this.sprite}`;
         this.elemento.classList.add("player", "tamPadrao", "layerTres");
         this.elemento.id = "jogador"; 
         posicionarGrid(this.elemento, 1, 1);
@@ -71,9 +71,6 @@ class Player{
     mover(x, y){
         this.elemento.style.gridRow = x;
         this.elemento.style.gridColumn = y;
-        if (typeof globalThis.atualizarCoordenadas === "function") {
-            atualizarCoordenadas(parseInt(this.elemento.style.gridRow), parseInt(this.elemento.style.gridColumn));
-        }
     }
 
     tomarDano(dano){

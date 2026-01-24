@@ -1,5 +1,4 @@
 class Description {
-    
     constructor(elemento, descricao){
         this.elemento = elemento;
         this.descricao = descricao;
@@ -33,6 +32,5 @@ class Description {
             descricaoEl.style.left = evento.pageX + 10 + "px";
             descricaoEl.style.top = evento.pageY + 10 + "px";
         });
-
     }
 }

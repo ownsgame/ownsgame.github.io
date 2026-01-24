@@ -3,7 +3,7 @@ function itemFrame(id, quantidade = false, onclick = false){
 
     let string = `
         <div class="item-conteiner ${ITEM.raridade}" ${onclick ? `onclick="${onclick}"` : ""}>
-            <img src="${ITEM.sprite}">
+            <img src="../${ITEM.sprite}">
     `;
 
     if(quantidade != false || quantidade != 0){

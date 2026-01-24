@@ -21,7 +21,7 @@ class Boss {
     inicializarElemento(){
         const bossEl = document.createElement("img");
         this.elemento = bossEl;
-        this.elemento.src = this.sprites[0][0];
+        this.elemento.src = `../${this.sprites[0][0]}`;
         this.elemento.classList.add("boss");
 
         posicionarGrid(this.elemento, this.x, this.y, 2, 2);

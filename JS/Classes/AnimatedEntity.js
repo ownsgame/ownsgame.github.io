@@ -20,11 +20,11 @@ class AnimatedEntity {
 
     trocarSprite(sprite){
         if(this.pause){
-            this.elemento.src = this.hover;
+            this.elemento.src = `../${this.hover}`;
             return;
         }
 
-        this.elemento.src = sprite;
+        this.elemento.src = `../${sprite}`;
     }
 
     loop(tempoAtual){

@@ -16,7 +16,7 @@ class NPC extends FixedEntity{
 
         this.rosto = data.rosto;
         this.sprites = data.sprites;
-        this.elemento.src = data.sprites[0];
+        this.elemento.src = `../${data.sprites[0]}`;
         this.hover = data.hover;
         this.emFala = false;
         this.conjuntoFalas = null;

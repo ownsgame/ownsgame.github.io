@@ -48,14 +48,14 @@ class IndirectLink extends FixedEntity{
                 `
                     <h1 class="animated-aparecer">${boss.nome}</h1>
                     <h3 class="animated-aparecer fonte-comum">${boss.titulo}</h3>
-                    <img class="animated-aparecer"src="${boss.sprites[0][0]}" width="200px" height="200px">
+                    <img class="animated-aparecer" src="../${boss.sprites[0][0]}" width="200px" height="200px">
                 `;
             }
             else {
                 string += 
                 `
                     <h1 class="animated-aparecer">${lugar.nome}</h1>
-                    <img class="animated-aparecer"src="${lugar.sprite}" width="200px" height="200px">
+                    <img class="animated-aparecer" src="../${lugar.sprite}" width="200px" height="200px">
                 `;
             }
             if(this.questId != false && !getIsCompleteQuest(this.questId)){

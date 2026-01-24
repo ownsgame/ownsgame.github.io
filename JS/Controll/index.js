@@ -8,7 +8,7 @@ const ImagemTelaInicial = document.querySelector(".main-image");
 let index = 0;
 
 setInterval(()=>{
-    ImagemTelaInicial.src = imgs[index];
+    ImagemTelaInicial.src = `../${imgs[index]}`;
     index = (index + 1) % imgs.length;
 }, 250);
 

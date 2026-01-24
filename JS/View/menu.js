@@ -25,11 +25,11 @@ MENU_OPTIONS.innerHTML =
 `;
 
 MENU_BUTTON.addEventListener("mousemove", function() {
-    MENU_BUTTON.src = "Sprites/IU/home_icon_hover.svg";
+    MENU_BUTTON.src = "../Sprites/IU/home_icon_hover.svg";
 })
 
 MENU_BUTTON.addEventListener("mouseleave", function() {
-    MENU_BUTTON.src = "Sprites/IU/home_icon.svg";
+    MENU_BUTTON.src = "../Sprites/IU/home_icon.svg";
 });
 
 MENU_BUTTON.addEventListener("click", function() {

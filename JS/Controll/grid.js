@@ -37,7 +37,7 @@ function criarGrid(x, y, sprites) {
     quadradoEl.classList.add("tiles");
 
     const spriteAtual = sprites[criarGrid._indiceSprite];
-    quadradoEl.src = spriteAtual;
+    quadradoEl.src = `../${spriteAtual}`;
 
     criarGrid._indiceSprite = (criarGrid._indiceSprite + 1) % sprites.length;
     

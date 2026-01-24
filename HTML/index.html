@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+
+    <title>Owns</title>
+    <link rel="icon" href="../Sprites/IU/Logo.svg"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/fontes.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div id="titulo" class="titulo">
+            <h1 class="fonte-futuretimes titulo-destaque">OwNs</h1>
+            <h2 class="fonte-futuretimes">O Conto do Hexapoda</h2>
+        </div>
+        
+        <img class="main-image" src="../Sprites/IU/TelaInicial1.svg">
+        
+        <div class="row-buttons animated-buttons">
+            <button onclick="mostrarTelaSaves()">Jogar</button>
+            <button onclick="mostrarOpcoesSaves()">Opções</button>
+            <button onclick="mostrarSobre()">Sobre</button>
+        </div>
+    </main>
+
+    <div class="telinha tela-comum" id="index-popup"></div>
+    <div id="notificacoes"></div>
+    <div class="blur-box"></div>
+
+    <script>
+        const THIS_ARQUIVO = {
+            tipo: "index",
+            arquivos: false,
+        }
+    </script>
+    <script src="../JS/Controll/scripts_loader.js"></script>
+    
+</body>
+</html>
