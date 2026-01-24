@@ -2,12 +2,32 @@ const VOADORES = [
     {
         id: "bird",
         nome: "Pássaro da Floresta",
-        dano: 1,
+        dano: 2,
         tempo: 200,
-        velocidade: 30,
+        velocidade: 50,
         tempoVida: 12000,
         tamanho: "Médio",
-        sprite: "Sprites/Enemys/1/bird.svg",
+        sprites: [[
+            "Sprites/Enemys/1/bird[0][0].svg", 
+            "Sprites/Enemys/1/bird[0][1].svg",
+            "Sprites/Enemys/1/bird[0][0].svg", 
+            "Sprites/Enemys/1/bird[0][1].svg",
+            "Sprites/Enemys/1/bird[0][0].svg", 
+            "Sprites/Enemys/1/bird[0][2].svg"
+        ]],
+    },
+    {
+        id: "blue_ghost",
+        nome: "Ghosts Azuis",
+        dano: 2,
+        tempo: 1000,
+        velocidade: 150,
+        tempoVida: 12000,
+        tamanho: "Médio",
+        sprites: [[
+            "Sprites/Enemys/blue_ghost[0][0].svg", 
+            "Sprites/Enemys/blue_ghost[0][1].svg", 
+        ]],
     }
 ];
 

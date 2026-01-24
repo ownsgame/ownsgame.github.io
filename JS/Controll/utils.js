@@ -32,6 +32,23 @@ function sorteioComProbabilidade(obj) {
     }
 }
 
+function fatorVelocidadeTela(){
+    const referencia = 1280;
+    const atual = Math.min(window.innerWidth, window.innerHeight);
+
+    return Math.min(1, atual / referencia);
+}
+
+function porcentagemTelaPixel(xPercent, yPercent) {
+    const largura = window.innerWidth;
+    const altura = window.innerHeight;
+
+    return {
+        x: (xPercent / 100) * largura,
+        y: (yPercent / 100) * altura
+    };
+}
+
 function fecharTela(id, blur = true){
     let tela = document.getElementById(id);
     tela.style.transition = "all ease-in-out 250ms";

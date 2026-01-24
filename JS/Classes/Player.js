@@ -64,6 +64,26 @@ class Player{
         return { px, py };
     }
 
+    getPixelLimites(){
+        const tamanhos = getTamanhosGrid();
+
+        const xGrid = parseInt(this.elemento.style.gridRow);
+        const yGrid = parseInt(this.elemento.style.gridColumn);
+
+        const centroX = tamanhos.gridOffsetX + (yGrid - 1) * tamanhos.tileLarg + tamanhos.tileLarg / 2;
+        const centroY = tamanhos.gridOffsetY + (xGrid - 1) * tamanhos.tileAlt + tamanhos.tileAlt / 2;
+
+        const meiaLarg = tamanhos.tileLarg / 2;
+        const meiaAlt = tamanhos.tileAlt / 2;
+
+        return {
+            left: centroX - meiaLarg,
+            right: centroX + meiaLarg,
+            top: centroY - meiaAlt,
+            bottom: centroY + meiaAlt
+        };
+    }
+
     getMorto(){
         return this.morto;
     }

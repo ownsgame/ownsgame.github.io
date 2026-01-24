@@ -15,6 +15,7 @@ const PLACES = [
             frutaEnergia: 28,
         },
 
+        viagens: 3,
         inimigos: ["ghost"],
         background: "Sprites/Ground/mirrorroom_background.svg",
     },
@@ -78,7 +79,7 @@ const PLACES = [
         nome: "Reino Flora",
         capitulo: 1,
         link: "reinoFlora.html", 
-        background: "Sprites/Ground/colina_background.svg",
+        background: "Sprites/Ground/floresta.svg",
         isDungeon: false,
         haveChests: false,
     },
@@ -99,7 +100,7 @@ const PLACES = [
         haveChests: true,
         sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "colinaDancante.html", 
-        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
             moeda: 54,
@@ -118,7 +119,7 @@ const PLACES = [
         haveChests: true,
         sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "pantano.html", 
-        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
             moeda: 54,
@@ -137,7 +138,7 @@ const PLACES = [
         haveChests: true,
         sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "florestaMorta.html", 
-        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
             moeda: 54,

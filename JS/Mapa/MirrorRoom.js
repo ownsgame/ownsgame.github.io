@@ -15,6 +15,17 @@ function mudarBotaoExplorar(restante, total){
     BOTAO_EX.innerHTML = `Avançar (${restante}/${total})`; 
 }
 
+const BIRD_PS = [70, 30];
+let entPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
+let entidade = new FlyingEntity("blue_ghost", [entPos.x, entPos.y]);
+entidade.perseguirJogador();
+
+setInterval(()=>{
+    let newBirdPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
+    let novaEntidade = new FlyingEntity("blue_ghost", [newBirdPos.x, newBirdPos.y]);
+    novaEntidade.perseguirJogador();
+}, 10000);
+
 const TOTAL_VIAGENS = 3;
 let viagensRestantes = TOTAL_VIAGENS;
 const BOTAO_EX = document.getElementById("botao-explorar");

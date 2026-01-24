@@ -53,6 +53,7 @@ const COMUM_DUNGEON_FILES = [
     "Controll/inserir_player.js",
     "Classes/Enemy.js",
     "Controll/combate.js",
+    "Classes/FlyingEntity.js",
     "Controll/power_up.js",
     "View/menu_fase.js",
 ];
@@ -65,6 +66,7 @@ const COMUM_BOSS_FILES = [
   "Controll/inserir_player.js",
   "Controll/sala.js",
   "Classes/Boss.js",
+  "Classes/AnimatedEntity.js",
   "Classes/FlyingEntity.js",
   "Controll/game_over.js"
 ]
