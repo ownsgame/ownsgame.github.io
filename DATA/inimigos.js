@@ -32,16 +32,16 @@ const INIMIGOS_LIST =
         id: "flow",
         nome: "Flows",
         capitulo: 1,
-        maxVida: 210,
-        minVida: 115,
+        maxVida: 110,
+        minVida: 70,
         maxDefesa: 20,
         minDefesa: 5,
         maxAtaque: 30,
         minAtaque: 20,
 
         recompensas: {
-            moeda: 50,
-            petala: 50,
+            petala: 65,
+            moeda: 35,
         },
 
         pontosVitais: 5,
@@ -62,16 +62,16 @@ const INIMIGOS_LIST =
         id: "flowy",
         nome: "Flowys",
         capitulo: 1,
-        maxVida: 300,
+        maxVida: 200,
         minVida: 120,
-        maxDefesa: 5,
-        minDefesa: 1,
+        maxDefesa: 6,
+        minDefesa: 2,
         maxAtaque: 35,
         minAtaque: 15,
 
         recompensas: {
-            moeda: 60,
-            espinho: 40,
+            espinho: 90,
+            moeda: 10,
         },
 
         pontosVitais: 5,
@@ -88,13 +88,13 @@ const INIMIGOS_LIST =
             ],
         ],
         hover: "Sprites/Enemys/1/flowy.svg",
-        intervalo: 3,
+        intervalo: 2,
     },
     {
         id: "frogs",
         nome: "Giant Frogs",
         capitulo: 1,
-        maxVida: 240,
+        maxVida: 170,
         minVida: 120,
         maxDefesa: 15,
         minDefesa: 5,
@@ -122,7 +122,7 @@ const INIMIGOS_LIST =
         id: "troncos",
         nome: "Troncos",
         capitulo: 1,
-        maxVida: 300,
+        maxVida: 200,
         minVida: 100,
         maxDefesa: 10,
         minDefesa: 5,
@@ -130,8 +130,8 @@ const INIMIGOS_LIST =
         minAtaque: 20,
 
         recompensas: {
-            moeda: 50,
-            madeira: 50,
+            madeira: 95,
+            moeda: 5,
         },
 
         pontosVitais: 5,
@@ -141,22 +141,22 @@ const INIMIGOS_LIST =
             ],
         ],
         hover: "Sprites/Enemys/1/tronco.svg",
-        intervalo: 3,
+        intervalo: 2,
     },
     {
         id: "sadFlowers",
         nome: "Sad Flowers",
         capitulo: 1,
-        maxVida: 300,
-        minVida: 200,
+        maxVida: 250,
+        minVida: 180,
         maxDefesa: 20,
         minDefesa: 10,
         maxAtaque: 50,
         minAtaque: 30,
 
         recompensas: {
-            moeda: 70,
-            polen: 30,
+            polen: 80,
+            moeda: 20,
         },
 
         pontosVitais: 5,
@@ -169,7 +169,7 @@ const INIMIGOS_LIST =
             ],
         ],
         hover: "Sprites/Enemys/1/sad_flower.svg",
-        intervalo: 2,
+        intervalo: 1,
     },
 ];
 
