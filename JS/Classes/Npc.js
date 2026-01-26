@@ -1,8 +1,7 @@
 class NPC extends FixedEntity{
-    constructor(id, elemento, posicao, layer){
-        super(elemento, posicao, layer);
-        this.elemento = elemento;
-
+    constructor(id, posicao, layer){
+        super(posicao, layer);
+        
         let data = getNpc(id);
         this.npc = data;
         this.especial = data.falasEspeciais;

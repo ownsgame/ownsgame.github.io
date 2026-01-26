@@ -35,6 +35,7 @@ function loadReceita(receitaId){
 
         <div class="column-telas">
             <h2 class="fonte-comum">Resultado:</h2>
+            <p><b>x${receita.quantItensResultado}</b> ${resultado.nome}</p>
             <div class="itens-conteiner">
                 ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
             </div>
@@ -82,7 +83,7 @@ function loadBancadaContrucao(nome, receitas){
                 </div>
             </div>
             <div class="row-telas receitas-conteiner">
-                ${loadReceita(receitas[0])}
+                    ${loadReceita(receitas[0])}
             </div>
         </div>
     `;
@@ -91,6 +92,7 @@ function loadBancadaContrucao(nome, receitas){
 }
 
 function changeReceita(receitaId){
+    
     document.querySelector(".receitas-conteiner"). innerHTML = loadReceita(receitaId);
 }
 

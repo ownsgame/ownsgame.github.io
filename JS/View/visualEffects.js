@@ -5,7 +5,7 @@ function picarRed(){
     
     setTimeout(()=>{
         fecharTela("camada-de-efeito")
-    }, 700);
+    }, 600);
 }
 
 function blurBoxOpen(){

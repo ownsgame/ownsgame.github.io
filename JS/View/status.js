@@ -51,7 +51,7 @@ function iniciarContador(tempo, dano) {
             else{
                 CONTADOR.classList.remove("tx-yellow");
             }
-            CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>  Ataque em: ${(tempo / 1000).toFixed(1)}s`;
+            CONTADOR.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Ataque em: ${(tempo / 1000).toFixed(1)}s`;
         }       
 
         if (tempo <= 0) {
@@ -105,7 +105,7 @@ function exibirDano(dano, tipo = 0){
     CONTADOR.style.display = "flex";
     CONTADOR.style.opacity = 1;
 
-    setTimeout(()=>{fecharTela("damage-count")}, 1200);
+    setTimeout(()=>{fecharTela("damage-count")}, 600);
 }
 
 function fecharAbaStatus(){

@@ -1,14 +1,18 @@
 const classLayer = ["layerZero", "layerUm", "layerDois", "layerTres"];
 
 class FixedEntity {
-    constructor(elemento, posicao, layer){
-        this.elemento = elemento;
+    constructor(posicao, layer){
+        this.elemento = document.createElement("img");
         this.inicialPosX = posicao[0];
         this.inicialPosY = posicao[1];
         
-        posicionarGrid(elemento, this.inicialPosX, this.inicialPosY);
-        fixarAoConteiner(elemento);
+        posicionarGrid(this.elemento, this.inicialPosX, this.inicialPosY);
+        fixarAoConteiner(this.elemento);
         this.elemento.classList.add("tamPadrao");
         this.elemento.classList.add(classLayer[layer]);
+    }
+
+    getElemento(){
+        return this.elemento;
     }
 }

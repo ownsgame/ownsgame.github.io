@@ -15,14 +15,14 @@ function mudarBotaoExplorar(restante, total){
     BOTAO_EX.innerHTML = `Avançar (${restante}/${total})`; 
 }
 
-const BIRD_PS = [70, 30];
-let entPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
+const Ghost_PS = [95, 5];
+let entPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
 let entidade = new FlyingEntity("blue_ghost", [entPos.x, entPos.y]);
 entidade.perseguirJogador();
 
 setInterval(()=>{
-    let newBirdPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
-    let novaEntidade = new FlyingEntity("blue_ghost", [newBirdPos.x, newBirdPos.y]);
+    let newGhostPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
+    let novaEntidade = new FlyingEntity("blue_ghost", [newGhostPos.x, newGhostPos.y]);
     novaEntidade.perseguirJogador();
 }, 10000);
 

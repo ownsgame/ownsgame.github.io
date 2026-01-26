@@ -1,16 +1,17 @@
 class DirectLink extends FixedEntity {
-    constructor(id, elemento, link, posicoes, layer){
-        super(elemento, posicoes, layer);
+    constructor(id, link, posicoes, layer){
+        super(posicoes, layer);
         
-        this.elemento = elemento;
         this.link = link;
         this.id = id;
 
-        this.elemento.classList.add("tamPadrao");
-        this.elemento.classList.add("link");
-
+        this.setClasses();
         this.linkagem();
-        setSprite(elemento, "work", id);
+        setSprite(this.elemento, "work", id);
+    }
+
+    setClasses(){
+        this.elemento.classList.add("tamPadrao", "link");
     }
 
     linkagem(){
@@ -21,19 +22,20 @@ class DirectLink extends FixedEntity {
 }
 
 class IndirectLink extends FixedEntity{
-    constructor(id, elemento, posicoes, layer, lugar, questId = false){
-        super(elemento, posicoes, layer);
+    constructor(id, posicoes, layer, lugar, questId = false){
+        super(posicoes, layer);
         
-        this.elemento = elemento;
         this.id = id;
         this.lugar = lugar;
-        
         this.questId = questId;
-        this.elemento.classList.add("tamPadrao");
-        this.elemento.classList.add("link");
 
+        this.setClasses();
         this.linkagem();
-        setSprite(elemento, "work", id);
+        setSprite(this.elemento, "work", id);
+    }
+
+    setClasses(){
+        this.elemento.classList.add("tamPadrao", "link");
     }
 
     linkagem(){

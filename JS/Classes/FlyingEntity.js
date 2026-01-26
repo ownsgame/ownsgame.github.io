@@ -79,10 +79,30 @@ class FlyingEntity {
     perseguirJogador(){
         const PLAYER = getObjectPlayer();
 
-        this.intervalo = setInterval(()=>{
+        this.ultimoTempo = 0;
+        this.acumulador = 0;
+        this.rafId = null;
+
+        this.loopPerseguicao = this.loopPerseguicao.bind(this, PLAYER);
+        requestAnimationFrame(this.loopPerseguicao);
+    }
+
+    loopPerseguicao(PLAYER, tempoAtual){
+        if(!this.ultimoTempo){
+            this.ultimoTempo = tempoAtual;
+        }
+
+        const delta = tempoAtual - this.ultimoTempo;
+        this.ultimoTempo = tempoAtual;
+        this.acumulador += delta;
+
+        if(this.acumulador >= this.tempo){
             const POS_PX_PLAYER = PLAYER.getPixelPosicao();
             this.seguir(POS_PX_PLAYER.px, POS_PX_PLAYER.py);
-        }, this.tempo);
+            this.acumulador = 0;
+        }
+
+        this.rafId = requestAnimationFrame(this.loopPerseguicao);
     }
 
     modoAlerta(){
@@ -117,6 +137,11 @@ class FlyingEntity {
         }
     }
 
+    pararPerseguicao(){
+        cancelAnimationFrame(this.rafId);
+        this.rafId = null;
+    }
+    
     morrer(){
         this.elemento.style.opacity = 0;
         setTimeout(()=>{

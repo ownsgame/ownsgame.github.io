@@ -42,6 +42,7 @@ const COMUM_SALA_FILES = [
 ];
 
 const COMUM_DUNGEON_FILES = [
+    "View/notificacoesFase.js",
     "Controll/recompensas.js",
     "Controll/game_over.js",
     "Controll/colision.js",

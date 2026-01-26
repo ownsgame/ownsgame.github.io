@@ -5,8 +5,10 @@ class Inimigo{
         this.elemento = elemento;
         this.emCombate = false;
 
+        this.id = id;
         const DadosInimigo = getInimigoById(id);
-        this.vida = randomInt(DadosInimigo.minVida, DadosInimigo.maxVida);
+        this.vidaInicial = randomInt(DadosInimigo.minVida, DadosInimigo.maxVida);
+        this.vida = this.vidaInicial;
         this.defesa = randomInt(DadosInimigo.minDefesa, DadosInimigo.maxDefesa);
         this.ataque = randomInt(DadosInimigo.minAtaque, DadosInimigo.maxAtaque);
         this.intervalo = DadosInimigo.intervalo;
@@ -41,6 +43,9 @@ class Inimigo{
     }
     getVida(){
         return this.vida;
+    }
+    getVidaInicial(){
+        return this.vidaInicial;
     }
     getAtaque(){
         return this.ataque;

@@ -1,15 +1,19 @@
 let baus = [];
 
 class Chest extends FixedEntity{
-    constructor(posicao, recompensa, quantidade, elemento, sprites){
-        super(elemento, posicao, 2);
+    constructor(posicao, recompensa, quantidade, sprites){
+        super(posicao, 2);
         this.recompensa = recompensa;
         this.quantidade = quantidade;
-        this.elemento = elemento;
         this.aberto = false;
         this.sprites = sprites;
+        this.setClasses();
         this.setSprite(sprites[0]);
         this.abrir();
+    }
+
+    setClasses(){
+        this.elemento.classList.add("pointer");
     }
 
     abrir(){
@@ -60,9 +64,7 @@ class Chest extends FixedEntity{
 
             posicoesOcupadas.add(chavePosicao);
             const POSICOES = [posX, posY];
-            const novoBauEl = document.createElement("img");
-            novoBauEl.classList.add("pointer");
-            const novoBau = new Chest(POSICOES, ITEM.id, QUANT, novoBauEl, sprites);
+            const novoBau = new Chest(POSICOES, ITEM.id, QUANT, sprites);
             baus.push(novoBau);
         }
     }
@@ -74,22 +76,6 @@ class Chest extends FixedEntity{
         });
     }
 }
-
-function mostrarRecompensas(id, quantidade){
-    const TELA_REWARD = document.getElementById("tela_reward");
-    const RECOMPENSA = getItem(id);
-    TELA_REWARD.innerHTML = `
-        <h1>Recompensa Concedida!</h1>
-        <img src="../${RECOMPENSA.sprite}" height="50px" width="50px">
-        <h3>${quantidade}x ${RECOMPENSA.nome}</h3>
-        <p><i>"${RECOMPENSA.descricao}"</i></p>
-        <button class="botao-ativo" onclick="fecharTela('tela_reward')">Fechar</button>
-    `;
-    
-    abrirTela("tela_reward");
-    verificaAcaoReward(id);
-}
-
 
 
 

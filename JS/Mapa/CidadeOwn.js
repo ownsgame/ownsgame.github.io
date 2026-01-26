@@ -8,27 +8,18 @@ const FLAG_NOME_SALA = document.querySelector(".sala-name");
 FLAG_NOME_SALA.innerHTML = `${SALA.nome}`;
 salaApresentation(SALA.nome, SALA.capitulo);
 
-const portaUmEl = document.createElement("img");
-const portaDoisEl = document.createElement("img");
-
-const portaUm = new DirectLink("door-locked", portaUmEl, "anteSala.html", [1, 3], 2);
-const desPortaUm = new Description(portaUmEl, "Entrar no Palácio");
+const portaUm = new DirectLink("door-locked", "anteSala.html", [1, 3], 2);
+const desPortaUm = new Description(portaUm.getElemento(), "Entrar no Palácio");
 
 const posPilares = [[1, 2], [1, 4]]
 for(let i =0; i< 2; i++){
-    const novoPilarEL = document.createElement("img");
-    setSprite(novoPilarEL, "entidade", "pilar");
-    let novoPilar = new FixedEntity(novoPilarEL, [posPilares[i][0], posPilares[i][1]], 2);
+   
+    let novoPilar = new FixedEntity([posPilares[i][0], posPilares[i][1]], 2);
+    setSprite(novoPilar.getElemento(), "entidade", "pilar");
 }
 
-const dojoEl = document.createElement("img");
-const dojo = new DirectLink("dojo", dojoEl, "dojo.html", [5, 2], 2);
-
-const cassinoEl = document.createElement("img");
-const cassino = new DirectLink("cassino", cassinoEl, "colinaDancante.html", [5, 4], 2);
-
-
+const dojo = new DirectLink("dojo", "dojo.html", [5, 2], 2);
+const cassino = new DirectLink("cassino", "colinaDancante.html", [5, 4], 2);
 const sino = new WorkBench("sino", [3, 5]);
-
-const portaDois = new DirectLink("door", portaDoisEl, "colinaDancante.html", [3, 1], 2);
+const portaDois = new DirectLink("door", "colinaDancante.html", [3, 1], 2);
 

@@ -39,7 +39,7 @@ function exibirDano(dano, tipo = 0){
     CONTADOR.style.display = "flex";
     CONTADOR.style.opacity = 1;
 
-    setTimeout(()=>{fecharTela("damage-count")}, 1200);
+    setTimeout(()=>{fecharTela("damage-count")}, 600);
 }
 
 function fecharAbaStatus(){

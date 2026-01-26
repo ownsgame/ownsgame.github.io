@@ -54,7 +54,7 @@
     box-sizing: border-box;
 }
 
-#status-hp, #status-time-attack, #contagem-ataque, #status-boss-hp{
+#status-hp, #status-time-attack, #contagem-ataque, #status-boss-hp, #dados-inimigo{
     border: 3px solid rgb(255, 255, 255);
     border-bottom: 3px rgba(255, 255, 255, 0.247) solid;
     border-radius: 50px;
@@ -81,6 +81,15 @@
     transition: background-image 0.3s ease;
 }
 
+#dados-inimigo{
+    display: none;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(223, 30, 23, 1) 100%, black 100%);
+    transition: background-image 0.3s ease;   
+}
+
 #contagem-ataque{
     box-sizing: border-box;
     display: none;
@@ -99,28 +108,6 @@
     font-family: "Ysabeau Infant", sans-serif;
     text-align: center;
     color: white;
-}
-
-.reward{
-    color: white;
-    width: 70vh; height: 70vh;
-    display: none;
-}
-
-.reward h3{
-    font-family: "Ysabeau Infant", sans-serif;
-    font-size: 18pt;
-    text-align: center;
-}
-
-.reward img{
-    width: 120px; height: 120px;
-    filter: drop-shadow(-3px 5px 30px #ffffff2d);
-}
-.reward p{
-    font-family: "Ysabeau Infant", sans-serif;
-    text-align: center;
-    font-size: 16pt;
 }
 
 #damage-count{
@@ -244,6 +231,16 @@
     }
     .reward img{
         width: 60px; height: 60px;
+    }
+
+    .notificaoes-level{
+        width: 60vw;
+        left: 30%;
+        transform: translateX(-30%);
+    }
+
+    .notificacao-level{
+        width: 100%;
     }
 }
 
