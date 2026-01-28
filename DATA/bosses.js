@@ -5,10 +5,16 @@ const BOSSES = [
         titulo: "Rei da Floresta de Flora",
         capa: "Sprites/Capa/b_woody.svg",
         sprites: [["Sprites/Bosses/woody.svg"]],
-        vida: 600,
-        defesa: 5,
+        vida: 100,
+        defesa: 0,
         ataque: 20,
-        forca: 210
+        forca: 210,
+        capitulo: 1,
+        nomeFragmento: "Fragmento da Natureza",
+        recompensas:{
+            cetroArvore: 1,
+            moeda: 500,
+        }
     },
     {
         id: 2,
@@ -19,7 +25,9 @@ const BOSSES = [
         vida: 1600,
         defesa: 10,
         ataque: 50,
-        forca: 575
+        forca: 575,
+        capitulo: 2,
+        nomeFragmento: "Fragmento da Visão",
     },
     {
         id: 3,
@@ -30,7 +38,9 @@ const BOSSES = [
         vida: 4000,
         defesa: 50,
         ataque: 70,
-        forca: 1376
+        forca: 1376,
+        capitulo: 3,
+        nomeFragmento: "Fragmento da Dor",
     },
     {
         id: 4,
@@ -41,7 +51,9 @@ const BOSSES = [
         vida: 7000,
         defesa: 75,
         ataque: 80,
-        forca: 2385
+        forca: 2385,
+        capitulo: 4,
+        nomeFragmento: "Fragmento da Luz",
     },
     {
         id: 5,
@@ -52,7 +64,9 @@ const BOSSES = [
         vida: 10000,
         defesa: 100,
         ataque: 100,
-        forca: 3400
+        forca: 3400,
+        capitulo: 5,
+        nomeFragmento: "Fragmento da Força",
     },
     {
         id: 6,
@@ -63,7 +77,9 @@ const BOSSES = [
         vida: 30000,
         defesa: 250,
         ataque: 250,
-        forca: 10166
+        forca: 10166,
+        capitulo: 6,
+        nomeFragmento: "Fragmento da Sabedoria",
     }
 ]
 

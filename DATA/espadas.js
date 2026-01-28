@@ -82,11 +82,30 @@ const ESCUDOS = [
         consumivel: false,
         destino: "inventário",
         classe: "escudo",
-        raridade: "Raro",
+        raridade: "Comum",
     }
 ];
 
 function getEscudo(id){
     const escudo = ESCUDOS.find(e => e.id === id);
     return escudo ? escudo : null;
+}
+
+const CETROS = [
+    {
+        id: "cetroArvore",
+        nome: "Cetro de Árvore",
+        sprite: "Sprites/Itens/scepter_tree.svg",
+        descricao: "Cetro de Árvore",
+        unico: true,
+        consumivel: false,
+        destino: "inventário",
+        classe: "cetro",
+        raridade: "Raro",
+    }
+];
+
+function getCetro(id){
+    const cetro = CETROS.find(c => c.id === id);
+    return cetro ? cetro : null;
 }

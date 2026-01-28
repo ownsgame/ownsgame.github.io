@@ -44,6 +44,11 @@
     font-size: 15pt;
 }
 
+.resultado-conteiner, .receitas-conteiner{
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
 @media (max-width: 600px) {
     .tela-padrao h1{
         font-size: 25pt;
@@ -63,6 +68,14 @@
 
     .column-telas, .row-telas {
         align-items: center;
+    }
+
+    .resultado-conteiner, .receitas-conteiner{
+        padding: 0px;
+    }
+
+    .resultado-conteiner p, .receitas-conteiner p{
+        text-align: center;
     }
 }
 

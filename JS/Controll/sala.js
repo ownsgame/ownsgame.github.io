@@ -14,9 +14,16 @@ function sairSala(){
 }
 
 function apagarSala(){
+    deletarFlyingEntitys();
     zerarInimigoAlvo();
     Chest.matarBaus();
     removerGrid();
     deletarInimigos();
     fecharAbaStatus();
+}
+
+function apagarSalaBoss(){
+    fecharAbaStatus();
+    removerGrid();
+    deletarFlyingEntitys();
 }

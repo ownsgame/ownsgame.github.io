@@ -14,7 +14,12 @@ entidade.perseguirJogador();
 
 
 setInterval(()=>{
-    let newBirdPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
-    let novaEntidade = new FlyingEntity("bird", [newBirdPos.x, newBirdPos.y]);
-    novaEntidade.perseguirJogador();
+    let player = getObjectPlayer();
+    if(!player.getVenceu()){
+        let newBirdPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
+        let novaEntidade = new FlyingEntity("bird", [newBirdPos.x, newBirdPos.y]);
+        addFlyingEntity(novaEntidade);
+        novaEntidade.perseguirJogador();
+    }
+
 }, 10000);

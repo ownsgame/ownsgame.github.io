@@ -1,6 +1,7 @@
 class Boss {
     constructor(id){
         const DATA = getBoss(id);
+        this.id = id;
         this.vida = DATA.vida;
         this.vidaInicial = DATA.vida;
         this.dano = DATA.ataque;
@@ -136,6 +137,7 @@ class Boss {
 
         this.pararMovimento();
         this.elemento.remove();
+        derrotarBOSS(this.id);
     }
 
     modoAlerta(){

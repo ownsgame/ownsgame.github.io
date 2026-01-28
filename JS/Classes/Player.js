@@ -10,6 +10,7 @@ class Player{
 
         this.tempoEspera = Dados.tempoEspera;
         this.podeAtaca = true;
+        this.venceu = false;
         this.morto = false;
 
         this.inicializarElemento();
@@ -29,7 +30,16 @@ class Player{
     getAtaque(){
         return this.ataque;
     }
+    getVenceu(){
+        return this.venceu;
+    }
+    setVenceu(){
+        this.venceu = true;
+    }
+
     podeAtacar(){
+        if(this.venceu) return false;
+        
         return this.podeAtaca;
     }
 
@@ -95,6 +105,7 @@ class Player{
 
     tomarDano(dano){
         if(this.morto) return;
+        if(this.venceu) return;
 
         let danoReal = dano - this.defesa;
 

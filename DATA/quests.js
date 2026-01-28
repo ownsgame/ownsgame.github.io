@@ -20,3 +20,7 @@ function getQuest(id){
     return quest ? quest : null;
 }
 
+function getQuestsDoCapitulo(capitulo){
+    return QUESTS.filter(quest => quest.capitulo === capitulo);
+}
+

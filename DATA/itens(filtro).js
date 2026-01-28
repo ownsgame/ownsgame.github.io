@@ -11,6 +11,10 @@ function getItem(chave){
     if(item == null){
         item = getEscudo(chave);
     }
+
+    if(item == null){
+        item = getCetro(chave);
+    }
     
     return item;
 }

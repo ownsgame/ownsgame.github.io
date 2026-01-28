@@ -1,6 +1,6 @@
 :root {
     --lendario: linear-gradient(to bottom right,rgb(127, 43, 184),  rgb(35, 14, 95));
-    --raro: linear-gradient(to bottom right,rgb(255, 230, 0),  rgb(167, 122, 0));
+    --raro: linear-gradient(to bottom right,rgb(255, 231, 19),  rgb(255, 187, 0));
     --comum: linear-gradient(to bottom right,rgb(31, 109, 255), rgb(0, 79, 224),  rgb(0, 61, 173));
     --nulo: linear-gradient(to bottom right,rgb(63, 63, 63),  rgb(26, 26, 26));
 }
@@ -78,6 +78,10 @@
 
 .item-conteiner:hover{
     background-image: var(--gradientebranco);
+}
+
+.item-conteiner:hover p{
+    color: rgb(0, 79, 224);
 }
 
 .item-conteiner img{

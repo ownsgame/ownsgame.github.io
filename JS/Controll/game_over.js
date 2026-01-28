@@ -5,13 +5,16 @@ const TEXTINHOS_MOTIVACIONAIS = [
     "Você insiste em perder essa fase?",
     "Dizem que você é revivido por uma máquina especial",
     "De alguma forma você ainda pode voltar a vida",
-]
+];
 
 function fimDeJogo(){
     let rd = randomVec(TEXTINHOS_MOTIVACIONAIS);
     
     if(!SALA.boss){
         apagarSala();
+    }
+    else{
+        apagarSalaBoss();
     }
     
     TELA_GAME_OVER.innerHTML = `
@@ -21,4 +24,36 @@ function fimDeJogo(){
         <button onclick="redirecionarUltimaSala()">Voltar</button>
     `;
     TELA_GAME_OVER.style.display = "flex";
+}
+
+function vitoriaDeJogo(boss){
+    apagarSalaBoss();
+    let player = getObjectPlayer();
+    player.setVenceu();
+    
+    let string = `
+        <h1><i class="fa-solid fa-trophy"></i>Vitória</h1>
+        
+        <p class="fonte-comum"> Você coletou o <i><b>"${boss.nomeFragmento}"</b></i></p>
+    `;
+
+    if(boss.recompensas){
+
+        string += `
+        <h3>Recompensas:</h3>
+        <div class="itens-conteiner">
+        `;
+
+        for(let recompensa in boss.recompensas){
+            string += itemFrame(recompensa, boss.recompensas[recompensa], false);
+        }
+
+        string += "</div>";
+    }
+
+    string += `<button onclick="redirecionarUltimaSala()">Voltar</button>`;
+
+    TELA_GAME_OVER.innerHTML = string;
+    TELA_GAME_OVER.style.display = "flex";
+
 }

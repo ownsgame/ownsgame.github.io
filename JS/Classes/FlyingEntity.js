@@ -1,3 +1,5 @@
+const FlyingEntity_ARRAY = [];
+
 class FlyingEntity {
     constructor(id, pos){
         const dados = getVoador(id);
@@ -148,7 +150,29 @@ class FlyingEntity {
             this.intervalo = null;
             this.tempoVida = false;
             this.elemento.remove();
+            const indice = FlyingEntity_ARRAY.indexOf(this);
+
+            if(indice !== -1){
+                FlyingEntity_ARRAY.splice(indice, 1);
+            }
         }, 100);
     }
 }
+
+function addFlyingEntity(objeto){
+    FlyingEntity_ARRAY.push(objeto);
+}
+
+function getAllFlyingEntity(){
+    return FlyingEntity_ARRAY;
+}
+
+function deletarFlyingEntitys(){
+    const INIMIGOS = getAllFlyingEntity();
+    for (let i = INIMIGOS.length - 1; i >= 0; i--) {
+        INIMIGOS[i].morrer();
+    }
+    return true;
+}
+
 

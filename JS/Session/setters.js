@@ -17,6 +17,28 @@ function setSessionItem(caminho, valor) {
     saveSession(SAVE);
 }
 
+function addItensToInventory(itens){
+    const RECURSOS = getSessionRecursos();
+    const INVENTARIO = getSessionInventario();
+
+    
+    for(let id in itens){
+        const RECOMPENSA = getItem(id);
+        
+        if(!RECOMPENSA.consumivel){
+            if(RECOMPENSA.destino == "inventário"){
+                INVENTARIO[id] = (INVENTARIO[id] || 0) + itens[id];
+            }
+            else if(RECOMPENSA.destino == "recursos"){
+                RECURSOS[id] = (RECURSOS[id] || 0) + itens[id];
+            }
+        }
+    }
+
+    setSessionInventario(INVENTARIO);
+    setSessionRecursos(RECURSOS);
+}
+
 function setSessionVida(valor){
     setSessionItem("vida", valor);
 }
@@ -70,6 +92,11 @@ function setEscudoAtual(escudoId){
     setSessionItem("defesa", escudo.defesa);
 }
 
+function setCetroAtual(cetroId){
+    let cetro = getItem(cetroId);
+    setSessionItem("cetroAtual", cetroId);
+}
+
 function completarQuest(id){
     const QUEST = getQuest(id);
     let estado = getSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`);
@@ -78,9 +105,12 @@ function completarQuest(id){
         setSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`, true);
    
         let QUESTS_ATIVAS = getSessionItem("questsAtivas");
+        let QUESTS_CONCLUIDAS = getSessionItem("questsConcluidas");
 
+        QUESTS_CONCLUIDAS.push(QUEST.id);
         QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
         setSessionItem("questsAtivas", QUESTS_ATIVAS);
+        setSessionItem("questsConcluidas", QUESTS_CONCLUIDAS);
         plusPorcentagem(5);
         emitirNotificacao(3, QUEST.nome);
     }
@@ -129,4 +159,29 @@ function playerTreinar(){
             console.log(getMoedas());
         }
     }
+}
+
+function derrotarBOSS(id){
+    const bossDerrotado = getBoss(id);
+    const PLAYER_DATA = getSession();
+
+    let fragmentosHexopoda = PLAYER_DATA.fragmentosHexopoda + 1;
+    let capituloCorrente = PLAYER_DATA.capituloCorrente + 1;
+    setSessionItem("fragmentosHexopoda", fragmentosHexopoda);
+    setSessionItem("capituloCorrente", capituloCorrente);
+    
+    let novasQuests = getQuestsDoCapitulo(capituloCorrente);
+
+    if(novasQuests != null && novasQuests.length > 0){
+        novasQuests.forEach(novaQuest => {
+            addQuest(novaQuest.id)
+        });
+    }
+
+    if(bossDerrotado.recompensas){
+        addItensToInventory(bossDerrotado.recompensas);
+    }
+
+    plusPorcentagem(10);
+    vitoriaDeJogo(bossDerrotado);
 }

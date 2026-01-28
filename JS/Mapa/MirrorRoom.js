@@ -24,7 +24,7 @@ setInterval(()=>{
     let newGhostPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
     let novaEntidade = new FlyingEntity("blue_ghost", [newGhostPos.x, newGhostPos.y]);
     novaEntidade.perseguirJogador();
-}, 10000);
+}, 15000);
 
 const TOTAL_VIAGENS = 3;
 let viagensRestantes = TOTAL_VIAGENS;

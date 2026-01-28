@@ -19,7 +19,7 @@ function loadReceita(receitaId){
     const ingredientes = receita.ingredientes;
 
     let string = `
-        <div class="column-telas">
+        <div class="column-telas receitas-conteiner">
             <h2 class="fonte-comum">Ingreditentes:</h2>
             <div class="itens-conteiner">
     `;
@@ -33,7 +33,7 @@ function loadReceita(receitaId){
             </div>
         </div>
 
-        <div class="column-telas">
+        <div class="column-telas resultado-conteiner">
             <h2 class="fonte-comum">Resultado:</h2>
             <p><b>x${receita.quantItensResultado}</b> ${resultado.nome}</p>
             <div class="itens-conteiner">
@@ -75,16 +75,14 @@ function loadBancadaContrucao(nome, receitas){
 
     receitas.forEach(receitaId => {
         const receita = getReceita(receitaId);
-        string += itemFrame(receita.resultado, false, `changeReceita(${receitaId})`);
+        string += itemFrame(receita.resultado, receita.quantItensResultado, `changeReceita(${receitaId})`);
     });
 
 
     string += `
                 </div>
             </div>
-            <div class="row-telas receitas-conteiner">
-                    ${loadReceita(receitas[0])}
-            </div>
+            ${loadReceita(receitas[0])}
         </div>
     `;
 
@@ -92,8 +90,60 @@ function loadBancadaContrucao(nome, receitas){
 }
 
 function changeReceita(receitaId){
+    const receita = getReceita(receitaId);
+    const resultado = getItem(receita.resultado);
+    const ingredientes = receita.ingredientes;
+
+    let string = `
+        <div class="column-telas receitas-conteiner">
+            <h2 class="fonte-comum">Ingreditentes:</h2>
+            <div class="itens-conteiner">
+    `;
+
+    for (let chave in ingredientes) {
+        string += itemFrame(chave, ingredientes[chave], false);
+    }
+
+    string += 
+    `
+            </div>
+        </div>
+    `;
+    document.querySelector(".receitas-conteiner").innerHTML = string;
+
+    string = 
+    `
+        <div class="column-telas resultado-conteiner">
+            <h2 class="fonte-comum">Resultado:</h2>
+            <p><b>x${receita.quantItensResultado}</b> ${resultado.nome}</p>
+            <div class="itens-conteiner">
+                ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
+            </div>
+    `;
+
+    if(getPossibilidadeReceita(receitaId)){
+        string +=   
+        `
+            <button onclick="construirReceita(${receitaId})">
+                    <i class="fa-solid fa-hammer"></i> Construir
+            </button>
+        </div>
+        `;
+    }
+    else{
+        string += ` 
+            <p class='fonte-comum'> 
+                <i class='fa-solid fa-triangle-exclamation'></i>
+                Faltam Recursos para a Construção
+            </p>
+            <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
+                <i class="fa-solid fa-toolbox"></i> Inventário
+            </button>
+        </div>
+        `
+    }
     
-    document.querySelector(".receitas-conteiner"). innerHTML = loadReceita(receitaId);
+    document.querySelector(".resultado-conteiner").innerHTML = string;
 }
 
 function loadTrainPerfil(){

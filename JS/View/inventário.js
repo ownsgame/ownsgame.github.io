@@ -112,7 +112,7 @@ function loadGear(){
         string += itemFrame(itemId, false, "loadChangeItem('escudo')")
     }
 
-    if(copiaDados.poderAtual == null || !copiaDados.poderAtual){
+    if(copiaDados.cetroAtual == null || !copiaDados.cetroAtual){
         string +=
         `
             <div class="item-conteiner" onclick="loadChangeItem('cetro')">
@@ -121,8 +121,8 @@ function loadGear(){
         `;
     }
     else{
-        let itemId = copiaDados.armaAtual;
-        string += itemFrame(itemId, false, "loadChangeItem('arma')")
+        let itemId = copiaDados.cetroAtual;
+        string += itemFrame(itemId, false, "loadChangeItem('cetro')")
     }
                     
     string +=      
@@ -141,13 +141,13 @@ function loadMissao(){
     let string =
     `
             <h2 class="animated-aparecer"> Hexapoda</h2>
-            <img class="animated-aparecer inventario-image" src="../Sprites/IU/hexopoda0.svg">
+            <img class="animated-aparecer inventario-image" src="../Sprites/IU/hexopoda${copiaDados.fragmentosHexopoda}.svg">
             <h2 class="animated-aparecer"> ${copiaDados.fragmentosHexopoda} de 6 partes</h2>
             <h3 class="animated-aparecer">Conclusão: ${copiaDados.porcentagem}%</h3>
             <h3 class="animated-aparecer">Capítulo Atual: ${copiaDados.capituloCorrente}</h3>
     `;
 
-    changeDados("Missao", string, 4);
+    changeDados("Missão", string, 4);
 }
 
 loadStatus();

@@ -19,7 +19,6 @@ setInterval(() => {
     }
 
     if (combate && !emCombateAnterior) {
-        emitirNotificacaoFase(1, enemyTarget.id, `Inimigo: ${getInimigoById(enemyTarget.id).nome}`);
         iniciarContador(tempo, dano);
     }
 

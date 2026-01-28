@@ -44,6 +44,10 @@ function trocaDeItens(classe, novoItemId){
         setEscudoAtual(novoItemId);
         loadGear();
     }
+    else if(classe == "cetro"){
+        setCetroAtual(novoItemId);
+        loadGear();
+    }
 }
 
 function sair(){

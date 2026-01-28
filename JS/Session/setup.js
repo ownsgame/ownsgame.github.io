@@ -10,7 +10,7 @@ function criarModelo(){
 
     return {
         nome: nomeRandom,
-        
+        saveVersion: null,
         vida: 100,
         vidaMult: 1,
         vidaSum: 0,
@@ -27,7 +27,11 @@ function criarModelo(){
 
         inventario: {},
         recursos: {
-            moeda: 0,
+            ectoplasma: 35,
+            petala: 15,
+            espinho: 5,
+            madeira: 20,
+            polen: 5,
         },
 
         arvoreConclusao: {
@@ -52,7 +56,7 @@ function criarModelo(){
         fragmentosHexopoda: 0,
         porcentagem: 0,
         armaAtual: null,
-        poderAtual: null,
+        cetroAtual: null,
         escudoAtual: null,
         ultimaSala: "laboratorio.html",
         iniciante: true,
