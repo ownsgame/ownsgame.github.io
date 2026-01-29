@@ -56,7 +56,7 @@ function resetar(){
             atualizarPos();
             if(viagensRestantes == 0){
                 ultimaSala = true;
-                BOTAO_EX.innerHTML = `Sair`;
+                BOTAO_EX.innerHTML = `Fim de Fase`;
                 BOTAO_EX.onclick = sairSala;
             }
             else{

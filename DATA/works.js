@@ -10,6 +10,11 @@ const WORKS = [
         hover: "Sprites/WorkBanks/door-locked.svg",
     },
     {
+        id: "placa",
+        sprite: "Sprites/WorkBanks/placa.svg",
+        hover: "Sprites/WorkBanks/placa.svg",
+    },
+    {
         id: "mirror",
         sprite: "Sprites/WorkBanks/mirror.svg",
         hover: "Sprites/WorkBanks/mirror-hover.svg",
@@ -44,6 +49,11 @@ const WORKS = [
         id: "tronco",
         sprite: "Sprites/WorkBanks/tronco.svg",
         hover: "Sprites/WorkBanks/tronco.svg",
+    },
+    {
+        id: "portal",
+        sprite: "Sprites/WorkBanks/portal.svg",
+        hover: "Sprites/WorkBanks/portal.svg",
     },
 ]
 

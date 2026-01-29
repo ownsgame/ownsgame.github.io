@@ -25,6 +25,12 @@ const WORKBENCHS = [
         receitas: [3],
         sprite: "Sprites/WorkBanks/falsificador.svg"
     },
+    {
+        id: "mapaMundi",
+        nome: "Mapa-Múndi",
+        tipo: "mapaMundi",
+        sprite: "Sprites/WorkBanks/globe.svg"
+    },
 ];
 
 function getWorkBench(id){

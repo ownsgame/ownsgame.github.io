@@ -22,4 +22,4 @@ for(let i =0; i<4; i++){
     setSprite(novaTocha.getElemento(), "entidade", "tocha");
 }
 
-
+const globo = new WorkBench("mapaMundi", [3, 5]);

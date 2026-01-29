@@ -153,32 +153,30 @@ function loadTrainPerfil(){
     let string = 
     `
         <div class="row-telas">
-            <div class="column-telas">
+            <div class="column-telas pad-1">
                 <h2 class="fonte-comum">Força Atual:</h2>
-                <div class="atributos-alinhados">
-                    <div class="atributo">
-                        <img src="Sprites/IU/heart_icon.svg" width="32px" height="32px">
-                        <h3 class="fonte-comum"> Vida: ${PLAYER_DATA.vida} 
+                <div class="column-telas">
+                    <div>
+                        <h3> Vida: ${PLAYER_DATA.vida} 
                         <span class="tx-yellow">+${PLAYER_DATA.vidaSum}</span>
                         <span class="tx-pink">x${PLAYER_DATA.vidaMult}</span></h3>
                     </div>
-                    <div class="atributo">
-                        <img src="Sprites/IU/attack_icon.svg" width="32px" height="32px">
-                        <h3 class="fonte-comum"> Ataque: ${PLAYER_DATA.ataque} 
+                    <div>
+                        <h3> Ataque: ${PLAYER_DATA.ataque} 
                         <span class="tx-yellow">+${PLAYER_DATA.ataqueSum}</span>
                         <span class="tx-pink">x${PLAYER_DATA.ataqueMult}</span></h3>
                     </div>
-                    <div class="atributo">
-                        <img src="Sprites/IU/shield_icon.svg" width="32px" height="32px">
-                        <h3 class="fonte-comum"> Defesa: ${PLAYER_DATA.defesa} 
+                    <div>
+                        <h3> Defesa: ${PLAYER_DATA.defesa} 
                         <span class="tx-yellow">+${PLAYER_DATA.defesaSum}</span>
                         <span class="tx-pink">x${PLAYER_DATA.defesaMult}</span></h3>
                     </div>
-                    <div class="atributo">
-                        <h3 class="fonte-comum">
-                            Base &nbsp
+                    <div>
+                        <h3>
+                            Base 
                             <span class="tx-yellow">+Bônus</span>
-                            <span class="tx-pink">&nbsp xMultiplicador</span></h3>
+                            <span class="tx-pink"> xMultiplicador</span>
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -186,14 +184,14 @@ function loadTrainPerfil(){
     if(treino != null){
         string += 
         `
-            <div class="column-telas">
+            <div class="column-telas pad-1">
                 <h2 class="fonte-comum">Treinar:</h2>
                 <h3 class="fonte-comum">Melhorias do <b>Treinamento ${PLAYER_DATA.levelTreino + 1}</b>:</h3>
                 <p>Vida: <span class="tx-yellow">+${treino.vidaSum} ao Bônus</span></p>
                 <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum} ao Bônus</span></p>
                 <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum} ao Bônus</span></p>
                 <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas</p>
-                <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
+                <p class="fonte-comum ${treino.custo > PLAYER_DATA.recursos.moeda ? 'tx-yellow"' : '"'}"><i class="fa-solid fa-coins"></i> Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
                 <button onclick="playerTreinar()"><i class="fa-solid fa-dumbbell"></i> Treinar</button>
             </div>
         `;
@@ -217,16 +215,26 @@ function loadTeleport(){
         <div class="column-telas">
             <h2 class="fonte-comum">Viajar para:</h2>
             <div class="column-buttons">
-                ${PLAYER_DATA.ultimaSala != "cidade.html" ? `<button onclick="redirecionarPara('cidade.html')"><i class="fa-solid fa-bell"></i> Cidade Own</button>` : ""}
+                ${PLAYER_DATA.ultimaSala != "cidadeDois.html" ? `<button onclick="redirecionarPara('cidadeDois.html')"><i class="fa-solid fa-bell"></i> Cidade Own</button>` : ""}
                 ${PLAYER_DATA.ultimaSala != "reinoFlora.html" ? `<button onclick="redirecionarPara('reinoFlora.html')"><i class="fa-solid fa-bell"></i> Reino Flora</button>` : ""}
-                ${PLAYER_DATA.capituloCorrente >= 2 ? '<button><i class="fa-solid fa-bell"></i> Reino de Hellas</button>' : ""}
-                ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino dos Casmurros</button>' : ""}
+                ${PLAYER_DATA.capituloCorrente >= 2 && PLAYER_DATA.ultimaSala != "reinoHellas.html"?  
+                    `<button onclick="redirecionarPara('reinoHellas.html')"><i class="fa-solid fa-bell"></i> Reino de Hellas</button>` : ""}
+                ${PLAYER_DATA.capituloCorrente >= 3 ? '<button><i class="fa-solid fa-bell"></i> Reino Casmurro</button>' : ""}
                 ${PLAYER_DATA.capituloCorrente >= 5 ? '<button><i class="fa-solid fa-bell"></i> Reino Brasa</button>' : ""}
                 ${PLAYER_DATA.capituloCorrente >= 6 ? '<button><i class="fa-solid fa-bell"></i> Terras de Orakana</button>' : ""}
             </div>
+            <p class='fonte-comum'> 
+                <i class='fa-solid fa-triangle-exclamation'></i>
+                Não é possivel viajar para Reinos de Capítulos futuros
+            </p>
         </div>
         
     `;
     
     changeWorkBenchScreen("Solicitar Viagem", string);
+}
+
+function loadMapaMundi(){
+    let string = `<img src="../Sprites/IU/mapa-mundi.svg">`;
+    changeWorkBenchScreen("Mapa-Múndi", string);
 }

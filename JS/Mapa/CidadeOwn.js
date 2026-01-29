@@ -20,6 +20,9 @@ for(let i =0; i< 2; i++){
 
 const dojo = new DirectLink("dojo", "dojo.html", [5, 2], 2);
 const cassino = new DirectLink("cassino", "colinaDancante.html", [5, 4], 2);
-const sino = new WorkBench("sino", [3, 5]);
+const placa = new DirectLink("placa", "cidadeDois.html", [3, 5], 2);
+const desPlaca = new Description(placa.getElemento(), "Avançar");
+placa.getElemento().style.transform = "scaleX(-1)";
+
 const portaDois = new DirectLink("door", "colinaDancante.html", [3, 1], 2);
 

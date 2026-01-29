@@ -26,6 +26,7 @@ const TILES_CUSTER = {
     floresta: ["Sprites/Tiles/floresta_1.svg", "Sprites/Tiles/floresta_2.svg"],
     pantano: ["Sprites/Tiles/pantano_1.svg", "Sprites/Tiles/pantano_2.svg"],
     morta: ["Sprites/Tiles/morta_1.svg", "Sprites/Tiles/morta_2.svg"],
+    hellas: ["Sprites/Tiles/hellas_1.svg", "Sprites/Tiles/hellas_2.svg"],
 }
 
 function getTileSprite(id){

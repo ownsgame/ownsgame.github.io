@@ -38,6 +38,9 @@ class WorkBench {
         else if(this.tipo == "teleporte"){
             loadTeleport();
         }
+        else if(this.tipo == "mapaMundi"){
+            loadMapaMundi();
+        }
     }
 
     getElemento(){

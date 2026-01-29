@@ -8,6 +8,10 @@ const ENTIDADES_SPRITES = [
         sprite: "Sprites/WorkBanks/pilar.svg"
     },
     {
+        id: "pilar-floresta",
+        sprite: "Sprites/WorkBanks/pilar-floresta.svg"
+    },
+    {
         id: "maquinaCientifica",
         sprite: "Sprites/WorkBanks/scientific-machine.svg"
     },
@@ -16,14 +20,13 @@ const ENTIDADES_SPRITES = [
         sprite: "Sprites/WorkBanks/wishing-well.svg"
     },
     {
-        id: "globo",
-        sprite: "Sprites/WorkBanks/globe.svg"
-    },
-    {
         id: "mesaRelatorio",
         sprite: "Sprites/WorkBanks/report-table.svg"
     },
-
+    {
+        id: "estatuaHelos",
+        sprite: "Sprites/WorkBanks/statue.svg"
+    },
 ]
 
 function getEntitySprite(id){

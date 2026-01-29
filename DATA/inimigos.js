@@ -137,7 +137,11 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/1/tronco.svg",
+                "Sprites/Enemys/1/tronco[0][0].svg",
+                "Sprites/Enemys/1/tronco[0][1].svg",
+                "Sprites/Enemys/1/tronco[0][2].svg",
+                "Sprites/Enemys/1/tronco[0][1].svg",
+                "Sprites/Enemys/1/tronco[0][3].svg",
             ],
         ],
         hover: "Sprites/Enemys/1/tronco.svg",
@@ -169,7 +173,7 @@ const INIMIGOS_LIST =
             ],
         ],
         hover: "Sprites/Enemys/1/sad_flower.svg",
-        intervalo: 1,
+        intervalo: 1.5,
     },
 ];
 
