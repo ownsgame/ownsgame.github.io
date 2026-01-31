@@ -11,6 +11,7 @@ const JS_DATA_FILES = [
     "../DATA/places.js",
     "../DATA/quests.js",
     "../DATA/receitas.js",
+    "../DATA/sounds.js",
     "../DATA/tiles.js",
     "../DATA/treino.js",
     "../DATA/voadores.js",
@@ -42,6 +43,7 @@ const COMUM_SALA_FILES = [
 ];
 
 const COMUM_DUNGEON_FILES = [
+    "Controll/audio.js",
     "View/notificacoesFase.js",
     "Controll/recompensas.js",
     "Controll/game_over.js",

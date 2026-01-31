@@ -11,13 +11,14 @@ const PLACES = [
         recompensas: 
         { 
             moeda: 45,
-            frutaCoracao: 27,
             frutaEnergia: 28,
+            frutaCoracao: 27,
         },
 
         viagens: 3,
         inimigos: ["ghost"],
         background: "Sprites/Ground/mirrorroom_background.svg",
+        trilha: "temaTemplo",
     },
     {
         id: "camaraCentral",
@@ -121,13 +122,14 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
-            moeda: 54,
+            moeda: 45,
+            frutaEnergia: 31,
             frutaCoracao: 24,
-            frutaEnergia: 22,
         },
 
-        inimigos: ["flow"],
+        inimigos: ["flow", "flowy"],
         background: "Sprites/Ground/colina_background.svg",
+        trilha: "temaColina",
     },
     {
         id: "pantano",
@@ -135,18 +137,19 @@ const PLACES = [
         capitulo: 1,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/Colina-Dancante.svg",
+        sprite: "Sprites/Places/pantano.svg",
         link: "pantano.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
-            moeda: 54,
-            frutaCoracao: 24,
-            frutaEnergia: 22,
+            moeda: 60,
+            frutaCoracao: 20,
+            frutaEnergia: 20,
         },
 
-        inimigos: ["frogs"],
+        inimigos: ["troncos", "frogs"],
         background: "Sprites/Ground/pantano.svg",
+        trilha: "temaPantano",
     },
     {
         id: "florestaMorta",
@@ -154,18 +157,19 @@ const PLACES = [
         capitulo: 1,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/Colina-Dancante.svg",
+        sprite: "Sprites/Places/Floresta-Morta.svg",
         link: "florestaMorta.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
-            moeda: 54,
-            frutaCoracao: 24,
-            frutaEnergia: 22,
+            moeda: 34,
+            frutaCoracao: 34,
+            frutaEnergia: 32,
         },
 
-        inimigos: ["frogs"],
+        inimigos: ["troncos", "sadFlowers"],
         background: "Sprites/Ground/floresta-morta.svg",
+        trilha: "temaDungeon",
     },
     {
         id: "bossWoody",

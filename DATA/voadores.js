@@ -25,9 +25,10 @@ const VOADORES = [
         tempoVida: 12000,
         tamanho: "Médio",
         sprites: [[
-            "Sprites/Enemys/blue_ghost[0][0].svg", 
-            "Sprites/Enemys/blue_ghost[0][1].svg",
-            "Sprites/Enemys/blue_ghost[0][2].svg",  
+            "Sprites/Enemys/blue_ghost[0][1].svg", 
+            "Sprites/Enemys/blue_ghost[0][0].svg",
+            "Sprites/Enemys/blue_ghost[0][2].svg",
+            "Sprites/Enemys/blue_ghost[0][0].svg",  
         ]],
     }
 ];

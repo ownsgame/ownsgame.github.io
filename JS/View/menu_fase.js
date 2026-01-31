@@ -10,12 +10,17 @@ function cardItem(sprite, quantidade){
 function abrirTelaMenuJogo(){
     const TELA = document.getElementById("menu-jogo");
     const NOME_FASE = getLevelName();
+    const MUSICA_FASE = getSound(getTemaFase());
 
     let string = `
         <h2>${NOME_FASE}</h2>
-        <p class="fonte-comum alerta">
+        <p>
             <i class="fa-solid fa-triangle-exclamation"></i> 
             Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
+        </p>
+        <p>
+            <i class="fa-solid fa-compact-disc"></i> Tocando:
+            <i>"${MUSICA_FASE.nome}"</i> de <b>${MUSICA_FASE.origem}</b>
         </p>
     `;
     string += `

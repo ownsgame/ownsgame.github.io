@@ -1,4 +1,4 @@
-function itemFrame(id, quantidade = false, onclick = false){
+function itemFrame(id, quantidade = false, onclick = false, percentual = false){
     const ITEM = getItem(id);
 
     let string = `
@@ -7,7 +7,12 @@ function itemFrame(id, quantidade = false, onclick = false){
     `;
 
     if(quantidade != false || quantidade != 0){
-        string += `<p class="fonte-comum">x${quantidade}</p>`
+        if(percentual){
+            string += `<p class="fonte-comum">${quantidade}%</p>`;
+        }
+        else{
+            string += `<p class="fonte-comum">x${quantidade}</p>`;
+        }
     }
 
     string += "</div>";

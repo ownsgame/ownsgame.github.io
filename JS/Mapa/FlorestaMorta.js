@@ -6,6 +6,7 @@ const NomeSala = SALA.nome;
 const ArrayRecompensas = SALA.recompensas;
 
 setBackground(SALA.background);
+setTemaFase(SALA);
 
 function getLevelName(){
     return NomeSala;
