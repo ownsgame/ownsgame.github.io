@@ -104,7 +104,11 @@ class Player{
     }
 
     tomarDano(dano){
-        if(this.morto) return;
+        if(this.morto) {
+            console.log("ué?");
+            return;
+        }
+        
         if(this.venceu) return;
 
         let danoReal = dano - this.defesa;

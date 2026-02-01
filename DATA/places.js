@@ -200,6 +200,25 @@ const PLACES = [
         isDungeon: false,
         haveChests: false,
     },
+    {
+        id: "temploFogo",
+        nome: "Templo Fogo",
+        capitulo: 2,
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/Floresta-Morta.svg",
+        link: "florestaMorta.html", 
+        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
+        recompensas: 
+        { 
+            moeda: 66,
+            frutaCoracao: 34,
+        },
+
+        inimigos: ["vassalos"],
+        background: "Sprites/Ground/hellas.svg",
+        trilha: "temaDungeon",
+    },
 ]
 
 function getPlace(id){

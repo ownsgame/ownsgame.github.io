@@ -72,6 +72,11 @@ class Inimigo{
         INIMIGOS_ARRAY.push(objeto);
     }
 
+    atualizarPos(x, y) {
+        this.elemento.style.gridRow = x;
+        this.elemento.style.gridColumn = y;
+    }
+    
     modoAlerta(){
         const PLAYER = getObjectPlayer();
 
@@ -129,6 +134,10 @@ class Inimigo{
             INIMIGOS_ARRAY.splice(indice, 1);
         }
     }
+}
+
+function thereAreEnemies(){
+    return INIMIGOS_ARRAY.length == 0;
 }
 
 function getAllEnemies(){

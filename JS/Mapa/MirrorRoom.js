@@ -19,12 +19,16 @@ function mudarBotaoExplorar(restante, total){
 const Ghost_PS = [95, 5];
 let entPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
 let entidade = new FlyingEntity("blue_ghost", [entPos.x, entPos.y]);
-entidade.perseguirJogador();
+entidade.rasante();
 
 setInterval(()=>{
-    let newGhostPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
-    let novaEntidade = new FlyingEntity("blue_ghost", [newGhostPos.x, newGhostPos.y]);
-    novaEntidade.perseguirJogador();
+    let player = getObjectPlayer();
+    if(!player.getVenceu()){
+        let newGhostPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
+        let novaEntidade = new FlyingEntity("blue_ghost", [newGhostPos.x, newGhostPos.y]);
+        novaEntidade.rasante();
+    }
+    
 }, 15000);
 
 const TOTAL_VIAGENS = 3;

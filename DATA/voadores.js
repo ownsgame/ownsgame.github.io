@@ -30,7 +30,19 @@ const VOADORES = [
             "Sprites/Enemys/blue_ghost[0][2].svg",
             "Sprites/Enemys/blue_ghost[0][0].svg",  
         ]],
-    }
+    },
+    {
+        id: "fogoGrego",
+        nome: "Fogo Grego",
+        dano: 5,
+        tempo: 200,
+        velocidade: 40,
+        tempoVida: 8000,
+        tamanho: "Médio",
+        sprites: [[
+            "Sprites/Enemys/2/fogoGrego.svg",  
+        ]],
+    },
 ];
 
 function getVoador(id){

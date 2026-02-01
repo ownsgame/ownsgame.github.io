@@ -109,7 +109,7 @@ function emitirNotificacao(tipo, mensagem){
 
     setTimeout(() => {
         fecharTela(idItem, false);
-    }, 1500);    
+    }, 2000);    
 }
 
 function redirecionarPara(link){

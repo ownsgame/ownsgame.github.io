@@ -43,6 +43,9 @@ function sairSala(){
 }
 
 function apagarSala(){
+    let player = getObjectPlayer();
+    player.setVenceu();
+    
     deletarFlyingEntitys();
     zerarInimigoAlvo();
     Chest.matarBaus();

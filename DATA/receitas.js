@@ -7,7 +7,8 @@ const RECEITAS = [
             ectoplasma: 20,
         },
         concluiQuest: true,
-        quests: [1]
+        quests: [1],
+        notificacaoEspecial: "equipar",
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const RECEITAS = [
         quantItensResultado: 1,
         ingredientes: {
             ectoplasma: 35,
-        }
+        },
+        notificacaoEspecial: "equipar",
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const RECEITAS = [
             polen: 5,
         },
         concluiQuest: true,
-        quests: [2]
+        quests: [2],
+        notificacaoEspecial: false,
     }
 ];
 

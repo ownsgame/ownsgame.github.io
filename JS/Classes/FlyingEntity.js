@@ -89,6 +89,40 @@ class FlyingEntity {
         requestAnimationFrame(this.loopPerseguicao);
     }
 
+    rasante(){
+        const PLAYER = getObjectPlayer();
+        const POS = PLAYER.getPixelPosicao();
+
+        const dx = POS.px - this.x;
+        const dy = POS.py - this.y;
+
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if(dist === 0){
+            setTimeout(() => this.rasante(), this.tempo);
+            return;
+        }
+
+        const dirX = dx / dist;
+        const dirY = dy / dist;
+
+        this.direcaoX = dx < 0 ? 1 : -1;
+
+        this.intervaloRasante = setInterval(() => {
+            this.x += dirX * this.velocidade;
+            this.y += dirY * this.velocidade;
+            this.mover(this.x, this.y);
+        }, 200);
+
+        setTimeout(() => {
+            clearInterval(this.intervaloRasante);
+            setTimeout(() => {
+                this.rasante();
+            }, this.tempo);
+        }, this.tempo);
+    }
+
+
+
     loopPerseguicao(PLAYER, tempoAtual){
         if(!this.ultimoTempo){
             this.ultimoTempo = tempoAtual;

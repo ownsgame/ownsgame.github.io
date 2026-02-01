@@ -1,9 +1,9 @@
-class Ghosts extends Inimigo {
+class Ogros extends Inimigo {
     constructor(id, elemento) {
-        super(id, elemento);
+        super(id, elemento);     
         this.movimento();
         
-        this.direcaoY = 1;
+        this.direcaoY = 1;   
     }
 
     movimento() {
@@ -22,7 +22,7 @@ class Ghosts extends Inimigo {
         this.ultimoTempo = tempoAtual;
         this.acumulador += delta;
 
-        if (this.acumulador >= 400) {
+        if (this.acumulador >= 250) {
             this.mover();
             this.acumulador = 0;
         }
@@ -45,7 +45,8 @@ class Ghosts extends Inimigo {
             }
 
             cordY += this.direcaoY;
-
+            
+            this.elemento.style.transform = `scaleX(${this.direcaoY})`;
             this.atualizarPos(cordX, cordY);
             setTileEnemyToogle(posicoes.x, posicoes.y, cordX, cordY, false);
         }
@@ -61,7 +62,7 @@ class Ghosts extends Inimigo {
                 let cordX = i + 1;
                 let cordY = randomInt(1, 5);
 
-                let novoInimigo = new Ghosts("ghost", novoInimigoEl);
+                let novoInimigo = new Ogros("ogros", novoInimigoEl);
                 Inimigo.setThisGrid(novoInimigo, novoInimigoEl, cordX, cordY);
             }   
         }

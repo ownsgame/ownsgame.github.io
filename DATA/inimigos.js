@@ -175,6 +175,126 @@ const INIMIGOS_LIST =
         hover: "Sprites/Enemys/1/sad_flower.svg",
         intervalo: 1.5,
     },
+    {
+        id: "vassalos",
+        nome: "Vassalos Hellanos",
+        capitulo: 2,
+        maxVida: 210,
+        minVida: 190,
+        maxDefesa: 30,
+        minDefesa: 20,
+        maxAtaque: 55,
+        minAtaque: 35,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/2/vassalos.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/2/vassalos.svg",
+        intervalo: 2,
+    },
+    {
+        id: "escudeiros",
+        nome: "Escudeiros Hellanos",
+        capitulo: 2,
+        maxVida: 100,
+        minVida: 90,
+        maxDefesa: 50,
+        minDefesa: 35,
+        maxAtaque: 55,
+        minAtaque: 45,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/2/escudeiro.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/2/escudeiro.svg",
+        intervalo: 2,
+    },
+    {
+        id: "guerreiroHellas",
+        nome: "Guerreiro Hellano",
+        capitulo: 2,
+        maxVida: 250,
+        minVida: 200,
+        maxDefesa: 20,
+        minDefesa: 10,
+        maxAtaque: 75,
+        minAtaque: 45,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/2/guerreiro.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/2/guerreiro.svg",
+        intervalo: 3.5,
+    },
+    {
+        id: "napolitano",
+        nome: "Napolitanos Hellanos",
+        capitulo: 2,
+        maxVida: 375,
+        minVida: 300,
+        maxDefesa: 30,
+        minDefesa: 20,
+        maxAtaque: 60,
+        minAtaque: 50,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/2/napolitano.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/2/napolitano.svg",
+        intervalo: 3.5,
+    },
+    {
+        id: "ogros",
+        nome: "Ogros Mercenários",
+        capitulo: 2,
+        maxVida: 350,
+        minVida: 300,
+        maxDefesa: 20,
+        minDefesa: 10,
+        maxAtaque: 60,
+        minAtaque: 45,
+
+        recompensas: {
+            moeda: 100,
+        },
+
+        pontosVitais: 5,
+        sprites: [
+            [
+                "Sprites/Enemys/2/ogro.svg",
+            ],
+        ],
+        hover: "Sprites/Enemys/2/ogro.svg",
+        intervalo: 3,
+    },
 ];
 
 function getInimigoById(id){

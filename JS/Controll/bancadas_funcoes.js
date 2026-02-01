@@ -44,7 +44,12 @@ function construirReceita(id){
         setSessionInventario(inventarioJogador);
         setSessionRecursos(recursosJogador);
 
-        emitirNotificacao(1, `x${receita.quantItensResultado} de ${produtoFinal.nome}`);
+        if(receita.notificacaoEspecial == "equipar"){
+            emitirNotificacao(1, `Você deve equipar ${produtoFinal.nome} no <b>Arsenal</b> no seu <b>Inventário</b>`);
+        }
+        else{
+            emitirNotificacao(1, `x${receita.quantItensResultado} de ${produtoFinal.nome}`);
+        }
         changeReceita(id);
     }
 }
