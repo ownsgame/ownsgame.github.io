@@ -1,13 +1,13 @@
 let ultimaSala = false;
 
-const SALA = getPlace("temploVento");
+const SALA = getPlace("temploAgua");
 
 const NomeSala = SALA.nome;
 const ArrayRecompensas = SALA.recompensas;
 
 setBackground(SALA.background);
 setTemaFase(SALA);
-addReward("medalhaoVento", 1);
+addReward("medalhaoAgua", 1);
 
 function getLevelName(){
     return NomeSala;
@@ -17,7 +17,7 @@ function mudarBotaoExplorar(restante, total){
     BOTAO_EX.innerHTML = `Avançar (${restante}/${total})`; 
 }
 
-const TOTAL_VIAGENS = 4;
+const TOTAL_VIAGENS = 5;
 let viagensRestantes = TOTAL_VIAGENS;
 const BOTAO_EX = document.getElementById("botao-explorar");
 mudarBotaoExplorar(viagensRestantes, TOTAL_VIAGENS);
@@ -32,36 +32,26 @@ function aumentarTotalViagens(){
 }
 
 function gerarDungeonPre(){
-    desenharGrade("temploVento", false);
+    desenharGrade("temploAgua", false);
     const QUANT_BAU = randomInt(0, 2);
     Chest.gerarBaus(QUANT_BAU, ArrayRecompensas, SALA.baus);
-
-    let tipoSala = randomInt(1, 4);
+    
+    let tipoSala = randomInt(1, 2);
 
     if(tipoSala == 1){
-        let quantNapolitanos = randomInt(1, 2);
-        Napolitanos.gerarInimigos(quantNapolitanos);
-        GuerreiroHellas.gerarInimigos();
+        Ogros.gerarInimigos();
     }
     else if(tipoSala == 2){
-        let quantNapolitanos = randomInt(2, 5);
-        Napolitanos.gerarInimigos(quantNapolitanos);
-    }
-    else if(tipoSala == 3){
         GuerreiroHellas.gerarInimigos();
-        Ogros.gerarInimigos()
-    }
-    else if(tipoSala == 4){
-        let quantNapolitanos = randomInt(1, 2);
-        Napolitanos.gerarInimigos(quantNapolitanos);
-        Ogros.gerarInimigos()
     }
 
-    const VIGIA_PS = [95, 5];
-    let entPos = porcentagemTelaPixel(randomVec(VIGIA_PS), 40);
-    let entidade = new FlyingEntity("vigilantes", [entPos.x, entPos.y]);
-    entidade.perseguirJogador();
+    const PEIXE_PS = [95, 5];
 
+    for(let i = 0; i< 2; i++){
+        let entPos = porcentagemTelaPixel(PEIXE_PS[i], 30);
+        let entidade = new FlyingEntity("lambisgoias", [entPos.x, entPos.y]);
+        entidade.perseguirJogador();
+    }
 }
 
 gerarDungeonPre();

@@ -53,10 +53,14 @@ class Vassalos extends Inimigo {
     }
 
     static gerarInimigos() {
+        let totalGerados = 0;
+
         for (let i = 0; i < 5; i++) {
+            if (totalGerados >= 3) break;
+
             let rd = randomBool();
 
-            if(rd){
+            if (rd) {
                 let novoInimigoEl = document.createElement("img");
 
                 let cordX = i + 1;
@@ -64,7 +68,9 @@ class Vassalos extends Inimigo {
 
                 let novoInimigo = new Vassalos("vassalos", novoInimigoEl);
                 Inimigo.setThisGrid(novoInimigo, novoInimigoEl, cordX, cordY);
-            }   
+
+                totalGerados++;
+            }
         }
     }
 }

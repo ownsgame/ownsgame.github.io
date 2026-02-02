@@ -166,6 +166,50 @@ const FALAS_COM = [
                 "Valeu, Natalina!",
             ],
         ],
+    },
+    {
+        id: "meliadas",
+        falas: [
+            ["Em Breve"],
+        ]
+    },
+    {
+        id: "picalo",
+        falas: [
+            ["Meu nome não é inspirado em nada!"],
+        ]
+    },
+    {
+        id: "esfinge",
+        falas: [
+            [
+                "Parado aí viajante",
+                "Não posso permitir sua visita a Polífemo, o Ciclop Gigante...",
+                "...A menos que resolva um enigma que proponho a você...",
+                "Será que consegues resolver?",
+                "Qual animal tem quatro patas pela manhã,",
+                "duas pela tarde...",
+                "...e à noite três patas?",
+                "....",
+                "É só um hellano qualquer, que quando bebê engatinha...",
+                "cresce e começa a andar com duas pernas e quando velho...",
+                "...precisa usar bengala hahahaha...",
+                "Mas agora é sério...",
+                "Esse enigma já é conhecido até pelos mais tolos...",
+                "...vou lhe propor um enigma final e...",
+                "...caso traga para mim a solução...",
+                "Você poderá passar, seja lá o que um OWN estará fazendo junto de Polífemo",
+                'Lá vai: "Os hellanos acreditam que a base do viver pode ser resumido em:',
+                "força, paixão e mente",
+                "a paixão é como um fogo ardente, consome tudo o que se vê até quem lhe ama",
+                "a força é como rios de águas, se move bravamente até se deparar com uma rocha",
+                "e a mente por sua vez é como o vento um perigo para os tolos...",
+                "...mas amigo para quem o sabe manipular...",
+                "A honra e mérito dado aos guerreiros hellanos é guardada fora de seus corações",
+                "procure pelas medalhas que premiam o ego das pessoas",
+                'e as traga para que eu possa devorar"'
+            ],
+        ]
     }
 ]
 

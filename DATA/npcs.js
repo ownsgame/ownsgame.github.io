@@ -63,6 +63,30 @@ const NPCS = [
         hover: "Sprites/Npcs/defantes.svg",
         falasEspeciais: false,
     },
+    {
+        id: "meliadas",
+        nome: "Melíadas",
+        rosto: "Sprites/Npcs/meliadas.svg",
+        sprites: ["Sprites/Npcs/meliadas.svg"],
+        hover: "Sprites/Npcs/meliadas.svg",
+        falasEspeciais: false,
+    },
+    {
+        id: "picalo",
+        nome: "Pícalo",
+        rosto: "Sprites/Npcs/picalo.svg",
+        sprites: ["Sprites/Npcs/picalo.svg"],
+        hover: "Sprites/Npcs/picalo.svg",
+        falasEspeciais: false,
+    },
+    {
+        id: "esfinge",
+        nome: "Esfinge",
+        rosto: "Sprites/Npcs/esfinge.svg",
+        sprites: ["Sprites/Npcs/esfinge.svg"],
+        hover: "Sprites/Npcs/esfinge.svg",
+        falasEspeciais: false,
+    },
 ]
 
 function getNpc(id){

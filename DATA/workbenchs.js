@@ -31,6 +31,13 @@ const WORKBENCHS = [
         tipo: "mapaMundi",
         sprite: "Sprites/WorkBanks/globe.svg"
     },
+    {
+        id: "esfingeDePedra",
+        nome: "Enigma da Esfinge",
+        tipo: "construção",
+        receitas: [4],
+        sprite: "Sprites/WorkBanks/esfingeDePedra.svg"
+    },
 ];
 
 function getWorkBench(id){

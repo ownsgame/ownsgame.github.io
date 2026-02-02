@@ -43,6 +43,30 @@ const VOADORES = [
             "Sprites/Enemys/2/fogoGrego.svg",  
         ]],
     },
+    {
+        id: "vigilantes",
+        nome: "vigilantes",
+        dano: 5,
+        tempo: 200,
+        velocidade: 60,
+        tempoVida: 18000,
+        tamanho: "Médio",
+        sprites: [[
+            "Sprites/Enemys/2/vigilantes.svg",  
+        ]],
+    },
+    {
+        id: "lambisgoias",
+        nome: "Lambisgoias",
+        dano: 5,
+        tempo: 200,
+        velocidade: 60,
+        tempoVida: 18000,
+        tamanho: "Médio",
+        sprites: [[
+            "Sprites/Enemys/2/lambisgoia.svg",  
+        ]],
+    },
 ];
 
 function getVoador(id){

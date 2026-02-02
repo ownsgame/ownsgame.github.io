@@ -95,6 +95,36 @@ const CONSUMIVEIS = [
         raridade: "Comum",
         destino: "recursos",
     },
+    {
+        id: "medalhaoFogo",
+        nome: "Madalhão do Fogo",
+        sprite: "Sprites/Itens/medalhaoFogo.svg",
+        descricao: "Encontrado nas Profundezas do Templo Hellano do Fogo",
+        unico: true,
+        consumivel: false,
+        raridade: "Raro",
+        destino: "recursos",
+    },
+    {
+        id: "medalhaoAgua",
+        nome: "Madalhão da Água",
+        sprite: "Sprites/Itens/medalhaoAgua.svg",
+        descricao: "Encontrado nas Profundezas de um Templo Hellano submerso na Água",
+        unico: true,
+        consumivel: false,
+        raridade: "Raro",
+        destino: "recursos",
+    },
+    {
+        id: "medalhaoVento",
+        nome: "Madalhão da Vento",
+        sprite: "Sprites/Itens/medalhaoVento.svg",
+        descricao: "Encontrado em um Templo Hellano do Vento, o pior dos Templos sem dúvida",
+        unico: true,
+        consumivel: false,
+        raridade: "Raro",
+        destino: "recursos",
+    },
 ];
 
 function getConsumivel(id){

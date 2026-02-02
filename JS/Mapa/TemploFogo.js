@@ -7,6 +7,7 @@ const ArrayRecompensas = SALA.recompensas;
 
 setBackground(SALA.background);
 setTemaFase(SALA);
+addReward("medalhaoFogo", 1);
 
 function getLevelName(){
     return NomeSala;
@@ -21,16 +22,16 @@ let viagensRestantes = TOTAL_VIAGENS;
 const BOTAO_EX = document.getElementById("botao-explorar");
 mudarBotaoExplorar(viagensRestantes, TOTAL_VIAGENS);
 
-const Ghost_PS = [95, 5];
-let entPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
+const FOGO_PS = [95, 5];
+let entPos = porcentagemTelaPixel(randomVec(FOGO_PS), 40);
 let entidade = new FlyingEntity("fogoGrego", [entPos.x, entPos.y]);
 entidade.perseguirJogador();
 
 setInterval(()=>{
     let player = getObjectPlayer();
     if(!player.getVenceu()){
-        let newGhostPos = porcentagemTelaPixel(randomVec(Ghost_PS), 40);
-        let novaEntidade = new FlyingEntity("fogoGrego", [newGhostPos.x, newGhostPos.y]);
+        let newFogoPos = porcentagemTelaPixel(randomVec(FOGO_PS), 40);
+        let novaEntidade = new FlyingEntity("fogoGrego", [newFogoPos.x, newFogoPos.y]);
         novaEntidade.perseguirJogador();
     }
     

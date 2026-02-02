@@ -201,13 +201,59 @@ const PLACES = [
         haveChests: false,
     },
     {
+        id: "feiraHellas",
+        nome: "Feira Dos Hellanos",
+        capitulo: 2,
+        link: "feiraHellana.html", 
+        background: "Sprites/Ground/hellas.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "salaoTemplos",
+        nome: "Câmara dos Templos",
+        capitulo: 2,
+        link: "salaoDosTemplos.html", 
+        background: "Sprites/Ground/hellas.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "gize",
+        nome: "A Gizé de Hellas",
+        capitulo: 2,
+        link: "gize.html", 
+        background: "Sprites/Ground/areia.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
         id: "temploFogo",
-        nome: "Templo Fogo",
+        nome: "Templo do Fogo",
         capitulo: 2,
         isDungeon: true,
         haveChests: true,
         sprite: "Sprites/Places/Floresta-Morta.svg",
-        link: "florestaMorta.html", 
+        link: "temploFogo.html", 
+        baus: ["Sprites/WorkBanks/Chests/cl-fogo.svg", "Sprites/WorkBanks/Chests/co-fogo.svg"], 
+        recompensas: 
+        { 
+            moeda: 66,
+            frutaCoracao: 34,
+        },
+
+        inimigos: ["vassalos", "escudeiros"],
+        background: "Sprites/Ground/temploFogo.svg",
+        trilha: "temaDungeon",
+    },
+    {
+        id: "temploVento",
+        nome: "Templo do Vento",
+        capitulo: 2,
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/Floresta-Morta.svg",
+        link: "temploVento.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
@@ -215,8 +261,27 @@ const PLACES = [
             frutaCoracao: 34,
         },
 
-        inimigos: ["vassalos"],
-        background: "Sprites/Ground/hellas.svg",
+        inimigos: ["guerreiroHellas", "ogros", "napolitanos"],
+        background: "Sprites/Ground/temploVento.svg",
+        trilha: "temaDungeon",
+    },
+    {
+        id: "temploAgua",
+        nome: "Templo da Água",
+        capitulo: 2,
+        isDungeon: true,
+        haveChests: true,
+        sprite: "Sprites/Places/Floresta-Morta.svg",
+        link: "temploAgua.html",
+        baus: ["Sprites/WorkBanks/Chests/cl-agua.svg", "Sprites/WorkBanks/Chests/co-agua.svg"], 
+        recompensas: 
+        { 
+            moeda: 66,
+            frutaCoracao: 34,
+        },
+
+        inimigos: ["guerreiroHellas", "ogros"],
+        background: "Sprites/Ground/temploAgua.svg",
         trilha: "temaDungeon",
     },
 ]

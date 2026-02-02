@@ -248,7 +248,7 @@ const INIMIGOS_LIST =
         intervalo: 3.5,
     },
     {
-        id: "napolitano",
+        id: "napolitanos",
         nome: "Napolitanos Hellanos",
         capitulo: 2,
         maxVida: 375,

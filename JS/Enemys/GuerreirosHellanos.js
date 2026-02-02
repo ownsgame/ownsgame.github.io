@@ -3,7 +3,7 @@ class GuerreiroHellas extends Inimigo {
         super(id, elemento);     
         this.movimento();
         
-        this.direcaoY = 1;   
+        this.direcaoX = 1;   
     }
 
     movimento() {
@@ -36,17 +36,17 @@ class GuerreiroHellas extends Inimigo {
             let cordX = posicoes.x;
             let cordY = posicoes.y;
 
-            if (cordY + this.direcaoY > 5) {
-                this.direcaoY = -1;
+            if (cordX + this.direcaoX > 5) {
+                this.direcaoX = -1;
             }
 
-            if (cordY + this.direcaoY < 1) {
-                this.direcaoY = 1;
+            if (cordX + this.direcaoX < 1) {
+                this.direcaoX = 1;
             }
 
-            cordY += this.direcaoY;
+            cordX += this.direcaoX;
             
-            this.elemento.style.transform = `scaleX(${this.direcaoY})`;
+            this.elemento.style.transform = `scaleX(${this.direcaoX})`;
             this.atualizarPos(cordX, cordY);
             setTileEnemyToogle(posicoes.x, posicoes.y, cordX, cordY, false);
         }
@@ -59,8 +59,8 @@ class GuerreiroHellas extends Inimigo {
             if(rd){
                 let novoInimigoEl = document.createElement("img");
 
-                let cordX = i + 1;
-                let cordY = randomInt(1, 5);
+                let cordX = randomInt(1, 5);
+                let cordY = i + 1;
 
                 let novoInimigo = new GuerreiroHellas("guerreiroHellas", novoInimigoEl);
                 Inimigo.setThisGrid(novoInimigo, novoInimigoEl, cordX, cordY);

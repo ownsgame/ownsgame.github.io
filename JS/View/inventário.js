@@ -46,7 +46,8 @@ function loadItens(){
 
     let string =
     `
-        <div class="itens-conteiner animated-aparecer"> 
+        <div class="row-telas">
+            <div class="itens-conteiner animated-aparecer"> 
     `;
 
     if(Object.keys(RECURSOS).length == 0 && Object.keys(INVENTARIO).length == 0) {
@@ -55,14 +56,16 @@ function loadItens(){
 
     else{
         for(let recurso in RECURSOS){
+            console.log()
             if(RECURSOS[recurso] != 0){
-                string += itemFrame(recurso, RECURSOS[recurso], false);
+                string += itemFrame(recurso, RECURSOS[recurso], `exibirDadosItem('${recurso}', ${RECURSOS[recurso]})`);
             }
         }
       
         for(let recurso in INVENTARIO){
+
             if(INVENTARIO[recurso] != 0){
-                string += itemFrame(recurso, INVENTARIO[recurso], false);
+                string += itemFrame(recurso, INVENTARIO[recurso], `exibirDadosItem('${recurso}', ${INVENTARIO[recurso]})`);
             }
         }
     }
@@ -70,10 +73,55 @@ function loadItens(){
     string += 
     `           
         </div>
-        <p class="descreve-item fonte-comum"></p>
+    `;
+
+    if(Object.keys(RECURSOS).length != 0 || Object.keys(INVENTARIO).length != 0) {
+        let todosRecursos = Object.keys(RECURSOS);
+        let todosItens = Object.keys(INVENTARIO);
+
+        if(todosRecursos.length != 0){
+            let primeiroItem = getItem(todosRecursos[0]);
+            string += `
+                <div class="column-telas descreve-item">
+                    <h3>${primeiroItem.nome}</h3>
+                    <img src="../${primeiroItem.sprite}" width="64px">
+                    <h3>x${RECURSOS[todosRecursos[0]]}</h3>
+                    <p><b>Descrição:</b> ${primeiroItem.descricao}</p>
+                    <p><b>Raridade:</b> ${primeiroItem.raridade}</p>
+                </div>`;
+        }
+        else{
+            let primeiroItem = getItem(todosItens[0]);
+            string += `
+                <div class="column-telas descreve-item">
+                    <h3>${primeiroItem.nome}</h3>
+                    <img src="../${primeiroItem.sprite}" width="64px">
+                    <h3>x${INVENTARIO[todosItens[0]]}</h3>
+                    <p><b>Descrição:</b> ${primeiroItem.descricao}</p>
+                    <p><b>Raridade:</b> ${primeiroItem.raridade}</p>
+                </div>`;
+        }
+    }
+    string += 
+    `           
+        </div>
     `;
 
     changeDados("Meus Itens", string, 2);
+}
+
+function exibirDadosItem(item, quantidade){
+    let itemAlvo = getItem(item);
+    const tela_descreve = document.querySelector(".descreve-item");
+
+    tela_descreve.innerHTML = 
+    `
+        <h3>${itemAlvo.nome}</h3>
+        <img src="../${itemAlvo.sprite}" width="64px">
+        <h3>x${quantidade}</h3>
+        <p><b>Descrição:</b> ${itemAlvo.descricao}</p>
+        <p><b>Raridade:</b> ${itemAlvo.raridade}</p>
+    `;
 }
 
 function loadGear(){    

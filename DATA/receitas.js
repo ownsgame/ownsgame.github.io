@@ -32,6 +32,19 @@ const RECEITAS = [
         concluiQuest: true,
         quests: [2],
         notificacaoEspecial: false,
+    },
+    {
+        id: 4,
+        resultado: "chaveFlora",
+        quantItensResultado: 1,
+        ingredientes: {
+            medalhaoVento: 1,
+            medalhaoAgua: 1,
+            medalhaoFogo: 1,
+        },
+        concluiQuest: true,
+        quests: [2],
+        notificacaoEspecial: false,
     }
 ];
 

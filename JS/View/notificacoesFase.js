@@ -11,7 +11,7 @@ let idNotificacaoLevel = 0;
 
 function emitirNotificacaoFase(tipo, id, mensagem){
     const notificacao  = document.createElement("div");
-    let idItem = `notificacao${idNotificacaoLevel}`;
+    let idItem = `notificacao-level-${idNotificacaoLevel}`;
     idNotificacaoLevel ++;
     notificacao.classList.add("notificacao-level", `notificacao-level-${tipo}`)
     notificacao.setAttribute("id", idItem);

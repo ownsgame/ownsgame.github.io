@@ -24,9 +24,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      width="100mm"
-     inkscape:zoom="2.4340424"
-     inkscape:cx="175.63375"
-     inkscape:cy="200.2841"
+     inkscape:zoom="1.2170212"
+     inkscape:cx="145.84791"
+     inkscape:cy="200.07868"
      inkscape:window-width="1366"
      inkscape:window-height="697"
      inkscape:window-x="0"
@@ -76,6 +76,13 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <ellipse
+       style="fill:#000000;fill-opacity:0.377144;stroke:none;stroke-width:2.55085;stroke-linecap:round"
+       id="path1"
+       cx="48.589436"
+       cy="94.461342"
+       rx="28.805819"
+       ry="5.7611637" />
     <path
        id="rect3"
        style="fill:#463700;fill-opacity:1;stroke:#0f0c00;stroke-width:3.51462;stroke-dasharray:none;stroke-opacity:1"

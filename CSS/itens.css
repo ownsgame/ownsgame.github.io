@@ -22,7 +22,7 @@
 }
 
 .Raro p{
-    color: var(--azulPadrao);
+    color: var(--azulPadrao) !important;
 }
 
 .Comum p, .Lendário p{

@@ -17,6 +17,9 @@ const defantes = new NPC("defantes", [4, 3], 2);
 const sino = new WorkBench("sino", [3, 1]);
 sino.getElemento().style.transform = "scaleX(-1)";
 
-const placa = new DirectLink("placa", "", [3, 5], 2);
+const placa = new DirectLink("placa", "feiraHellana.html", [3, 5], 2);
 const desPlaca = new Description(placa.getElemento(), "Avançar");
 placa.getElemento().style.transform = "scaleX(-1)";
+
+const placaDois = new DirectLink("placa-sul", "gize.html", [5, 3], 2);
+const desPlacaDois = new Description(placaDois.getElemento(), "Descer");

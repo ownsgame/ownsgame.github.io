@@ -15,6 +15,16 @@ const WORKS = [
         hover: "Sprites/WorkBanks/placa.svg",
     },
     {
+        id: "placa-norte",
+        sprite: "Sprites/WorkBanks/placa-norte.svg",
+        hover: "Sprites/WorkBanks/placa-norte.svg",
+    },
+    {
+        id: "placa-sul",
+        sprite: "Sprites/WorkBanks/placa-sul.svg",
+        hover: "Sprites/WorkBanks/placa-sul.svg",
+    },
+    {
         id: "mirror",
         sprite: "Sprites/WorkBanks/mirror.svg",
         hover: "Sprites/WorkBanks/mirror-hover.svg",
@@ -54,6 +64,21 @@ const WORKS = [
         id: "portal",
         sprite: "Sprites/WorkBanks/portal.svg",
         hover: "Sprites/WorkBanks/portal.svg",
+    },
+    {
+        id: "portaVento",
+        sprite: "Sprites/WorkBanks/portao-vento.svg",
+        hover: "Sprites/WorkBanks/portao-vento.svg",
+    },
+    {
+        id: "portaAgua",
+        sprite: "Sprites/WorkBanks/portao-agua.svg",
+        hover: "Sprites/WorkBanks/portao-agua.svg",
+    },
+    {
+        id: "portaFogo",
+        sprite: "Sprites/WorkBanks/portao-fogo.svg",
+        hover: "Sprites/WorkBanks/portao-fogo.svg",
     },
 ]
 

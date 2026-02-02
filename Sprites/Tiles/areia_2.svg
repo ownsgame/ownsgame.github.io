@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="areia_2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="3.5277778"
+     inkscape:cx="46.346457"
+     inkscape:cy="40.677165"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch7"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#2a8437;stop-opacity:1;"
+         offset="0"
+         id="stop7" />
+    </linearGradient>
+    <filter
+       inkscape:label="Glowing Bubble"
+       inkscape:menu="Ridges"
+       inkscape:menu-tooltip="Bubble effect with refraction and glow"
+       x="-2.8985506"
+       y="-2.8985509"
+       width="6.7971012"
+       height="6.7971018"
+       style="color-interpolation-filters:sRGB;"
+       id="filter14">
+      <feGaussianBlur
+         stdDeviation="1"
+         result="result1"
+         id="feGaussianBlur9" />
+      <feGaussianBlur
+         stdDeviation="10"
+         result="result6"
+         in="result1"
+         id="feGaussianBlur10" />
+      <feComposite
+         operator="atop"
+         in="result6"
+         in2="result1"
+         result="result8"
+         id="feComposite10" />
+      <feComposite
+         operator="xor"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite11" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 "
+         id="feColorMatrix11" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="1"
+         id="feGaussianBlur11" />
+      <feSpecularLighting
+         specularExponent="35"
+         specularConstant="1.5"
+         surfaceScale="-2"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting11">
+        <feDistantLight
+           azimuth="230"
+           elevation="60"
+           id="feDistantLight11" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphicAlpha"
+         id="feComposite12" />
+      <feComposite
+         k3="1.2"
+         k2="1.1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite13" />
+      <feGaussianBlur
+         result="result80"
+         in="result4"
+         stdDeviation="0.5"
+         id="feGaussianBlur13" />
+      <feComposite
+         operator="atop"
+         in="result9"
+         in2="result80"
+         result="result91"
+         id="feComposite14" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend14" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#d2981c;fill-opacity:1;stroke:none;stroke-width:2.31029;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="27.024395"
+       height="27.872923"
+       x="-0.29139438"
+       y="-0.60726452"
+       ry="0" />
+    <g
+       id="g1"
+       transform="rotate(180,13.090419,22.374414)">
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse31"
+         cx="2.4859092"
+         cy="22.729206"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse33"
+         cx="1.2507187"
+         cy="27.216858"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse10"
+         cx="14.747784"
+         cy="26.212988"
+         rx="0.50021857"
+         ry="0.45162433" />
+    </g>
+    <g
+       id="g3"
+       transform="matrix(1,0,0,-1,2.9698482,31.066312)">
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse1"
+         cx="2.4859092"
+         cy="22.729206"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse2"
+         cx="1.2507187"
+         cy="27.216858"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse3"
+         cx="14.747784"
+         cy="26.212988"
+         rx="0.50021857"
+         ry="0.45162433" />
+    </g>
+    <g
+       id="g6"
+       transform="matrix(1,0,0,-1,1.0606602,34.566492)"
+       style="fill:#59510d;fill-opacity:1">
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse4"
+         cx="2.4859092"
+         cy="22.729206"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse5"
+         cx="1.2507187"
+         cy="27.216858"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse6"
+         cx="14.747784"
+         cy="26.212988"
+         rx="0.50021857"
+         ry="0.45162433" />
+    </g>
+    <g
+       id="g9"
+       transform="rotate(180,9.8023732,22.639579)"
+       style="fill:#59510d;fill-opacity:1">
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse7"
+         cx="2.4859092"
+         cy="22.729206"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse8"
+         cx="1.2507187"
+         cy="27.216858"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse9"
+         cx="14.747784"
+         cy="26.212988"
+         rx="0.50021857"
+         ry="0.45162433" />
+    </g>
+    <g
+       id="g13"
+       transform="rotate(180,13.037387,18.396939)"
+       style="fill:#59510d;fill-opacity:1">
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse11"
+         cx="2.4859092"
+         cy="22.729206"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse12"
+         cx="1.2507187"
+         cy="27.216858"
+         rx="0.50021857"
+         ry="0.45162433" />
+      <ellipse
+         style="fill:#59510d;fill-opacity:1;stroke:none;stroke-width:0.699113;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         id="ellipse13"
+         cx="14.747784"
+         cy="26.212988"
+         rx="0.50021857"
+         ry="0.45162433" />
+    </g>
+  </g>
+</svg>
