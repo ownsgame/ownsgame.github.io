@@ -170,7 +170,7 @@ const FALAS_COM = [
     {
         id: "meliadas",
         falas: [
-            ["Em Breve"],
+            ["Atualizações em breve! Vai logo github"],
         ]
     },
     {
