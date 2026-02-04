@@ -17,6 +17,20 @@ const VOADORES = [
         ]],
     },
     {
+        id: "energiaFloresta",
+        nome: "Energia da Floresta",
+        dano: 4,
+        tempo: 1000,
+        velocidade: 80,
+        tempoVida: 6000,
+        tamanho: "Médio",
+        sprites: [[
+            "Sprites/Enemys/1/forest_energy[0][0].svg", 
+            "Sprites/Enemys/1/forest_energy[0][1].svg",
+            "Sprites/Enemys/1/forest_energy[0][2].svg",  
+        ]],
+    },
+    {
         id: "blue_ghost",
         nome: "Ghosts Azuis",
         dano: 2,
@@ -40,7 +54,10 @@ const VOADORES = [
         tempoVida: 8000,
         tamanho: "Médio",
         sprites: [[
-            "Sprites/Enemys/2/fogoGrego.svg",  
+            "Sprites/Enemys/2/fogoGrego[0][0].svg", 
+            "Sprites/Enemys/2/fogoGrego[0][1].svg",
+            "Sprites/Enemys/2/fogoGrego[0][0].svg", 
+            "Sprites/Enemys/2/fogoGrego[0][2].svg",   
         ]],
     },
     {
@@ -52,7 +69,10 @@ const VOADORES = [
         tempoVida: 18000,
         tamanho: "Médio",
         sprites: [[
-            "Sprites/Enemys/2/vigilantes.svg",  
+            "Sprites/Enemys/2/vigilantes[0][0].svg", 
+            "Sprites/Enemys/2/vigilantes[0][1].svg",
+            "Sprites/Enemys/2/vigilantes[0][0].svg",
+            "Sprites/Enemys/2/vigilantes[0][2].svg",       
         ]],
     },
     {
@@ -64,7 +84,9 @@ const VOADORES = [
         tempoVida: 18000,
         tamanho: "Médio",
         sprites: [[
-            "Sprites/Enemys/2/lambisgoia.svg",  
+            "Sprites/Enemys/2/lambisgoia[0][0].svg", 
+            "Sprites/Enemys/2/lambisgoia[0][1].svg", 
+            "Sprites/Enemys/2/lambisgoia[0][2].svg",  
         ]],
     },
 ];

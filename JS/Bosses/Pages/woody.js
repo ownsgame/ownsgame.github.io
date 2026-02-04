@@ -1,7 +1,7 @@
 const SALA = getPlace("bossWoody");
 
 setBackground(SALA.background);
-desenharGrade("floresta", false);
+desenharGrade("bossWoody", false);
 
 Woody.gerar();
 
@@ -23,3 +23,13 @@ setInterval(()=>{
     }
 
 }, 10000);
+
+setInterval(()=>{
+    let player = getObjectPlayer();
+    if(!player.getVenceu()){
+        let newEnergyPos = porcentagemTelaPixel(randomVec(BIRD_PS), 40);
+        let novaEntidade = new FlyingEntity("energiaFloresta", [newEnergyPos.x, newEnergyPos.y]);
+        addFlyingEntity(novaEntidade);
+        novaEntidade.rasante();
+    }
+}, 5000);

@@ -22,7 +22,7 @@ class Boss {
     inicializarElemento(){
         const bossEl = document.createElement("img");
         this.elemento = bossEl;
-        this.elemento.src = `../${this.sprites[0][0]}`;
+        this.animacao = new AnimatedEntity(this.elemento, this.sprites, false, 120);
         this.elemento.classList.add("boss");
 
         posicionarGrid(this.elemento, this.x, this.y, 2, 2);

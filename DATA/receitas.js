@@ -35,7 +35,7 @@ const RECEITAS = [
     },
     {
         id: 4,
-        resultado: "chaveFlora",
+        resultado: "passeEsfinge",
         quantItensResultado: 1,
         ingredientes: {
             medalhaoVento: 1,
@@ -43,7 +43,7 @@ const RECEITAS = [
             medalhaoFogo: 1,
         },
         concluiQuest: true,
-        quests: [2],
+        quests: [3],
         notificacaoEspecial: false,
     },
     {

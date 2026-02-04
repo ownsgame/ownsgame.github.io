@@ -30,7 +30,6 @@ const SESSION_FILES = [
 const COMUM_SALA_FILES = [
     "View/menu.js",
     "Controll/colision.js",
-    "View/itens.js",
     "Controll/bancadas_funcoes.js",
     "View/bancadasTrabalho.js",
     "Classes/Description.js",
@@ -63,16 +62,16 @@ const COMUM_DUNGEON_FILES = [
 ];
 
 const COMUM_BOSS_FILES = [
-  "Controll/colision.js",
-  "Classes/FixedEntity.js",
-  "View/status_boss.js",
-  "Classes/Player.js",
-  "Controll/inserir_player.js",
-  "Controll/sala.js",
-  "Classes/Boss.js",
-  "Classes/AnimatedEntity.js",
-  "Classes/FlyingEntity.js",
-  "Controll/game_over.js"
+    "Controll/audio.js",
+    "Controll/colision.js",
+    "Classes/FixedEntity.js",
+    "View/status_boss.js",
+    "Classes/Player.js",
+    "Controll/inserir_player.js",
+    "Classes/Boss.js",
+    "Classes/AnimatedEntity.js",
+    "Classes/FlyingEntity.js",
+    "Controll/game_over.js"
 ]
 
 function carregarScript(src) {

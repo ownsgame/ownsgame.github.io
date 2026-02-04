@@ -3,6 +3,7 @@ const NOMES_SAVE = [
     "Hexopoda", "Destino", "Carinha Azul",
     "Helano", "Terras Distantes", "Terras Desconhecidas",
     "Aflorecer", "Jogador Profissional", "Guerreiro Own",
+    "Betinha", "Sucesso", "Desenvolvedor"
 ];
 
 function criarModelo(){
@@ -26,14 +27,25 @@ function criarModelo(){
         tempoEspera: 5,
 
         inventario: {},
-        recursos: {},
+        recursos: {
+            ectoplasma: 55,
+            petala: 15,
+            espinho: 5,
+            madeira: 20,
+            polen: 5,
+            moeda: 1000,
+        },
 
         arvoreConclusao: {
             cap1: {
                 espadaFantasma: false,
                 chaveFlora: false
             },
-            cap2: null,
+            cap2: {
+                esfinge: false,
+                meliadas: false,
+                picalo: false,
+            },
             cap3: null,
             cap4: null,
             cap5: null,

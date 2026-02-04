@@ -170,7 +170,25 @@ const FALAS_COM = [
     {
         id: "meliadas",
         falas: [
-            ["Atualizações em breve! Vai logo github"],
+            [
+                "Olá Estrangeiro >:)",
+                "Eu gostaria muito de saber o que você está fazendo por aqui?... >:0",
+                "É algum tipo de missão secreta? :|",
+                "hum...isso parece divertido! :D",
+                "Mais divertido do que ficar presa aqui nessa cidade meio pacata |:(",
+                "Meu pai, me impôs regras rígidas sobre para onde sair e quando voltar >:(",
+                "Eu não vou conseguir ser livre até  um cara vir me libertar :0",
+                "E com libertar eu quero dizer... :}",
+                "...",
+                "Você não estaria afim de ter um lance comigo? Estaria? :D",
+                "Ah! Você realmente não parece estar ligando muito pra esse tipo de coisa... :/",
+                "Bem... você seria um par perfeito, poderia me levar por essas suas viagens pelo mundo",
+                "Mas já que não quer eu respeito sua decisão! De onde você vem... :O",
+                "...tem mais... assim...igualzinho a você? :)",
+                "Só pra mim saber também... não é como se eu fosse ir para a Cidade dos Owns",
+                "Mas se algum momento você encontrar um cara solteirão, precisando de um anjinho",
+                "Você poderia apresenta-lo à mim?",
+            ],
         ]
     },
     {

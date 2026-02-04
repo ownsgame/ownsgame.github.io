@@ -1,6 +1,14 @@
 function mostrarRecompensas(id, quantidade){
     const RECOMPENSA = getItem(id);
-    emitirNotificacaoFase(0, id, `x${quantidade} ${RECOMPENSA.nome}`)
+    if(id == "frutaCoracao"){
+        emitirNotificacaoFase(0, id, `${RECOMPENSA.nome}`, `+15 de Vida Recuperada`);
+    }
+    else if(id == "frutaEnergia"){
+        emitirNotificacaoFase(0, id, `${RECOMPENSA.nome}`, `+1 Avançar`);
+    }
+    else{
+        emitirNotificacaoFase(0, id, `x${quantidade} ${RECOMPENSA.nome}`, false);
+    }
     verificaAcaoReward(id);
 }
 
@@ -9,7 +17,7 @@ const TIPO_NOTIFICACOES_LEVEL = ["Item Obtido", "Em Combate"];
 
 let idNotificacaoLevel = 0;
 
-function emitirNotificacaoFase(tipo, id, mensagem){
+function emitirNotificacaoFase(tipo, id, mensagem, mensagem2 = false){
     const notificacao  = document.createElement("div");
     let idItem = `notificacao-level-${idNotificacaoLevel}`;
     idNotificacaoLevel ++;
@@ -28,8 +36,8 @@ function emitirNotificacaoFase(tipo, id, mensagem){
     notificacao.innerHTML = `
         <img src="../${imagem}">
         <div>
-            <h3 class="fonte-comum">${TIPO_NOTIFICACOES_LEVEL[tipo]}</h3>
-            <p class="fonte-comum">${mensagem}</p>
+            <h3 class="fonte-comum">${mensagem2? mensagem : TIPO_NOTIFICACOES_LEVEL[tipo]}</h3>
+            <p class="fonte-comum">${mensagem2? mensagem2: mensagem}</p>
         </div>
     `;
 

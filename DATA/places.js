@@ -178,9 +178,10 @@ const PLACES = [
         capitulo: 1,
         sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "bossWoody.html", 
-        background: "Sprites/Ground/floresta.svg",
+        background: "Sprites/Ground/bossWoody.svg",
         isDungeon: false,
         haveChests: false,
+        trilha: "temaDungeon",
     },
     {
         id: "florestaGuardiao",
@@ -241,10 +242,13 @@ const PLACES = [
             moeda: 66,
             frutaCoracao: 34,
         },
+        completar:{
+            medalhaoFogo: 1,
+        },
 
         inimigos: ["vassalos", "escudeiros"],
         background: "Sprites/Ground/temploFogo.svg",
-        trilha: "temaDungeon",
+        trilha: "temaTemplo",
     },
     {
         id: "temploVento",
@@ -259,6 +263,9 @@ const PLACES = [
         { 
             moeda: 66,
             frutaCoracao: 34,
+        },
+        completar:{
+            medalhaoVento: 1,
         },
 
         inimigos: ["guerreiroHellas", "ogros", "napolitanos"],
@@ -279,6 +286,9 @@ const PLACES = [
             moeda: 66,
             frutaCoracao: 34,
         },
+        completar:{
+            medalhaoAgua: 1,
+        },
 
         inimigos: ["guerreiroHellas", "ogros"],
         background: "Sprites/Ground/temploAgua.svg",
@@ -292,6 +302,18 @@ const PLACES = [
         background: "Sprites/Ground/cassino.svg",
         isDungeon: false,
         haveChests: false,
+    },
+    {
+        id: "bossCiclop",
+        boss: true,
+        bossId: 2,
+        capitulo: 2,
+        sprite: "Sprites/Places/Colina-Dancante.svg",
+        link: "bossWoody.html", 
+        background: "Sprites/Ground/hellas.svg",
+        isDungeon: false,
+        haveChests: false,
+        trilha: "temaDungeon",
     },
 ]
 

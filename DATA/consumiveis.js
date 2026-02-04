@@ -135,6 +135,16 @@ const CONSUMIVEIS = [
         raridade: "Comum",
         destino: "recursos",
     },
+    {
+        id: "passeEsfinge",
+        nome: "Passe da Esfinge",
+        sprite: "Sprites/Itens/key_esfinge.svg",
+        descricao: "Isso significa que a Esfinge deixou você passar...",
+        unico: true,
+        consumivel: false,
+        raridade: "Raro",
+        destino: "recursos",
+    },
 ];
 
 function getConsumivel(id){

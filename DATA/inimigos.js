@@ -193,7 +193,10 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/2/vassalos.svg",
+                "Sprites/Enemys/2/vassalos[0][0].svg",
+                "Sprites/Enemys/2/vassalos[0][1].svg",
+                "Sprites/Enemys/2/vassalos[0][0].svg",
+                "Sprites/Enemys/2/vassalos[0][2].svg",
             ],
         ],
         hover: "Sprites/Enemys/2/vassalos.svg",
@@ -217,7 +220,10 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/2/escudeiro.svg",
+                "Sprites/Enemys/2/escudeiro[0][0].svg",
+                "Sprites/Enemys/2/escudeiro[0][1].svg",
+                "Sprites/Enemys/2/escudeiro[0][0].svg",
+                "Sprites/Enemys/2/escudeiro[0][2].svg",
             ],
         ],
         hover: "Sprites/Enemys/2/escudeiro.svg",
@@ -241,7 +247,11 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/2/guerreiro.svg",
+                "Sprites/Enemys/2/guerreiro[0][0].svg",
+                "Sprites/Enemys/2/guerreiro[0][1].svg",
+                "Sprites/Enemys/2/guerreiro[0][0].svg",
+                "Sprites/Enemys/2/guerreiro[0][2].svg",
+
             ],
         ],
         hover: "Sprites/Enemys/2/guerreiro.svg",
@@ -265,7 +275,8 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/2/napolitano.svg",
+                "Sprites/Enemys/2/napolitano[0][0].svg",
+                "Sprites/Enemys/2/napolitano[0][1].svg",
             ],
         ],
         hover: "Sprites/Enemys/2/napolitano.svg",
@@ -289,7 +300,8 @@ const INIMIGOS_LIST =
         pontosVitais: 5,
         sprites: [
             [
-                "Sprites/Enemys/2/ogro.svg",
+                "Sprites/Enemys/2/ogro[0][0].svg",
+                "Sprites/Enemys/2/ogro[0][1].svg",
             ],
         ],
         hover: "Sprites/Enemys/2/ogro.svg",

@@ -102,13 +102,13 @@ function loadItens(){
         todosRecursos.forEach(recurso => {
             let item = getItem(recurso);
             let thisItemElemento = document.getElementById(`itemHTML-${item.id}`);
-            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <b>${item.classe}</b>` : ""}`);            
+            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <span class="tx-yellow"><b>${item.classe}</b></span>` : ""}`);            
         });
 
         todosItens.forEach(recurso => {
             let item = getItem(recurso);
             let thisItemElemento = document.getElementById(`itemHTML-${item.id}`);
-            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <b>${item.classe}</b>` : ""}`);            
+            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <span class="tx-yellow"><b>${item.classe}</b></span>` : ""}`);            
         });
     }
 }

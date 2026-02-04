@@ -17,6 +17,10 @@ PAINEL_STATUS.innerHTML =
              ${getSessionAtaque()}
         </h3>
     </div>
+
+    <button class="botao-ativo" id="botao-trilha" onclick="tocarTemaFase()">
+        <i class="fa-solid fa-music"></i>
+    </button>
 `;
 
 const VIDA_TEXTO = document.getElementById("status-vida");
@@ -65,7 +69,7 @@ function atualizarVidaChefe(vida, total){
 
     BARRA_BOSS.style.backgroundImage = `linear-gradient(
         to right,
-        rgba(223, 30, 23, 1) ${porcentagem}%,
+        rgba(105, 15, 12, 1) ${porcentagem}%,
         black ${porcentagem}%
     )`;
 }

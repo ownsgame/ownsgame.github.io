@@ -111,7 +111,7 @@ function completarQuest(id){
         QUESTS_ATIVAS = QUESTS_ATIVAS.filter(q => q !== QUEST.id);
         setSessionItem("questsAtivas", QUESTS_ATIVAS);
         setSessionItem("questsConcluidas", QUESTS_CONCLUIDAS);
-        plusPorcentagem(5);
+        plusPorcentagem(3);
         emitirNotificacao(3, QUEST.nome);
     }
 }
@@ -164,24 +164,25 @@ function playerTreinar(){
 function derrotarBOSS(id){
     const bossDerrotado = getBoss(id);
     const PLAYER_DATA = getSession();
+    if(PLAYER_DATA.capituloCorrente == bossDerrotado.capitulo){
+        let fragmentosHexopoda = PLAYER_DATA.fragmentosHexopoda + 1;
+        let capituloCorrente = PLAYER_DATA.capituloCorrente + 1;
+        setSessionItem("fragmentosHexopoda", fragmentosHexopoda);
+        setSessionItem("capituloCorrente", capituloCorrente);
+        
+        let novasQuests = getQuestsDoCapitulo(capituloCorrente);
 
-    let fragmentosHexopoda = PLAYER_DATA.fragmentosHexopoda + 1;
-    let capituloCorrente = PLAYER_DATA.capituloCorrente + 1;
-    setSessionItem("fragmentosHexopoda", fragmentosHexopoda);
-    setSessionItem("capituloCorrente", capituloCorrente);
-    
-    let novasQuests = getQuestsDoCapitulo(capituloCorrente);
+        if(novasQuests != null && novasQuests.length > 0){
+            novasQuests.forEach(novaQuest => {
+                addQuest(novaQuest.id)
+            });
+        }
 
-    if(novasQuests != null && novasQuests.length > 0){
-        novasQuests.forEach(novaQuest => {
-            addQuest(novaQuest.id)
-        });
+        if(bossDerrotado.recompensas){
+            addItensToInventory(bossDerrotado.recompensas);
+        }
+
+        plusPorcentagem(10);
+        vitoriaDeJogo(bossDerrotado);
     }
-
-    if(bossDerrotado.recompensas){
-        addItensToInventory(bossDerrotado.recompensas);
-    }
-
-    plusPorcentagem(10);
-    vitoriaDeJogo(bossDerrotado);
 }

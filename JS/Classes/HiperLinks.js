@@ -145,6 +145,19 @@ function mostrarEstatisticasSala(sala){
         string += itemFrame(rec, recompensasSala[rec], false, true);
     }
 
+    if(lugar.completar){
+        const recompensasCompletar = lugar.completar;
+
+        string += `</div>
+                <p>Ao Completar Fase:</p>
+                <div class="itens-conteiner">
+        `;
+
+        for(let rec in recompensasCompletar){
+            string += itemFrame(rec, 100, false, true);
+        }
+    }
+
     string +=
     `
             </div>
@@ -165,7 +178,9 @@ function mostrarEstatisticasSala(sala){
     
     string += `
                 </div>
-                <p><i class="fa-solid fa-triangle-exclamation"></i> As porcentagens são por cada criatura, inimigos com recompensas semelhantes são considerados</p>
+                <div class="itens-conteiner">
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> As porcentagens são por cada criatura, inimigos com recompensas semelhantes são considerados</p>
+                </div>
             </div>
         </div>
         <button onclick="fecharTela('show-place')" class="red-button">

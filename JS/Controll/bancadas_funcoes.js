@@ -71,4 +71,7 @@ function apostarRoleta(id){
             loadResultRoleta(resultado, id);
         }
     }
+    else{
+        emitirNotificacao(0, "Você não possui fichas para Apostar");
+    }
 }

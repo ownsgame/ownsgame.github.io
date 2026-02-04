@@ -27,6 +27,7 @@ class Chest extends FixedEntity{
 
                 this.setSprite(this.sprites[1]);
                 this.elemento.classList.add("no-click");
+                
                 mostrarRecompensas(this.recompensa, this.quantidade);
 
             }
