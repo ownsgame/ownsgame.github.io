@@ -64,6 +64,29 @@ function getMoedas(){
     return getSessionItem("recursos.moeda");
 }
 
+function getThereAreItem(){
+    let inventario = getSessionInventario();
+    let recursos = getSessionRecursos();
+
+    if(Object.keys(inventario).length == 0 && Object.keys(recursos).length == 0) {
+        return false;
+    }
+
+    for(let recurso in recursos){
+        if(recursos[recurso] > 0){
+            return true;
+        }
+    }
+
+    for(let item in inventario){
+        if(inventario[item] > 0){
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function getIsCompleteQuest(id){
     const QUEST = getQuest(id);
     return getSessionItem(`arvoreConclusao.cap${QUEST.capitulo}.${QUEST.caminho}`);

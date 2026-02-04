@@ -1,7 +1,7 @@
 const NPCS = [
     {
         id: "sabioown",
-        nome: "Sabio Own",
+        nome: "Sábio Own",
         rosto: "Sprites/Npcs/Capa/sabio_capa.svg",
         sprites: ["Sprites/Npcs/sabio.svg"],
         hover: "Sprites/Npcs/sabio-hover.svg",
@@ -9,7 +9,7 @@ const NPCS = [
     },
     {
         id: "guarda",
-        nome: "Guarda Real Own",
+        nome: "Guarda do Palácio",
         rosto: "Sprites/Npcs/Capa/guarda_capa.svg",
         sprites: ["Sprites/Npcs/guarda.svg"],
         hover: "Sprites/Npcs/guarda.svg",
@@ -33,8 +33,8 @@ const NPCS = [
     },
     {
         id: "viajante",
-        nome: "Lucy o viajante",
-        rosto: "Sprites/Npcs/viajante.svg",
+        nome: "Lucy Viajante",
+        rosto: "Sprites/Npcs/Capa/viajante_capa.svg",
         sprites: ["Sprites/Npcs/viajante.svg"],
         hover: "Sprites/Npcs/viajante.svg",
         falasEspeciais: false,
@@ -58,7 +58,7 @@ const NPCS = [
     {
         id: "defantes",
         nome: "Defantes",
-        rosto: "Sprites/Npcs/defantes.svg",
+        rosto: "Sprites/Npcs/Capa/defantes_capa.svg",
         sprites: ["Sprites/Npcs/defantes.svg"],
         hover: "Sprites/Npcs/defantes.svg",
         falasEspeciais: false,
@@ -66,7 +66,7 @@ const NPCS = [
     {
         id: "meliadas",
         nome: "Melíadas",
-        rosto: "Sprites/Npcs/meliadas.svg",
+        rosto: "Sprites/Npcs/Capa/meliadas_capa.svg",
         sprites: ["Sprites/Npcs/meliadas.svg"],
         hover: "Sprites/Npcs/meliadas.svg",
         falasEspeciais: false,

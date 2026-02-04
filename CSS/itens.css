@@ -31,6 +31,7 @@
 
 .itens-conteiner{
     max-width: 100%;
+    max-height: 280px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,7 +53,7 @@
 }
 
 .itens-conteiner::-webkit-scrollbar {
-    width: 100%;
+    width: 6px;
     height: 6px;
 }
 

@@ -97,7 +97,7 @@ const CONSUMIVEIS = [
     },
     {
         id: "medalhaoFogo",
-        nome: "Madalhão do Fogo",
+        nome: "Medalhão do Fogo",
         sprite: "Sprites/Itens/medalhaoFogo.svg",
         descricao: "Encontrado nas Profundezas do Templo Hellano do Fogo",
         unico: true,
@@ -107,7 +107,7 @@ const CONSUMIVEIS = [
     },
     {
         id: "medalhaoAgua",
-        nome: "Madalhão da Água",
+        nome: "Medalhão da Água",
         sprite: "Sprites/Itens/medalhaoAgua.svg",
         descricao: "Encontrado nas Profundezas de um Templo Hellano submerso na Água",
         unico: true,
@@ -117,12 +117,22 @@ const CONSUMIVEIS = [
     },
     {
         id: "medalhaoVento",
-        nome: "Madalhão da Vento",
+        nome: "Medalhão da Vento",
         sprite: "Sprites/Itens/medalhaoVento.svg",
         descricao: "Encontrado em um Templo Hellano do Vento, o pior dos Templos sem dúvida",
         unico: true,
         consumivel: false,
         raridade: "Raro",
+        destino: "recursos",
+    },
+    {
+        id: "ficha",
+        nome: "Fichas",
+        sprite: "Sprites/Itens/ficha.svg",
+        descricao: "Usada para se divertir em jogos dos Owns!",
+        unico: true,
+        consumivel: false,
+        raridade: "Comum",
         destino: "recursos",
     },
 ];

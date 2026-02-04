@@ -2,6 +2,7 @@ class Description {
     constructor(elemento, descricao){
         this.elemento = elemento;
         this.descricao = descricao;
+        
         this.eventos();
     }
 

@@ -118,6 +118,10 @@ button:hover{
     box-sizing: border-box;
 }
 
+.flex-1{
+    flex: 1;
+}
+
 .red-effect{
     width: 100vw; height: 100vh;
     margin: 0px;
@@ -193,6 +197,21 @@ a{
 
 .no-click{
     pointer-events: none;
+}
+
+.over-flow{
+    overflow: auto;
+}
+
+.over-flow::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.over-flow::-webkit-scrollbar-thumb {
+    background-image: var(--gradienteTransparente);
+    border: 1px rgba(255, 255, 255, 0.459) solid;
+    border-radius: 10px;
 }
 
 .player{
@@ -271,7 +290,7 @@ a{
 }
 
 .description{
-    z-index: 8;
+    z-index: 12;
     position: absolute;
     display: block;
     opacity: 0;

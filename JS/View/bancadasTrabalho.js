@@ -191,7 +191,7 @@ function loadTrainPerfil(){
                 <p class="fonte-comum">Ataque: <span class="tx-yellow">+${treino.ataqueSum} ao Bônus</span></p>
                 <p class="fonte-comum">Defesa: <span class="tx-yellow">+${treino.defesaSum} ao Bônus</span></p>
                 <p class="fonte-comum"><i class="fa-solid fa-coins"></i> Custo: ${treino.custo} moedas</p>
-                <p class="fonte-comum ${treino.custo > PLAYER_DATA.recursos.moeda ? 'tx-yellow"' : '"'}"><i class="fa-solid fa-coins"></i> Você tem: ${PLAYER_DATA.recursos.moeda} moedas</p>
+                <p class="fonte-comum ${treino.custo > PLAYER_DATA.recursos.moeda ? 'tx-yellow"' : '"'}"><i class="fa-solid fa-coins"></i> Você tem: ${PLAYER_DATA.recursos.moeda ? PLAYER_DATA.recursos.moeda : "0"} moedas</p>
                 <button onclick="playerTreinar()"><i class="fa-solid fa-dumbbell"></i> Treinar</button>
             </div>
         `;
@@ -237,4 +237,59 @@ function loadTeleport(){
 function loadMapaMundi(){
     let string = `<img src="../Sprites/IU/mapa-mundi.svg">`;
     changeWorkBenchScreen("Mapa-Múndi", string);
+}
+
+function loadRoleta(){
+    let apostas = getRoleta();
+    
+    let string = `
+        <div class="column-telas">
+            <div class="row-telas">
+    `
+
+    apostas.forEach(aposta => {
+        string += `
+            <div class="column-telas">
+                <h3>Level: ${aposta.nome}</h3>
+                <p>Ganhos:</p>
+                ${itemFrame("ficha", aposta.recompensa.ficha, false, false)}
+                <p>Probabilidade de Vitória: <span class="tx-yellow"><b>${aposta.fantasia}%</b></span></p>
+                <button onclick="apostarRoleta(${aposta.id})">Apostar</button>
+            </div>
+        `
+    });
+
+    string += `
+            </div>
+            <p><i class="fa-solid fa-coins"></i> Custo da Aposta: 1 ficha | <i class="fa-solid fa-coins"></i> Você possui: ${getSessionItem("recursos.ficha") ? getSessionItem("recursos.ficha") : "0"} fichas</p>
+        </div>
+    `
+    changeWorkBenchScreen("Jogo Da Roleta", string);
+}
+
+function loadResultRoleta(resultado, id){
+    let string = `
+        <div class="column-telas">
+    `;
+
+    let aposta = getApostaRoleta(id);
+
+    const frases_derrota = ["Continue tentando uma hora a sorte vem!", "Mas é um azarão mesmo em!..."]
+    if(resultado == "perca"){
+        string += `
+            <h3>Você perdeu!</h3>
+            <p><b>${randomVec(frases_derrota)}</b></p>
+        `;
+    }
+    else if(resultado == "ganho"){
+        string += `
+            <h3>Você Ganhou!</h3>
+            <p>Ganhos:</p>
+            ${itemFrame("ficha", aposta.recompensa.ficha, false, false)}
+        `;
+    }
+
+    string += "</div>";
+
+    changeWorkBenchScreen("Jogo Da Roleta", string);
 }

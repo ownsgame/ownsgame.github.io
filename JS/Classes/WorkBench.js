@@ -5,6 +5,10 @@ class WorkBench {
         this.tipo = bancada.tipo;
         this.sprite = bancada.sprite
 
+        if(bancada.hover){
+            this.hover = bancada.hover;
+        }
+
         if(this.tipo == "construção"){
             this.receitas = bancada.receitas;
         }
@@ -20,6 +24,9 @@ class WorkBench {
         posicionarGrid(this.elemento, pos[0], pos[1]);
         fixarAoConteiner(this.elemento);
         this.descricao = new Description(this.elemento, this.nome);
+        if(this.hover){
+            setHover(this.elemento, this.sprite, this.hover);
+        }
     }
 
     adicionarClasses(){
@@ -40,6 +47,9 @@ class WorkBench {
         }
         else if(this.tipo == "mapaMundi"){
             loadMapaMundi();
+        }
+        else if(this.tipo == "roleta"){
+            loadRoleta();
         }
     }
 

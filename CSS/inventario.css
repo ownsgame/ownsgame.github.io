@@ -69,6 +69,14 @@ section{
     width: 200px; height: 200px;
 }
 
+.inventario-my-items{
+    width: 90%;
+}
+
+.inventario-my-items > div{
+    max-width: 100%;
+}
+
 @media (max-width: 800px) {
     main{ flex-direction: column-reverse;}
     .inventario-image{width: 150px; height: 150px;}
@@ -144,13 +152,26 @@ section{
 }
 
 .descreve-item{
+    box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.219);
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 1rem;
+    max-height: 280px;
     width: 90%;
     overflow: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+    .descreve-item{
+        justify-content: flex-start;
+    }
+
+    .descreve-item-imagem{
+        width: 50px;
+    }
 }
 
 @media (max-width: 700px){

@@ -12,17 +12,17 @@ const WORKS = [
     {
         id: "placa",
         sprite: "Sprites/WorkBanks/placa.svg",
-        hover: "Sprites/WorkBanks/placa.svg",
+        hover: "Sprites/WorkBanks/placa-hover.svg",
     },
     {
         id: "placa-norte",
         sprite: "Sprites/WorkBanks/placa-norte.svg",
-        hover: "Sprites/WorkBanks/placa-norte.svg",
+        hover: "Sprites/WorkBanks/placa-norte-hover.svg",
     },
     {
         id: "placa-sul",
         sprite: "Sprites/WorkBanks/placa-sul.svg",
-        hover: "Sprites/WorkBanks/placa-sul.svg",
+        hover: "Sprites/WorkBanks/placa-sul-hover.svg",
     },
     {
         id: "mirror",
@@ -49,11 +49,6 @@ const WORKS = [
         id: "cassino",
         sprite: "Sprites/WorkBanks/cassino.svg",
         hover: "Sprites/WorkBanks/cassino-hover.svg",
-    },
-    {
-        id: "sino",
-        sprite: "Sprites/WorkBanks/sino.svg",
-        hover: "Sprites/WorkBanks/sino-hover.svg",
     },
     {
         id: "tronco",

@@ -41,87 +41,76 @@ function loadStatus(){
 
 function loadItens(){
     let copiaDados = getSession();
+    const temItens = getThereAreItem();
     const RECURSOS = copiaDados.recursos;
     const INVENTARIO = copiaDados.inventario;
 
     let string =
     `
-        <div class="row-telas">
-            <div class="itens-conteiner animated-aparecer"> 
+        <div class="row-telas inventario-my-items">
+            <div class="itens-conteiner animated-aparecer flex-1"> 
     `;
 
-    if(Object.keys(RECURSOS).length == 0 && Object.keys(INVENTARIO).length == 0) {
+    if(!temItens) {
         string += "<h3><i class='fa-solid fa-triangle-exclamation'></i> Você possui não itens!</h3>"
     }
-
     else{
         for(let recurso in RECURSOS){
             console.log()
             if(RECURSOS[recurso] != 0){
-                string += itemFrame(recurso, RECURSOS[recurso], `exibirDadosItem('${recurso}', ${RECURSOS[recurso]})`);
+                string += itemFrame(recurso, RECURSOS[recurso], `descreveItem('${recurso}', ${RECURSOS[recurso]})`);
             }
         }
       
         for(let recurso in INVENTARIO){
 
             if(INVENTARIO[recurso] != 0){
-                string += itemFrame(recurso, INVENTARIO[recurso], `exibirDadosItem('${recurso}', ${INVENTARIO[recurso]})`);
+                string += itemFrame(recurso, INVENTARIO[recurso], `descreveItem('${recurso}', ${INVENTARIO[recurso]})`);
             }
         }
     }
 
     string += 
-    `           
+    `          
         </div>
     `;
 
-    if(Object.keys(RECURSOS).length != 0 || Object.keys(INVENTARIO).length != 0) {
-        let todosRecursos = Object.keys(RECURSOS);
-        let todosItens = Object.keys(INVENTARIO);
-
-        if(todosRecursos.length != 0){
-            let primeiroItem = getItem(todosRecursos[0]);
-            string += `
-                <div class="column-telas descreve-item">
-                    <h3>${primeiroItem.nome}</h3>
-                    <img src="../${primeiroItem.sprite}" width="64px">
-                    <h3>x${RECURSOS[todosRecursos[0]]}</h3>
-                    <p><b>Descrição:</b> ${primeiroItem.descricao}</p>
-                    <p><b>Raridade:</b> ${primeiroItem.raridade}</p>
-                </div>`;
-        }
-        else{
-            let primeiroItem = getItem(todosItens[0]);
-            string += `
-                <div class="column-telas descreve-item">
-                    <h3>${primeiroItem.nome}</h3>
-                    <img src="../${primeiroItem.sprite}" width="64px">
-                    <h3>x${INVENTARIO[todosItens[0]]}</h3>
-                    <p><b>Descrição:</b> ${primeiroItem.descricao}</p>
-                    <p><b>Raridade:</b> ${primeiroItem.raridade}</p>
-                </div>`;
-        }
+    if(temItens) {
+        string += `<div class="column-telas descreve-item flex-1 over-flow"></div>`;
     }
+
     string += 
-    `           
+    `          
         </div>
     `;
 
     changeDados("Meus Itens", string, 2);
-}
 
-function exibirDadosItem(item, quantidade){
-    let itemAlvo = getItem(item);
-    const tela_descreve = document.querySelector(".descreve-item");
+    if(temItens) {
+        let todosRecursos = Object.keys(RECURSOS);
+        let todosItens = Object.keys(INVENTARIO);
 
-    tela_descreve.innerHTML = 
-    `
-        <h3>${itemAlvo.nome}</h3>
-        <img src="../${itemAlvo.sprite}" width="64px">
-        <h3>x${quantidade}</h3>
-        <p><b>Descrição:</b> ${itemAlvo.descricao}</p>
-        <p><b>Raridade:</b> ${itemAlvo.raridade}</p>
-    `;
+        if(todosRecursos.length != 0){
+            let primeiroItem = todosRecursos[0];
+            descreveItem(primeiroItem, RECURSOS[primeiroItem]);
+        }
+        else{
+            let primeiroItem = todosItens[0];
+            descreveItem(primeiroItem, INVENTARIO[primeiroItem]);
+        }
+
+        todosRecursos.forEach(recurso => {
+            let item = getItem(recurso);
+            let thisItemElemento = document.getElementById(`itemHTML-${item.id}`);
+            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <b>${item.classe}</b>` : ""}`);            
+        });
+
+        todosItens.forEach(recurso => {
+            let item = getItem(recurso);
+            let thisItemElemento = document.getElementById(`itemHTML-${item.id}`);
+            let thisItemDesc = new Description(thisItemElemento, `${item.nome} ${item.classe ? `| <b>${item.classe}</b>` : ""}`);            
+        });
+    }
 }
 
 function loadGear(){    

@@ -45,7 +45,27 @@ const RECEITAS = [
         concluiQuest: true,
         quests: [2],
         notificacaoEspecial: false,
-    }
+    },
+    {
+        id: 5,
+        resultado: "ficha",
+        quantItensResultado: 1,
+        ingredientes: {
+            moeda: 50,
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 6,
+        resultado: "moeda",
+        quantItensResultado: 40,
+        ingredientes: {
+            ficha: 1,
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
 ];
 
 function getReceita(id){

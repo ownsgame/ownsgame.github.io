@@ -24,17 +24,17 @@ class CaixaDialogo {
         this.aberta = false;
     }
 
-    passarDialogo(NPC, string){
+    passarDialogo(npc, texto){
         this.abrirCaixa();
 
-        let nome = NPC.nome;
-        let rosto = NPC.rosto || "Sprites/IU/sem_imagem.svg";
+        let nome = npc.nome;
+        let rosto = npc.rosto || "Sprites/IU/sem_imagem.svg";
 
         this.mainEl.innerHTML = `
             <img class="dialogo-rosto" src="../${rosto}">
             <div class="dialogo-conteudo">
-                <h1 class="fonte-futuretimes animated-aparecer">${nome}</h1>
-                <p  class="fonte-comum animated-aparecer">${string}</p>
+                <h1 class="fonte-comum animated-aparecer">${nome}</h1>
+                <p class="fonte-comum animated-aparecer">${texto}</p>
             </div>
         `;
     }

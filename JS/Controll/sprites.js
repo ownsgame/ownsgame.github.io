@@ -26,3 +26,12 @@ function setBackground(imagem){
     const BACKGROUND = document.body;
     BACKGROUND.style.backgroundImage = `url('../${imagem}')`;
 }
+
+function setHover(elemento, sprite, hover){
+    elemento.addEventListener("mouseenter", ()=>{
+        elemento.src = `../${hover}`;
+    });
+    elemento.addEventListener("mouseleave", ()=>{
+        elemento.src = `../${sprite}`;
+    });
+}

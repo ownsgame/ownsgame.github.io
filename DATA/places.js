@@ -284,6 +284,15 @@ const PLACES = [
         background: "Sprites/Ground/temploAgua.svg",
         trilha: "temaDungeon",
     },
+    {
+        id: "cassino",
+        nome: "Royal Games Center",
+        capitulo: 1,
+        link: "salaJogos.html", 
+        background: "Sprites/Ground/cassino.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
 ]
 
 function getPlace(id){

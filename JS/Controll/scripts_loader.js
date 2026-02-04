@@ -1,4 +1,5 @@
 const JS_DATA_FILES = [
+    "../DATA/apostas.js",
     "../DATA/bosses.js",
     "../DATA/consumiveis.js",
     "../DATA/entidades.js",

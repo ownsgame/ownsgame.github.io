@@ -53,3 +53,22 @@ function construirReceita(id){
         changeReceita(id);
     }
 }
+
+function apostarRoleta(id){
+    if(getSessionItem("recursos.ficha") > 0){
+        const aposta = getApostaRoleta(id);
+        let quantidadeFichas = getSessionItem("recursos.ficha") - 1;
+        setSessionItem("recursos.ficha", quantidadeFichas);
+
+        let resultado = sorteioComProbabilidade(aposta.probabilidades);
+        
+        if(resultado == "perca"){
+            loadResultRoleta(resultado, id);
+        }
+        else if(resultado == "ganho"){
+            let quantidadeFichas = getSessionItem("recursos.ficha") + aposta.recompensa.ficha;
+            setSessionItem("recursos.ficha", quantidadeFichas);
+            loadResultRoleta(resultado, id);
+        }
+    }
+}
