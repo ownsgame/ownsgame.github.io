@@ -25,7 +25,7 @@ const BOSSES = [
     {
         id: 2,
         nome: "Polifemo",
-        titulo: "o Ciclope",
+        titulo: "o Ciclope Gigante",
         capa: "Sprites/Capa/b_ciclop.svg",
         sprites: [["Sprites/Bosses/ciclop.svg"]],
         vida: 1600,
@@ -34,6 +34,11 @@ const BOSSES = [
         forca: 575,
         capitulo: 2,
         nomeFragmento: "Fragmento da Visão",
+        recompensas:{
+            lancaPolifemo: 1,
+            escudoHellano: 1,
+            moeda: 1500,
+        }
     },
     {
         id: 3,

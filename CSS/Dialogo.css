@@ -2,6 +2,7 @@
     width: 70vw; height: 20vh;
     border-radius: 1rem;
     background-image: var(--gradienteAzul);
+    border: 1px rgba(255, 255, 255, 0.295) solid;
     color: white;
     position: absolute;
 

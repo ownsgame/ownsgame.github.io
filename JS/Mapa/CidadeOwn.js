@@ -19,8 +19,13 @@ for(let i =0; i< 2; i++){
 }
 
 const dojo = new DirectLink("dojo", "dojo.html", [5, 2], 2);
+const desDojo = new Description(dojo.getElemento(), "Dojo Do Mestre Wei");
+
 const cassino = new DirectLink("cassino", "salaJogos.html", [5, 4], 2);
+const desCassino = new Description(cassino.getElemento(), "Royal Games Center");
+
 const placa = new DirectLink("placa", "cidadeDois.html", [3, 5], 2);
+
 const desPlaca = new Description(placa.getElemento(), "Avançar");
 placa.getElemento().style.transform = "scaleX(-1)";
 

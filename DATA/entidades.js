@@ -4,6 +4,10 @@ const ENTIDADES_SPRITES = [
         sprite: "Sprites/WorkBanks/tocha.svg"
     },
     {
+        id: "grama",
+        sprite: "Sprites/WorkBanks/grama.svg"
+    },
+    {
         id: "pilar",
         sprite: "Sprites/WorkBanks/pilar.svg"
     },

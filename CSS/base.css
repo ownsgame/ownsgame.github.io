@@ -312,18 +312,17 @@ a{
 }
 
 .room-apresentation{
-    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.596),rgba(0, 0, 0, 0.562), rgba(12, 12, 12, 0.192));
-    border: 1px solid rgba(255, 255, 255, 0.137);
-    border-radius: 0.5rem;
+    background-image: linear-gradient(to right, rgba(12, 12, 12, 0), rgba(12, 12, 12, 0.192), rgba(0, 0, 0, 0.897), rgba(12, 12, 12, 0.192), rgba(12, 12, 12, 0));
+    width: 100vw;
     position: absolute;
     bottom: 8vh;
-    left: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     gap: 0px;
     padding: 0.5rem 1rem;
     z-index: 9;
+    pointer-events: none;
 }
 
 .room-apresentation h1{

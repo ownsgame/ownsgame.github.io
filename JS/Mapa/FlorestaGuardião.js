@@ -23,3 +23,5 @@ for(let i =0; i<4; i++){
     let novaTocha = new FixedEntity([posTochas[i][0], posTochas[i][1]], 2);
     setSprite(novaTocha.getElemento(), "entidade", "tocha");
 }
+
+iniciarParticulas("rgba(174, 255, 68, 0.67)");

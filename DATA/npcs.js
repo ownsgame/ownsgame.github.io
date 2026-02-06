@@ -8,6 +8,14 @@ const NPCS = [
         falasEspeciais: true,
     },
     {
+        id: "brooks",
+        nome: "Brooks",
+        rosto: "Sprites/Npcs/brooks.svg",
+        sprites: ["Sprites/Npcs/brooks.svg"],
+        hover: "Sprites/Npcs/brooks.svg",
+        falasEspeciais: false,
+    },
+    {
         id: "guarda",
         nome: "Guarda do Palácio",
         rosto: "Sprites/Npcs/Capa/guarda_capa.svg",
@@ -85,6 +93,14 @@ const NPCS = [
         rosto: "Sprites/Npcs/esfinge.svg",
         sprites: ["Sprites/Npcs/esfinge.svg"],
         hover: "Sprites/Npcs/esfinge.svg",
+        falasEspeciais: false,
+    },
+    {
+        id: "darby",
+        nome: "D'Arby",
+        rosto: "Sprites/Npcs/d'arby.svg",
+        sprites: ["Sprites/Npcs/d'arby.svg"],
+        hover: "Sprites/Npcs/d'arby.svg",
         falasEspeciais: false,
     },
 ]

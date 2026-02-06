@@ -18,6 +18,17 @@
     gap: 0.5rem;
 }
 
+.tela-padrao::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.tela-padrao::-webkit-scrollbar-thumb {
+    background-image: var(--gradienteTransparente);
+    border: 1px rgba(255, 255, 255, 0.459) solid;
+    border-radius: 10px;
+}
+
 .tela-padrao h1, .tela-padrao h2, .tela-padrao h3{
     font-family: "Ysabeau Infant", sans-serif;
     color: white;
@@ -50,6 +61,9 @@
 }
 
 @media (max-width: 600px) {
+    .tela-padrao{
+        justify-content: start;
+    }
     .tela-padrao h1{
         font-size: 25pt;
     }

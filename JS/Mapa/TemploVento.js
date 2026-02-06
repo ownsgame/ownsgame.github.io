@@ -41,24 +41,20 @@ function gerarDungeonPre(){
     if(tipoSala == 1){
         let quantNapolitanos = randomInt(1, 2);
         Napolitanos.gerarInimigos(quantNapolitanos);
-        GuerreiroHellas.gerarInimigos();
     }
     else if(tipoSala == 2){
-        let quantNapolitanos = randomInt(2, 5);
+        let quantNapolitanos = randomInt(3, 4);
         Napolitanos.gerarInimigos(quantNapolitanos);
     }
     else if(tipoSala == 3){
-        GuerreiroHellas.gerarInimigos();
         Ogros.gerarInimigos()
     }
     else if(tipoSala == 4){
-        let quantNapolitanos = randomInt(1, 2);
-        Napolitanos.gerarInimigos(quantNapolitanos);
-        Ogros.gerarInimigos()
+        GuerreiroHellas.gerarInimigos();
     }
 
     const VIGIA_PS = [95, 5];
-    let entPos = porcentagemTelaPixel(randomVec(VIGIA_PS), 40);
+    let entPos = porcentagemTelaPixel(randomVec(VIGIA_PS), 30);
     let entidade = new FlyingEntity("vigilantes", [entPos.x, entPos.y]);
     entidade.perseguirJogador();
 

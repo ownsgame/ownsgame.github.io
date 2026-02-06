@@ -13,6 +13,19 @@ const ESPADAS = [
         raridade: "Comum"
     },
     {
+        id: "lancaPolifemo",
+        nome: "Lança de Polífemo",
+        sprite: "Sprites/Itens/lança_Polifemo.svg",
+        dano: 150,
+        espera: 5,
+        descricao: "Obtida das mãos de Polífemo o Ciclope Gigante",
+        unico: true,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
+        raridade: "Raro"
+    },
+    {
         id: "linguaDeHidra",
         nome: "Língua de Hidra",
         sprite: "Sprites/Itens/espada_hydra.svg",
@@ -83,6 +96,18 @@ const ESCUDOS = [
         destino: "inventário",
         classe: "escudo",
         raridade: "Comum",
+    },
+    {
+        id: "escudoHellano",
+        nome: "Escudo Hellano",
+        defesa: 40,
+        sprite: "Sprites/Itens/escudo_hellas.svg",
+        descricao: "Dizem que o olho no meio do escudo consegue ver tudo o que há em seu redor",
+        unico: true,
+        consumivel: false,
+        destino: "inventário",
+        classe: "escudo",
+        raridade: "Raro",
     }
 ];
 

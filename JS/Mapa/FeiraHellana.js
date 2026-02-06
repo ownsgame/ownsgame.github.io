@@ -20,3 +20,7 @@ const meliadas = new NPC("meliadas", [1, 3], 2);
 if(randomBool()){
     const picalo = new NPC("picalo", [5, 3], 2);
 }
+
+const emBreve1 = new FixedEntity([3, 3], 2);
+setSprite(emBreve1.getElemento(), "work", "emBreve");
+const desEmBreve = new Description(emBreve1.getElemento(), "Mais conteúdos para esta área");

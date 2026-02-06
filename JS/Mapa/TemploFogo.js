@@ -52,7 +52,7 @@ function gerarDungeonPre(){
     Chest.gerarBaus(QUANT_BAU, ArrayRecompensas, SALA.baus);
     Vassalos.gerarInimigos();
 
-    const quantEscudeiros = randomInt(0, 3);
+    const quantEscudeiros = randomInt(0, 2);
     Escudeiros.gerarInimigos(quantEscudeiros);
 }
 

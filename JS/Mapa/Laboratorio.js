@@ -23,7 +23,7 @@ const desPorta = new Description(portaUm.getElemento(), "Câmara Central");
 
 const maquinaCientifica = new FixedEntity([3,3], 2);
 setSprite(maquinaCientifica.getElemento(), "entidade", "maquinaCientifica");
-const desMaquina = new Description(maquinaCientifica.getElemento(), "Máquina de Apromiramento");
+const desMaquina = new Description(maquinaCientifica.getElemento(), "Máquina de Aprimoramento");
 
 const globo = new WorkBench("mapaMundi", [5, 4]);
 

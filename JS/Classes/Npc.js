@@ -30,13 +30,16 @@ fecharFalaBTN.onclick = () => {
 class NPC extends FixedEntity{
     constructor(id, posicao, layer){
         super(posicao, layer);
-
+        
         let data = getNpc(id);
+        let playerChapter = getSessionItem("capituloCorrente");
+        
+
         this.npc = data;
         this.especial = data.falasEspeciais;
 
         if(this.especial){
-            this.falas = getFalasEsp(data.id, 0);
+            this.falas = getFalasEsp(data.id, playerChapter);
         } else {
             this.falas = getFalasCom(data.id);
         }

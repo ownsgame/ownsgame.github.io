@@ -24,10 +24,31 @@ body{
     z-index: 0;
     cursor: pointer;
     box-sizing: border-box;
+    border: none;
 }
 .tiles:hover{
     filter: brightness(2);
     border: 3px solid rgb(255, 255, 255);
+    animation: pulso-borda 1.2s infinite ease-in-out;
+}
+
+@keyframes pulso-borda{
+    0%{
+        border-color: rgba(255, 255, 255, 1);
+    }
+    50%{
+        border-color: rgba(255, 255, 255, 0.096);
+    }
+    100%{
+        border-color: rgba(255, 255, 255, 1);
+    }
+}
+
+@media (max-width: 600px){
+    .tiles:hover{
+        border-width: 1px;
+    }
+    
 }
 
 @media (max-width: 199px){

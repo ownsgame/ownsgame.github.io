@@ -199,8 +199,10 @@ function loadChangeItem(classe){
     for(let recurso in INVENTARIO){
 
         let item = getItem(recurso);
-
+        console.log(classe);
+        console.log(item.classe);
         if(item.classe == classe){
+            
             possui = true;
             string += itemFrame(recurso, false, `trocaDeItens('${classe}', '${item.id}')`);
         }
@@ -216,8 +218,7 @@ function loadChangeItem(classe){
 
 function loadQuests(){
     let questsAtivas = getSessionItem("questsAtivas");
-    let arvoreConclusao = getSessionItem("arvoreConclusao");
-
+    
     let string = `<div class="quests-conteiner">`;
 
     if(questsAtivas.length == 0){
@@ -242,7 +243,41 @@ function loadQuests(){
     `
         </div>
         <div class="row-buttons animated-buttons">
-            <button>Quests Concluidas</button>
+            <button onclick='loadQuestsConcluidas()'>Quests Concluidas</button>
+        </div>
+    `;
+    changeDados("Quests", string, 5);
+}
+
+function loadQuestsConcluidas(){
+    let questsConcluidas = getSessionItem("questsConcluidas");
+    questsConcluidas.reverse();
+
+    let string = `<div class="quests-conteiner">`;
+
+    if(questsConcluidas.length == 0){
+        string += "<p>Você ainda não concluiu alguma quest</p>";
+    }
+    else{
+        string += `<h2 class="fonte-comum">Quests Concluídas: (${questsConcluidas.length})</h2>`;
+        questsConcluidas.forEach(id => {
+            
+            let quest = getQuest(id);
+            string += 
+            `
+                <div class="quest animated-aparecer">
+                    <h3>${quest.nome}</h3>
+                    <p class="fonte-comum">${quest.descricao}</p>
+                </div>
+            `;
+        });
+    }
+
+    string += 
+    `
+        </div>
+        <div class="row-buttons animated-buttons">
+            <button onclick='loadQuests()'>Voltar</button>
         </div>
     `;
 

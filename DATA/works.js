@@ -75,6 +75,11 @@ const WORKS = [
         sprite: "Sprites/WorkBanks/portao-fogo.svg",
         hover: "Sprites/WorkBanks/portao-fogo.svg",
     },
+    {
+        id: "emBreve",
+        sprite: "Sprites/WorkBanks/em-breve.svg",
+        hover: "Sprites/WorkBanks/em-breve.svg",
+    },
 ]
 
 function getWorkSprite(id){

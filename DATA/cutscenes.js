@@ -19,7 +19,7 @@ const CUTSCENES = [
             `"<i>Filho meu, crave as palavras que te digo em seu coração...Eis que hoje nós nasce uma esperaça que trará das cinzas a glória do Reino de OWN!</i>"`,
             "O Conto do HEXAPODA encuca na cabeça da mais jovem criatura até o ancião mais ocioso, Mas aquilo que era somente um conto, hoje ganha mais um capítulo...",
             "...em meio páginas amareladas deste livro: O Guerreiro capaz de enfrentar os maiores desafios surge",
-            "e vai coletar todos os fragmentos da glória de seus inimigos, e afundá-los no mais profundo esquecimento, de que modo que estes se tornaram o conto.",
+            "e vai coletar todos os fragmentos da glória de seus inimigos, e afundá-los no mais profundo esquecimento, de modo que estes se tornarão um conto.",
             "A história diz que a muito tempo nas Terras Sombrias, os MITHYS após terminarem a construção do FRAGMENTO DA SABEDORIA, iniciaram um projeto que abalou a estrutura do MUNDO ANTIGO",
             "Eles juntaram todos os 6 FRAGMENTOS da GLÓRIA e deram inicio àquilo que ficou conhecido como o HEXAPODA",
             "o HEXAPODA era um MITHY capaz de possuir um poder suficiente para desafiar todos os grandes guerreios do MUNDO ANTIGO, e levar os MITHYS ao controle absoluto das raças...",

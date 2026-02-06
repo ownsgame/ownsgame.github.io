@@ -27,14 +27,7 @@ function criarModelo(){
         tempoEspera: 5,
 
         inventario: {},
-        recursos: {
-            ectoplasma: 55,
-            petala: 15,
-            espinho: 5,
-            madeira: 20,
-            polen: 5,
-            moeda: 1000,
-        },
+        recursos: {},
 
         arvoreConclusao: {
             cap1: {

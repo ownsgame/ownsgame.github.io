@@ -15,7 +15,7 @@ let index = 0;
 setInterval(()=>{
     ImagemTelaInicial.src = `../${imgs[index]}`;
     index = (index + 1) % imgs.length;
-}, 100);
+}, 500);
 
 function mostrarTelaSaves(){
     const SAVES = getSaves();

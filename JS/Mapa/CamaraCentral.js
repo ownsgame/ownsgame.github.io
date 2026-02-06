@@ -14,7 +14,7 @@ const bookshelf = new DirectLink("bookshelf", "biblioteca.html", [2, 5], 2);
 const espelho = new IndirectLink("mirror", [3, 5], 2, "mirrorroom");
 const sabioOWN = new NPC("sabioown", [3, 3], 2);
 
-const desBookshelf = new Description(bookshelf.getElemento(), "Biblioteca Real Own");
+const desBookshelf = new Description(bookshelf.getElemento(), "Biblioteca Own");
 const desPortaUm = new Description(portaUm.getElemento(), "Laboratório do Palácio");
 const desPortaDois = new Description(portaDois.getElemento(), "Entrada do Palácio");
 const desEspelho = new Description(espelho.getElemento(), "<i class='fa-solid fa-circle-play'></i>");

@@ -48,3 +48,54 @@ function salaApresentation(Nome, Capitulo){
         fecharTela("room-apresentation", false);
     }, 2000);
 }
+
+let loopParticulas = null;
+
+function iniciarParticulas(cor, intervalo = 110) {
+    if (loopParticulas) return;
+
+    const alturaMaximaPx = window.innerHeight * 0.75;
+
+    loopParticulas = setInterval(() => {
+        const particula = document.createElement("div");
+
+        const tamanho = Math.random() * 6 + 10;
+        const x = Math.random() * window.innerWidth;
+        let y = window.innerHeight + Math.random() * 30;
+        const velocidade = Math.random() * 1.5 + 0.5;
+
+        particula.style.position = "absolute";
+        particula.style.width = `${tamanho}px`;
+        particula.style.height = `${tamanho}px`;
+        particula.style.borderRadius = "50%";
+        particula.style.backgroundColor = cor;
+        particula.style.left = `${x}px`;
+        particula.style.top = `${y}px`;
+        particula.style.pointerEvents = "none";
+        particula.style.opacity = "1";
+
+        document.body.appendChild(particula);
+
+        function animar() {
+            y -= velocidade;
+            particula.style.top = `${y}px`;
+            particula.style.opacity = `${1 - (window.innerHeight - y) / alturaMaximaPx}`;
+
+            if (window.innerHeight - y >= alturaMaximaPx) {
+                particula.remove();
+                return;
+            }
+
+            requestAnimationFrame(animar);
+        }
+
+        animar();
+    }, intervalo);
+}
+
+function pararParticulas() {
+    clearInterval(loopParticulas);
+    loopParticulas = null;
+}
+
+

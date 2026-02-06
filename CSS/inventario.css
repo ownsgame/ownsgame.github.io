@@ -119,6 +119,7 @@ section{
 .quests-conteiner{
     height: 50%;
     width: 90%;
+    max-height: 380px;
     overflow-y: auto;
     box-sizing: border-box;
     padding: 0.5rem;
@@ -215,7 +216,7 @@ section{
     }
 
     .quests-conteiner{
-        height: 50%;
         width: 100%;
+        max-height: 680px;
     }
 }

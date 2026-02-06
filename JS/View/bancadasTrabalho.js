@@ -36,6 +36,9 @@ function loadReceita(receitaId){
         <div class="column-telas resultado-conteiner">
             <h2 class="fonte-comum">Resultado:</h2>
             <p><b>x${receita.quantItensResultado}</b> ${resultado.nome}</p>
+            ${resultado.dano ? `<p><b>Dano base:</b> ${resultado.dano}</p>` : ""}
+            ${resultado.defesa ? `<p><b>Defesa base:</b> ${resultado.defesa}</p>` : ""}
+            ${resultado.espera ? `<p><b>Tempo de espera:</b> ${resultado.espera} seg</p>` : ""}
             <div class="itens-conteiner">
                 ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
             </div>
@@ -95,7 +98,6 @@ function changeReceita(receitaId){
     const ingredientes = receita.ingredientes;
 
     let string = `
-        <div class="column-telas receitas-conteiner">
             <h2 class="fonte-comum">Ingreditentes:</h2>
             <div class="itens-conteiner">
     `;
@@ -107,15 +109,16 @@ function changeReceita(receitaId){
     string += 
     `
             </div>
-        </div>
     `;
     document.querySelector(".receitas-conteiner").innerHTML = string;
 
     string = 
     `
-        <div class="column-telas resultado-conteiner">
             <h2 class="fonte-comum">Resultado:</h2>
             <p><b>x${receita.quantItensResultado}</b> ${resultado.nome}</p>
+            ${resultado.dano ? `<p><b>Dano base:</b> ${resultado.dano}</p>` : ""}
+            ${resultado.defesa ? `<p><b>Defesa base:</b> ${resultado.defesa}</p>` : ""}
+            ${resultado.espera ? `<p><b>Tempo de espera:</b> ${resultado.espera} seg</p>` : ""}
             <div class="itens-conteiner">
                 ${itemFrame(receita.resultado, receita.quantItensResultado, false)}
             </div>
@@ -127,7 +130,7 @@ function changeReceita(receitaId){
             <button onclick="construirReceita(${receitaId})">
                     <i class="fa-solid fa-hammer"></i> Construir
             </button>
-        </div>
+
         `;
     }
     else{
@@ -139,7 +142,6 @@ function changeReceita(receitaId){
             <button class="botao-ativo blue-button" onclick="window.location = 'inventario.html'">
                 <i class="fa-solid fa-toolbox"></i> Inventário
             </button>
-        </div>
         `
     }
     
@@ -235,8 +237,25 @@ function loadTeleport(){
 }
 
 function loadMapaMundi(){
-    let string = `<img src="../Sprites/IU/mapa-mundi.svg">`;
+    let string = `
+        <div class="column-telas">
+            <img class="mapa-mundi" src="../Sprites/IU/mapa-mundi.svg">
+            <button onclick="loadPlaces()"><i class="fa-solid fa-earth-europe"></i></button>
+        </div>
+    `;
     changeWorkBenchScreen("Mapa-Múndi", string);
+}
+
+function loadPlaces(){
+    let string = `
+        <div class="column-telas">
+            <h3>Cidade Own - <i class="fa-solid fa-book"></i> 1°</h3>
+            <h3>Reino Flora - <i class="fa-solid fa-book"></i> 1°</h3>
+            <h3>Reino de Hellas- <i class="fa-solid fa-book"></i> 2°</h3>
+            <button onclick="loadMapaMundi()"><i class="fa-solid fa-earth-europe"></i></button>
+        </div>
+    `;
+    changeWorkBenchScreen("Lugares", string);
 }
 
 function loadRoleta(){

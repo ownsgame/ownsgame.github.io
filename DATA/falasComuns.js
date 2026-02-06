@@ -4,12 +4,30 @@ const FALAS_COM = [
         falas: [[
             "Eu sinceramente gosto dos meus olhos vermelhos", 
             "Fica todo mundo me admirando por essa condição especial",
-            "Minha esposa odeia, ela gostaria que eu tivesse olhos normais",
-            "Assim outras owns não ficariam olhando pra mim",
-            "Mas se bem me lembro",
-            "Ela também começou a gostar de mim por conta dos olhos",
-            "É estranho as diferentes ideias que temos a respeito dos aspectos físicos dos outros",
+            "Bem... menos as mulheres...",
+            "As owns não gostam muito de mim por algum motivo",
+            "Talvez seja pelos olhos vermelhos? Eu não sei, talvez...",
+            "A real é que caso você encontre alguém aí pela sua jornada que possa...bem...",
+            "Estar dísponivel, você bem que poderia levantar uma bola pra mim?",
+            "Posso contar com você?",
         ]],
+    },
+    {
+        id: "brooks",
+        falas: [[
+            "Acalme-se! Não se assuste! hahaha",
+            "Isso é o que acontece com os OWNS PUROS quando eles ficam velhos",  
+            "Suas cor azulada vai se desbotando com o tempo é normal, tranquilamente normal...",  
+            "...e não precisa se desculpar pelo susto hahahaha as pessoas mais jovem assim hahaha",
+            "Daminha época, vivo hoje em dia só tem o Mestre Wei,, nós lutamos juntos na Batalha do Vale do Marfim...", 
+            "O sábio? Bem ele era uma criança quando tudo aconteceu hahaha ele tá quase virando um vovô hahaha",
+            "Por que o Mestre Wei não é tão... desbotado quanto eu? bem...",
+            "Mestre Wei seguiu o caminho da Guerra... ele se especializou em combate e para aumentar seu nível de poder...",
+            "Ele foi às terras de Lord Orakana, realizar um processo que lhe deu a força de vários guerreiros",
+            "Você vai até o Shogunato de Orakana né? Terra do clã 馬鹿な? Se eu não me engano o Fragmento da Sabedoria encontra-se em sua posse",
+            "Lá você pretende realizar o processo pra ficar mais forte também?",
+        ]
+    ],
     },
     {
         id: "mestreWei",
@@ -228,6 +246,25 @@ const FALAS_COM = [
                 'e as traga para que eu possa devorar"'
             ],
         ]
+    },
+    {
+        id: "darby",
+        falas: [[
+            "Oi o meu nome é D'Arby!",
+            "Você pode pronunciar '<i>Darbi</i>', é um prazer",
+            "O que veio fazer aqui? Apostar? hahaha",
+            "Caí dentro garoto o que você faz aqui não é apostar",
+            "Apostar de verdade é de tirar a alma de dentro do corpo das pessoas",
+            "Causa arrepios...",
+            "Por isso eu vou colocar um jogo de verdade aqui nessa espelunca!",
+            "Vou por um jogo que quando as pessoas perderem vão tremer tanto... mas tranto...",
+            "Elas vão morrer somente com o medo causado pelos Jogos de D'Arby!",
+            "Mas agora olhe para esta espelunca o joguinho da roleta ali não tem emoção nenhuma",
+            "Eu acho uma vergonha que desenvolvedores de jogos não entreguem um serviço completo e te obrigam a esperar pelo que vai vir 'em breve'...",
+            "Eu vou trazer um jogo que uma vez vi na terra dos Takanas Servos de Orakana",
+            "Aí jogaremos um jogo de verdade",
+        ]
+        ],
     }
 ]
 

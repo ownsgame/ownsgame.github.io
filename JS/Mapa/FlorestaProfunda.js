@@ -40,3 +40,6 @@ if(chancePortal){
     const portal = new DirectLink("portal", "florestaGuardião.html", [5, 4], 2);
     const desPortal = new Description(portal.getElemento(), "???");
 }
+
+iniciarParticulas("rgba(111, 255, 68, 0.67)");
+
