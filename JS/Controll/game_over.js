@@ -30,26 +30,37 @@ function vitoriaDeJogo(boss){
     apagarSalaBoss();
     let player = getObjectPlayer();
     player.setVenceu();
+    let string;
     
-    let string = `
-        <h1><i class="fa-solid fa-trophy"></i>Vitória</h1>
-        
-        <p class="fonte-comum"> Você coletou o <i><b>"${boss.nomeFragmento}"</b></i></p>
-    `;
-
-    if(boss.recompensas){
-
-        string += `
-        <h3>Recompensas:</h3>
-        <div class="itens-conteiner">
+    if(boss != false){
+        string = `
+            <h1><i class="fa-solid fa-trophy"></i>Vitória</h1>
+            
+            <p class="fonte-comum"> Você coletou o <i><b>"${boss.nomeFragmento}"</b></i></p>
         `;
 
-        for(let recompensa in boss.recompensas){
-            string += itemFrame(recompensa, boss.recompensas[recompensa], false);
-        }
+        if(boss.recompensas){
 
-        string += "</div>";
+            string += `
+            <h3>Recompensas:</h3>
+            <div class="itens-conteiner">
+            `;
+
+            for(let recompensa in boss.recompensas){
+                string += itemFrame(recompensa, boss.recompensas[recompensa], false);
+            }
+
+            string += "</div>";
+        }
     }
+    else{
+        string = `
+            <h1><i class="fa-solid fa-trophy"></i> Vitória</h1>
+    
+            <p class="fonte-comum"> Você já havia derrotado este Boss anteriormente, por isso sem recompensas mas... Você é bom mesmo em!</p>
+        `;
+    }
+    
 
     string += `<button onclick="redirecionarUltimaSala()">Voltar</button>`;
 

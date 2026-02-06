@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    
+    <title>Owns</title>
+    <link rel="icon" href="../Sprites/IU/Logo.svg"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/fontes.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/cutscenes.css">
+        
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+        <main>
+            <div class="tela-cutscene"></div>
+            <div class="inventario-corpo animated-aparecer">
+                <button onclick="retrocederFrame()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="avancarFrame()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="red-button" onclick="fecharCutscene()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </main>
+
+        <script src="../JS/Session/save.js"></script>
+        <script src="../JS/Session/session.js"></script>
+        <script src="../JS/Session/getters.js"></script>
+        <script src="../JS/Session/setters.js"></script>
+        <script src="../DATA/cutscenes.js"></script>
+        <script src="../JS/Controll/sala.js"></script>
+        <script src="../JS/Controll/cutscenes.js"></script>
+        <script src="../JS/View/cutscenes.js"></script>
+</body>
+</html>

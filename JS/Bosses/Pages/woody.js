@@ -2,6 +2,7 @@ const SALA = getPlace("bossWoody");
 
 setBackground(SALA.background);
 desenharGrade("bossWoody", false);
+setTemaFase(SALA);
 
 Woody.gerar();
 

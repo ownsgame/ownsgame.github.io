@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+}
+
+main {
+    width: 60vw;
+    height: 90vh;
+    border: 1px solid rgba(255, 255, 255, 0.308);
+    
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 550px){
+    main {
+        width: 90vw;
+    }
+}
+@media (max-width: 350px) {
+    .cutscene-image{
+        width: 200px;
+    }
+}
+
+.tela-cutscene{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin: 0.5rem;
+}
+
+.cutscene-image{
+    border: 1px solid rgba(255, 255, 255, 0.308);
+    
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.cutscene-texts{
+    width: 100%;
+}

@@ -13,3 +13,9 @@ const desPlaca = new Description(placa.getElemento(), "Subir");
 
 const esfingeDePedra = new WorkBench("esfingeDePedra", [3, 3]);
 const esfinge = new NPC("esfinge", [4, 3], 2);
+
+let player_data = getSession();
+if(player_data.fragmentosHexopoda < 2){
+    const portaChefe = new IndirectLink("door-locked", [3, 5], 2, "bossCiclop", 3);
+    const desPortaChefe = new Description(portaChefe.getElemento(), "Boss");
+}

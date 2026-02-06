@@ -164,6 +164,7 @@ function playerTreinar(){
 function derrotarBOSS(id){
     const bossDerrotado = getBoss(id);
     const PLAYER_DATA = getSession();
+
     if(PLAYER_DATA.capituloCorrente == bossDerrotado.capitulo){
         let fragmentosHexopoda = PLAYER_DATA.fragmentosHexopoda + 1;
         let capituloCorrente = PLAYER_DATA.capituloCorrente + 1;
@@ -184,5 +185,8 @@ function derrotarBOSS(id){
 
         plusPorcentagem(10);
         vitoriaDeJogo(bossDerrotado);
+    }
+    else{
+        vitoriaDeJogo(false);
     }
 }

@@ -148,6 +148,6 @@ const CONSUMIVEIS = [
 ];
 
 function getConsumivel(id){
-    const item = CONSUMIVEIS.find(e => e.id === id);
+    const item = CONSUMIVEIS.find(c => c.id === id);
     return item ? item : null;
 }

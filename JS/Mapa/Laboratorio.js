@@ -1,5 +1,9 @@
 const SALA = getPlace("laboratorio");
 
+if(getSessionItem("iniciante")){
+    changeIniciante();
+}
+
 marcarSala(SALA.link);
 setBackground(SALA.background);
 desenharGrade("ceramica", false);
@@ -19,11 +23,12 @@ const desPorta = new Description(portaUm.getElemento(), "Câmara Central");
 
 const maquinaCientifica = new FixedEntity([3,3], 2);
 setSprite(maquinaCientifica.getElemento(), "entidade", "maquinaCientifica");
+const desMaquina = new Description(maquinaCientifica.getElemento(), "Máquina de Apromiramento");
 
 const globo = new WorkBench("mapaMundi", [5, 4]);
 
 const reportTable = new FixedEntity([5,2], 2);
 setSprite(reportTable.getElemento(), "entidade", "mesaRelatorio");
-const desReport = new Description(reportTable.getElemento(), "Relatório de Projeto");
+const desReport = new Description(reportTable.getElemento(), "Relatório de Projeto : Em Breve");
 
 const forjaFantasma = new WorkBench("forjaFantasma", [5, 3]);

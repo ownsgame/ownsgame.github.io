@@ -69,6 +69,7 @@ function criarModelo(){
         questsAtivas: [1, 2],
         questsConcluidas: [],
         levelTreino: 0,
+        cutscene: 1,
     };
 }
 

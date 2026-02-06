@@ -59,7 +59,20 @@ h1{
     }
 }
 
+.txt-left{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+
+.txt-left > *{
+    margin-left: 0px;
+    text-align: left;
+}
+
 .telinha{
+    background-image: linear-gradient(to bottom right, rgba(0, 64, 255, 0.637), rgba(0, 31, 126, 0.541), rgba(0, 11, 49, 0.63));;
+    border: 1px solid rgba(255, 255, 255, 0.192);
     width: 80vw; height: 80vh;
     padding: 2rem;
     box-sizing: border-box;

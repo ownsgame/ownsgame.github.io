@@ -66,7 +66,7 @@ const VOADORES = [
         dano: 5,
         tempo: 200,
         velocidade: 60,
-        tempoVida: 18000,
+        tempoVida: 10000,
         tamanho: "Médio",
         sprites: [[
             "Sprites/Enemys/2/vigilantes[0][0].svg", 

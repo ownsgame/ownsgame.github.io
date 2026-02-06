@@ -8,7 +8,7 @@ class Ciclop extends Boss{
             [2,3], [3, 4], [4, 4], [4, 3], [4, 2], [4, 1], [3, 2], [3, 1], [2, 2],
         ];
 
-        this.moverLoop(this.movimentos, 350);
+        this.moverLoop(this.movimentos, 400);
     }
 
     static gerar(){

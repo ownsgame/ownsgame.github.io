@@ -33,6 +33,7 @@ const TILES_CUSTER = {
     areia: ["Sprites/Tiles/areia_1.svg", "Sprites/Tiles/areia_2.svg"],
     cassino: ["Sprites/Tiles/cassino_1.svg", "Sprites/Tiles/cassino_2.svg"],
     bossWoody: ["Sprites/Tiles/bossWoody_1.svg", "Sprites/Tiles/bossWoody_3.svg", "Sprites/Tiles/bossWoody_2.svg", "Sprites/Tiles/bossWoody_3.svg"],
+    bossCiclop: ["Sprites/Tiles/bossCiclop_1.svg", "Sprites/Tiles/bossCiclop_2.svg"],
 }
 
 function getTileSprite(id){

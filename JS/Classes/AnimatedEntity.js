@@ -2,6 +2,7 @@ class AnimatedEntity {
     constructor(elemento, sprites, hover, intervalo){
         this.elemento = elemento;
         this.sprites = sprites;
+        this.elemento.src = `../${this.sprites[0][0]}`;
         this.hover = hover;
         this.intervalo = intervalo;
 

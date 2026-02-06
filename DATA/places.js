@@ -234,7 +234,7 @@ const PLACES = [
         capitulo: 2,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/Floresta-Morta.svg",
+        sprite: "Sprites/Places/Templo-Fogo.svg",
         link: "temploFogo.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-fogo.svg", "Sprites/WorkBanks/Chests/co-fogo.svg"], 
         recompensas: 
@@ -256,7 +256,7 @@ const PLACES = [
         capitulo: 2,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/Floresta-Morta.svg",
+        sprite: "Sprites/Places/Templo-Vento.svg",
         link: "temploVento.html", 
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
@@ -278,7 +278,7 @@ const PLACES = [
         capitulo: 2,
         isDungeon: true,
         haveChests: true,
-        sprite: "Sprites/Places/Floresta-Morta.svg",
+        sprite: "Sprites/Places/Templo-Água.svg",
         link: "temploAgua.html",
         baus: ["Sprites/WorkBanks/Chests/cl-agua.svg", "Sprites/WorkBanks/Chests/co-agua.svg"], 
         recompensas: 
@@ -310,7 +310,7 @@ const PLACES = [
         capitulo: 2,
         sprite: "Sprites/Places/Colina-Dancante.svg",
         link: "bossWoody.html", 
-        background: "Sprites/Ground/hellas.svg",
+        background: "Sprites/Ground/bossCiclop.svg",
         isDungeon: false,
         haveChests: false,
         trilha: "temaDungeon",

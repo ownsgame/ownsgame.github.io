@@ -1,4 +1,5 @@
 function tocarAudio(id){
+    console.log(id);
     const sound = getSound(id);
     if(!sound) return;
 
