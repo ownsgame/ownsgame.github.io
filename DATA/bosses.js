@@ -28,7 +28,7 @@ const BOSSES = [
         titulo: "o Ciclope Gigante",
         capa: "Sprites/Capa/b_ciclop.svg",
         sprites: [["Sprites/Bosses/ciclop.svg"]],
-        vida: 1600,
+        vida: 1000,
         defesa: 10,
         ataque: 50,
         forca: 575,
