@@ -3,7 +3,7 @@ const WORKBENCHS = [
         id: "forjaFantasma",
         nome: "Forja Fantasma",
         tipo: "construção",
-        receitas: [1, 2],
+        receitas: [1, 2, 7],
         sprite: "Sprites/WorkBanks/forja_fantasma.svg",
         hover: "Sprites/WorkBanks/forja_fantasma-hover.svg"
     },
@@ -24,7 +24,7 @@ const WORKBENCHS = [
         id: "falsificador",
         nome: "Falsificador de Chaves",
         tipo: "construção",
-        receitas: [3],
+        receitas: [3, 7],
         sprite: "Sprites/WorkBanks/falsificador.svg"
     },
     {

@@ -194,7 +194,10 @@ function loadChangeItem(classe){
     const INVENTARIO = copiaDados.inventario;
     let possui = false;
 
-    let string = `<h3 class='fonte-comum'>Trocar ${classe} atual por:</h3>`;
+    let string = `
+        <h3 class='fonte-comum'>Trocar ${classe} atual por:</h3>
+        <div class="itens-conteiner">
+    `;
 
     for(let recurso in INVENTARIO){
 
@@ -211,7 +214,7 @@ function loadChangeItem(classe){
     if(!possui){
         string += `<h3><i class='fa-solid fa-triangle-exclamation'></i> Você não possui ${classe}s!</h3>`;
     }
-    string += "<button onclick='loadGear()'>Voltar</button>";
+    string += "</div> <button onclick='loadGear()'>Voltar</button>";
 
     changeDados("Trocar", string, 3);
 }

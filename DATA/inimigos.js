@@ -102,7 +102,8 @@ const INIMIGOS_LIST =
         minAtaque: 20,
 
         recompensas: {
-            moeda: 100,
+            linguaSapo: 68,
+            peleSapo: 32,
         },
 
         pontosVitais: 5,

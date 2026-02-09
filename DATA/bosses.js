@@ -13,7 +13,7 @@ const BOSSES = [
         ]],
         vida: 550,
         defesa: 0,
-        ataque: 50,
+        ataque: 32,
         forca: 210,
         capitulo: 1,
         nomeFragmento: "Fragmento da Natureza",

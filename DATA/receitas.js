@@ -66,6 +66,17 @@ const RECEITAS = [
         concluiQuest: false,
         notificacaoEspecial: false,
     },
+    {
+        id: 7,
+        resultado: "espadaSapo",
+        quantItensResultado: 1,
+        ingredientes: {
+            peleSapo: 1,
+            linguaSapo: 5,
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
 ];
 
 function getReceita(id){

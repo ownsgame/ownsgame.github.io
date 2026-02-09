@@ -13,11 +13,24 @@ const ESPADAS = [
         raridade: "Comum"
     },
     {
+        id: "espadaSapo",
+        nome: "Espada de Sapo",
+        sprite: "Sprites/Itens/espada_sapo.svg",
+        dano: 35,
+        espera: 3.2,
+        descricao: "O que você fez a pobres sapos somente para isso?",
+        unico: true,
+        consumivel: false,
+        destino: "inventário",
+        classe: "arma",
+        raridade: "Raro"
+    },
+    {
         id: "lancaPolifemo",
         nome: "Lança de Polífemo",
         sprite: "Sprites/Itens/lança_Polifemo.svg",
         dano: 150,
-        espera: 5,
+        espera: 4,
         descricao: "Obtida das mãos de Polífemo o Ciclope Gigante",
         unico: true,
         consumivel: false,
