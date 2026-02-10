@@ -258,7 +258,7 @@ const PLACES = [
         haveChests: true,
         sprite: "Sprites/Places/Templo-Vento.svg",
         link: "temploVento.html", 
-        baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
+        baus: ["Sprites/WorkBanks/Chests/cl-vento.svg", "Sprites/WorkBanks/Chests/co-vento.svg"], 
         recompensas: 
         { 
             moeda: 66,
@@ -270,7 +270,7 @@ const PLACES = [
 
         inimigos: ["guerreiroHellas", "ogros", "napolitanos"],
         background: "Sprites/Ground/temploVento.svg",
-        trilha: "temaDungeon",
+        trilha: "temploForesta",
     },
     {
         id: "temploAgua",
@@ -292,7 +292,7 @@ const PLACES = [
 
         inimigos: ["guerreiroHellas", "ogros"],
         background: "Sprites/Ground/temploAgua.svg",
-        trilha: "temaDungeon",
+        trilha: "ambienteAquatico",
     },
     {
         id: "cassino",
@@ -313,7 +313,7 @@ const PLACES = [
         background: "Sprites/Ground/bossCiclop.svg",
         isDungeon: false,
         haveChests: false,
-        trilha: "temaDungeon",
+        trilha: "temaGrecia",
     },
 ]
 

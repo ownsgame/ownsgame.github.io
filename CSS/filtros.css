@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 5;
-    background-color: rgba(53, 141, 255, 0.37);
+    background-color: rgba(36, 69, 255, 0.295);
     pointer-events: none;
     backdrop-filter: blur(1px);
 }

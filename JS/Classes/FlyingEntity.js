@@ -161,7 +161,7 @@ class FlyingEntity {
 
             this.timeoutAtaque = setTimeout(() => {
                 this.podeAtacar = true;
-            }, 1000);
+            }, 2000);
         }
     }
 

@@ -34,7 +34,7 @@ const VOADORES = [
         id: "blue_ghost",
         nome: "Ghosts Azuis",
         dano: 2,
-        tempo: 1000,
+        tempo: 2000,
         velocidade: 150,
         tempoVida: 12000,
         tamanho: "Médio",

@@ -28,7 +28,25 @@ const SOUNDS = [
         nome: "Dungeon Theme",
         origem: "The Legend of Zelda",
         link: "SOUNDS/Trilhas/Dungeon-Theme.mp3",
-    }
+    },
+    {
+        id: "ambienteAquatico",
+        nome: "Aquatic Ambience",
+        origem: "Donkey Kong Country",
+        link: "SOUNDS/Trilhas/Aquatic-Ambience.mp3",
+    },
+    {
+        id: "temploForesta",
+        nome: "Forest Temple",
+        origem: "The Legend of Zelda: Ocarina Of Time",
+        link: "SOUNDS/Trilhas/Forest-Temple.mp3",
+    },
+    {
+        id: "temaGrecia",
+        nome: "The great sword bridge of athens",
+        origem: "God of War (2005)",
+        link: "SOUNDS/Trilhas/The great sword bridge of athens.mp3",
+    },
 ];
 
 function getSound(id){

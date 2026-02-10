@@ -1,5 +1,6 @@
 #status{
-    background-image: var(--gradienteAzul);
+    background-image: linear-gradient(to top left, rgba(10, 30, 85, 0.781),rgba(181, 71, 255, 0.192));
+    border: 1px rgba(255, 255, 255, 0.438) solid;
     border-radius: 1rem;
     padding: 1.5rem 1.5rem;
     gap: 0.2rem;
