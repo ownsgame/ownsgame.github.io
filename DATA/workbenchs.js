@@ -56,6 +56,30 @@ const WORKBENCHS = [
         sprite: "Sprites/WorkBanks/roleta.svg",
         hover: "Sprites/WorkBanks/roleta-hover.svg"
     },
+    {
+        id: "cambio",
+        nome: "Câmbio de Moedas",
+        tipo: "construção",
+        receitas: [8, 9],
+        sprite: "Sprites/WorkBanks/cambio.svg",
+        hover: "Sprites/WorkBanks/cambio-hover.svg"
+    },
+    {
+        id: "joalheria",
+        nome: "Joalheria",
+        tipo: "construção",
+        receitas: [14, 15, 16, 17, 10, 11, 12, 13],
+        sprite: "Sprites/WorkBanks/joalheria.svg",
+        hover: "Sprites/WorkBanks/joalheria-hover.svg"
+    },
+    {
+        id: "forjaHefesto",
+        nome: "Forja de Hefesto",
+        tipo: "construção",
+        receitas: [18],
+        sprite: "Sprites/WorkBanks/forja_hefesto.svg",
+        hover: "Sprites/WorkBanks/forja_hefesto-hover.svg"
+    },
 ];
 
 function getWorkBench(id){

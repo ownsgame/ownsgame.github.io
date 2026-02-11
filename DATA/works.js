@@ -61,6 +61,11 @@ const WORKS = [
         hover: "Sprites/WorkBanks/portal.svg",
     },
     {
+        id: "portalAzul",
+        sprite: "Sprites/WorkBanks/portalAzul.svg",
+        hover: "Sprites/WorkBanks/portalAzul.svg",
+    },
+    {
         id: "portaVento",
         sprite: "Sprites/WorkBanks/portao-vento.svg",
         hover: "Sprites/WorkBanks/portao-vento.svg",
@@ -79,6 +84,11 @@ const WORKS = [
         id: "emBreve",
         sprite: "Sprites/WorkBanks/em-breve.svg",
         hover: "Sprites/WorkBanks/em-breve.svg",
+    },
+    {
+        id: "bueiro",
+        sprite: "Sprites/WorkBanks/bueiro.svg",
+        hover: "Sprites/WorkBanks/bueiro-hover.svg",
     },
 ]
 

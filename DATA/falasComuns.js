@@ -265,7 +265,31 @@ const FALAS_COM = [
             "Aí jogaremos um jogo de verdade",
         ]
         ],
-    }
+    },
+    {
+        id: "cambista",
+        falas: [[
+            "Olhe um own aí hahaha",
+            "Meu trabalho até parece piada pois temos poucos Owns pela cidade",
+            "Mas eu sabia que um dia eu seria recompensado!",
+        ]
+        ],
+    },
+    {
+        id: "joalheiro",
+        falas: [[
+            "Hum...Vou analizar muito bem seu produto não tente me dar um golpe!",
+            "Sou especializado nas artes das Joias de Alta Société!",
+        ]
+        ],
+    },
+    {
+        id: "hefesto",
+        falas: [[
+            "Bing, Bong! Arma criada!",
+        ]
+        ],
+    },
 ]
 
 function getFalasCom(id) {

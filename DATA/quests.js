@@ -30,7 +30,7 @@ const QUESTS = [
     {
         id: 5,
         nome: "Revolucionário",
-        descricao: `Ajude Pícalo com uma revolução dos Ogros em Hellas! Consiga a espada de Hidra`,
+        descricao: `Ajude Pícalo com uma revolução dos Ogros em Hellas! Consiga a espada de Hydra`,
         capitulo: 2,
         caminho: "picalo",
     },

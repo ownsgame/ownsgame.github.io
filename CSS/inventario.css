@@ -220,3 +220,47 @@ section{
         max-height: 680px;
     }
 }
+
+.barra-container{
+    width: 150px;
+    height: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.349);
+    background-color: rgb(24, 47, 121);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.barra-preenchimento{
+    height: 100%;
+    width: 0%;
+    border-radius: 1rem;
+    transition: width 800ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.barra-texto{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    font-size: 12pt;
+}
+
+.barra-preenchimento.vida{
+    background: linear-gradient(to right, #744dff, #3700ff);
+}
+
+.barra-preenchimento.ataque{
+    background: linear-gradient(to right, #ff1919, #b10000);
+}
+
+.barra-preenchimento.defesa{
+    background: linear-gradient(to right, #4da6ff, #0066ff);
+}
+

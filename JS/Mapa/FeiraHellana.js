@@ -15,12 +15,18 @@ placa.getElemento().style.transform = "scaleX(-1)";
 const placaDois = new DirectLink("placa", "reinoHellas.html", [3, 1], 2);
 const desPlacaDois = new Description(placaDois.getElemento(), "Voltar");
 
-const meliadas = new NPC("meliadas", [1, 3], 2);
+const placaSul = new DirectLink("placa-sul", "esconderijoOgro.html", [5, 2], 2);
+const desPlacaSul = new Description(placaSul.getElemento(), "Descer");
 
 if(randomBool()){
     const picalo = new NPC("picalo", [5, 3], 2);
 }
 
-const emBreve1 = new FixedEntity([3, 3], 2);
-setSprite(emBreve1.getElemento(), "work", "emBreve");
-const desEmBreve = new Description(emBreve1.getElemento(), "Mais conteúdos para esta área");
+const cambista = new NPC("cambista", [1, 2], 2);
+const cambio = new WorkBench("cambio", [2, 2]);
+
+const joalheiro = new NPC("joalheiro", [1, 4], 2);
+const joalheria = new WorkBench("joalheria", [2, 4]);
+
+const bueiro = new DirectLink("bueiro", "casaMeliadas.html", [1, 5], 2);
+const desBueiro = new Description(bueiro.getElemento(), "???");

@@ -184,11 +184,11 @@ const INIMIGOS_LIST =
         minVida: 140,
         maxDefesa: 30,
         minDefesa: 20,
-        maxAtaque: 55,
+        maxAtaque: 40,
         minAtaque: 35,
 
         recompensas: {
-            moeda: 100,
+            moedaHellas: 100,
         },
 
         pontosVitais: 5,
@@ -211,11 +211,14 @@ const INIMIGOS_LIST =
         minVida: 120,
         maxDefesa: 50,
         minDefesa: 35,
-        maxAtaque: 55,
-        minAtaque: 45,
+        maxAtaque: 42,
+        minAtaque: 32,
 
         recompensas: {
-            moeda: 100,
+            moedaHellas: 20,
+            joiaRubi: 15,
+            laminaThorin: 20,
+            escudoReal: 45,
         },
 
         pontosVitais: 5,
@@ -238,11 +241,12 @@ const INIMIGOS_LIST =
         minVida: 210,
         maxDefesa: 20,
         minDefesa: 10,
-        maxAtaque: 75,
+        maxAtaque: 55,
         minAtaque: 45,
 
         recompensas: {
-            moeda: 100,
+            moedaHellas: 85,
+            joiaEsmeralda: 15,
         },
 
         pontosVitais: 5,
@@ -270,7 +274,9 @@ const INIMIGOS_LIST =
         minAtaque: 50,
 
         recompensas: {
-            moeda: 100,
+            moedaHellas: 80,
+            joiaSafira: 15,
+            joiaDiamante: 5,
         },
 
         pontosVitais: 5,
@@ -295,7 +301,9 @@ const INIMIGOS_LIST =
         minAtaque: 45,
 
         recompensas: {
-            moeda: 100,
+            moedaHellas: 50,
+            escamaHydra: 30,
+            laminaThorin: 20,
         },
 
         pontosVitais: 5,

@@ -77,6 +77,118 @@ const RECEITAS = [
         concluiQuest: false,
         notificacaoEspecial: false,
     },
+    {
+        id: 8,
+        resultado: "moedaHellas",
+        quantItensResultado: 1,
+        ingredientes: {
+            moeda: 6
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 9,
+        resultado: "moeda",
+        quantItensResultado: 5,
+        ingredientes: {
+            moedaHellas: 1
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 10,
+        resultado: "moedaHellas",
+        quantItensResultado: 125,
+        ingredientes: {
+            joiaRubi: 1
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 11,
+        resultado: "moedaHellas",
+        quantItensResultado: 250,
+        ingredientes: {
+            joiaEsmeralda: 1
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 12,
+        resultado: "moedaHellas",
+        quantItensResultado: 375,
+        ingredientes: {
+            joiaSafira: 1
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 13,
+        resultado: "moedaHellas",
+        quantItensResultado: 500,
+        ingredientes: {
+            joiaDiamante: 1
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 14,
+        resultado: "joiaRubi",
+        quantItensResultado: 1,
+        ingredientes: {
+            moedaHellas: 125,
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 15,
+        resultado: "joiaEsmeralda",
+        quantItensResultado: 1,
+        ingredientes: {
+            moedaHellas: 250
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 16,
+        resultado: "joiaSafira",
+        quantItensResultado: 1,
+        ingredientes: {
+            moedaHellas: 375
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 17,
+        resultado: "joiaDiamante",
+        quantItensResultado: 1,
+        ingredientes: {
+            moedaHellas: 500
+        },
+        concluiQuest: false,
+        notificacaoEspecial: false,
+    },
+    {
+        id: 18,
+        resultado: "laminaDeHidra",
+        quantItensResultado: 1,
+        ingredientes: {
+            escamaHydra: 5,
+            laminaThorin: 1,
+        },
+        concluiQuest: true,
+        quests: [5],
+        notificacaoEspecial: true,
+    },
 ];
 
 function getReceita(id){

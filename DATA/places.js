@@ -315,6 +315,33 @@ const PLACES = [
         haveChests: false,
         trilha: "temaGrecia",
     },
+    {
+        id: "casaMeliadas",
+        nome: "Casa de Melíadas",
+        capitulo: 2,
+        link: "casaMeliadas.html", 
+        background: "Sprites/Ground/hellas.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "esconderijoOgro",
+        nome: "Esconderijo dos Ogros",
+        capitulo: 2,
+        link: "esconderijoOgro.html", 
+        background: "Sprites/Ground/hellas2.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
+    {
+        id: "dimensaoEsquecida",
+        nome: "Dimensão Esquecida?",
+        capitulo: "?",
+        link: "dimensaoEsquecida.html", 
+        background: "Sprites/Ground/dimensaoEsquecida.svg",
+        isDungeon: false,
+        haveChests: false,
+    },
 ]
 
 function getPlace(id){
