@@ -37,7 +37,7 @@ const DUNGEON_TAGS =
     <div class="blur-box"></div>
     <div id="damage-count"></div>
     <div id="game-over" class="game-over tela-padrao"></div>
-    <audio id="trilhaPlayer"></audio>
+    <audio id="trilhaPlayer" loop></audio>
 `;
 
 

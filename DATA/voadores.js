@@ -56,8 +56,17 @@ const VOADORES = [
         sprites: [[
             "Sprites/Enemys/2/fogoGrego[0][0].svg", 
             "Sprites/Enemys/2/fogoGrego[0][1].svg",
-            "Sprites/Enemys/2/fogoGrego[0][0].svg", 
-            "Sprites/Enemys/2/fogoGrego[0][2].svg",   
+            "Sprites/Enemys/2/fogoGrego[0][2].svg",  
+            "Sprites/Enemys/2/fogoGrego[0][3].svg",
+            "Sprites/Enemys/2/fogoGrego[0][2].svg",
+            "Sprites/Enemys/2/fogoGrego[0][1].svg",
+            "Sprites/Enemys/2/fogoGrego[0][0].svg",   
+            "Sprites/Enemys/2/fogoGrego[0][4].svg",
+            "Sprites/Enemys/2/fogoGrego[0][5].svg",  
+            "Sprites/Enemys/2/fogoGrego[0][6].svg",
+            "Sprites/Enemys/2/fogoGrego[0][5].svg",
+            "Sprites/Enemys/2/fogoGrego[0][4].svg",
+            "Sprites/Enemys/2/fogoGrego[0][0].svg",  
         ]],
     },
     {
@@ -72,7 +81,11 @@ const VOADORES = [
             "Sprites/Enemys/2/vigilantes[0][0].svg", 
             "Sprites/Enemys/2/vigilantes[0][1].svg",
             "Sprites/Enemys/2/vigilantes[0][0].svg",
-            "Sprites/Enemys/2/vigilantes[0][2].svg",       
+            "Sprites/Enemys/2/vigilantes[0][2].svg", 
+            "Sprites/Enemys/2/vigilantes[0][0].svg",
+            "Sprites/Enemys/2/vigilantes[0][3].svg", 
+            "Sprites/Enemys/2/vigilantes[0][0].svg",
+            "Sprites/Enemys/2/vigilantes[0][4].svg",     
         ]],
     },
     {
@@ -86,7 +99,8 @@ const VOADORES = [
         sprites: [[
             "Sprites/Enemys/2/lambisgoia[0][0].svg", 
             "Sprites/Enemys/2/lambisgoia[0][1].svg", 
-            "Sprites/Enemys/2/lambisgoia[0][2].svg",  
+            "Sprites/Enemys/2/lambisgoia[0][2].svg", 
+            "Sprites/Enemys/2/lambisgoia[0][3].svg", 
         ]],
     },
 ];
