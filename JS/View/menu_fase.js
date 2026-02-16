@@ -25,8 +25,8 @@ function abrirTelaMenuJogo(){
     `;
     string += `
         <div class="botoes-alinhados">
-            <button class="botao-ativo" onclick="showRewards()">Coletados</button>
-            <button class="botao-ativo red-button" onclick="redirecionarUltimaSala()">Desistir</button>
+            <button class="botao-ativo" onclick="showRewards()"> <i class="fa-solid fa-wallet"></i> Coletados</button>
+            <button class="botao-ativo red-button" onclick="redirecionarUltimaSala()"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Desistir</button>
         </div>
     `;
 
@@ -40,7 +40,11 @@ function rewardsToHtml(){
     let quantidadeTipos = Object.keys(rewards).length;
 
     if(quantidadeTipos === 0){
-        string += `<h3 class="fonte-comum">Você não coletou nenhuma recompensa ainda</h3>`;
+        string += `
+            <p class="fonte-comum">
+                <i class="fa-regular fa-circle-xmark"></i> Sem recompensas coletadas
+            </p>`
+        ;
     } else {
         
         string += `<div class="dequeRewards">`;
@@ -99,15 +103,19 @@ function showRewards(){
 
     let string = `
         <h2>${NOME_FASE}</h2>
-        <p class="fonte-comum alerta">
+        <p>
             <i class="fa-solid fa-triangle-exclamation"></i> 
-            Atenção:<i>"O jogo ainda está rodando no fundo!"</i>
+            Atenção:<i>"As recompensas só serão obtidas após o Fim de Fase"</i>
         </p>
     `;
 
     string += `${rewardsToHtml()}`;
 
-    string += `<button class="botao-ativo" onclick="abrirTelaMenuJogo()">Voltar</button>`;
+
+    string += 
+    `
+        <button class="botao-ativo" onclick="abrirTelaMenuJogo()">Voltar</button>
+    `;
     TELA.innerHTML = string;
     abrirTela("menu-jogo");
 }

@@ -5,6 +5,9 @@ function verificaAcaoReward(recompensa){
     else if(recompensa == "frutaEnergia"){
         energyFruitAction();
     }
+    else if(recompensa == "amolador"){
+        amoladorFunction();
+    }
 }
 
 function healthFruitAction(){
@@ -14,4 +17,9 @@ function healthFruitAction(){
 
 function energyFruitAction(){
     aumentarTotalViagens();
+}
+
+function amoladorFunction(){
+    let jogador = getObjectPlayer();
+    jogador.aumentarAtaque(10);
 }

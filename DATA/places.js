@@ -10,9 +10,10 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-mirror.svg", "Sprites/WorkBanks/Chests/co-mirror.svg"], 
         recompensas: 
         { 
-            moeda: 45,
-            frutaEnergia: 28,
-            frutaCoracao: 27,
+            moeda: 35,
+            frutaCoracao: 25,
+            frutaEnergia: 20,
+            amolador: 20,
         },
 
         viagens: 3,
@@ -122,9 +123,10 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
-            moeda: 45,
+            moeda: 35,
             frutaEnergia: 31,
             frutaCoracao: 24,
+            amolador: 10,
         },
 
         inimigos: ["flow", "flowy"],
@@ -142,9 +144,10 @@ const PLACES = [
         baus: ["Sprites/WorkBanks/Chests/cl-wood.svg", "Sprites/WorkBanks/Chests/co-wood.svg"], 
         recompensas: 
         { 
-            moeda: 60,
+            moeda: 50,
             frutaCoracao: 20,
             frutaEnergia: 20,
+            amolador: 10,
         },
 
         inimigos: ["troncos", "frogs"],
@@ -164,7 +167,8 @@ const PLACES = [
         { 
             moeda: 34,
             frutaCoracao: 34,
-            frutaEnergia: 32,
+            frutaEnergia: 22,
+            amolador: 10,
         },
 
         inimigos: ["troncos", "sadFlowers"],
@@ -309,7 +313,7 @@ const PLACES = [
         bossId: 2,
         capitulo: 2,
         sprite: "Sprites/Places/Colina-Dancante.svg",
-        link: "bossWoody.html", 
+        link: "bossCiclop.html", 
         background: "Sprites/Ground/bossCiclop.svg",
         isDungeon: false,
         haveChests: false,

@@ -19,3 +19,11 @@ if(player_data.fragmentosHexopoda < 2){
     const portaChefe = new IndirectLink("door-locked", [3, 5], 2, "bossCiclop", 3);
     const desPortaChefe = new Description(portaChefe.getElemento(), "Boss");
 }
+
+const posPir = [[5, 2], [5, 4]]
+for(let i =0; i<2; i++){
+    let novaTocha = new FixedEntity([posPir[i][0], posPir[i][1]], 2);
+    setSprite(novaTocha.getElemento(), "entidade", "piramide");
+}
+
+iniciarParticulas("rgba(255, 255, 255, 0.57)");

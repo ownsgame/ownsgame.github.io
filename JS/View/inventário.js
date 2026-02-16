@@ -195,7 +195,7 @@ function loadChangeItem(classe){
     let possui = false;
 
     let string = `
-        <h3 class='fonte-comum'>Trocar ${classe} atual por:</h3>
+        <h3 class='fonte-comum'><i class="fa-solid fa-arrows-turn-to-dots"></i> Trocar ${itens_CLASSES[classe]} atual por:</h3>
         <div class="itens-conteiner">
     `;
 
@@ -214,7 +214,7 @@ function loadChangeItem(classe){
     if(!possui){
         string += `<h3><i class='fa-solid fa-triangle-exclamation'></i> Você não possui ${classe}s!</h3>`;
     }
-    string += "</div> <button onclick='loadGear()'>Voltar</button>";
+    string += "</div> <button onclick='loadGear()'><i class='fa-regular fa-circle-check'></i></button>";
 
     changeDados("Trocar", string, 3);
 }
@@ -280,7 +280,9 @@ function loadQuestsConcluidas(){
     `
         </div>
         <div class="row-buttons animated-buttons">
-            <button onclick='loadQuests()'>Voltar</button>
+            <button onclick='loadQuests()'>
+                <i class="fa-solid fa-left-long"></i>
+            </button>
         </div>
     `;
 

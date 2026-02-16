@@ -17,4 +17,7 @@ for(let i =0; i< posVasos.length; i++){
     setSprite(novaTocha.getElemento(), "entidade", "grama");
 }
 
+const cama = new FixedEntity([2 , 2], 2);
+setSprite(cama.getElemento(), "entidade", "cama");
+
 const bueiro = new DirectLink("bueiro", "feiraHellana.html", [1, 5], 2);

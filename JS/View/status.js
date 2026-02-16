@@ -7,9 +7,8 @@ PAINEL_STATUS.innerHTML =
     </div>
 
     <div id="status-time-attack" class="status-item">
-        <h3 class="status-item fonte-comum">
-        <i class="fa-solid fa-hand-fist"></i>
-             ${getSessionAtaque()}
+        <h3 id="status-dano" class="status-item fonte-comum">
+        <i class="fa-solid fa-hand-fist"></i>${getSessionAtaque()}
         </h3>
     </div>
 
@@ -154,4 +153,13 @@ function animarBarraTempo(tempoMs){
     }
 
     requestAnimationFrame(atualizar);
+}
+
+function mudarDanoFase(novoDano){
+    const texto = document.getElementById("status-dano");
+
+    texto.innerHTML = 
+    `
+        <i class="fa-solid fa-hand-fist"></i>${novoDano}
+    `;
 }

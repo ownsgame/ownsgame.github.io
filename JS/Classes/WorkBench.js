@@ -51,6 +51,9 @@ class WorkBench {
         else if(this.tipo == "roleta"){
             loadRoleta();
         }
+        else if(this.tipo == "cama"){
+            deitar(this.elemento);
+        }
     }
 
     getElemento(){

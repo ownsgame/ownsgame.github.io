@@ -9,9 +9,24 @@ class Ciclop extends Boss{
         ];
 
         this.moverLoop(this.movimentos, 400);
+        this.girar();
     }
 
     static gerar(){
         let boss = new Ciclop();
+    }
+
+    girar(){
+        setInterval(()=>{
+            let lado = this.getLadoDoPlayer();
+
+            if(lado == "esquerda"){
+                this.elemento.style.transform = "scaleX(-1)";
+            }
+            else {
+                this.elemento.style.transform = "scaleX(1)";
+            }
+
+        }, 400);
     }
 }

@@ -22,7 +22,7 @@ class GuerreiroHellas extends Inimigo {
         this.ultimoTempo = tempoAtual;
         this.acumulador += delta;
 
-        if (this.acumulador >= 250) {
+        if (this.acumulador >= 500) {
             this.mover();
             this.acumulador = 0;
         }

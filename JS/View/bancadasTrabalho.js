@@ -48,8 +48,26 @@ function loadReceita(receitaId){
         string +=   
         `
             <button onclick="construirReceita(${receitaId})">
-                    <i class="fa-solid fa-hammer"></i> Construir
+                    <i class="fa-solid fa-hammer"></i>
             </button>
+            ${
+                getPossibilidadeReceita(receitaId, 10) ? 
+                `
+                    <button onclick="construirReceita(${receitaId}, 10)">
+                        <i class="fa-solid fa-hammer"></i> x10
+                    </button>
+                `
+                : ""
+            }
+            ${
+                getPossibilidadeReceita(receitaId, 100) ? 
+                `
+                    <button onclick="construirReceita(${receitaId}, 100)">
+                        <i class="fa-solid fa-hammer"></i> x100
+                    </button>
+                `
+                : ""
+            }
         </div>
         `;
     }
@@ -128,9 +146,26 @@ function changeReceita(receitaId){
         string +=   
         `
             <button onclick="construirReceita(${receitaId})">
-                    <i class="fa-solid fa-hammer"></i> Construir
+                    <i class="fa-solid fa-hammer"></i>
             </button>
-
+            ${
+                getPossibilidadeReceita(receitaId, 10) ? 
+                `
+                    <button onclick="construirReceita(${receitaId}, 10)">
+                        <i class="fa-solid fa-hammer"></i> x10
+                    </button>
+                `
+                : ""
+            }
+            ${
+                getPossibilidadeReceita(receitaId, 100) ? 
+                `
+                    <button onclick="construirReceita(${receitaId}, 100)">
+                        <i class="fa-solid fa-hammer"></i> x100
+                    </button>
+                `
+                : ""
+            }
         `;
     }
     else{

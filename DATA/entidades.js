@@ -31,6 +31,18 @@ const ENTIDADES_SPRITES = [
         id: "estatuaHelos",
         sprite: "Sprites/WorkBanks/statue.svg"
     },
+    {
+        id: "piramide",
+        sprite: "Sprites/WorkBanks/piramide.svg"
+    },
+    {
+        id: "cama",
+        sprite: "Sprites/WorkBanks/cama.svg"
+    },
+    {
+        id: "cama-deitado",
+        sprite: "Sprites/WorkBanks/cama-deitado.svg"
+    },
 ]
 
 function getEntitySprite(id){

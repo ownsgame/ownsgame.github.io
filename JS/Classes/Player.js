@@ -12,6 +12,7 @@ class Player{
         this.podeAtaca = true;
         this.venceu = false;
         this.morto = false;
+        this.desaparecido = false;
 
         this.inicializarElemento();
     }
@@ -142,6 +143,21 @@ class Player{
             this.vida += quantidade;
         }
         atualizarVida(this.vida, this.vidaInicial);
+    }
+
+    aumentarAtaque(incremento){
+        this.ataque += incremento;
+        mudarDanoFase(this.ataque);
+    }
+
+    desaparecer(){
+        this.elemento.style.opacity = 0;
+        this.desaparecido = true;
+    }
+
+    aparecer(){
+        this.elemento.style.opacity = 1;
+        this.desaparecido = false;
     }
 }
 

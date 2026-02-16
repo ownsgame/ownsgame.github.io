@@ -1,7 +1,7 @@
 const CONSUMIVEIS = [
     {
         id: "frutaCoracao",
-        nome: "Fruta do Coracao",
+        nome: "Fruta do Coração",
         sprite: "Sprites/Itens/health_fruit.svg",
         descricao: "Restaura 15 Pontos de Vida, Se você não estava precisando,que azar!",
         unico: true,
@@ -13,6 +13,15 @@ const CONSUMIVEIS = [
         nome: "Fruta de Energia",
         sprite: "Sprites/Itens/energy_berry.svg",
         descricao: "Te dá vigor para explorar ainda mais a área!",
+        unico: true,
+        consumivel: true,
+        raridade: "Comum"
+    },
+    {
+        id: "amolador",
+        nome: "Amolador de Lâminas",
+        sprite: "Sprites/Itens/amolador.svg",
+        descricao: "Aumenta o dano de espadas nas fases",
         unico: true,
         consumivel: true,
         raridade: "Comum"

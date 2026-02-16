@@ -21,6 +21,8 @@ class DirectLink extends FixedEntity {
     }
 }
 
+let ultimaIndirectLinkaberta = null;
+
 class IndirectLink extends FixedEntity{
     constructor(id, posicoes, layer, lugar, questId = false){
         super(posicoes, layer);
@@ -47,6 +49,7 @@ class IndirectLink extends FixedEntity{
     carregarTelaLugar(){
         const TELA = document.getElementById("show-place");
         const lugar = getPlace(this.lugar);
+        ultimaIndirectLinkaberta = this;
 
         let string = "";
         if(lugar.boss){
@@ -125,6 +128,12 @@ class IndirectLink extends FixedEntity{
     };
 }
 
+function voltarMostrarSala(){
+    if(ultimaIndirectLinkaberta != null){
+        ultimaIndirectLinkaberta.carregarTelaLugar();
+    }
+}
+
 function mostrarEstatisticasSala(sala){
     const TELA = document.getElementById("show-place");
     const lugar = getPlace(sala);
@@ -148,41 +157,53 @@ function mostrarEstatisticasSala(sala){
     if(lugar.completar){
         const recompensasCompletar = lugar.completar;
 
-        string += `</div>
-                <p>Ao Completar Fase:</p>
-                <div class="itens-conteiner">
+        string += `
+                    </div>
+                </div>
+
+                <div class="column-telas">
+                    <p>Ao Completar Fase:</p>
+                    <div class="itens-conteiner">
         `;
 
         for(let rec in recompensasCompletar){
             string += itemFrame(rec, 100, false, true);
         }
+
+        string += "</div></div>";
+    }
+    else {
+        string += "</div></div>";
     }
 
     string +=
     `
-            </div>
-        </div>
         <div class="column-telas">
             <p>Recompensas de Inimigos:</p>
             <div class="itens-conteiner">
     `;
 
+    const recompensasMostradas = new Set();
+
     inimigosSala.forEach(inimigo => {
         const inimigoData = getInimigoById(inimigo);
         const inimigoRecompensas = inimigoData.recompensas;
 
-        for(let rec in inimigoRecompensas){
-            string += itemFrame(rec, inimigoRecompensas[rec], false, true);
+        for (let rec in inimigoRecompensas) {
+            if (!recompensasMostradas.has(rec)) {
+                recompensasMostradas.add(rec);
+                string += itemFrame(rec, inimigoRecompensas[rec], false, true);
+            }
         }
     });
-    
+
     string += `
-                </div>
-                <div class="itens-conteiner">
-                    <p><i class="fa-solid fa-triangle-exclamation"></i> As porcentagens são por cada criatura, inimigos com recompensas semelhantes são considerados</p>
                 </div>
             </div>
         </div>
+        <button onclick="voltarMostrarSala()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
         <button onclick="fecharTela('show-place')" class="red-button">
             <i class="fa-solid fa-x"></i>
         </button>

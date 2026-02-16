@@ -45,6 +45,7 @@ class Boss {
                 this.x = vetor[indexMovimento][0];
                 this.y = vetor[indexMovimento][1];
 
+
                 this.atualizarPos(this.x, this.y);
                 indexMovimento++;
                 ultimoTempo = tempoAtual;
@@ -74,7 +75,7 @@ class Boss {
             if(tempoAtual - ultimoTempo >= intervalo){
                 this.x = vetor[indexMovimento][0];
                 this.y = vetor[indexMovimento][1];
-
+                
                 this.atualizarPos(this.x, this.y);
                 indexMovimento++;
                 ultimoTempo = tempoAtual;
@@ -161,5 +162,26 @@ class Boss {
                 this.podeAtacar = true;
             }, 1000);
         }
+    }
+
+    getLadoDoPlayer(){
+        const PLAYER = getObjectPlayer();
+        const posPlayer = PLAYER.getPosicao();
+
+        const playerLeft = posPlayer.y;
+        const playerRight = posPlayer.y;
+
+        const bossLeft = this.y;
+        const bossRight = this.y + 1;
+
+        if (bossRight < playerLeft) {
+            return "esquerda";
+        }
+
+        if (bossLeft > playerRight) {
+            return "direita";
+        }
+
+        return "mesmaColuna";
     }
 }
